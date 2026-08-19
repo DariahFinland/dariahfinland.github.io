@@ -1,0 +1,51 @@
+---
+// src/components/blocks/TrainingSections.astro
+
+interface Course {
+  title: string
+  url?: string
+  description?: string
+  levelTags?: string
+}
+
+interface Group {
+  levelLabel?: string
+  courses: Course[]
+}
+
+interface Props {
+  heading?: string
+  intro?: string
+  groups?: Group[]
+}
+
+const { heading, intro, groups = [] } = Astro.props
+---
+
+<div class="container my-8">
+  {heading && <h2 class="text-2xl font-semibold mb-2">{heading}</h2>}
+  {intro && <p class="mb-6 text-muted-foreground">{intro}</p>}
+
+  {groups.map((group) => (
+    <div class="mb-6">
+      {group.levelLabel && <h3 class="text-lg font-medium mb-3">{group.levelLabel}</h3>}
+      <div class="space-y-4">
+        {group.courses.map((course) => (
+          <div class="border rounded-lg p-4">
+            {course.url ? (
+              <a href={course.url} target="_blank" rel="noreferrer noopener" class="font-semibold underline">
+                {course.title}
+              </a>
+            ) : (
+              <p class="font-semibold">{course.title}</p>
+            )}
+            {course.description && <p class="text-sm mt-1 text-muted-foreground">{course.description}</p>}
+            {course.levelTags && (
+              <p class="text-xs mt-2 uppercase tracking-wide text-primary">{course.levelTags}</p>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  ))}
+</div>

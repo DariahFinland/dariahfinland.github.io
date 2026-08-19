@@ -1,0 +1,94 @@
+---
+// src/components/Hero.astro
+//
+// Your old site had 4 hero types: none, lowImpact, mediumImpact, highImpact.
+// Classes below are adapted from the real LowImpact/MediumImpact/HighImpact
+// components. One deliberate simplification: the original highImpact hero
+// used a floating/transparent header + negative margin trick to sit the
+// image behind the nav bar. Our header is a normal, non-overlaid bar, so
+// instead we use a plain full-width image with a dark overlay for text
+// contrast -- simpler, and looks right without needing header changes.
+
+import { md } from '../lib/markdown'
+
+interface Link {
+  label: string
+  url?: string
+  newTab?: boolean
+}
+
+interface Props {
+  hero?: {
+    type: 'none' | 'lowImpact' | 'mediumImpact' | 'highImpact'
+    richText?: string
+    links?: Link[]
+    media?: string
+    mediaAlt?: string
+  }
+}
+
+const { hero } = Astro.props
+
+// Reused across mediumImpact/highImpact link lists
+const linkClass =
+  'inline-block bg-primary text-primary-foreground px-4 py-2 rounded-md hover:bg-primary-hover transition-colors'
+---
+
+{hero && hero.type === 'lowImpact' && (
+  <div class="container my-16">
+    <div class="max-w-[48rem]">
+      {hero.richText && <div set:html={md(hero.richText)} />}
+    </div>
+  </div>
+)}
+
+{hero && hero.type === 'mediumImpact' && (
+  <div>
+    <div class="container mb-8">
+      {hero.richText && <div class="mb-6" set:html={md(hero.richText)} />}
+      {hero.links && hero.links.length > 0 && (
+        <ul class="flex gap-4">
+          {hero.links.map((link) => (
+            <li>
+              <a class={linkClass} href={link.url} target={link.newTab ? '_blank' : undefined}>
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+    {hero.media && (
+      <div class="container">
+        <img class="w-full" src={hero.media} alt={hero.mediaAlt ?? ''} />
+      </div>
+    )}
+  </div>
+)}
+
+{hero && hero.type === 'highImpact' && (
+  <div class="relative flex items-center justify-center text-white min-h-[60vh]">
+    {hero.media && (
+      <img class="absolute inset-0 w-full h-full object-cover -z-10" src={hero.media} alt={hero.mediaAlt ?? ''} />
+    )}
+    <div class="absolute inset-0 bg-black/40 -z-10"></div>
+
+    <div class="container z-10 relative flex items-center justify-center py-16">
+      <div class="max-w-[36.5rem] md:text-center">
+        {hero.richText && <div class="mb-6" set:html={md(hero.richText)} />}
+        {hero.links && hero.links.length > 0 && (
+          <ul class="flex md:justify-center gap-4">
+            {hero.links.map((link) => (
+              <li>
+                <a class={linkClass} href={link.url} target={link.newTab ? '_blank' : undefined}>
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+    </div>
+  </div>
+)}
+

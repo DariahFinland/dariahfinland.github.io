@@ -1,0 +1,16 @@
+---
+// src/components/blocks/MediaBlock.astro
+
+interface Props {
+  path?: string
+  alt?: string
+}
+
+const { path, alt } = Astro.props
+---
+
+{path && (
+  <div class="container">
+    <img class="border border-border rounded-[0.8rem] w-full" src={path} alt={alt ?? ''} />
+  </div>
+)}

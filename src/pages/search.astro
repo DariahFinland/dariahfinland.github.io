@@ -1,0 +1,28 @@
+---
+// src/pages/search.astro
+//
+// Pagefind indexes the site's built HTML *after* astro build runs (see
+// package.json change below) -- it reads dist/, finds every page's text,
+// and writes a search index into dist/pagefind/. Because of that, search
+// only works after a full `pnpm build`, NOT in `pnpm dev` -- the
+// /pagefind/pagefind-ui.js file referenced below doesn't exist until then.
+// This replaces Payload's old Postgres-backed search entirely.
+
+import BaseLayout from '../layouts/BaseLayout.astro'
+---
+
+<BaseLayout title="Search">
+  <main class="container my-16">
+    <h1 class="mb-6">Search</h1>
+    <div id="search"></div>
+  </main>
+</BaseLayout>
+
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet" />
+<script src="/pagefind/pagefind-ui.js" is:inline></script>
+<script is:inline>
+  window.addEventListener('DOMContentLoaded', () => {
+    // eslint-disable-next-line no-undef
+    new PagefindUI({ element: '#search', showSubResults: true })
+  })
+</script>

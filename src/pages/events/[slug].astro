@@ -1,0 +1,85 @@
+---
+// src/pages/events/[slug].astro
+import { getCollection, getEntry, render } from 'astro:content'
+import BaseLayout from '../../layouts/BaseLayout.astro'
+
+export async function getStaticPaths() {
+  const events = await getCollection('events')
+  return events.map((event) => ({
+    params: { slug: event.id },
+    props: { event },
+  }))
+}
+
+const { event } = Astro.props
+const { Content } = await render(event)
+const relatedNode = event.data.relatedNode ? await getEntry(event.data.relatedNode) : undefined
+
+function formatEventDateTime(start: Date, end?: Date): string {
+  const dateFmt = new Intl.DateTimeFormat('en-GB', {
+    weekday: 'long', day: 'numeric', month: 'long', year: 'numeric',
+  })
+  const timeFmt = new Intl.DateTimeFormat('en-GB', { hour: '2-digit', minute: '2-digit' })
+  let result = dateFmt.format(start)
+  if (end) {
+    const sameDay = start.toDateString() === end.toDateString()
+    result += sameDay ? `, ${timeFmt.format(start)}–${timeFmt.format(end)}` : ` – ${dateFmt.format(end)}`
+  } else {
+    result += `, ${timeFmt.format(start)}`
+  }
+  return result
+}
+---
+
+<BaseLayout title={event.data.title}>
+  <main class="container my-16 max-w-3xl">
+    <a href="/events" class="text-sm underline text-muted-foreground">← Events</a>
+
+    {event.data.featuredImage && (
+      <div class="mt-4 mb-6 rounded-md overflow-hidden">
+        <img class="w-full" src={event.data.featuredImage} alt="" />
+      </div>
+    )}
+
+    <h1 class="mb-6">{event.data.title}</h1>
+
+    <p class="text-muted-foreground mb-1">
+      {formatEventDateTime(event.data.startDate, event.data.endDate)}
+    </p>
+    {event.data.location && <p class="text-muted-foreground mb-1">{event.data.location}</p>}
+    {event.data.isOnline && <p class="text-muted-foreground mb-1">Online event</p>}
+
+    {event.data.status === 'past' && (
+      <span class="inline-block mt-2 mb-4 text-xs font-medium uppercase tracking-wide text-muted-foreground border border-border rounded-full px-3 py-1">
+        Past event
+      </span>
+    )}
+
+    {event.data.registrationUrl && event.data.status === 'upcoming' && (
+      <div class="mt-4 mb-6">
+        <a
+          href={event.data.registrationUrl}
+          target="_blank"
+          rel="noreferrer noopener"
+          class="inline-block bg-primary text-primary-foreground rounded px-5 py-2 text-sm font-medium hover:bg-primary-hover transition-colors"
+          style="text-decoration: none;"
+        >
+          Register
+        </a>
+      </div>
+    )}
+
+    <div class="mt-6">
+      <Content />
+    </div>
+
+    {relatedNode && (
+      <div class="mt-8 pt-6 border-t border-border">
+        <p class="text-sm text-muted-foreground">
+          Organised by{' '}
+          <a href={`/local-offices/${relatedNode.id}`} class="underline">{relatedNode.data.name}</a>
+        </p>
+      </div>
+    )}
+  </main>
+</BaseLayout>

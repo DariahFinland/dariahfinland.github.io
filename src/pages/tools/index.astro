@@ -1,0 +1,16 @@
+---
+// src/pages/tools/index.astro
+import { getCollection } from 'astro:content'
+import BaseLayout from '../../layouts/BaseLayout.astro'
+
+const tools = (await getCollection('tools')).sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0))
+---
+
+<BaseLayout title="Tools">
+  <h1>Tools</h1>
+  <ul>
+    {tools.map((tool) => (
+      <li><a href={`/tools/${tool.id}`}>{tool.data.name}</a></li>
+    ))}
+  </ul>
+</BaseLayout>

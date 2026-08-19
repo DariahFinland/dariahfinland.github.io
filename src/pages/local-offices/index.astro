@@ -1,0 +1,37 @@
+---
+// src/pages/local-offices/index.astro
+import { getCollection } from 'astro:content'
+import BaseLayout from '../../layouts/BaseLayout.astro'
+
+const offices = (await getCollection('localOffices')).sort(
+  (a, b) => (a.data.order ?? 0) - (b.data.order ?? 0),
+)
+---
+
+<BaseLayout title="Local Offices">
+  <main class="container my-16">
+    <h1 class="mb-6">Local Offices</h1>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {offices.map((office) => (
+        <a
+          href={`/local-offices/${office.id}`}
+          class="flex gap-4 p-4 border border-border rounded-md bg-card hover:bg-muted transition-colors"
+          style="text-decoration: none;"
+        >
+          {office.data.logo && (
+            <div class="w-20 flex-shrink-0 flex items-center">
+              <img src={office.data.logo} alt="" />
+            </div>
+          )}
+          <div>
+            <p class="font-semibold text-headings mb-1">{office.data.name}</p>
+            {office.data.shortDescription && (
+              <p class="text-sm text-muted-foreground">{office.data.shortDescription}</p>
+            )}
+          </div>
+        </a>
+      ))}
+    </div>
+  </main>
+</BaseLayout>

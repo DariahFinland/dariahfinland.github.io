@@ -1,0 +1,97 @@
+---
+// src/components/Header.astro
+//
+// getEntry() reads one entry from a content collection. Here it reads the
+// "header" entry out of the globals collection (from src/data/globals.json,
+// the file the export script produced).
+//
+// Mobile menu ported from the real HeaderClient.tsx, but with plain
+// click-toggled classes instead of React state -- same idea as the
+// TabsBlock/events tab switching we already built.
+
+import { getEntry } from 'astro:content'
+
+const header = await getEntry('globals', 'header')
+const navItems = header?.data.navItems ?? []
+---
+
+<header class="border-b border-border bg-background z-50">
+  <div class="container py-3 flex items-center justify-between">
+    <a href="/" class="flex items-center flex-shrink-0 min-w-0">
+      <img alt="Dariah Logo" width="160" height="40" loading="eager" fetchpriority="high" decoding="async" class="h-auto w-28 md:w-40" src="/dariah_logo.svg">
+    </a>
+
+    <!-- Desktop nav -- lg and up -->
+    <nav class="hidden lg:flex items-center gap-4">
+      {navItems.map((item) => (
+        <a
+          href={item.url}
+          target={item.newTab ? '_blank' : undefined}
+          class="text-foreground hover:text-primary transition-colors text-sm"
+        >
+          {item.label}
+        </a>
+      ))}
+      <a href="/search" class="text-foreground hover:text-primary transition-colors flex-shrink-0" aria-label="Search">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8" />
+          <path d="m21 21-4.3-4.3" />
+        </svg>
+      </a>
+    </nav>
+
+    <!-- Mobile/tablet: search icon + hamburger -- below lg -->
+    <div class="flex items-center gap-3 lg:hidden">
+      <a href="/search" aria-label="Search">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-foreground">
+          <circle cx="11" cy="11" r="8" />
+          <path d="m21 21-4.3-4.3" />
+        </svg>
+      </a>
+      <button id="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" class="p-1 text-foreground">
+        <svg id="menu-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="4" y1="12" x2="20" y2="12" />
+          <line x1="4" y1="6" x2="20" y2="6" />
+          <line x1="4" y1="18" x2="20" y2="18" />
+        </svg>
+        <svg id="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden">
+          <path d="M18 6 6 18" />
+          <path d="m6 6 12 12" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile dropdown -- hidden by default, toggled by the script below -->
+  <div id="mobile-menu" class="hidden lg:hidden border-t border-border bg-background">
+    <nav class="container py-4 flex flex-col gap-1">
+      {navItems.map((item) => (
+        <a
+          href={item.url}
+          target={item.newTab ? '_blank' : undefined}
+          class="py-2 text-base border-b border-border last:border-0 text-foreground hover:text-primary transition-colors"
+        >
+          {item.label}
+        </a>
+      ))}
+    </nav>
+  </div>
+</header>
+
+<script>
+  const toggleButton = document.getElementById('menu-toggle')
+  const menuIcon = document.getElementById('menu-icon')
+  const closeIcon = document.getElementById('close-icon')
+  const mobileMenu = document.getElementById('mobile-menu')
+
+  toggleButton?.addEventListener('click', () => {
+    const isOpen = !mobileMenu?.classList.contains('hidden')
+    mobileMenu?.classList.toggle('hidden', isOpen)
+    menuIcon?.classList.toggle('hidden', !isOpen)
+    closeIcon?.classList.toggle('hidden', isOpen)
+    toggleButton.setAttribute('aria-expanded', String(!isOpen))
+    toggleButton.setAttribute('aria-label', isOpen ? 'Open menu' : 'Close menu')
+    // Prevent background scroll while the menu is open
+    document.body.style.overflow = isOpen ? '' : 'hidden'
+  })
+</script>

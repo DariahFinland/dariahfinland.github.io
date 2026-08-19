@@ -1,0 +1,129 @@
+---
+// src/pages/local-offices/[slug].astro
+//
+// The original office page also lists affiliated groups and tools tied to
+// that office (matched via dariahNode/developedBy/collaborators). We
+// reproduce that here by filtering every affiliated-group/tool entry
+// against this office's id -- comparing .id, not the objects themselves,
+// same reference-equality issue as the Archive block's category filter.
+import { getCollection, render } from 'astro:content'
+import BaseLayout from '../../layouts/BaseLayout.astro'
+
+export async function getStaticPaths() {
+  const offices = await getCollection('localOffices')
+  return offices.map((office) => ({
+    params: { slug: office.id },
+    props: { office },
+  }))
+}
+
+const { office } = Astro.props
+
+const allGroups = await getCollection('affiliatedGroups')
+const groups = allGroups.filter((g) => g.data.dariahNode?.id === office.id)
+const groupsWithContent = await Promise.all(
+  groups.map(async (g) => ({ group: g, Content: (await render(g)).Content })),
+)
+
+const allTools = await getCollection('tools')
+const tools = allTools.filter(
+  (t) =>
+    t.data.developedBy?.some((ref) => ref.id === office.id) ||
+    t.data.collaborators?.some((ref) => ref.id === office.id),
+)
+const toolsWithContent = await Promise.all(
+  tools.map(async (t) => ({ tool: t, Content: (await render(t)).Content })),
+)
+---
+
+<BaseLayout title={office.data.name}>
+  <main class="container my-16">
+    <a href="/local-offices" class="text-sm underline text-muted-foreground">← Local Offices</a>
+
+    <div class="flex items-center gap-6 mt-4 mb-8">
+      {office.data.logo && (
+        <div class="w-24 flex-shrink-0">
+          <img src={office.data.logo} alt="" />
+        </div>
+      )}
+      <h1 class="mt-12">{office.data.name}</h1>
+    </div>
+
+    {office.data.externalUrl && (
+      <a href={office.data.externalUrl} target="_blank" rel="noreferrer noopener" class="underline inline-block mb-4 font-bold">
+        Visit website
+      </a>
+    )}
+
+    {office.data.shortDescription && <p class="text-muted-foreground mb-8">{office.data.shortDescription}</p>}
+
+    {office.data.contacts && office.data.contacts.length > 0 && (
+      <div class="mb-10">
+        <h2 class="text-sm font-semibold uppercase tracking-wide text-muted-foreground mb-2">Contact</h2>
+        <div class="flex gap-4 p-4 rounded-lg bg-card">
+          <div class="flex-1 space-y-2">
+            {office.data.contacts.map((contact) => (
+              <div class="flex items-center gap-2">
+                {contact.photo ? (
+                  <img src={contact.photo} alt="" class="w-10 h-10 rounded-full overflow-hidden flex-shrink-0 object-cover" />
+                ) : (
+                  <div class="w-10 h-10 rounded-full overflow-hidden flex-shrink-0 bg-secondary"></div>
+                )}
+                <div class="text-sm">
+                  {contact.url ? (
+                    <a href={contact.url} target="_blank" rel="noreferrer noopener" class="underline">{contact.name}</a>
+                  ) : (
+                    <span>{contact.name}</span>
+                  )}
+                  {contact.note && <span class="text-muted-foreground"> {contact.note}</span>}
+                  {contact.email && (
+                    <div class="text-xs text-muted-foreground">
+                      <a href={`mailto:${contact.email}`} class="underline">{contact.email}</a>
+                    </div>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    )}
+
+    {groupsWithContent.length > 0 && (
+      <div class="mb-10">
+        <h2 class="text-xl font-semibold mb-4">Affiliated Groups</h2>
+        <div class="space-y-4">
+          {groupsWithContent.map(({ group, Content }) => (
+            <div class="border rounded-lg p-4 flex gap-4">
+              {group.data.logo && (
+                <div class="w-16 h-16 flex-shrink-0">
+                  <img src={group.data.logo} alt="" class="w-full h-full object-contain" />
+                </div>
+              )}
+              <div class="flex-1">
+                <a href={group.data.externalUrl} target="_blank" rel="noreferrer noopener" class="font-semibold underline">
+                  {group.data.name}
+                </a>
+                <div class="text-sm text-muted-foreground mt-1 mb-2"><Content /></div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    )}
+
+    {toolsWithContent.length > 0 && (
+      <div class="mb-10">
+        <h2 class="text-xl font-semibold mb-4">Tools</h2>
+        <div class="space-y-4">
+          {toolsWithContent.map(({ tool, Content }) => (
+            <div class="border rounded-lg p-4">
+              <p class="font-semibold mb-2">{tool.data.name}</p>
+              <div class="text-sm text-muted-foreground mb-2"><Content /></div>
+            </div>
+          ))}
+        </div>
+      </div>
+    )}
+  </main>
+</BaseLayout>

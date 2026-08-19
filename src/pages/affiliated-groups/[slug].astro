@@ -1,0 +1,31 @@
+---
+// src/pages/affiliated-groups/[slug].astro
+import { getCollection, render } from 'astro:content'
+import BaseLayout from '../../layouts/BaseLayout.astro'
+
+export async function getStaticPaths() {
+  const groups = await getCollection('affiliatedGroups')
+  return groups.map((group) => ({
+    params: { slug: group.id },
+    props: { group },
+  }))
+}
+
+const { group } = Astro.props
+const { Content } = await render(group)
+---
+
+<BaseLayout title={group.data.name}>
+  <article>
+    <h1>{group.data.name}</h1>
+    {group.data.logo && <img src={group.data.logo} alt="" />}
+    <Content />
+
+    {group.data.expertise && group.data.expertise.length > 0 && (
+      <ul>
+        {group.data.expertise.map((tag) => <li>{tag}</li>)}
+      </ul>
+    )}
+    {group.data.externalUrl && <a href={group.data.externalUrl}>Website</a>}
+  </article>
+</BaseLayout>

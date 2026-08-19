@@ -1,0 +1,59 @@
+---
+// src/pages/contacts.astro
+//
+// This route never went through the export script because it was never a
+// Payload "pages" entry in the first place -- the original site hardcodes
+// it as its own route that just lists every local office. Same situation
+// as /search: a page that exists in code, not in content.
+
+import { getCollection } from 'astro:content'
+import BaseLayout from '../layouts/BaseLayout.astro'
+
+const offices = (await getCollection('localOffices')).sort(
+  (a, b) => (a.data.order ?? 0) - (b.data.order ?? 0),
+)
+---
+
+<BaseLayout title="Contacts">
+  <main class="container my-16">
+    <h1 class="mb-6">Contacts</h1>
+    <p class="text-muted-foreground mb-8">Contact your local DARIAH-FI representative</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {offices.map((office) => (
+        <div class="p-4 rounded-lg bg-card">
+          <p class="font-semibold text-headings mb-3">{office.data.name}</p>
+
+          {office.data.contacts && office.data.contacts.length > 0 ? (
+            <div class="space-y-2">
+              {office.data.contacts.map((contact) => (
+                <div class="flex items-center gap-2">
+                  {contact.photo ? (
+                    <img src={contact.photo} alt="" class="w-10 h-10 rounded-full overflow-hidden flex-shrink-0 object-cover" />
+                  ) : (
+                    <div class="w-10 h-10 rounded-full overflow-hidden flex-shrink-0 bg-secondary"></div>
+                  )}
+                  <div class="text-sm">
+                    {contact.url ? (
+                      <a href={contact.url} target="_blank" rel="noreferrer noopener" class="underline">{contact.name}</a>
+                    ) : (
+                      <span>{contact.name}</span>
+                    )}
+                    {contact.note && <span class="text-muted-foreground"> {contact.note}</span>}
+                    {contact.email && (
+                      <div class="text-xs text-muted-foreground">
+                        <a href={`mailto:${contact.email}`} class="underline">{contact.email}</a>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <p class="text-sm text-muted-foreground">No contacts listed.</p>
+          )}
+        </div>
+      ))}
+    </div>
+  </main>
+</BaseLayout>

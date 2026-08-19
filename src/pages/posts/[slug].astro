@@ -1,0 +1,65 @@
+---
+// src/pages/posts/[slug].astro
+import { getCollection, getEntry, render } from 'astro:content'
+import BaseLayout from '../../layouts/BaseLayout.astro'
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts')
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }))
+}
+
+const { post } = Astro.props
+const { Content } = await render(post)
+
+const categories = post.data.categories
+  ? (await Promise.all(post.data.categories.map((c) => getEntry(c)))).filter((c) => c !== undefined)
+  : []
+---
+
+<BaseLayout title={post.data.title} description={post.data.meta?.description}>
+  <article class="pb-16">
+    <!-- Simplified vs. the original PostHero, which floats over a full-bleed
+         image behind a transparent header -- same simplification as the
+         highImpact hero earlier. -->
+    <div class="relative text-white flex items-end min-h-[86vh]">
+      {post.data.heroImage && (
+        <img class="absolute inset-0 w-full h-full object-cover -z-10" src={post.data.heroImage} alt={post.data.heroImageAlt ?? ''} />
+      )}
+      <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent -z-10"></div>
+
+      <div class="container z-10 relative pb-8">
+        <div class="max-w-[48rem]">
+          {categories.length > 0 && (
+            <div class="uppercase text-sm mb-6">
+              {categories.map((c) => c.data.title).join(', ')}
+            </div>
+          )}
+          <h1>{post.data.title}</h1>
+          <div class="flex flex-col md:flex-row gap-4 md:gap-16">
+            {post.data.authors && post.data.authors.length > 0 && (
+              <div class="flex flex-col gap-1">
+                <p class="text-sm">Author</p>
+                <p>{post.data.authors.join(', ')}</p>
+              </div>
+            )}
+            <div class="flex flex-col gap-1">
+              <p class="text-sm">Date Published: <time datetime={post.data.publishedAt.toISOString()}>
+                {post.data.publishedAt.toLocaleDateString()}
+              </time>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container pt-8">
+      <div class="max-w-[48rem] mx-auto">
+        <Content />
+      </div>
+    </div>
+  </article>
+</BaseLayout>

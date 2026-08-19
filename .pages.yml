@@ -1,0 +1,330 @@
+# .pages.yml
+#
+# This is what turns your GitHub repo into an editable CMS at pagescms.org.
+# Every collection/field here mirrors src/content.config.ts -- if you add a
+# field to the Astro schema later, add the matching field here too (and vice
+# versa), or PagesCMS and Astro will quietly disagree about what a document
+# should look like.
+
+media:
+  input: public/media
+  output: /media
+
+content:
+  # ---------- categories ----------
+  - name: categories
+    label: Categories
+    type: collection
+    path: src/content/categories
+    view:
+      fields: [title]
+      primary: title
+    fields:
+      - { name: title, type: string, required: true }
+      - { name: slug, type: string, required: true }
+
+  # ---------- local-offices ----------
+  - name: local-offices
+    label: Local Offices
+    type: collection
+    path: src/content/local-offices
+    view:
+      fields: [name, order]
+      primary: name
+      sort: [order]
+    fields:
+      - { name: name, type: string, required: true }
+      - { name: slug, type: string, required: true }
+      - { name: logo, type: image }
+      - { name: shortDescription, type: text }
+      - { name: externalUrl, type: string }
+      - name: contacts
+        type: object
+        list: true
+        fields:
+          - { name: name, type: string, required: true }
+          - { name: photo, type: image }
+          - { name: url, type: string }
+          - { name: email, type: string }
+          - { name: note, type: string }
+      - { name: order, type: number }
+
+  # ---------- affiliated-groups ----------
+  - name: affiliated-groups
+    label: Affiliated Groups
+    type: collection
+    path: src/content/affiliated-groups
+    view:
+      fields: [name, order]
+      primary: name
+      sort: [order]
+    fields:
+      - { name: name, type: string, required: true }
+      - { name: logo, type: image }
+      - { name: externalUrl, type: string, required: true }
+      - name: expertise
+        label: Expertise tags
+        type: string
+        list: true
+      - { name: contactName, type: string }
+      - { name: contactUrl, type: string }
+      - name: dariahNode
+        label: Local Office
+        type: reference
+        options: { collection: local-offices }
+      - { name: order, type: number }
+      - { name: body, label: Description, type: rich-text }
+
+  # ---------- tools ----------
+  - name: tools
+    label: Tools
+    type: collection
+    path: src/content/tools
+    view:
+      fields: [name, order]
+      primary: name
+      sort: [order]
+    fields:
+      - { name: name, type: string, required: true }
+      - name: accessLinks
+        type: object
+        list: true
+        fields:
+          - { name: label, type: string }
+          - { name: url, type: string, required: true }
+      - { name: tutorialUrl, type: string }
+      - name: contacts
+        type: object
+        list: true
+        fields:
+          - { name: name, type: string, required: true }
+          - { name: url, type: string }
+      - name: developedBy
+        label: Developed by
+        type: reference
+        options: { collection: local-offices, multiple: true }
+      - name: collaborators
+        type: reference
+        options: { collection: local-offices, multiple: true }
+      - { name: order, type: number }
+      - { name: body, label: Description, type: rich-text }
+
+  # ---------- events ----------
+  - name: events
+    label: Events
+    type: collection
+    path: src/content/events
+    view:
+      fields: [title, startDate, status]
+      primary: title
+      sort: [startDate]
+      default: { sort: startDate, order: desc }
+    fields:
+      - { name: title, type: string, required: true }
+      - { name: slug, type: string, required: true }
+      - { name: startDate, type: date, required: true }
+      - { name: endDate, type: date }
+      - { name: location, type: string }
+      - { name: isOnline, type: boolean, default: false }
+      - { name: registrationUrl, type: string }
+      - { name: featuredImage, type: image }
+      - name: relatedNode
+        label: Organising office
+        type: reference
+        options: { collection: local-offices }
+      - name: status
+        type: select
+        options: { values: [upcoming, past, cancelled] }
+        default: upcoming
+      - { name: body, label: Description, type: rich-text }
+
+  # ---------- posts ----------
+  - name: posts
+    label: Posts
+    type: collection
+    path: src/content/posts
+    view:
+      fields: [title, publishedAt]
+      primary: title
+      sort: [publishedAt]
+      default: { sort: publishedAt, order: desc }
+    fields:
+      - { name: title, type: string, required: true }
+      - { name: slug, type: string, required: true }
+      - { name: heroImage, type: image }
+      - { name: heroImageAlt, type: string }
+      - name: categories
+        type: reference
+        options: { collection: categories, multiple: true }
+      - name: relatedPosts
+        type: reference
+        options: { collection: posts, multiple: true }
+      - name: authors
+        type: string
+        list: true
+      - { name: publishedAt, type: date, required: true }
+      - name: meta
+        label: SEO
+        type: object
+        fields:
+          - { name: title, type: string }
+          - { name: description, type: text }
+          - { name: image, type: image }
+      - { name: body, label: Content, type: rich-text }
+
+  # ---------- pages ----------
+  - name: pages
+    label: Pages
+    type: collection
+    path: src/content/pages
+    view:
+      fields: [title, slug]
+      primary: title
+    fields:
+      - { name: title, type: string, required: true }
+      - { name: slug, type: string, required: true }
+      - name: hero
+        type: object
+        fields:
+          - name: type
+            type: select
+            options: { values: [none, lowImpact, mediumImpact, highImpact] }
+            default: lowImpact
+          - { name: richText, type: rich-text }
+          - name: links
+            type: object
+            list: true
+            fields:
+              - { name: label, type: string, required: true }
+              - { name: url, type: string, required: true }
+              - { name: newTab, type: boolean }
+          - { name: media, type: image }
+          - { name: mediaAlt, type: string }
+      - name: layout
+        label: Page sections
+        type: block
+        list: true
+        blockKey: blockType # matches Astro's discriminatedUnion('blockType', ...) key exactly
+        blocks:
+          - name: content
+            label: Content columns
+            fields:
+              - name: columns
+                type: object
+                list: true
+                fields:
+                  - name: size
+                    type: select
+                    options: { values: [oneThird, half, twoThirds, full] }
+                    default: oneThird
+                  - { name: richText, type: rich-text }
+                  - name: link
+                    type: object
+                    fields:
+                      - { name: label, type: string }
+                      - { name: url, type: string }
+          - name: cta
+            label: Call to Action
+            fields:
+              - { name: richText, type: rich-text }
+              - name: links
+                type: object
+                list: true
+                fields:
+                  - { name: label, type: string, required: true }
+                  - { name: url, type: string, required: true }
+                  - { name: newTab, type: boolean }
+          - name: mediaBlock
+            label: Media
+            fields:
+              - { name: media, type: image, required: true }
+              - { name: mediaAlt, type: string }
+          - name: archive
+            label: Post Archive
+            fields:
+              - { name: introRichText, type: rich-text }
+              - name: populateBy
+                type: select
+                options: { values: [collection, selection] }
+                default: collection
+              - name: categories
+                type: reference
+                options: { collection: categories, multiple: true }
+              - { name: limit, type: number, default: 10 }
+              - name: selectedDocs
+                label: Selected posts
+                type: reference
+                options: { collection: posts, multiple: true }
+          - name: tabsBlock
+            label: Tabs
+            fields:
+              - name: tabs
+                type: object
+                list: true
+                fields:
+                  - { name: label, type: string, required: true }
+                  - name: listType
+                    type: select
+                    options: { values: [none, affiliatedGroups, tools] }
+                    default: none
+                  - { name: richText, type: rich-text }
+          - name: trainingSections
+            label: Training Sections
+            fields:
+              - { name: heading, type: string, required: true }
+              - { name: intro, type: text }
+              - name: groups
+                type: object
+                list: true
+                fields:
+                  - { name: levelLabel, type: string }
+                  - name: courses
+                    type: object
+                    list: true
+                    fields:
+                      - { name: title, type: string, required: true }
+                      - { name: url, type: string }
+                      - { name: description, type: text }
+                      - { name: levelTags, type: string }
+          - name: upcomingEvents
+            label: Upcoming Events
+            fields:
+              - { name: heading, type: string, default: 'Upcoming Events' }
+              - { name: limit, type: number, default: 3 }
+              - { name: viewAllLink, type: string, default: '/events' }
+      - name: meta
+        label: SEO
+        type: object
+        fields:
+          - { name: title, type: string }
+          - { name: description, type: text }
+          - { name: image, type: image }
+
+  # ---------- header/footer (site-wide nav, not a repeated collection) ----------
+  - name: site-nav
+    label: Site Navigation
+    type: file
+    path: src/data/globals.json
+    fields:
+      - name: header
+        type: object
+        fields:
+          - name: navItems
+            label: Header nav items
+            type: object
+            list: true
+            fields:
+              - { name: label, type: string, required: true }
+              - { name: url, type: string }
+              - { name: newTab, type: boolean }
+      - name: footer
+        type: object
+        fields:
+          - name: navItems
+            label: Footer nav items (incl. social links -- add a bsky.app or youtube.com URL to get an icon instead of text)
+            type: object
+            list: true
+            fields:
+              - { name: label, type: string, required: true }
+              - { name: url, type: string }
+              - { name: newTab, type: boolean }

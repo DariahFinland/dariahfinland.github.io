@@ -1,0 +1,38 @@
+---
+// src/layouts/BaseLayout.astro
+//
+// Every page on the site wraps itself in this layout. It just sets up the
+// <head> and puts Header/Footer around whatever content the page passes in.
+
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import '../styles/global.css'
+
+// Pages using this layout can pass in a title/description for SEO.
+interface Props {
+  title: string
+  description?: string
+}
+
+const { title, description } = Astro.props
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title} · DARIAH-FI</title>
+    {description && <meta name="description" content={description} />}
+    <link rel="icon" href="/favicon.ico" />
+  </head>
+  <body>
+    <Header />
+
+    <!-- <slot /> is where the page's own content gets inserted -->
+    <main>
+      <slot />
+    </main>
+
+    <Footer />
+  </body>
+</html>

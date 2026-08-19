@@ -1,0 +1,65 @@
+{
+  "header": {
+    "navItems": [
+      {
+        "label": "About",
+        "url": "/about",
+        "newTab": false
+      },
+      {
+        "label": "Local Offices",
+        "url": "/local-offices",
+        "newTab": false
+      },
+      {
+        "label": "Training and Teaching",
+        "url": "/training-and-teaching",
+        "newTab": false
+      },
+      {
+        "label": "Resources",
+        "url": "/resources",
+        "newTab": false
+      },
+      {
+        "label": "Events",
+        "url": "/events",
+        "newTab": false
+      },
+      {
+        "label": "News and Blogs",
+        "url": "/posts",
+        "newTab": false
+      }
+    ]
+  },
+  "footer": {
+    "navItems": [
+      {
+        "label": "Contacts",
+        "url": "/contacts",
+        "newTab": false
+      },
+      {
+        "label": "Accessibility Statement",
+        "url": "/accessibility-statement",
+        "newTab": false
+      },
+      {
+        "label": "Bluesky",
+        "url": "https://bsky.app/profile/dariahfi.bsky.social",
+        "newTab": true
+      },
+      {
+        "label": "YouTube",
+        "url": "https://www.youtube.com/@DARIAH-FI",
+        "newTab": true
+      },
+      {
+        "label": "info@dariah.fi",
+        "url": "mailto:info@dariah.fi",
+        "newTab": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,63 @@
+---
+// src/components/RenderBlocks.astro
+//
+// A page's `layout` field is an array of blocks, each tagged with a
+// `blockType`. This component loops over that array and renders whichever
+// component matches. Archive/TabsBlock/UpcomingEvents are stubbed for now --
+// next step wires those up since they need to query other collections.
+
+import Content from './blocks/Content.astro'
+import CallToAction from './blocks/CallToAction.astro'
+import MediaBlock from './blocks/MediaBlock.astro'
+import TrainingSections from './blocks/TrainingSections.astro'
+import Archive from './blocks/Archive.astro'
+import TabsBlock from './blocks/TabsBlock.astro'
+import UpcomingEvents from './blocks/UpcomingEvents.astro'
+
+interface Props {
+  layout?: Array<{ blockType: string; [key: string]: unknown }>
+}
+
+const { layout = [] } = Astro.props
+---
+
+{layout.map((block) => {
+  switch (block.blockType) {
+    case 'content':
+      return <Content columns={block.columns as any} />
+    case 'cta':
+      return <CallToAction richText={block.richText as any} links={block.links as any} />
+    case 'mediaBlock':
+      return <MediaBlock path={block.media as any} alt={block.mediaAlt as any} />
+    case 'trainingSections':
+      return (
+        <TrainingSections
+          heading={block.heading as any}
+          intro={block.intro as any}
+          groups={block.groups as any}
+        />
+      )
+    case 'archive':
+      return (
+        <Archive
+          introRichText={block.introRichText as any}
+          populateBy={block.populateBy as any}
+          categories={block.categories as any}
+          limit={block.limit as any}
+          selectedDocs={block.selectedDocs as any}
+        />
+      )
+    case 'tabsBlock':
+      return <TabsBlock tabs={block.tabs as any} />
+    case 'upcomingEvents':
+      return (
+        <UpcomingEvents
+          heading={block.heading as any}
+          limit={block.limit as any}
+          viewAllLink={block.viewAllLink as any}
+        />
+      )
+    default:
+      return null
+  }
+})}

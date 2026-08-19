@@ -1,0 +1,18 @@
+---
+// src/pages/affiliated-groups/index.astro
+import { getCollection } from 'astro:content'
+import BaseLayout from '../../layouts/BaseLayout.astro'
+
+const groups = (await getCollection('affiliatedGroups')).sort(
+  (a, b) => (a.data.order ?? 0) - (b.data.order ?? 0),
+)
+---
+
+<BaseLayout title="Affiliated Groups">
+  <h1>Affiliated Groups</h1>
+  <ul>
+    {groups.map((group) => (
+      <li><a href={`/affiliated-groups/${group.id}`}>{group.data.name}</a></li>
+    ))}
+  </ul>
+</BaseLayout>

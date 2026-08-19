@@ -1,0 +1,108 @@
+---
+// src/pages/events/index.astro
+//
+// The original site does this with a ?view=past URL param + server
+// rendering (EventsViewToggle). Since this is a static build with no
+// per-request server, we compute both lists at build time and switch
+// between them client-side instead -- same click-based pattern as
+// TabsBlock.astro, and the same button classes as the original
+// EventsViewToggle component.
+import { getCollection } from 'astro:content'
+import BaseLayout from '../../layouts/BaseLayout.astro'
+
+function formatEventDate(start: Date, end?: Date): string {
+  const dateFmt = new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })
+  const timeFmt = new Intl.DateTimeFormat('en-GB', { hour: '2-digit', minute: '2-digit' })
+  let result = dateFmt.format(start)
+  if (end) {
+    const sameDay = start.toDateString() === end.toDateString()
+    result += sameDay ? ` · ${timeFmt.format(start)}–${timeFmt.format(end)}` : ` – ${dateFmt.format(end)}`
+  } else {
+    result += ` · ${timeFmt.format(start)}`
+  }
+  return result
+}
+
+const allEvents = await getCollection('events')
+const upcoming = allEvents
+  .filter((e) => e.data.status === 'upcoming')
+  .sort((a, b) => a.data.startDate.valueOf() - b.data.startDate.valueOf())
+const past = allEvents
+  .filter((e) => e.data.status === 'past')
+  .sort((a, b) => b.data.startDate.valueOf() - a.data.startDate.valueOf())
+
+const tabButtonClass = (active: boolean) =>
+  active
+    ? 'px-4 py-2 text-sm font-medium transition-colors rounded-t-md border border-b-background border-border bg-background text-foreground -mb-px'
+    : 'px-4 py-2 text-sm font-medium transition-colors rounded-t-md text-muted-foreground hover:text-foreground'
+---
+
+<BaseLayout title="Events">
+  <main class="container my-16">
+    <h1 class="mb-6">Events</h1>
+
+    <div class="flex border-b border-border mb-8 gap-1">
+      <button type="button" data-events-tab="upcoming" class={tabButtonClass(true)}>Upcoming</button>
+      <button type="button" data-events-tab="past" class={tabButtonClass(false)}>Past Events</button>
+    </div>
+
+    <div data-events-panel="upcoming" class="block">
+      {upcoming.length === 0 ? (
+        <p class="text-muted-foreground">No upcoming events at the moment.</p>
+      ) : (
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {upcoming.map((event) => (
+            <a href={`/events/${event.id}`} class="block border border-border rounded-md p-4 bg-card hover:bg-muted transition-colors"
+            style="text-decoration: none;">
+              <p class="text-sm text-muted-foreground mb-1">{formatEventDate(event.data.startDate, event.data.endDate)}</p>
+              <p class="font-semibold text-headings">{event.data.title}</p>
+              {event.data.location && <p class="text-sm text-muted-foreground mt-1">{event.data.location}</p>}
+              {event.data.isOnline && <p class="text-sm text-muted-foreground mt-1">Online</p>}
+            </a>
+          ))}
+        </div>
+      )}
+    </div>
+
+    <div data-events-panel="past" class="hidden">
+      {past.length === 0 ? (
+        <p class="text-muted-foreground">No past events.</p>
+      ) : (
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {past.map((event) => (
+            <a href={`/events/${event.id}`} class="block border border-border rounded-md p-4 bg-card hover:bg-muted transition-colors"
+            style="text-decoration: none;">
+              <p class="text-sm text-muted-foreground mb-1">{formatEventDate(event.data.startDate, event.data.endDate)}</p>
+              <p class="font-semibold text-headings">{event.data.title}</p>
+              {event.data.location && <p class="text-sm text-muted-foreground mt-1">{event.data.location}</p>}
+              {event.data.isOnline && <p class="text-sm text-muted-foreground mt-1">Online</p>}
+            </a>
+          ))}
+        </div>
+      )}
+    </div>
+  </main>
+</BaseLayout>
+
+<script>
+  const activeClass = ['border', 'border-b-background', 'border-border', 'bg-background', 'text-foreground', '-mb-px']
+  const inactiveClass = ['text-muted-foreground', 'hover:text-foreground']
+
+  document.querySelectorAll('[data-events-tab]').forEach((button) => {
+    button.addEventListener('click', () => {
+      const target = button.getAttribute('data-events-tab')
+
+      document.querySelectorAll('[data-events-tab]').forEach((btn) => {
+        const active = btn.getAttribute('data-events-tab') === target
+        activeClass.forEach((c) => btn.classList.toggle(c, active))
+        inactiveClass.forEach((c) => btn.classList.toggle(c, !active))
+      })
+
+      document.querySelectorAll('[data-events-panel]').forEach((panel) => {
+        const match = panel.getAttribute('data-events-panel') === target
+        panel.classList.toggle('hidden', !match)
+        panel.classList.toggle('block', match)
+      })
+    })
+  })
+</script>

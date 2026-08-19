@@ -1,0 +1,31 @@
+---
+// src/pages/[...slug].astro
+//
+// This one file handles every page in the `pages` collection. The [...slug]
+// name means it's a "rest parameter" route -- it matches /, /about,
+// /about/team, anything -- and getStaticPaths tells Astro exactly which
+// URLs to generate, one per page document.
+
+import { getCollection } from 'astro:content'
+import BaseLayout from '../layouts/BaseLayout.astro'
+import Hero from '../components/Hero.astro'
+import RenderBlocks from '../components/RenderBlocks.astro'
+
+export async function getStaticPaths() {
+  const pages = await getCollection('pages')
+
+  return pages.map((page) => ({
+    // slug "home" maps to the site root (params.slug left undefined);
+    // everything else becomes /<slug>
+    params: { slug: page.data.slug === 'home' ? undefined : page.data.slug },
+    props: { page },
+  }))
+}
+
+const { page } = Astro.props
+---
+
+<BaseLayout title={page.data.title} description={page.data.meta?.description}>
+  <Hero hero={page.data.hero} />
+  <RenderBlocks layout={page.data.layout} />
+</BaseLayout>

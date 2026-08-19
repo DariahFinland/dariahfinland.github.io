@@ -1,0 +1,36 @@
+---
+// src/components/blocks/Content.astro
+import { md } from '../../lib/markdown'
+
+interface Column {
+  size: 'oneThird' | 'half' | 'twoThirds' | 'full'
+  richText?: string
+  link?: { label: string; url?: string }
+}
+
+interface Props {
+  columns?: Column[]
+}
+
+const { columns = [] } = Astro.props
+
+const colSpan: Record<Column['size'], string> = {
+  full: 'col-span-4 lg:col-span-12',
+  half: 'col-span-4 md:col-span-2 lg:col-span-6',
+  oneThird: 'col-span-4 md:col-span-2 lg:col-span-4',
+  twoThirds: 'col-span-4 md:col-span-2 lg:col-span-8',
+}
+---
+
+<div class="container my-16">
+  <div class="grid grid-cols-4 lg:grid-cols-12 gap-y-8 gap-x-16">
+    {columns.map((col) => (
+      <div class={colSpan[col.size]}>
+        {col.richText && <div set:html={md(col.richText)} />}
+        {col.link?.url && (
+          <a class="underline" href={col.link.url}>{col.link.label}</a>
+        )}
+      </div>
+    ))}
+  </div>
+</div>

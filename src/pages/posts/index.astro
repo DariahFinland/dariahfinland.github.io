@@ -1,0 +1,48 @@
+---
+// src/pages/posts/index.astro
+import { getCollection, getEntry } from 'astro:content'
+import BaseLayout from '../../layouts/BaseLayout.astro'
+
+const posts = (await getCollection('posts')).sort(
+  (a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf(),
+)
+
+// Resolve each post's category references into titles for the card labels
+const cards = await Promise.all(
+  posts.map(async (post) => {
+    const cats = post.data.categories
+      ? await Promise.all(post.data.categories.map((c) => getEntry(c)))
+      : []
+    return { post, categoryTitles: cats.filter((c) => c !== undefined).map((c) => c.data.title) }
+  }),
+)
+---
+
+<BaseLayout title="News and Blogs">
+  <div class="container mb-8 my-16">
+    <h1 class="mb-6">News and Blogs</h1>
+  </div>
+
+  <div class="container">
+    <div class="grid grid-cols-4 sm:grid-cols-8 lg:grid-cols-12 gap-y-4 gap-x-4 lg:gap-y-8 lg:gap-x-8">
+      {cards.map(({ post, categoryTitles }) => (
+        <div class="col-span-4">
+          <a
+            href={`/posts/${post.id}`}
+            class="block h-full border border-border rounded-lg overflow-hidden bg-card hover:cursor-pointer"
+            style="text-decoration: none;"
+          >
+            {post.data?.heroImage && <img class="w-full" src={post.data.heroImage} alt="" />}
+            <div class="p-4">
+              {categoryTitles.length > 0 && (
+                <div class="uppercase text-sm mb-4">{categoryTitles.join(', ')}</div>
+              )}
+              <h3 class="text-lg font-semibold">{post.data.title}</h3>
+              {post.data.meta?.description && <p class="mt-2">{post.data.meta.description}</p>}
+            </div>
+          </a>
+        </div>
+      ))}
+    </div>
+  </div>
+</BaseLayout>
