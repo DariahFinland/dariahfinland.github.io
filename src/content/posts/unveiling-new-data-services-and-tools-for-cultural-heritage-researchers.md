@@ -1,22 +1,20 @@
 ---
 title: Unveiling new data services and tools for cultural heritage researchers
-heroImage: /media/darah-blog-header-6.png
+slug: unveiling-new-data-services-and-tools-for-cultural-heritage-researchers
+heroImage: /media/Viking-luettelo-1.jpg
 heroImageAlt: darah blog header 6
-relatedPosts: []
 categories:
   - news-and-blogs
   - uncategorized
-authors: []
-publishedAt: '2026-02-10T14:18:23.000Z'
+publishedAt: 2026-02-10
 meta:
-  title: Unveiling new data services and tools for cultural heritage researchers – DARIAH-FI
-  description: >-
-    In this blog, we bring news about new infrastructure developed in the past two years by the
-    DARIAH-FI network for acquiring and processing large-scale,…
+  title: Unveiling new data services and tools for cultural heritage researchers –
+    DARIAH-FI
+  description: In this blog, we bring news about new infrastructure developed in
+    the past two years by the DARIAH-FI network for acquiring and processing
+    large-scale,…
   image: /media/darah-blog-header-6.png
-slug: unveiling-new-data-services-and-tools-for-cultural-heritage-researchers
 ---
-
 In this blog, we bring news about new infrastructure developed in the past two years by the DARIAH-FI network for acquiring and processing large-scale, visual and multimodal historical documents. 
 
 These infrastructures were unveiled during a full-day workshop on January 22nd with 70 participants. The tools have been developed based on what humanities researchers need when working with archival materials and visual cultural heritage, enabling the acquisition and making the most of large-scale data in the [ASTIA](https://astia.narc.fi/) services, or [FINNA.fi](http://finna.fi/) portal. The sessions offered things for everybody, both for researchers not familiar with computational methods and for advanced digital humanities research.
@@ -45,4 +43,4 @@ Using R for cultural analysis operates on a much larger scale than manual browsi
 
 The workshop programme also included an introduction to MessyDesk ([slides](https://drive.google.com/file/d/14tgxs4dXiC4nkrxIp0Zc4FCXb7X517Ot/view?usp=drive_link)), a virtual desktop to organise, transcribe and extract readable information from heterogeneous archive material, from old Swedish manuscript data to tabular data. MessyDesk is still under development by the DARIAH-node at the University of Jyväskylä ([contact](https://www.dariah.fi/local-offices/local-office-detail-jyvaskyla/)). Further, a brief introduction on new services from the National archives, such as an AI-powered content search ([demo](https://sisaltohaku.demo.kansallisarkisto.fi/)), a [search tool for Judgement Books](https://tuomiokirjat.kansallisarkisto.fi/), and a [Text Recognition Tool for handwritten material](https://huggingface.co/spaces/Kansallisarkisto/Multicentury-HTR-Demo). Finally, [LetterSampo](https://kirjesampo.fi/en/) a portal providing exploratory tools to examine correspondence networks among artists, politicians and influential people relating to the period of the Grand Duchy of Finland (1809–1917).
 
-<sub>Text: Inés Matres, Iuliia Nesterenko. Images: Header – Viking luettelo, 1944. Kansalliskirjaston digitaaliset aineistot. Figure 2 – Ahola, A., Peura, L., Leal, R., Rantala, H., and Hyvönen, E. Using generative AI and LLMs to enrich art collection metadata for searching, browsing, and studying art history in Digital Humanities. *Humanising Technology, Volume III - Artificial Intelligence and the Humanities*, Peter Lang Verlag, March, 2026. In press.</sub>
+Text: Inés Matres, Iuliia Nesterenko. Images: Header – Viking luettelo, 1944. Kansalliskirjaston digitaaliset aineistot. Figure 2 – Ahola, A., Peura, L., Leal, R., Rantala, H., and Hyvönen, E. Using generative AI and LLMs to enrich art collection metadata for searching, browsing, and studying art history in Digital Humanities. *Humanising Technology, Volume III - Artificial Intelligence and the Humanities*, Peter Lang Verlag, March, 2026. In press.
