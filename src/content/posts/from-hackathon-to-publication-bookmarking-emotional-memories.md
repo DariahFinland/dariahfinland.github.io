@@ -5,7 +5,7 @@ heroImage: /media/poster-slam-oral-history-e1780301256616.jpg
 heroImageAlt: poster slam oral history
 categories:
   - news-and-blogs
-publishedAt: 2026-08-22
+publishedAt: 2026-06-01
 meta:
   title: From Hackathon to publication - Bookmarking Emotional Memories – DARIAH-FI
   description: The 10th DHH (Digital Humanities Hackathon 2025) challenged
