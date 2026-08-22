@@ -6,7 +6,7 @@ heroImageAlt: clouds-of-metadata
 categories:
   - blog
   - news-and-blogs
-publishedAt: 2026-07-03
+publishedAt: 2025-07-03
 meta:
   title: Clouds of (meta)data… DARIAH and the European Cultural Heritage Ecosystem
     – DARIAH-FI
