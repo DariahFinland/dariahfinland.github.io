@@ -112,19 +112,10 @@ const blockSchema = z.discriminatedUnion('blockType', [
     blockType: z.literal('trainingSections'),
     heading: z.string(),
     intro: z.string().optional(),
-    groups: z.array(
-      z.object({
-        levelLabel: z.string().optional(),
-        courses: z.array(
-          z.object({
-            title: z.string(),
-            url: z.string().optional(),
-            description: z.string().optional(),
-            levelTags: z.string().optional(),
-          }),
-        ),
-      }),
-    ),
+    // Explicit selection, not "all trainings" -- a page can have more than
+    // one trainingSections block (e.g. one per university), and each needs
+    // to show only its own subset.
+    trainings: z.array(reference('trainings')).optional(),
   }),
   z.object({
     blockType: z.literal('upcomingEvents'),
@@ -195,7 +186,7 @@ const localOffices = defineCollection({
           name: z.string(),
           photo: z.string().optional(),
           url: z.string().optional(),
-          email: z.email().optional(),
+          email: z.string().email().optional(),
           note: z.string().optional(),
         }),
       )
@@ -255,6 +246,19 @@ const categories = defineCollection({
   }),
 })
 
+const trainings = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/trainings' }),
+  schema: z.object({
+    title: z.string(),
+    url: z.string().optional(),
+    // Section this training belongs to on the page (was groups[].levelLabel)
+    group: z.string().optional(),
+    levelTags: z.string().optional(),
+    order: z.number().optional(),
+    // description lives in the file's body, same convention as posts/events/tools
+  }),
+})
+
 // Header/Footer globals -- not repeated content, so they live in one JSON
 // file (src/data/globals.json = { "header": {...}, "footer": {...} })
 // rather than as markdown files. Astro's file() loader turns each top-level
@@ -274,5 +278,6 @@ export const collections = {
   affiliatedGroups,
   tools,
   categories,
+  trainings,
   globals,
 }

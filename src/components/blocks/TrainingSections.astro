@@ -1,47 +1,81 @@
 ---
 // src/components/blocks/TrainingSections.astro
+//
+// A page can have more than one trainingSections block (e.g. one per
+// university), so this only renders the specific trainings selected on
+// THIS block instance -- not the whole collection. Same idea as the
+// Archive block's populateBy: 'selection' + selectedDocs.
 
-interface Course {
-  title: string
-  url?: string
-  description?: string
-  levelTags?: string
-}
+import { getEntry, render } from 'astro:content'
 
-interface Group {
-  levelLabel?: string
-  courses: Course[]
+interface Ref {
+  id: string
+  collection: string
 }
 
 interface Props {
   heading?: string
   intro?: string
-  groups?: Group[]
+  trainings?: Ref[]
 }
 
-const { heading, intro, groups = [] } = Astro.props
+const { heading, intro, trainings: trainingRefs = [] } = Astro.props
+
+const selected =
+  trainingRefs.length > 0
+    ? (await Promise.all(trainingRefs.map((ref) => getEntry(ref)))).filter((t) => t !== undefined)
+    : []
+
+const withContent = await Promise.all(
+  selected
+    .sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0))
+    .map(async (t) => ({ training: t, Content: (await render(t)).Content })),
+)
+
+// Group by the `group` field, preserving the order groups first appear in
+const groups = new Map<string, typeof withContent>()
+for (const item of withContent) {
+  const key = item.training.data.group ?? ''
+  if (!groups.has(key)) groups.set(key, [])
+  groups.get(key)!.push(item)
+}
+
+// Sections always appear in this order, regardless of content order.
+// Anything with a group label not in this list (including no group at all)
+// is appended at the end, in whatever order it was first encountered.
+const GROUP_ORDER = ["Bachelor's level", "Master's level", 'Doctoral level', 'Varied levels']
+const orderedGroups = [...groups.entries()].sort(([a], [b]) => {
+  const ai = GROUP_ORDER.indexOf(a)
+  const bi = GROUP_ORDER.indexOf(b)
+  if (ai === -1 && bi === -1) return 0
+  if (ai === -1) return 1
+  if (bi === -1) return -1
+  return ai - bi
+})
 ---
 
 <div class="container my-8">
   {heading && <h2 class="text-2xl font-semibold mb-2">{heading}</h2>}
   {intro && <p class="mb-6 text-muted-foreground">{intro}</p>}
 
-  {groups.map((group) => (
+  {orderedGroups.map(([groupLabel, items]) => (
     <div class="mb-6">
-      {group.levelLabel && <h3 class="text-lg font-medium mb-3">{group.levelLabel}</h3>}
+      {groupLabel && <h3 class="text-lg font-medium mb-3">{groupLabel}</h3>}
       <div class="space-y-4">
-        {group.courses.map((course) => (
+        {items.map(({ training, Content }) => (
           <div class="border rounded-lg p-4">
-            {course.url ? (
-              <a href={course.url} target="_blank" rel="noreferrer noopener" class="font-semibold underline">
-                {course.title}
+            {training.data.url ? (
+              <a href={training.data.url} target="_blank" rel="noreferrer noopener" class="font-semibold underline">
+                {training.data.title}
               </a>
             ) : (
-              <p class="font-semibold">{course.title}</p>
+              <p class="font-semibold">{training.data.title}</p>
             )}
-            {course.description && <p class="text-sm mt-1 text-muted-foreground">{course.description}</p>}
-            {course.levelTags && (
-              <p class="text-xs mt-2 uppercase tracking-wide text-primary">{course.levelTags}</p>
+            <div class="text-sm mt-1 text-muted-foreground">
+              <Content />
+            </div>
+            {training.data.levelTags && (
+              <p class="text-xs mt-2 uppercase tracking-wide text-primary">{training.data.levelTags}</p>
             )}
           </div>
         ))}

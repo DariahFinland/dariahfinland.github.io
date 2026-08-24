@@ -108,6 +108,23 @@ content:
         options: { collection: local-offices, multiple: true }
       - { name: order, type: number }
       - { name: body, label: Description, type: rich-text }
+  
+  # ---------- trainings ----------
+  - name: trainings
+    label: Trainings
+    type: collection
+    path: src/content/trainings
+    view:
+      fields: [title, group, order]
+      primary: title
+      sort: [order]
+    fields:
+      - { name: title, type: string, required: true }
+      - { name: url, type: string }
+      - { name: group, type: string }
+      - { name: levelTags, type: string }
+      - { name: order, type: number }
+      - { name: body, label: Description, type: rich-text }
 
   # ---------- events ----------
   - name: events
@@ -273,19 +290,10 @@ content:
             fields:
               - { name: heading, type: string, required: true }
               - { name: intro, type: text }
-              - name: groups
-                type: object
-                list: true
-                fields:
-                  - { name: levelLabel, type: string }
-                  - name: courses
-                    type: object
-                    list: true
-                    fields:
-                      - { name: title, type: string, required: true }
-                      - { name: url, type: string }
-                      - { name: description, type: text }
-                      - { name: levelTags, type: string }
+              - name: trainings
+                label: Trainings shown in this section
+                type: reference
+                options: { collection: trainings, multiple: true }
           - name: upcomingEvents
             label: Upcoming Events
             fields:
