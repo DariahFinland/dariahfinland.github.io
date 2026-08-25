@@ -28,7 +28,7 @@ const selected =
 
 const withContent = await Promise.all(
   selected
-    .sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0))
+    .sort((a, b) => a.data.title.localeCompare(b.data.title))
     .map(async (t) => ({ training: t, Content: (await render(t)).Content })),
 )
 

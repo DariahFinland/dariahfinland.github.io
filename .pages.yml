@@ -29,9 +29,9 @@ content:
     type: collection
     path: src/content/local-offices
     view:
-      fields: [name, order]
+      fields: [name]
       primary: name
-      sort: [order]
+      sort: [name]
     fields:
       - { name: name, type: string, required: true }
       - { name: slug, type: string, required: true }
@@ -55,9 +55,9 @@ content:
     type: collection
     path: src/content/affiliated-groups
     view:
-      fields: [name, order]
+      fields: [name]
       primary: name
-      sort: [order]
+      sort: [name]
     fields:
       - { name: name, type: string, required: true }
       - { name: logo, type: image }
@@ -81,9 +81,9 @@ content:
     type: collection
     path: src/content/tools
     view:
-      fields: [name, order]
+      fields: [name]
       primary: name
-      sort: [order]
+      sort: [name]
     fields:
       - { name: name, type: string, required: true }
       - name: accessLinks
@@ -115,7 +115,7 @@ content:
     type: collection
     path: src/content/trainings
     view:
-      fields: [title, group, order]
+      fields: [title, group]
       primary: title
       sort: [order]
     fields:

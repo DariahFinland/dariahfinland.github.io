@@ -33,7 +33,7 @@ const needsTools = tabs.some((t) => t.listType === 'tools')
 
 const affiliatedGroups = needsGroups
   ? await Promise.all(
-      (await getCollection('affiliatedGroups')).map(async (g) => ({
+      (await getCollection('affiliatedGroups')).sort((a, b) => a.data.name.localeCompare(b.data.name)).map(async (g) => ({
         group: g,
         Content: (await render(g)).Content,
       })),
@@ -42,7 +42,7 @@ const affiliatedGroups = needsGroups
 
 const tools = needsTools
   ? await Promise.all(
-      (await getCollection('tools')).map(async (t) => {
+      (await getCollection('tools')).sort((a, b) => a.data.name.localeCompare(b.data.name)).map(async (t) => {
         const developedBy = t.data.developedBy
           ? (await Promise.all(t.data.developedBy.map((ref) => getEntry(ref)))).filter((o) => o !== undefined)
           : []

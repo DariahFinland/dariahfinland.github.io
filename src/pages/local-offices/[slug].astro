@@ -20,17 +20,21 @@ export async function getStaticPaths() {
 const { office } = Astro.props
 
 const allGroups = await getCollection('affiliatedGroups')
-const groups = allGroups.filter((g) => g.data.dariahNode?.id === office.id)
+const groups = allGroups
+  .filter((g) => g.data.dariahNode?.id === office.id)
+  .sort((a, b) => a.data.name.localeCompare(b.data.name))
 const groupsWithContent = await Promise.all(
   groups.map(async (g) => ({ group: g, Content: (await render(g)).Content })),
 )
 
 const allTools = await getCollection('tools')
-const tools = allTools.filter(
-  (t) =>
-    t.data.developedBy?.some((ref) => ref.id === office.id) ||
-    t.data.collaborators?.some((ref) => ref.id === office.id),
-)
+const tools = allTools
+  .filter(
+    (t) =>
+      t.data.developedBy?.some((ref) => ref.id === office.id) ||
+      t.data.collaborators?.some((ref) => ref.id === office.id),
+  )
+  .sort((a, b) => a.data.name.localeCompare(b.data.name))
 const toolsWithContent = await Promise.all(
   tools.map(async (t) => ({ tool: t, Content: (await render(t)).Content })),
 )
