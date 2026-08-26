@@ -1,30 +1,27 @@
 ---
 title: Analysis of Video Stream Interactions with AI Solutions
+slug: analysis-of-video-stream-interactions-with-ai-solutions
 heroImage: /media/darah-blog-header-3-1.png
 heroImageAlt: darah blog header 3 1
-relatedPosts: []
 categories:
   - blog
   - news-and-blogs
   - uncategorized
-authors: []
-publishedAt: '2026-01-12T14:27:55.000Z'
+publishedAt: 2026-01-12
 meta:
   title: Analysis of Video Stream Interactions with AI Solutions – DARIAH-FI
-  description: >-
-    The proliferation of short-form video on livestreaming platforms like Twitch presents a
-    significant challenge for multimodal content analysis. Each clip…
+  description: The proliferation of short-form video on livestreaming platforms
+    like Twitch presents a significant challenge for multimodal content
+    analysis. Each clip…
   image: /media/darah-blog-header-3-1.png
-slug: analysis-of-video-stream-interactions-with-ai-solutions
 ---
-
 The proliferation of short-form video on livestreaming platforms like Twitch presents a significant challenge for multimodal content analysis. Each clip contains a vast amount of diverse information: the visual action of the gameplay, the auditory context from the caster commentary, and the text-based reactions from the live chat. Together, these represent dense and valuable data for understanding online communities and digital entertainment.
 
 However, the sheer volume and complexity of this data creates a need for efficient tools for its analysis.
 
 ### **From Chat to Multimodal Context**
 
-Last year, the Game Research Network at the University of Jyväskylä, in collaboration with our partners at DARIAH-FI, produced a [suite of tools](https://github.com/JYU-digihum) to enable chat collection, content detection, and chat analysis. These foundational works, presented at [**58th Hawaii International Conference on System Sciences (HICSS-58)**](https://jyx.jyu.fi/jyx/Record/jyx_123456789_100338) and [**9th Annual International GamiFIN Conference 2025 (GamiFIN 2025)**](https://jyx.jyu.fi/jyx/Record/jyx_123456789_105503), allowed us to understand what is going on in the audience during massive esports events like the PGL Major Antwerp 2022 in Counter-Strike.
+Last year, the Game Research Network at the University of Jyväskylä, in collaboration with our partners at DARIAH-FI, produced a [suite of tools](https://github.com/JYU-digihum) to enable chat collection, content detection, and chat analysis. These foundational works, presented at **[58th Hawaii International Conference on System Sciences (HICSS-58)](https://jyx.jyu.fi/jyx/Record/jyx_123456789_100338)** and **[9th Annual International GamiFIN Conference 2025 (GamiFIN 2025)](https://jyx.jyu.fi/jyx/Record/jyx_123456789_105503)**, allowed us to understand what is going on in the audience during massive esports events like the PGL Major Antwerp 2022 in Counter-Strike.
 
 Until now, however, these tools did not cover the diverse, multimodal nature of Twitch content thoroughly enough. A true understanding of a Twitch clip requires more than just perceiving events within a single modality; it requires a synthesis of their interplay. We identified a clear research gap: tools that can comprehensively understand and summarize the interaction between visual gameplay, audio commentary, and the massive chat audience.
 
@@ -36,7 +33,7 @@ Powered by the **Google Gemini** family of Multimodal Large Language Models (MLL
 
 ![media:547]()
 
-Video Clip Analysis Tool: [https://collector-twitcher.2.rahtiapp.fi/Video\_clip\_summary](https://collector-twitcher.2.rahtiapp.fi/Video_clip_summary)
+Video Clip Analysis Tool: [https://collector-twitcher.2.rahtiapp.fi/Videoclipsummary](https://collector-twitcher.2.rahtiapp.fi/Video_clip_summary)
 
 #### **1. Automated Summarization**
 
@@ -62,6 +59,6 @@ For researchers requiring structured data for further analysis, the tool generat
 
 ![media:521]()
 
-All generated summaries and analyses are automatically saved and accessible within the **video\_descriptions** category in the [data viewer section of the tool](https://collector-twitcher.2.rahtiapp.fi/Data_viewer).
+All generated summaries and analyses are automatically saved and accessible within the **videodescriptions** category in the [data viewer section of the tool](https://collector-twitcher.2.rahtiapp.fi/Data_viewer).
 
 Text and images: Jari Lindroos
