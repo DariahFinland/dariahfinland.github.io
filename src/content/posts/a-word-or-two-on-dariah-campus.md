@@ -1,19 +1,16 @@
 ---
 title: A word or two on DARIAH-Campus
+slug: a-word-or-two-on-dariah-campus
 heroImage: /media/Screenshot-2023-11-15-at-13.23.56.png
 heroImageAlt: Screenshot 2023 11 15 at 13.23.56
-relatedPosts: []
 categories:
   - news-and-blogs
-authors: []
-publishedAt: '2023-11-17T14:21:55.000Z'
+publishedAt: 2023-11-17
 meta:
   title: A word or two on DARIAH-Campus – DARIAH-FI
   description: (featured image source)
   image: /media/Screenshot-2023-11-15-at-13.23.56.png
-slug: a-word-or-two-on-dariah-campus
 ---
-
 ([featured image source](https://campus.dariah.eu))
 
 Hi everyone, welcome back to our blog updates! My apologies for the break, the DARIAH-FI team has been busy preparing for the Christmas Workshop on December 19th - which has been a huge success in terms of signups! We appreciate your interest and support, and hopefully our team will deliver presentations of the highest quality. However, there is always time for a post or two on other projects that we have been involved in or participated in, and one of such things is DARIAH-Campus. a fantastic platform for everyone interested in digital humanities.
