@@ -6,7 +6,7 @@ relatedPosts: []
 categories:
   - news-and-blogs
 authors: []
-publishedAt: '2024-09-17T14:10:12.000Z'
+publishedAt: 2024-09-17
 meta:
   title: Calling researchers working on social media data! – DARIAH-FI
   description: Survey on the current state of research using social media data in Finland.

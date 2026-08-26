@@ -6,7 +6,7 @@ relatedPosts: []
 categories:
   - news-and-blogs
 authors: []
-publishedAt: '2025-03-27T09:39:12.000Z'
+publishedAt: 2025-03-27
 meta:
   title: 'Helsinki Digital Humanities Hackathon #DHH25 welcomes applicants – DARIAH-FI'
   description: >-

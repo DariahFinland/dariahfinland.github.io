@@ -7,7 +7,7 @@ categories:
   - aalto-university
   - news-and-blogs
 authors: []
-publishedAt: '2026-03-26T13:07:36.000Z'
+publishedAt: 2026-03-26
 meta:
   title: From data to intelligence - A FIN-CLARIAH Roadshow at Aalto University – DARIAH-FI
   description: >-

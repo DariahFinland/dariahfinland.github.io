@@ -6,7 +6,7 @@ relatedPosts: []
 categories:
   - news-and-blogs
 authors: []
-publishedAt: '2023-03-10T10:51:57.000Z'
+publishedAt: 2023-03-10
 meta:
   title: Three Lessons from the Road – DARIAH-FI
   description: >-

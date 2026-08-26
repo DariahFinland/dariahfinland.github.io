@@ -6,7 +6,7 @@ relatedPosts: []
 categories:
   - news-and-blogs
 authors: []
-publishedAt: '2024-11-27T21:34:15.000Z'
+publishedAt: 2024-11-27
 meta:
   title: FIN-CLARIAH day - Digital cultural heritage... Data or Metadata? – DARIAH-FI
   description: >-

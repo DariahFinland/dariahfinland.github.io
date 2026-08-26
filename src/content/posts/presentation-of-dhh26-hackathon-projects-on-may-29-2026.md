@@ -6,7 +6,7 @@ relatedPosts: []
 categories:
   - news-and-blogs
 authors: []
-publishedAt: '2026-05-20T10:45:44.000Z'
+publishedAt: 2026-05-20
 meta:
   title: 'Presentation of #DHH26 Hackathon projects on May 29, 2026 – DARIAH-FI'
   description: >-

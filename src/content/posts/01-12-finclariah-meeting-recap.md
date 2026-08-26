@@ -8,7 +8,7 @@ categories:
 publishedAt: 2023-12-15
 meta:
   title: 01.12 FINCLARIAH meeting recap – DARIAH-FI
-  description: Dear Readers,
+  description: FINCLARIAH teams have updated each other on the deliverables during the internal FINCLARIAH meeting that took place December 1st in Tampere. Here is a little summary of what happened, who spoke about what, and what it means for the future.
   image: /media/Screenshot-2023-12-15-at-15.16.24.png
 ---
 Dear Readers,

@@ -10,7 +10,7 @@ categories:
   - csc-it-center-for-science
   - news-and-blogs
 authors: []
-publishedAt: '2025-05-08T10:27:41.000Z'
+publishedAt: 2025-05-08
 meta:
   title: CSC renewed services for research – DARIAH-FI
   description: CSC renewed Services for Research available at https://research.csc.fi/

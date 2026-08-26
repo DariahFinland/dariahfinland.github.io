@@ -6,12 +6,12 @@ relatedPosts: []
 categories:
   - news-and-blogs
 authors: []
-publishedAt: '2024-02-22T17:04:33.000Z'
+publishedAt: 2024-02-22
 meta:
   title: DARIAH-FI Season 2 opening meeting – DARIAH-FI
   description: >-
     Overview of project goals, new participants, and objectives as introduced by partners for the
-    current season of DARIAH-FI. This recap of our opening…
+    current season of DARIAH-FI.
   image: /media/dariah-fi-building-digital-research-infrastructures-scaled-1.jpg
 slug: dariah-fi-season-2-opening-meeting
 ---

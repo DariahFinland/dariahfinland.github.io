@@ -6,7 +6,7 @@ relatedPosts: []
 categories:
   - news-and-blogs
 authors: []
-publishedAt: '2024-06-18T22:35:29.000Z'
+publishedAt: 2024-06-18
 meta:
   title: FIN-CLARIAH day - Consotium brainstorms AI implementation – DARIAH-FI
   description: >-

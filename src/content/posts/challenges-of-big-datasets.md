@@ -6,12 +6,12 @@ relatedPosts: []
 categories:
   - news-and-blogs
 authors: []
-publishedAt: '2023-09-12T10:12:49.000Z'
+publishedAt: 2023-09-12
 meta:
   title: Challenges of Big Datasets – DARIAH-FI
   description: >-
     DARIAH-FI project's Work Package 3.1 "Increasingly Automated Ingestion of Material" is creating
-    data pipeline from the National Library of Finland (NLF)…
+    data pipeline from the National Library of Finland to CSC.
   image: /media/Figure-2-DARIAH-FI-Workshop-scaled-1.jpg
 slug: challenges-of-big-datasets
 ---

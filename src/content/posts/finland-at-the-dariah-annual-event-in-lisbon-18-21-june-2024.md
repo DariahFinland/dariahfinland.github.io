@@ -6,7 +6,7 @@ relatedPosts: []
 categories:
   - news-and-blogs
 authors: []
-publishedAt: '2024-06-21T19:42:21.000Z'
+publishedAt: 2024-06-21
 meta:
   title: Finland at the DARIAH Annual event in Lisbon 18-21 June 2024 – DARIAH-FI
   description: >-

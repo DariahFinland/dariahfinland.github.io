@@ -6,7 +6,7 @@ relatedPosts: []
 categories:
   - news-and-blogs
 authors: []
-publishedAt: '2025-01-22T10:52:22.000Z'
+publishedAt: 2025-01-22
 meta:
   title: 'Sampo Tutorial: From Semantic Web Technologies to Your Own Portal – DARIAH-FI'
   description: >-

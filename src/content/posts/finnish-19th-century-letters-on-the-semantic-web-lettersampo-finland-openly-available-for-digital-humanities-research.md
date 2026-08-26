@@ -8,7 +8,7 @@ relatedPosts: []
 categories:
   - news-and-blogs
 authors: []
-publishedAt: '2025-10-02T13:07:41.000Z'
+publishedAt: 2025-10-02
 meta:
   title: >-
     Finnish 19th-Century Letters on the Semantic Web: LetterSampo Finland openly available for

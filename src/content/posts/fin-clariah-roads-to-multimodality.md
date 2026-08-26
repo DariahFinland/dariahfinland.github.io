@@ -7,7 +7,7 @@ categories:
   - news
   - news-and-blogs
 authors: []
-publishedAt: '2025-06-25T11:13:52.000Z'
+publishedAt: 2025-06-25
 meta:
   title: FIN-CLARIAH summer meeting builds "Roads to Multimodality" – DARIAH-FI
   description: >-

@@ -6,7 +6,7 @@ relatedPosts: []
 categories:
   - news-and-blogs
 authors: []
-publishedAt: '2025-06-25T14:12:33.000Z'
+publishedAt: 2025-06-25
 meta:
   title: Engaging infrastructures to study The Past, DARIAH Annual event 2025 Göttingen – DARIAH-FI
   description: >-

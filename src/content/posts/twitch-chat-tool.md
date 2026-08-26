@@ -6,7 +6,7 @@ relatedPosts: []
 categories:
   - news-and-blogs
 authors: []
-publishedAt: '2023-05-23T09:18:15.000Z'
+publishedAt: 2023-05-23
 meta:
   title: Twitch Chat Tool - DARIAH-FI workshop winner – DARIAH-FI
   description: >-

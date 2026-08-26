@@ -6,7 +6,7 @@ relatedPosts: []
 categories:
   - news-and-blogs
 authors: []
-publishedAt: '2024-05-15T10:30:56.000Z'
+publishedAt: 2024-05-15
 meta:
   title: Experiences from the DARIAH-FI online workshops with doctoral researchers – DARIAH-FI
   description: >-

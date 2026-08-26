@@ -6,10 +6,10 @@ relatedPosts: []
 categories:
   - news-and-blogs
 authors: []
-publishedAt: '2023-10-16T07:19:27.000Z'
+publishedAt: 2023-10-16
 meta:
   title: DARIAH-FI Christmas Workshop Coming Soon! – DARIAH-FI
-  description: Dear Stranger,
+  description: Dear Stranger, you are warmly invited to the DARIAH-FI Christmas Workshop on December 19
   image: /media/DARIAH-FI-WORKSHOP-Featured-Image.jpg
 slug: dariah-fi-christmas-workshop-coming-soon
 ---

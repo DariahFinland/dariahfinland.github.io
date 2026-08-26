@@ -11,7 +11,7 @@ meta:
     DARIAH-FI"
   description: Find in this article information about HumInfra.se and a dossier
     with Finnish tools fit for international researchers and historical datasets
-    in Swedish…
+    in Swedish language.
   image: /media/LNU_header.37db1f3c.webp
 ---
 **Find in this article information about HumInfra.se and a dossier with Finnish tools fit for international researchers and historical datasets in Swedish language**

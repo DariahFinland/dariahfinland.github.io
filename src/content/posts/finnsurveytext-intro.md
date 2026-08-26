@@ -6,7 +6,7 @@ relatedPosts: []
 categories:
   - news-and-blogs
 authors: []
-publishedAt: '2024-03-19T11:11:45.000Z'
+publishedAt: 2024-03-19
 meta:
   title: 'FinnSurveyText: Tool for open-ended survey questions in Finnish – DARIAH-FI'
   description: >-

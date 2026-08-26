@@ -8,7 +8,7 @@ relatedPosts: []
 categories:
   - news-and-blogs
 authors: []
-publishedAt: '2024-02-09T09:50:35.000Z'
+publishedAt: 2024-02-09
 meta:
   title: >-
     We don’t want to leave this at the hands of computer scientists... an interview with Mikko

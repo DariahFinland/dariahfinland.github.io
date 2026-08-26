@@ -8,7 +8,7 @@ categories:
 publishedAt: 2023-11-17
 meta:
   title: A word or two on DARIAH-Campus – DARIAH-FI
-  description: (featured image source)
+  description: If you have ever wondered where to look for resources associated with DARIAH infrastructures or digital humanities as a whole, look no further than here.
   image: /media/Screenshot-2023-11-15-at-13.23.56.png
 ---
 ([featured image source](https://campus.dariah.eu))

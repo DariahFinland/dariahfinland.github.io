@@ -6,7 +6,7 @@ relatedPosts: []
 categories:
   - news-and-blogs
 authors: []
-publishedAt: '2024-12-18T15:04:04.000Z'
+publishedAt: 2024-12-18
 meta:
   title: 'Tools to Make Sense of Web Data: a workshop report... with Christmas presents – DARIAH-FI'
   description: >-

@@ -6,7 +6,7 @@ relatedPosts: []
 categories:
   - news-and-blogs
 authors: []
-publishedAt: '2024-08-07T08:31:20.000Z'
+publishedAt: 2024-08-07
 meta:
   title: TRANSFORMATIONS a new journal on digital humanities – DARIAH-FI
   description: >-

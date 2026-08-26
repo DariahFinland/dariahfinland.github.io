@@ -6,7 +6,7 @@ relatedPosts: []
 categories:
   - news-and-blogs
 authors: []
-publishedAt: '2025-01-07T13:00:15.000Z'
+publishedAt: 2025-01-07
 meta:
   title: Laughter and disruption in the Parliament of Finland – DARIAH-FI
   description: >-

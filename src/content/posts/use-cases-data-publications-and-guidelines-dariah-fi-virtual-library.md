@@ -7,7 +7,7 @@ categories:
   - blog
   - news-and-blogs
 authors: []
-publishedAt: '2026-03-04T11:11:08.000Z'
+publishedAt: 2026-03-04
 meta:
   title: Use Cases, data publications and guidelines -  DARIAH-FI virtual library – DARIAH-FI
   description: >-

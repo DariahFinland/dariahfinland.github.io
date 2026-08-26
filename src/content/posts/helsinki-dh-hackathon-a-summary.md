@@ -6,7 +6,7 @@ relatedPosts: []
 categories:
   - news-and-blogs
 authors: []
-publishedAt: '2024-05-30T12:34:34.000Z'
+publishedAt: 2024-05-30
 meta:
   title: Helsinki DH Hackathon - a summary – DARIAH-FI
   description: >-

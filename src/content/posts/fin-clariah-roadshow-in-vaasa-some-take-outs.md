@@ -6,7 +6,7 @@ relatedPosts: []
 categories:
   - news-and-blogs
 authors: []
-publishedAt: '2025-04-27T07:59:43.000Z'
+publishedAt: 2025-04-27
 meta:
   title: 'FIN-CLARIAH Roadshow in Vaasa: Some take-outs – DARIAH-FI'
   description: >-

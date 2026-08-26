@@ -6,7 +6,7 @@ relatedPosts: []
 categories:
   - news-and-blogs
 authors: []
-publishedAt: '2023-05-31T10:23:13.000Z'
+publishedAt: 2023-05-31
 meta:
   title: Findings from DARIAH-FI survey – DARIAH-FI
   description: Findings from a DARIAH-FI wide survey.

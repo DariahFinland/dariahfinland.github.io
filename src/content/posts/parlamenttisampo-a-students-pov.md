@@ -6,7 +6,7 @@ relatedPosts: []
 categories:
   - news-and-blogs
 authors: []
-publishedAt: '2023-03-27T09:22:39.000Z'
+publishedAt: 2023-03-27
 meta:
   title: ParlamenttiSampo - A Student's POV – DARIAH-FI
   description: >-

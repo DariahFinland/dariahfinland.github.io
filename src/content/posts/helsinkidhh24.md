@@ -6,7 +6,7 @@ relatedPosts: []
 categories:
   - news-and-blogs
 authors: []
-publishedAt: '2024-03-18T15:17:15.000Z'
+publishedAt: 2024-03-18
 meta:
   title: Helsinki Digital Humanities Hackathon welcomes applicants – DARIAH-FI
   description: >-

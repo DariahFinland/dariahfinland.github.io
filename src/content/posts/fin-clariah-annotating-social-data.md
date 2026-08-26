@@ -8,7 +8,7 @@ categories:
   - news-and-blogs
   - university-of-helsinki
 authors: []
-publishedAt: '2025-12-05T09:15:59.000Z'
+publishedAt: 2025-12-05
 meta:
   title: FIN-CLARIAH Fall meeting Annotating Social data – DARIAH-FI
   description: >-

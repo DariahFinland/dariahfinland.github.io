@@ -6,7 +6,7 @@ relatedPosts: []
 categories:
   - news-and-blogs
 authors: []
-publishedAt: '2022-06-20T08:49:21.000Z'
+publishedAt: 2022-06-20
 meta:
   title: 'FIN-CLARIAH Kick-Off: Cocktails & Research Infrastructures – DARIAH-FI'
   description: >-

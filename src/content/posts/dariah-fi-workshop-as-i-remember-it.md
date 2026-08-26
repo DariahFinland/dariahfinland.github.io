@@ -6,7 +6,7 @@ relatedPosts: []
 categories:
   - news-and-blogs
 authors: []
-publishedAt: '2023-06-21T07:18:55.000Z'
+publishedAt: 2023-06-21
 meta:
   title: 'DARIAH-FI Workshop: As I Remember It – DARIAH-FI'
   description: >-

@@ -6,7 +6,7 @@ relatedPosts: []
 categories:
   - news-and-blogs
 authors: []
-publishedAt: '2023-09-05T09:02:05.000Z'
+publishedAt: 2023-09-05
 meta:
   title: 'Memories from the #DHH23 Hackathon – DARIAH-FI'
   description: >-

@@ -6,7 +6,7 @@ categories:
   - blog
   - news-and-blogs
 authors: []
-publishedAt: '2026-06-15T09:00:00.000Z'
+publishedAt: 2026-06-15
 meta:
   title: Networked communities, the traces they leave and the phenomena they reveal
   description: >-

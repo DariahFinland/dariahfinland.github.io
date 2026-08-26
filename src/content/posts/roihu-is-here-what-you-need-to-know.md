@@ -6,7 +6,7 @@ categories:
   - news
   - news-and-blogs
 authors: []
-publishedAt: '2026-07-07T09:00:00.000Z'
+publishedAt: 2026-07-07
 meta:
   title: 'Roihu is Here: What You Need to Know?'
   description: >-
