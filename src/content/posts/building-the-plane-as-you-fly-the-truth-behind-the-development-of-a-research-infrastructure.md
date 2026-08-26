@@ -1,23 +1,19 @@
 ---
-title: 'Building the plane as you fly: The truth behind the development of a research infrastructure'
+title: "Building the plane as you fly: The truth behind the development of a
+  research infrastructure"
+slug: building-the-plane-as-you-fly-the-truth-behind-the-development-of-a-research-infrastructure
 heroImage: /media/photo_1-scaled-1.jpg
 heroImageAlt: photo 1 scaled 1
-relatedPosts: []
 categories:
   - news-and-blogs
-authors: []
-publishedAt: '2023-06-08T12:26:39.000Z'
+publishedAt: 2023-06-08
 meta:
-  title: >-
-    Building the plane as you fly: The truth behind the development of a research infrastructure –
-    DARIAH-FI
-  description: >-
-    How do you develop a research infrastructure? A short insight into the reality of DARIAH-FI's
-    evolution thus far, the good and the bad.
+  title: "Building the plane as you fly: The truth behind the development of a
+    research infrastructure – DARIAH-FI"
+  description: How do you develop a research infrastructure? A short insight into
+    the reality of DARIAH-FI's evolution thus far, the good and the bad.
   image: /media/photo_1-scaled-1.jpg
-slug: building-the-plane-as-you-fly-the-truth-behind-the-development-of-a-research-infrastructure
 ---
-
 Hi y'all!
 
 Greetings from Käärijä's land. My name is Anna Sendra Toset and I'm currently working as a Project Manager at Tampere University for the DARIAH-FI research infrastructure (RI). I joined this fantastic group of people back in August 2022, and my work since then has mainly consisted in trying to reveal the needs and expectations of Finnish social sciences and humanities (SSH) scholars regarding this new facility. To this end, we conducted up to **34 semi-structured interviews** between September 2022 and February 2023 with potential end-users of different backgrounds, both related and unrelated to the development of DARIAH-FI. Participants, which included SSH scholars and computer/data scientists, were recruited via internal communication channels and taking advantage of the roadshow events organized to present the RI in various universities around Finland.
@@ -34,7 +30,7 @@ The latter need/expectation connects to the third thing that comes to my mind in
 
 In his [post](https://www.dariah.fi/blog/dariah-fi-roadshow-coming-soon-links-to-the-events-below/) of October 2022, Risto Turunen (aka the National Coordinator for the RI) wrote that DARIAH-FI wants "to solve those big problems that cannot be solved by any individual researcher or research group". In compliance with the interviews, the difficulty here not only lies in the variety of these *big problems*, but also in the capacity of determining which of these issues the RI should address so that the facility is **as representative and useful as possible** to all the Finnish SSH research community. While this adds a layer of complexity in terms of development, it also makes things more fun and exciting for us. As one of the participants stated, our work feels like building a plane as we fly it. This expression becomes even more precise when considering that it will be necessary to have constant dialogue with the end-users of DARIAH-FI along the way.
 
-With all this in mind, if you work in Finland and would like to have a say on what the future will look like (or you did already, but want to repeat), we hope that you will join us in this adventure. There are many questions that remain unresolved, and we need your help to find the answers. For example, you can participate in some of the activities organized by the RI (\*cough\* upcoming DARIAH-FI (public) workshop in the autumn \*cough\*). In the meantime, we encourage you to follow our updates and keep an eye out for scientific publications that will explain what we have hinted here in more detail.
+With all this in mind, if you work in Finland and would like to have a say on what the future will look like (or you did already, but want to repeat), we hope that you will join us in this adventure. There are many questions that remain unresolved, and we need your help to find the answers. For example, you can participate in some of the activities organized by the RI (cough upcoming DARIAH-FI (public) workshop in the autumn cough). In the meantime, we encourage you to follow our updates and keep an eye out for scientific publications that will explain what we have hinted here in more detail.
 
 See you (hopefully) soon!
 
