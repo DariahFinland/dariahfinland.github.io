@@ -1,21 +1,19 @@
 ---
-title: 'Building bridges across borders and languages: Sweden joins DARIAH EU'
+title: "Building bridges across borders and languages: Sweden joins DARIAH EU"
+slug: building-bridges-across-borders-and-languages-sweden-joins-dariah-eu
 heroImage: /media/LNU_header.37db1f3c.webp
 heroImageAlt: LNU header.37db1f3c
-relatedPosts: []
 categories:
   - news-and-blogs
-authors: []
-publishedAt: '2024-12-20T11:18:43.000Z'
+publishedAt: 2024-12-20
 meta:
-  title: 'Building bridges across borders and languages: Sweden joins DARIAH EU – DARIAH-FI'
-  description: >-
-    Find in this article information about HumInfra.se and a dossier with Finnish tools fit for
-    international researchers and historical datasets in Swedish…
+  title: "Building bridges across borders and languages: Sweden joins DARIAH EU –
+    DARIAH-FI"
+  description: Find in this article information about HumInfra.se and a dossier
+    with Finnish tools fit for international researchers and historical datasets
+    in Swedish…
   image: /media/LNU_header.37db1f3c.webp
-slug: building-bridges-across-borders-and-languages-sweden-joins-dariah-eu
 ---
-
 **Find in this article information about HumInfra.se and a dossier with Finnish tools fit for international researchers and historical datasets in Swedish language**
 
 With occasion to the DARIAH-SE launch as full-member of DARIAH-EU, we visited Linnaeus Univeristy in Växjö where its coordinator [Koraljka Golub](https://lnu.se/en/staff/koraljka.golub/) greeted us and other members of the Swedish national infrastructure Huminfra for a DARIAH launch seminar on December 9. The consortium was introduced to [DARIAH Campus](https://campus.dariah.eu/) and [SSH Open marketplace](https://marketplace.sshopencloud.eu/), and discussed the best way to bring their national resources to international fellow humanists. This was a good opportunity to exchange information about how to best organise a national consortium and start conversation as to what resources and research support could be done jointly.
