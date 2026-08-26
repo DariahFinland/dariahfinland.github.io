@@ -1,4 +1,6 @@
 allowBuilds:
+  better-sqlite3: set this to true or false
+  core-js: set this to true or false
   esbuild: true
 minimumReleaseAgeExclude:
   - astro@7.2.2
