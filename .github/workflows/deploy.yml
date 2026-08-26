@@ -41,8 +41,11 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Build site (astro build + pagefind indexing)
+      - name: Build site (tinacms build + astro build + pagefind indexing)
         run: pnpm build
+        env:
+          TINA_CLIENT_ID: ${{ secrets.TINA_CLIENT_ID }}
+          TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
