@@ -9,9 +9,8 @@ tutorialUrl: https://youtu.be/q8kOJB6nA2M?feature=shared
 contacts:
   - name: Veronika Laippala
     url: https://www.utu.fi/fi/ihmiset/veronika-laippala
-localOffice: src/content/local-offices/turku.md
+localOffice: turku
 collaborators:
   - csc
-order: 1
 ---
 This resource consists of two tools: one to classify toxic data in Finnish (e.g., insults, obscene language) from datasets retrieved from social media platforms; and another to identify registers (genres, e.g., reviews, interviews, news reports) from web content in diverse languages. Resource developed by TurkuNLP / University of Turku in partnership with the CSC.
