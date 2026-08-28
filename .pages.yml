@@ -101,8 +101,19 @@ content:
           - { name: url, type: string }
       - name: localOffice
         label: Local Office
-        type: reference
-        options: { collection: local-offices, label: "{name}" }
+        type: select
+        options:
+          values:
+            - { value: aalto, label: "Aalto University" }
+            - { value: csc, label: "CSC" }
+            - { value: national-archives, label: "National Archives of Finland" }
+            - { value: national-library, label: "National Library of Finland" }
+            - { value: tampere, label: "Tampere University" }
+            - { value: eastern-finland, label: "University of Eastern Finland" }
+            - { value: helsinki, label: "University of Helsinki" }
+            - { value: jyvaskyla, label: "University of Jyväskylä" }
+            - { value: oulu, label: "University of Oulu" }
+            - { value: turku, label: "University of Turku" }
       - name: collaborators
         type: reference
         options: { collection: local-offices, multiple: true }
