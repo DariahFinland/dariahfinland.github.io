@@ -140,7 +140,10 @@ content:
       - { name: title, type: string, required: true }
       - { name: slug, type: string, required: true }
       - { name: startDate, type: date, required: true }
+      - { name: startTime, type: string, description: 'e.g. 12:15' }
       - { name: endDate, type: date }
+      - { name: endTime, type: string, description: 'e.g. 14:00' }
+      - { name: cancelled, type: boolean, default: false }
       - { name: location, type: string }
       - { name: isOnline, type: boolean, default: false }
       - { name: registrationUrl, type: string }
