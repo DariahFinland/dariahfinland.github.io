@@ -55,7 +55,7 @@ content:
     type: collection
     path: src/content/affiliated-groups
     view:
-      fields: [name]
+      fields: [name, localOffice]
       primary: name
       sort: [name]
     fields:
@@ -68,7 +68,7 @@ content:
         list: true
       - { name: contactName, type: string }
       - { name: contactUrl, type: string }
-      - name: dariahNode
+      - name: localOffice
         label: Local Office
         type: reference
         options: { collection: local-offices }
@@ -81,7 +81,7 @@ content:
     type: collection
     path: src/content/tools
     view:
-      fields: [name]
+      fields: [name, localOffice]
       primary: name
       sort: [name]
     fields:
@@ -99,10 +99,10 @@ content:
         fields:
           - { name: name, type: string, required: true }
           - { name: url, type: string }
-      - name: developedBy
-        label: Developed by
+      - name: localOffice
+        label: Local Office
         type: reference
-        options: { collection: local-offices, multiple: true }
+        options: { collection: local-offices }
       - name: collaborators
         type: reference
         options: { collection: local-offices, multiple: true }
@@ -115,12 +115,16 @@ content:
     type: collection
     path: src/content/trainings
     view:
-      fields: [title, group]
+      fields: [title, group, localOffice]
       primary: title
       sort: [order]
     fields:
       - { name: title, type: string, required: true }
       - { name: url, type: string }
+      - name: localOffice
+        label: Local Office
+        type: reference
+        options: { collection: local-offices }
       - { name: group, type: string }
       - { name: levelTags, type: string }
       - { name: order, type: number }

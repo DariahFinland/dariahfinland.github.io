@@ -209,7 +209,7 @@ const affiliatedGroups = defineCollection({
     expertise: z.array(z.string()).optional(),
     contactName: z.string().optional(),
     contactUrl: z.string().optional(),
-    dariahNode: reference('localOffices').optional(),
+    localOffice: reference('localOffices').optional(), // renamed from dariahNode
   }),
 })
 
@@ -235,7 +235,7 @@ const tools = defineCollection({
         }),
       )
       .optional(),
-    developedBy: z.array(reference('localOffices')).optional(),
+    localOffice: reference('localOffices').optional(), // replaces developedBy (was a list; now a single office)
     collaborators: z.array(reference('localOffices')).optional(),
   }),
 })
@@ -256,6 +256,7 @@ const trainings = defineCollection({
     // Section this training belongs to on the page (was groups[].levelLabel)
     group: z.string().optional(),
     levelTags: z.string().optional(),
+    localOffice: reference('localOffices').optional(),
     // description lives in the file's body, same convention as posts/events/tools
   }),
 })

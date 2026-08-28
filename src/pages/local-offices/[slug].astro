@@ -1,11 +1,10 @@
 ---
 // src/pages/local-offices/[slug].astro
 //
-// The original office page also lists affiliated groups and tools tied to
-// that office (matched via dariahNode/developedBy/collaborators). We
-// reproduce that here by filtering every affiliated-group/tool entry
-// against this office's id -- comparing .id, not the objects themselves,
-// same reference-equality issue as the Archive block's category filter.
+// Lists affiliated groups, tools, and trainings tied to this office, now
+// via each collection's own explicit `localOffice` field (previously
+// affiliated-groups used `dariahNode` and tools used a list `developedBy` --
+// both are gone, replaced by a single, consistently-named field).
 import { getCollection, render } from 'astro:content'
 import BaseLayout from '../../layouts/BaseLayout.astro'
 
@@ -21,7 +20,7 @@ const { office } = Astro.props
 
 const allGroups = await getCollection('affiliatedGroups')
 const groups = allGroups
-  .filter((g) => g.data.dariahNode?.id === office.id)
+  .filter((g) => g.data.localOffice?.id === office.id)
   .sort((a, b) => a.data.name.localeCompare(b.data.name))
 const groupsWithContent = await Promise.all(
   groups.map(async (g) => ({ group: g, Content: (await render(g)).Content })),
@@ -31,12 +30,20 @@ const allTools = await getCollection('tools')
 const tools = allTools
   .filter(
     (t) =>
-      t.data.developedBy?.some((ref) => ref.id === office.id) ||
+      t.data.localOffice?.id === office.id ||
       t.data.collaborators?.some((ref) => ref.id === office.id),
   )
   .sort((a, b) => a.data.name.localeCompare(b.data.name))
 const toolsWithContent = await Promise.all(
   tools.map(async (t) => ({ tool: t, Content: (await render(t)).Content })),
+)
+
+const allTrainings = await getCollection('trainings')
+const trainings = allTrainings
+  .filter((t) => t.data.localOffice?.id === office.id)
+  .sort((a, b) => a.data.title.localeCompare(b.data.title))
+const trainingsWithContent = await Promise.all(
+  trainings.map(async (t) => ({ training: t, Content: (await render(t)).Content })),
 )
 ---
 
@@ -124,6 +131,26 @@ const toolsWithContent = await Promise.all(
             <div class="border rounded-lg p-4">
               <p class="font-semibold mb-2">{tool.data.name}</p>
               <div class="text-sm text-muted-foreground mb-2"><Content /></div>
+            </div>
+          ))}
+        </div>
+      </div>
+    )}
+
+    {trainingsWithContent.length > 0 && (
+      <div class="mb-10">
+        <h2 class="text-xl font-semibold mb-4">Trainings</h2>
+        <div class="space-y-4">
+          {trainingsWithContent.map(({ training, Content }) => (
+            <div class="border rounded-lg p-4">
+              {training.data.url ? (
+                <a href={training.data.url} target="_blank" rel="noreferrer noopener" class="font-semibold underline">
+                  {training.data.title}
+                </a>
+              ) : (
+                <p class="font-semibold">{training.data.title}</p>
+              )}
+              <div class="text-sm text-muted-foreground mt-1"><Content /></div>
             </div>
           ))}
         </div>
