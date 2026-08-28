@@ -71,7 +71,7 @@ content:
       - name: localOffice
         label: Local Office
         type: reference
-        options: { collection: local-offices }
+        options: { collection: local-offices, label: "{name}" }
       - { name: order, type: number }
       - { name: body, label: Description, type: rich-text }
 
@@ -102,11 +102,10 @@ content:
       - name: localOffice
         label: Local Office
         type: reference
-        options: { collection: local-offices }
+        options: { collection: local-offices, label: "{name}" }
       - name: collaborators
         type: reference
         options: { collection: local-offices, multiple: true }
-      - { name: order, type: number }
       - { name: body, label: Description, type: rich-text }
   
   # ---------- trainings ----------
@@ -124,10 +123,9 @@ content:
       - name: localOffice
         label: Local Office
         type: reference
-        options: { collection: local-offices }
+        options: { collection: local-offices, label: "{name}" }
       - { name: group, type: string }
       - { name: levelTags, type: string }
-      - { name: order, type: number }
       - { name: body, label: Description, type: rich-text }
 
   # ---------- events ----------
@@ -152,10 +150,10 @@ content:
       - { name: isOnline, type: boolean, default: false }
       - { name: registrationUrl, type: string }
       - { name: featuredImage, type: image }
-      - name: relatedNode
+      - name: localOffice
         label: Organising office
         type: reference
-        options: { collection: local-offices }
+        options: { collection: local-offices, label: "{name}" }
       - name: status
         type: select
         options: { values: [upcoming, past, cancelled] }
