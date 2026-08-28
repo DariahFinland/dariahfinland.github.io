@@ -7,8 +7,8 @@
     "node": ">=22.12.0"
   },
   "scripts": {
-    "dev": "tinacms dev -c 'astro dev'",
-    "build": "tinacms build && astro build && pagefind --site dist",
+    "dev": "astro dev", 
+    "build": "astro build && pagefind --site dist",
     "preview": "astro preview",
     "astro": "astro"
   },
