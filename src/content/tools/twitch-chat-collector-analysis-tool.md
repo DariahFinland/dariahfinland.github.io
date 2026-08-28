@@ -9,7 +9,7 @@ contacts:
     url: https://www.jyu.fi/fi/henkilot/raine-koskimaa
   - name: Jari Lindroos
     url: https://www.jyu.fi/fi/henkilot/jari-lindroos
-localOffice: jyvaskyla
+localOffice: src/content/local-offices/jyvaskyla.md
 collaborators:
   - tampere
 ---
