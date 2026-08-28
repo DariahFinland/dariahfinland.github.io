@@ -1,34 +1,15 @@
 ---
 // src/pages/events/index.astro
-//
-// The original site does this with a ?view=past URL param + server
-// rendering (EventsViewToggle). Since this is a static build with no
-// per-request server, we compute both lists at build time and switch
-// between them client-side instead -- same click-based pattern as
-// TabsBlock.astro, and the same button classes as the original
-// EventsViewToggle component.
 import { getCollection } from 'astro:content'
 import BaseLayout from '../../layouts/BaseLayout.astro'
-
-function formatEventDate(start: Date, end?: Date): string {
-  const dateFmt = new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })
-  const timeFmt = new Intl.DateTimeFormat('en-GB', { hour: '2-digit', minute: '2-digit' })
-  let result = dateFmt.format(start)
-  if (end) {
-    const sameDay = start.toDateString() === end.toDateString()
-    result += sameDay ? ` · ${timeFmt.format(start)}–${timeFmt.format(end)}` : ` – ${dateFmt.format(end)}`
-  } else {
-    result += ` · ${timeFmt.format(start)}`
-  }
-  return result
-}
+import { isPastEvent, formatEventDate } from '../../lib/events'
 
 const allEvents = await getCollection('events')
 const upcoming = allEvents
-  .filter((e) => e.data.status === 'upcoming')
+  .filter((e) => !isPastEvent(e.data))
   .sort((a, b) => a.data.startDate.valueOf() - b.data.startDate.valueOf())
 const past = allEvents
-  .filter((e) => e.data.status === 'past')
+  .filter((e) => isPastEvent(e.data))
   .sort((a, b) => b.data.startDate.valueOf() - a.data.startDate.valueOf())
 
 const tabButtonClass = (active: boolean) =>
@@ -52,10 +33,18 @@ const tabButtonClass = (active: boolean) =>
       ) : (
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {upcoming.map((event) => (
-            <a href={`/events/${event.id}`} class="block border border-border rounded-md p-4 bg-card hover:bg-muted transition-colors"
-            style="text-decoration: none;">
-              <p class="text-sm text-muted-foreground mb-1">{formatEventDate(event.data.startDate, event.data.endDate)}</p>
-              <p class="font-semibold text-headings">{event.data.title}</p>
+            <a href={`/events/${event.id}`} class="block border border-border rounded-md p-4 bg-card hover:bg-muted transition-colors">
+              <p class="text-sm text-muted-foreground mb-1">
+                {formatEventDate(event.data.startDate, {
+                  startTime: event.data.startTime,
+                  endDate: event.data.endDate,
+                  endTime: event.data.endTime,
+                })}
+              </p>
+              <p class="font-semibold text-headings">
+                {event.data.title}
+                {event.data.cancelled && <span class="ml-2 text-xs font-medium uppercase text-red-600">Cancelled</span>}
+              </p>
               {event.data.location && <p class="text-sm text-muted-foreground mt-1">{event.data.location}</p>}
               {event.data.isOnline && <p class="text-sm text-muted-foreground mt-1">Online</p>}
             </a>
@@ -70,9 +59,14 @@ const tabButtonClass = (active: boolean) =>
       ) : (
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {past.map((event) => (
-            <a href={`/events/${event.id}`} class="block border border-border rounded-md p-4 bg-card hover:bg-muted transition-colors"
-            style="text-decoration: none;">
-              <p class="text-sm text-muted-foreground mb-1">{formatEventDate(event.data.startDate, event.data.endDate)}</p>
+            <a href={`/events/${event.id}`} class="block border border-border rounded-md p-4 bg-card hover:bg-muted transition-colors">
+              <p class="text-sm text-muted-foreground mb-1">
+                {formatEventDate(event.data.startDate, {
+                  startTime: event.data.startTime,
+                  endDate: event.data.endDate,
+                  endTime: event.data.endTime,
+                })}
+              </p>
               <p class="font-semibold text-headings">{event.data.title}</p>
               {event.data.location && <p class="text-sm text-muted-foreground mt-1">{event.data.location}</p>}
               {event.data.isOnline && <p class="text-sm text-muted-foreground mt-1">Online</p>}

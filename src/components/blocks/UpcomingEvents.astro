@@ -2,6 +2,7 @@
 // src/components/blocks/UpcomingEvents.astro
 
 import { getCollection } from 'astro:content'
+import { isPastEvent } from '../../lib/events'
 
 interface Props {
   heading?: string
@@ -13,7 +14,7 @@ const { heading = 'Upcoming Events', limit = 3, viewAllLink = '/events' } = Astr
 
 const events = await getCollection('events')
 const upcoming = events
-  .filter((e) => e.data.status === 'upcoming')
+  .filter((e) => !isPastEvent(e.data) && !e.data.cancelled)
   .sort((a, b) => a.data.startDate.valueOf() - b.data.startDate.valueOf())
   .slice(0, limit)
 ---
@@ -27,7 +28,7 @@ const upcoming = events
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       {upcoming.map((event) => (
-        <a href={`/events/${event.id}`} class="block border rounded-lg p-4 hover:bg-muted transition-colors" style="text-decoration: none;">
+        <a href={`/events/${event.id}`} class="block border rounded-lg p-4 hover:bg-muted transition-colors">
           <p class="text-sm text-muted-foreground mb-1">{event.data.startDate.toLocaleDateString()}</p>
           <p class="font-semibold">{event.data.title}</p>
           {event.data.location && <p class="text-sm text-muted-foreground mt-1">{event.data.location}</p>}

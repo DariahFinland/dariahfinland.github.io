@@ -2,6 +2,7 @@
 // src/pages/events/[slug].astro
 import { getCollection, getEntry, render } from 'astro:content'
 import BaseLayout from '../../layouts/BaseLayout.astro'
+import { isPastEvent, formatEventDate } from '../../lib/events'
 
 export async function getStaticPaths() {
   const events = await getCollection('events')
@@ -14,21 +15,7 @@ export async function getStaticPaths() {
 const { event } = Astro.props
 const { Content } = await render(event)
 const relatedNode = event.data.relatedNode ? await getEntry(event.data.relatedNode) : undefined
-
-function formatEventDateTime(start: Date, end?: Date): string {
-  const dateFmt = new Intl.DateTimeFormat('en-GB', {
-    weekday: 'long', day: 'numeric', month: 'long', year: 'numeric',
-  })
-  const timeFmt = new Intl.DateTimeFormat('en-GB', { hour: '2-digit', minute: '2-digit' })
-  let result = dateFmt.format(start)
-  if (end) {
-    const sameDay = start.toDateString() === end.toDateString()
-    result += sameDay ? `, ${timeFmt.format(start)}–${timeFmt.format(end)}` : ` – ${dateFmt.format(end)}`
-  } else {
-    result += `, ${timeFmt.format(start)}`
-  }
-  return result
-}
+const past = isPastEvent(event.data)
 ---
 
 <BaseLayout title={event.data.title}>
@@ -44,25 +31,36 @@ function formatEventDateTime(start: Date, end?: Date): string {
     <h1 class="mb-6">{event.data.title}</h1>
 
     <p class="text-muted-foreground mb-1">
-      {formatEventDateTime(event.data.startDate, event.data.endDate)}
+      {formatEventDate(event.data.startDate, {
+        startTime: event.data.startTime,
+        endDate: event.data.endDate,
+        endTime: event.data.endTime,
+        includeWeekday: true,
+      })}
     </p>
     {event.data.location && <p class="text-muted-foreground mb-1">{event.data.location}</p>}
     {event.data.isOnline && <p class="text-muted-foreground mb-1">Online event</p>}
 
-    {event.data.status === 'past' && (
-      <span class="inline-block mt-2 mb-4 text-xs font-medium uppercase tracking-wide text-muted-foreground border border-border rounded-full px-3 py-1">
-        Past event
-      </span>
-    )}
+    <div class="flex gap-2 mt-2 mb-4">
+      {event.data.cancelled && (
+        <span class="inline-block text-xs font-medium uppercase tracking-wide text-red-600 border border-red-600 rounded-full px-3 py-1">
+          Cancelled
+        </span>
+      )}
+      {past && (
+        <span class="inline-block text-xs font-medium uppercase tracking-wide text-muted-foreground border border-border rounded-full px-3 py-1">
+          Past event
+        </span>
+      )}
+    </div>
 
-    {event.data.registrationUrl && event.data.status === 'upcoming' && (
+    {event.data.registrationUrl && !past && !event.data.cancelled && (
       <div class="mt-4 mb-6">
         <a
           href={event.data.registrationUrl}
           target="_blank"
           rel="noreferrer noopener"
           class="inline-block bg-primary text-primary-foreground rounded px-5 py-2 text-sm font-medium hover:bg-primary-hover transition-colors"
-          style="text-decoration: none;"
         >
           Register
         </a>

@@ -12,6 +12,11 @@ on:
   push:
     branches: [main]
   workflow_dispatch: # lets you trigger a rebuild manually from the Actions tab
+  schedule:
+    # Daily rebuild so events flip from upcoming to past on their own, even
+    # with zero content changes -- otherwise the site only recomputes this
+    # whenever someone happens to save an edit in PagesCMS/Tina.
+    - cron: '0 3 * * *' # 03:00 UTC daily
 
 permissions:
   contents: read

@@ -161,14 +161,19 @@ const events = defineCollection({
     title: z.string(),
     slug: z.string(),
     startDate: z.coerce.date(),
+    startTime: z.string().optional(), // display-only, e.g. "12:15" -- not used for sorting/status
     endDate: z.coerce.date().optional(),
+    endTime: z.string().optional(),
     location: z.string().optional(),
     isOnline: z.boolean().default(false),
     // body of the .md file = event description
     registrationUrl: z.string().optional(),
     featuredImage: z.string().optional(),
     relatedNode: reference('localOffices').optional(),
-    status: z.enum(['upcoming', 'past', 'cancelled']).default('upcoming'),
+    // Upcoming/past is now computed at build time from startDate/endDate
+    // (see src/lib/events.ts) instead of stored here -- "cancelled" is the
+    // only state that genuinely can't be derived from a date.
+    cancelled: z.boolean().optional(),
   }),
 })
 
@@ -191,7 +196,6 @@ const localOffices = defineCollection({
         }),
       )
       .optional(),
-    order: z.number().optional(),
   }),
 })
 
@@ -206,7 +210,6 @@ const affiliatedGroups = defineCollection({
     contactName: z.string().optional(),
     contactUrl: z.string().optional(),
     dariahNode: reference('localOffices').optional(),
-    order: z.number().optional(),
   }),
 })
 
@@ -234,7 +237,6 @@ const tools = defineCollection({
       .optional(),
     developedBy: z.array(reference('localOffices')).optional(),
     collaborators: z.array(reference('localOffices')).optional(),
-    order: z.number().optional(),
   }),
 })
 
@@ -254,7 +256,6 @@ const trainings = defineCollection({
     // Section this training belongs to on the page (was groups[].levelLabel)
     group: z.string().optional(),
     levelTags: z.string().optional(),
-    order: z.number().optional(),
     // description lives in the file's body, same convention as posts/events/tools
   }),
 })
