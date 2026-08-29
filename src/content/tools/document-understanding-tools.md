@@ -13,8 +13,7 @@ contacts:
     url: https://www.jyu.fi/fi/henkilot/venla-poso
   - name: Ida Toivanen
     url: https://www.jyu.fi/fi/henkilot/ida-toivanen
-localOffice: src/content/local-offices/jyvaskyla.md
 collaborators:
-  - national-archives
+  - src/content/local-offices/national-archives.md
 ---
 Tools for document understanding including named entity recognition and document type classification. Most of the tool development has been conducted in collaboration with the National Archives of Finland.
