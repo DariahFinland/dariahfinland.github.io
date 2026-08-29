@@ -7,8 +7,6 @@ expertise:
   - computer vision
 contactName: Jouni Tuominen
 contactUrl: https://researchportal.helsinki.fi/fi/persons/jouni-tuominen
-dariahNode: helsinki
-order: 7
+localOffice: src/content/local-offices/helsinki.md
 ---
-
 The institute is building a research culture that creates new multidisciplinary and inspiring research collaboration on the City Centre Campus and with partners outside the university.
