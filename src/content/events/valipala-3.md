@@ -1,11 +1,12 @@
 ---
 title: Digital Humanities Early-Career Välipala. Spring 2026
 slug: valipala-3
-startDate: '2026-05-29T13:00:00.000Z'
-endDate: '2026-05-29T14:30:00.000Z'
+startDate: 2026-05-29
+startTime: 13:00
+endDate: 2026-05-29
+endTime: 14:30
+cancelled: false
 location: University of Helsinki
 isOnline: false
-status: past
+localOffice: src/content/local-offices/helsinki.md
 ---
-
-
