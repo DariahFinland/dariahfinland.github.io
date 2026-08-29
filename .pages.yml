@@ -57,6 +57,7 @@ content:
       fields: [name, localOffice]
       primary: name
       sort: [name]
+      search: [name, localOffice]
     fields:
       - { name: name, type: string, required: true }
       - { name: logo, type: image }
@@ -82,6 +83,7 @@ content:
       fields: [name, localOffice]
       primary: name
       sort: [name]
+      search: [name, localOffice]
     fields:
       - { name: name, type: string, required: true }
       - name: accessLinks
@@ -133,10 +135,11 @@ content:
     type: collection
     path: src/content/events
     view:
-      fields: [title, startDate, cancelled]
+      fields: [title, startDate, cancelled, localOffice]
       primary: title
       sort: [startDate]
       default: { sort: startDate, order: desc }
+      search: [title, localOffice]
     fields:
       - { name: title, type: string, required: true }
       - { name: slug, type: string, required: true }
@@ -161,10 +164,11 @@ content:
     type: collection
     path: src/content/posts
     view:
-      fields: [title, publishedAt]
+      fields: [title, publishedAt, authors, categories]
       primary: title
       sort: [publishedAt]
       default: { sort: publishedAt, order: desc }
+      search: [title, authors, categories]
     fields:
       - { name: title, type: string, required: true }
       - { name: slug, type: string, required: true }
