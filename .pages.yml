@@ -106,7 +106,7 @@ content:
       - name: collaborators
         label: Collaborators
         type: reference
-        options: { collection: local-offices, multiple: true, value: "{path}" }
+        options: { collection: local-offices, multiple: true, label: "{name}", value: "{path}" }
       - { name: body, label: Description, type: rich-text }
   
   # ---------- trainings ----------
