@@ -11,6 +11,7 @@ tutorialUrl: https://youtu.be/VV7Hw_uEtHM?feature=shared
 contacts:
   - name: Eero Hyvönen
     url: https://seco.cs.aalto.fi/u/eahyvone/
+localOffice: src/content/local-offices/aalto.md
 collaborators:
   - src/content/local-offices/turku.md
   - src/content/local-offices/helsinki.md
