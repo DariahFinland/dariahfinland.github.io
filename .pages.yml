@@ -82,7 +82,7 @@ content:
       fields: [name, localOffice]
       primary: name
       sort: [name]
-      search: [name, localOffice, description]
+      search: ["name", "localOffice", "description"]
     fields:
       - { name: name, type: string, required: true }
       - name: accessLinks
