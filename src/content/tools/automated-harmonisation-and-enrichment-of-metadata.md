@@ -10,8 +10,7 @@ accessLinks:
 contacts:
   - name: Leo Lahti
     url: https://www.utu.fi/fi/ihmiset/leo-lahti
-localOffice: src/content/local-offices/turku.md
 collaborators:
-  - national-library
+  - src/content/local-offices/national-library.md
 ---
 R packages for collecting and enriching Finnish cultural heritage metadata. Includes finna R package for collecting cultural metadata using the Finna API, finto R package for enriching metadata using the Finto API, and geofi R package for geospatial analysis and visualization of metadata.
