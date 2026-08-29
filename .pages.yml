@@ -80,7 +80,7 @@ content:
     type: collection
     path: src/content/tools
     view:
-      fields: [name, localOffice]
+      fields: [name, localOffice, collaborators]
       primary: name
       sort: [name]
       search: [name, localOffice]
