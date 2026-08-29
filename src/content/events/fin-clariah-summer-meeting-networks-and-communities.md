@@ -1,14 +1,16 @@
 ---
-title: 'FIN-CLARIAH Summer meeting: Networks and communities'
+title: "FIN-CLARIAH Summer meeting: Networks and communities"
 slug: fin-clariah-summer-meeting-networks-and-communities
-startDate: '2026-06-11T16:00:00.000Z'
-endDate: '2026-06-12T14:30:00.000Z'
+startDate: 2026-06-11
+startTime: 16:00
+endDate: 2026-06-12
+endTime: 14:30
+cancelled: false
 location: Aurora building, Yliopistokatu 2, Joensuu
 isOnline: false
 registrationUrl: https://link.webropolsurveys.com/EP/ACBF9189CE773E03
-status: past
+localOffice: src/content/local-offices/eastern-finland.md
 ---
-
 The FIN-CLARIAH Summer meeting takes place in Joensuu on 11 and 12 June, 2026. This year's program brings together thematic plenary sessions and dedicated time to share ongoing work across the consortium. Our focus is on the relationships between digital materials, from texts to multimodal content and their creators, and the **networks and communities** that emerge around them.
 
 We have two invited speakers. [Ruth Ahnert](https://www.qmul.ac.uk/arts/people/academic-and-research-staff/english/ahnertr.html) is Professor of Literary History & Digital Humanities at Queen Mary University, London. She works at the crossroads of literary studies and computational linguistics, with an interest in networks.
