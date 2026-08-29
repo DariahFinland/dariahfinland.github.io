@@ -10,6 +10,7 @@ accessLinks:
 contacts:
   - name: Leo Lahti
     url: https://www.utu.fi/fi/ihmiset/leo-lahti
+localOffice: src/content/local-offices/turku.md
 collaborators:
   - src/content/local-offices/national-library.md
 ---
