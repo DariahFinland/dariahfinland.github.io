@@ -8,8 +8,6 @@ expertise:
   - image processing
 contactName: Mikko Tolonen
 contactUrl: https://researchportal.helsinki.fi/fi/persons/mikko-tolonen
-dariahNode: helsinki
-order: 3
+localOffice: src/content/local-offices/helsinki.md
 ---
-
 Helsinki Computational History Group (COMHIS) is an interdisciplinary team that studies intellectual history. The work in the group is guided by methods from various different backgrounds ranging from modern data science and machine learning to history and linguistics.
