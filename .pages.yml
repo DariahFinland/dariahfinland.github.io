@@ -83,7 +83,7 @@ content:
       fields: [name, localOffice]
       primary: name
       sort: [name]
-      search: ["name", "localOffice"]
+      search: [name, localOffice]
     fields:
       - { name: name, type: string, required: true }
       - name: accessLinks
@@ -104,6 +104,7 @@ content:
         type: reference
         options: { collection: local-offices, label: "{name}", value: "{path}" }
       - name: collaborators
+        label: Collaborators
         type: reference
         options: { collection: local-offices, multiple: true, value: "{path}" }
       - { name: body, label: Description, type: rich-text }
