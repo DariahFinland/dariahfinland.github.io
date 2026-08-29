@@ -5,6 +5,7 @@ accessLinks:
     url: https://github.com/mrgransky/DARIAH-FI
   - label: Demo
     url: https://drive.google.com/file/d/1rYT_xqot9FKourz0DUoK5mD5urzeNVDE/view
+localOffice: src/content/local-offices/tampere.md
 collaborators:
   - src/content/local-offices/csc.md
   - src/content/local-offices/helsinki.md
