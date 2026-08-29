@@ -1,13 +1,14 @@
 ---
-title: 'Fin-CLARIAH Roadshow: Interoperabilitly and Metadata Practices'
+title: "Fin-CLARIAH Roadshow: Interoperabilitly and Metadata Practices"
 slug: fin-clariah-roadshow-interoperabilitly-and-metadata-practices
-startDate: '2026-08-26T12:00:00.000Z'
-endDate: '2026-08-26T19:30:00.000Z'
+startDate: 2026-08-26
+startTime: 12:00
+endDate: 2026-08-26
+endTime: 19:30
+cancelled: false
 location: University of Oulu, Pentti Kaiteran katu 1, Oulu
 isOnline: false
-status: upcoming
 ---
-
 The event will take place on **Wednesday, 26 August 2026** at the University of Oulu, Tellus Stage. Possible updates will be notified at the [event site](https://cmc2026.org/roadshow/).
 
 To register for the Roadshow, please use [this form](https://docs.google.com/forms/d/e/1FAIpQLSfXoucHYQqG63Q7VIl2FiiSrbUDXJ88AaWQsDDu8m0UmIa9lQ/viewform?usp=dialog) (**Deadline 15.7.**). NOTE: If you are registering for the CMC2026 conference in ConfTool, please register for the Roadshow event and the reception there!
