@@ -80,10 +80,10 @@ content:
     type: collection
     path: src/content/tools
     view:
-      fields: [name, localOffice, collaborators]
+      fields: [name, localOffice]
       primary: name
       sort: [name]
-      search: [name, localOffice, collaborators]
+      search: [name, localOffice]
     fields:
       - { name: name, type: string, required: true }
       - name: accessLinks
@@ -103,10 +103,6 @@ content:
         label: Local Office
         type: reference
         options: { collection: local-offices, label: "{name}", value: "{path}" }
-      - name: collaborators
-        label: Collaborators
-        type: reference
-        options: { collection: local-offices, multiple: true, label: "{name}", value: "{path}" }
       - { name: body, label: Description, type: rich-text }
   
   # ---------- trainings ----------
