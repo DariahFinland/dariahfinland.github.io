@@ -10,8 +10,6 @@ expertise:
   - human-computer interaction
 contactName: Maria Valaste
 contactUrl: https://researchportal.helsinki.fi/fi/persons/maria-valaste
-dariahNode: helsinki
-order: 4
+localOffice: src/content/local-offices/helsinki.md
 ---
-
 The Centre for Social Data Science (CSDS) cultivates data-intensive quantitative methods for a social-science-anchored response to the datafication and digitalisation of society.
