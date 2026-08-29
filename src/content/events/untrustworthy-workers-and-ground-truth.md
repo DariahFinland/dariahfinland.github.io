@@ -1,13 +1,15 @@
 ---
-title: 'Brown Bag Seminar: “Untrustworthy” workers and “ground truth”'
+title: "Brown Bag Seminar: “Untrustworthy” workers and “ground truth”"
 slug: untrustworthy-workers-and-ground-truth
-startDate: '2026-04-15T12:00:00.000Z'
-endDate: '2026-04-15T13:00:00.000Z'
+startDate: 2026-04-15
+startTime: 12:00
+endDate: 2026-04-15
+endTime: 13:00
+cancelled: false
 location: University of Helsinki
 isOnline: false
-status: past
+localOffice: src/content/local-offices/helsinki.md
 ---
-
 Ground-truth datasets are supposed to nail down facts about the "world", so that machine-learning models trained on them will behave reliably in that same world. Yet when annotation is outsourced to crowdworkers whom engineers do not know, and often distrust, how is such reliability achieved or even imagined? Based on 27 interviews with machine learning researchers, crowdsourcing practitioners, and industry insiders, this research investigates how ground-truth datasets are stabilised.
 
 This seminar's speaker is **Laura Savolainen**, a postdoctoral researcher working at the intersection of sociology and science and technology studies. Her research examines the social and political dimensions of algorithmic systems
