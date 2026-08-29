@@ -70,7 +70,7 @@ content:
       - name: localOffice
         label: Local Office
         type: reference
-        options: { collection: local-offices, label: "{name}", value: "{id}" }
+        options: { collection: local-offices, label: "{name}", value: "{path}" }
       - { name: body, label: Description, type: rich-text }
 
   # ---------- tools ----------
@@ -100,10 +100,10 @@ content:
       - name: localOffice
         label: Local Office
         type: reference
-        options: { collection: local-offices, label: "{name}", value: "{id}" }
+        options: { collection: local-offices, label: "{name}", value: "{path}" }
       - name: collaborators
         type: reference
-        options: { collection: local-offices, multiple: true, value: "{id}" }
+        options: { collection: local-offices, multiple: true, value: "{path}" }
       - { name: body, label: Description, type: rich-text }
   
   # ---------- trainings ----------
@@ -152,7 +152,7 @@ content:
       - name: localOffice
         label: Organising office
         type: reference
-        options: { collection: local-offices, label: "{name}", value: "{id}" }
+        options: { collection: local-offices, label: "{name}", value: "{path}" }
       - { name: body, label: Description, type: rich-text }
 
   # ---------- posts ----------
@@ -172,10 +172,10 @@ content:
       - { name: heroImageAlt, type: string }
       - name: categories
         type: reference
-        options: { collection: categories, multiple: true, value: "{id}" }
+        options: { collection: categories, multiple: true, value: "{path}" }
       - name: relatedPosts
         type: reference
-        options: { collection: posts, multiple: true, value: "{id}" }
+        options: { collection: posts, multiple: true, value: "{path}" }
       - name: authors
         type: string
         list: true
@@ -266,12 +266,12 @@ content:
                 default: collection
               - name: categories
                 type: reference
-                options: { collection: categories, multiple: true, value: "{id}" }
+                options: { collection: categories, multiple: true, value: "{path}" }
               - { name: limit, type: number, default: 10 }
               - name: selectedDocs
                 label: Selected posts
                 type: reference
-                options: { collection: posts, multiple: true, value: "{id}" }
+                options: { collection: posts, multiple: true, value: "{path}" }
           - name: tabsBlock
             label: Tabs
             fields:
@@ -293,7 +293,7 @@ content:
               - name: trainings
                 label: Trainings shown in this section
                 type: reference
-                options: { collection: trainings, multiple: true, value: "{id}" }
+                options: { collection: trainings, multiple: true, value: "{path}" }
           - name: upcomingEvents
             label: Upcoming Events
             fields:
