@@ -9,6 +9,7 @@ tutorialUrl: https://youtu.be/q8kOJB6nA2M?feature=shared
 contacts:
   - name: Veronika Laippala
     url: https://www.utu.fi/fi/ihmiset/veronika-laippala
+localOffice: src/content/local-offices/turku.md
 collaborators:
   - src/content/local-offices/csc.md
 ---
