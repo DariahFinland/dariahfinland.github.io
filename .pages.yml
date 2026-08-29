@@ -121,7 +121,7 @@ content:
       - name: localOffice
         label: Local Office
         type: reference
-        options: { collection: local-offices, label: "{name}" }
+        options: { collection: local-offices, label: "{name}", value: "{path}" }
       - { name: group, type: string }
       - { name: levelTags, type: string }
       - { name: body, label: Description, type: rich-text }
