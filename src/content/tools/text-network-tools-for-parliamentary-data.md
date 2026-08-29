@@ -9,6 +9,7 @@ tutorialUrl: https://youtu.be/_5CCKOnOSfg?feature=shared
 contacts:
   - name: Kimmo Elo
     url: https://www.utu.fi/fi/ihmiset/kimmo-elo
+localOffice: src/content/local-offices/turku.md
 collaborators:
   - src/content/local-offices/aalto.md
   - src/content/local-offices/jyvaskyla.md
