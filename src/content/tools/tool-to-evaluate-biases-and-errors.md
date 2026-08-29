@@ -9,6 +9,7 @@ tutorialUrl: https://youtu.be/EVe5ZUo8tOM?feature=shared
 contacts:
   - name: Eetu Mäkelä
     url: https://researchportal.helsinki.fi/fi/persons/jarkko-ilkka-eetu-m%C3%A4kel%C3%A4
+localOffice: src/content/local-offices/helsinki.md
 collaborators:
   - src/content/local-offices/csc.md
 ---
