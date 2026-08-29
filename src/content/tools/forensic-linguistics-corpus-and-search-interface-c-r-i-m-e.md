@@ -8,10 +8,6 @@ accessLinks:
 contacts:
   - name: Steven Coats
     url: https://cc.oulu.fi/~scoats/
-developedBy:
-  - oulu
-collaborators: []
-order: 13
+localOffice: src/content/local-offices/oulu.md
 ---
-
 A structured, searchable corpus comprising audio and ASR-generated transcripts from investigative interviews, courtroom interactions, and related media.
