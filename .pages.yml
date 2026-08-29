@@ -115,6 +115,7 @@ content:
       fields: [title, group, localOffice]
       primary: title
       sort: [title]
+      search: [title, group, localOffice]
     fields:
       - { name: title, type: string, required: true }
       - { name: url, type: string }
