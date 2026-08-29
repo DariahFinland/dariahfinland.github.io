@@ -11,12 +11,9 @@ tutorialUrl: https://youtu.be/VV7Hw_uEtHM?feature=shared
 contacts:
   - name: Eero Hyvönen
     url: https://seco.cs.aalto.fi/u/eahyvone/
-developedBy:
-  - aalto
+localOffice: src/content/local-offices/aalto.md
 collaborators:
   - turku
   - helsinki
-order: 6
 ---
-
 This resource provides a framework for building customizable and responsive user interfaces for semantic portals without the necessity of having broad coding skill. Resource developed by Aalto University in partnership with the University of Turku and the University of Helsinki.
