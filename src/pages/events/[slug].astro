@@ -14,7 +14,7 @@ export async function getStaticPaths() {
 
 const { event } = Astro.props
 const { Content } = await render(event)
-const relatedNode = event.data.relatedNode ? await getEntry(event.data.relatedNode) : undefined
+const localOffice = event.data.localOffice ? await getEntry(event.data.localOffice) : undefined
 const past = isPastEvent(event.data)
 ---
 
@@ -71,11 +71,11 @@ const past = isPastEvent(event.data)
       <Content />
     </div>
 
-    {relatedNode && (
+    {localOffice && (
       <div class="mt-8 pt-6 border-t border-border">
         <p class="text-sm text-muted-foreground">
           Organised by{' '}
-          <a href={`/local-offices/${relatedNode.id}`} class="underline">{relatedNode.data.name}</a>
+          <a href={`/local-offices/${localOffice.id}`} class="underline">{localOffice.data.name}</a>
         </p>
       </div>
     )}

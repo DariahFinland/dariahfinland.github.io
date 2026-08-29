@@ -47,7 +47,6 @@ content:
           - { name: url, type: string }
           - { name: email, type: string }
           - { name: note, type: string }
-      - { name: order, type: number }
 
   # ---------- affiliated-groups ----------
   - name: affiliated-groups
@@ -71,8 +70,7 @@ content:
       - name: localOffice
         label: Local Office
         type: reference
-        options: { collection: local-offices, label: "{name}" }
-      - { name: order, type: number }
+        options: { collection: local-offices, label: "{name}", value: "{id}" }
       - { name: body, label: Description, type: rich-text }
 
   # ---------- tools ----------
@@ -102,10 +100,10 @@ content:
       - name: localOffice
         label: Local Office
         type: reference
-        options: { collection: local-offices, label: "{name}" }
+        options: { collection: local-offices, label: "{name}", value: "{id}" }
       - name: collaborators
         type: reference
-        options: { collection: local-offices, multiple: true }
+        options: { collection: local-offices, multiple: true, value: "{id}" }
       - { name: body, label: Description, type: rich-text }
   
   # ---------- trainings ----------
@@ -116,14 +114,14 @@ content:
     view:
       fields: [title, group, localOffice]
       primary: title
-      sort: [order]
+      sort: [title]
     fields:
       - { name: title, type: string, required: true }
       - { name: url, type: string }
       - name: localOffice
         label: Local Office
         type: reference
-        options: { collection: local-offices, label: "{name}" }
+        options: { collection: local-offices, label: "{name}", value: "{id}" }
       - { name: group, type: string }
       - { name: levelTags, type: string }
       - { name: body, label: Description, type: rich-text }
@@ -134,7 +132,7 @@ content:
     type: collection
     path: src/content/events
     view:
-      fields: [title, startDate, status]
+      fields: [title, startDate, cancelled]
       primary: title
       sort: [startDate]
       default: { sort: startDate, order: desc }
@@ -153,11 +151,7 @@ content:
       - name: localOffice
         label: Organising office
         type: reference
-        options: { collection: local-offices, label: "{name}" }
-      - name: status
-        type: select
-        options: { values: [upcoming, past, cancelled] }
-        default: upcoming
+        options: { collection: local-offices, label: "{name}", value: "{id}" }
       - { name: body, label: Description, type: rich-text }
 
   # ---------- posts ----------
@@ -177,10 +171,10 @@ content:
       - { name: heroImageAlt, type: string }
       - name: categories
         type: reference
-        options: { collection: categories, multiple: true }
+        options: { collection: categories, multiple: true, value: "{id}" }
       - name: relatedPosts
         type: reference
-        options: { collection: posts, multiple: true }
+        options: { collection: posts, multiple: true, value: "{id}" }
       - name: authors
         type: string
         list: true
@@ -271,12 +265,12 @@ content:
                 default: collection
               - name: categories
                 type: reference
-                options: { collection: categories, multiple: true }
+                options: { collection: categories, multiple: true, value: "{id}" }
               - { name: limit, type: number, default: 10 }
               - name: selectedDocs
                 label: Selected posts
                 type: reference
-                options: { collection: posts, multiple: true }
+                options: { collection: posts, multiple: true, value: "{id}" }
           - name: tabsBlock
             label: Tabs
             fields:
@@ -298,7 +292,7 @@ content:
               - name: trainings
                 label: Trainings shown in this section
                 type: reference
-                options: { collection: trainings, multiple: true }
+                options: { collection: trainings, multiple: true, value: "{id}" }
           - name: upcomingEvents
             label: Upcoming Events
             fields:

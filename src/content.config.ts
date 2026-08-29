@@ -169,7 +169,7 @@ const events = defineCollection({
     // body of the .md file = event description
     registrationUrl: z.string().optional(),
     featuredImage: z.string().optional(),
-    relatedNode: reference('localOffices').optional(),
+    localOffice: reference('localOffices').optional(), // renamed from relatedNode, matches .pages.yml
     // Upcoming/past is now computed at build time from startDate/endDate
     // (see src/lib/events.ts) instead of stored here -- "cancelled" is the
     // only state that genuinely can't be derived from a date.
