@@ -13,6 +13,7 @@ contacts:
     url: https://www.jyu.fi/fi/henkilot/venla-poso
   - name: Ida Toivanen
     url: https://www.jyu.fi/fi/henkilot/ida-toivanen
+localOffice: src/content/local-offices/jyvaskyla.md
 collaborators:
   - src/content/local-offices/national-archives.md
 ---
