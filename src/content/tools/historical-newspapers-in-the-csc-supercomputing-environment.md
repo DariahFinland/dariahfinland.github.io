@@ -7,15 +7,12 @@ accessLinks:
     url: https://urn.fi/urn:nbn:fi:lb-202311261
 contacts:
   - name: kk-tutkijapalvelut@helsinki.fi
-developedBy:
-  - national-library
+localOffice: src/content/local-offices/national-library.md
 collaborators:
   - csc
   - helsinki
   - turku
   - national-archives
   - jyvaskyla
-order: 10
 ---
-
 This resource allows downloading copyright-free materials from the National Library of Finland through the CSC. Resource developed by the National Library of Finland in partnership with the CSC, University of Helsinki and University of Turku.
