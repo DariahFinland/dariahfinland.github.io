@@ -1,11 +1,11 @@
 ---
 title: Solving the IIIF-puzzle - Images in Dialogue Helsinki Showcase
 slug: solving-the-iiif-puzzle-images-in-dialogue-helsinki-showcase
-startDate: '2026-05-27T09:00:00.000Z'
-endDate: '2026-05-27T16:30:00.000Z'
-location: ''
+startDate: 2026-05-27
+startTime: 09:00
+endDate: 2026-05-27
+endTime: 16:30
+cancelled: false
 isOnline: false
-status: past
+localOffice: src/content/local-offices/national-library.md
 ---
-
-
