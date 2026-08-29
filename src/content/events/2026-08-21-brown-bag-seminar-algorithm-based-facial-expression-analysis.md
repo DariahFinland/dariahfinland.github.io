@@ -8,7 +8,7 @@ endTime: 13:00
 cancelled: false
 location: University of Helsinki Main Building, Fabianinkatu 33, 3rd floor, room F3010
 isOnline: false
-status: upcoming
+localOffice: src/content/local-offices/helsinki.md
 ---
 In this talk, we present a research method that enables the automatic analysis of facial expressions from video recordings. In 2023 HSSH organized a workshop on the method that inspired its use in the context of language education and language assessment. We give two examples on how the method has been used in the Aasis project (Research Council of Finland 2023 – 2027) developing ways to automatically measure and assess verbal and nonverbal features of spoken interaction in L2 Finnish.
 
