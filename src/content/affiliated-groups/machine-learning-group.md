@@ -8,8 +8,6 @@ expertise:
   - optimizing health care applications
 contactName: Pasi Fränti
 contactUrl: https://uefconnect.uef.fi/pasi.franti/
-dariahNode: eastern-finland
-order: 10
+localOffice: src/content/local-offices/eastern-finland.md
 ---
-
 The main research areas are clustering methods, location-based services, data and web mining, and optimizing health care applications.
