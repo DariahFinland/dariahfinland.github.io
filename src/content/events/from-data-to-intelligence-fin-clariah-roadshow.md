@@ -1,16 +1,17 @@
 ---
-title: 'From Data to Intelligence: a FIN-CLARIAH Roadshow'
+title: "From Data to Intelligence: a FIN-CLARIAH Roadshow"
 slug: from-data-to-intelligence-fin-clariah-roadshow
-startDate: '2026-03-25T12:45:00.000Z'
-endDate: '2026-03-25T15:30:00.000Z'
+startDate: 2026-03-25
+startTime: 12:45
+endDate: 2026-03-25
+endTime: 15:30
+cancelled: false
 location: Aalto University, TUAS Atrium, Maarintie 8, Espoo
 isOnline: false
-status: past
 ---
-
 **"From Data to Intelligence: a FIN-CLARIAH Roadshow"** 
 
-This Roadshow event at Aalto University showcases scientific terminology work supporting researchers with the new[ language recommendations](https://www.aalto.fi/en/doctoral-education/key-terms-of-research-available-in-a-term-bank-guidelines-for-doctoral-students) now being implemented, and introduces latest related infrastructures and research. We also wish to raise awareness of the resources, services and collaboration networks offered via FIN-CLARIAH. During the event, you will learn about[ The Helsinki Term Bank for the Arts and Sciences](https://tieteentermipankki.fi/) and see how you can utilize and contribute to it. In invited talks we present Finnish ontology resources available that can be used to engineer consistent terminologies for different research purposes and applications, and local researchers present their research illustrating the relevance of concepts, terminologies and ontologies for both human sciences and engineering. More widely, we wish to foster discussion on concept-aware AI.
+This Roadshow event at Aalto University showcases scientific terminology work supporting researchers with the new [language recommendations](https://www.aalto.fi/en/doctoral-education/key-terms-of-research-available-in-a-term-bank-guidelines-for-doctoral-students) now being implemented, and introduces latest related infrastructures and research. We also wish to raise awareness of the resources, services and collaboration networks offered via FIN-CLARIAH. During the event, you will learn about [The Helsinki Term Bank for the Arts and Sciences](https://tieteentermipankki.fi/) and see how you can utilize and contribute to it. In invited talks we present Finnish ontology resources available that can be used to engineer consistent terminologies for different research purposes and applications, and local researchers present their research illustrating the relevance of concepts, terminologies and ontologies for both human sciences and engineering. More widely, we wish to foster discussion on concept-aware AI.
 
 Date: 25 March 2026, 12:45-15:30
 
