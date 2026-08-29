@@ -1,13 +1,14 @@
 ---
 title: FAIR Science Café – Arkeologiset paikkatiedot ja arkeologisen tiedon saatavuus
 slug: fair-science-cafe-arkeologiset-paikkatiedot-ja-arkeologisen-tiedon-saatavuus
-startDate: '2026-03-19T13:00:00.000Z'
-endDate: '2026-03-19T14:00:00.000Z'
-location: ''
+startDate: 2026-03-19
+startTime: 13:00
+endDate: 2026-03-19
+endTime: 14:00
+cancelled: false
 isOnline: true
-status: past
+localOffice: src/content/local-offices/csc.md
 ---
-
 **Mikä on FAIR Science Café?**
 
 FAIR Science Café on rento ja vuorovaikutteinen verkkotapahtuma, jossa tutkija saa puheenvuoron kertoakseen työstään, tutkimuksestaan ja sen tuloksista omin sanoin. Keskustelussa nostetaan esiin myös tutkimuksessa käytetty, tuotettu ja mahdollisesti avoimesti saatavilla oleva data.
@@ -27,4 +28,4 @@ Tämä tapahtuma on **suomeksi** ja sopii kaikille, joita kiinnostaa arkeologist
 
 Tule mukaan kahvittelemaan, kuulemaan ja keskustelemaan!
 
-[**Register**](https://ssl.eventilla.com/attend/edw2B?t%5Bm7o6R%5D)
+**[Register](https://ssl.eventilla.com/attend/edw2B?t%5Bm7o6R%5D)**
