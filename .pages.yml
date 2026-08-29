@@ -32,7 +32,6 @@ content:
       fields: [name]
       primary: name
       sort: [name]
-      search: [name]
     fields:
       - { name: name, type: string, required: true }
       - { name: slug, type: string, required: true }
