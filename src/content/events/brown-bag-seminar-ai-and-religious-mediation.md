@@ -1,13 +1,15 @@
 ---
-title: 'Brown Bag Seminar: AI and Religious Mediation'
+title: "Brown Bag Seminar: AI and Religious Mediation"
 slug: brown-bag-seminar-ai-and-religious-mediation
-startDate: '2026-04-08T12:00:00.000Z'
-endDate: '2026-04-08T13:00:00.000Z'
+startDate: 2026-04-08
+startTime: 12:00
+endDate: 2026-04-08
+endTime: 13:00
+cancelled: false
 location: University of Helsinki
 isOnline: false
-status: past
+localOffice: src/content/local-offices/helsinki.md
 ---
-
 This presentation by **Feeza Vasudeva** (Academy Research Fellow at the Study of Religions, University of Helsinki) introduces a concept of synthetic sacred – a configuration in which generative systems co-produce devotional, mythological, and heritage content that circulates as religiously effective media. The talk uses two empirical sites – conversational 'Godbots' and AI-generated religious imagery – to ask how such objects can be studied when they exist simultaneously as cultural forms, socio-technical systems, and sites of mediated meaning.
 
 The Methodological unit at the [Helsinki Institute for Humanities and Social Sciences](https://www.helsinki.fi/en/helsinki-institute-social-sciences-and-humanities) (Uni Helsinki) organizes a recurrent Brown Bag Seminar to highlight novel methodological approaches in the humanities and social sciences. The idea of the meetings is to introduce methodological innovations and cutting-edge research in various disciplines in an easily accessible manner and have an interdisciplinary discussion in an easy-going atmosphere over lunch.
