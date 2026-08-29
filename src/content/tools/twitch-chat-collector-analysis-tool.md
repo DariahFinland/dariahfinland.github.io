@@ -9,8 +9,7 @@ contacts:
     url: https://www.jyu.fi/fi/henkilot/raine-koskimaa
   - name: Jari Lindroos
     url: https://www.jyu.fi/fi/henkilot/jari-lindroos
-localOffice: src/content/local-offices/jyvaskyla.md
 collaborators:
-  - tampere
+  - src/content/local-offices/tampere.md
 ---
 This resource collects chat data from the live stream service Twitch and YouTube. The tools sidebar contains multiple ways to collect data, but also sections for chat content classification based on machine learning and video clip analysis based on Multimodal Large Language Models. Resource developed by the University of Jyväskylä with collaboration from Tampere University.
