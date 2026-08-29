@@ -9,8 +9,7 @@ tutorialUrl: https://youtu.be/EVe5ZUo8tOM?feature=shared
 contacts:
   - name: Eetu Mäkelä
     url: https://researchportal.helsinki.fi/fi/persons/jarkko-ilkka-eetu-m%C3%A4kel%C3%A4
-localOffice: src/content/local-offices/helsinki.md
 collaborators:
-  - csc
+  - src/content/local-offices/csc.md
 ---
 This resource provides tools for subsetting and evaluating datasets that have not originally been created for research. Researchers will be able to robustly explore large datasets, examine their representativeness, and extract the subset they are interested in. Resource developed by the University of Helsinki (ARTS) in partnership with the CSC.
