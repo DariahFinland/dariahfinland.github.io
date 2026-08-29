@@ -9,6 +9,7 @@ tutorialUrl: https://youtu.be/9QYKQ1IYIjQ?feature=shared
 contacts:
   - name: Leo Lahti
     url: https://www.utu.fi/fi/ihmiset/leo-lahti
+localOffice: src/content/local-offices/turku.md
 collaborators:
   - src/content/local-offices/helsinki.md
   - src/content/local-offices/national-library.md
