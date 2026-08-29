@@ -7,6 +7,7 @@ accessLinks:
     url: https://urn.fi/urn:nbn:fi:lb-202311261
 contacts:
   - name: kk-tutkijapalvelut@helsinki.fi
+localOffice: src/content/local-offices/national-library.md
 collaborators:
   - src/content/local-offices/csc.md
   - src/content/local-offices/helsinki.md
