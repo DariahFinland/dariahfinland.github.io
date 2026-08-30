@@ -4,15 +4,17 @@ slug: from-hackathon-to-publication-bookmarking-emotional-memories
 heroImage: /media/poster-slam-oral-history-e1780301256616.jpg
 heroImageAlt: poster slam oral history
 categories:
-  - news-and-blogs
-publishedAt: 2026-06-01
+  - src/content/categories/news-and-blogs.md
+publishedAt: '2026-06-01'
 meta:
   title: From Hackathon to publication - Bookmarking Emotional Memories – DARIAH-FI
-  description: The 10th DHH (Digital Humanities Hackathon 2025) challenged
-    students for the first time to examine oral history interviews. A year
-    later, an article has been published presenting this work.
+  description: >-
+    The 10th DHH (Digital Humanities Hackathon 2025) challenged students for the first time to
+    examine oral history interviews. A year later, an article has been published presenting this
+    work.
   image: /media/poster-slam-oral-history-e1780301256616.jpg
 ---
+
 The 10th DHH (Digital Humanities Hackathon 2025) challenged students for the first time to examine oral history interviews. A year later, an article has been published presenting this work.
 
 **How will I capture this moment?** Multiple times I have asked myself this question. As ethnographer I have witnessed emotional moments. While doing fieldwork in a history class, students closed a month-long review to Europe's colonial history with several minutes of silence; "kids are struggling with this, all are looking at their desks, faces look as if they were having trouble swallowing or stomach ache" is jotted in my field diary. On other occasion, during an interview with a history teacher, I added the following annotation in a transcript "closes hand into fist" as immediate reaction to my question of how he was coping with all the digital competence they were supposed to be teaching. On emotional moments, my *modus operandi* is always the same, quick glance at the recording time, and as soon as the mood shifts, I jot what I saw. Expressions of emotion are among the most valuable findings qualitative researchers encounter and return to.

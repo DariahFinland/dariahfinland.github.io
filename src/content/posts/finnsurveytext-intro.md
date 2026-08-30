@@ -4,9 +4,9 @@ heroImage: /media/1_finnsurveytext-LOGO-e1751008263275.png
 heroImageAlt: 1 finnsurveytext LOGO e1751008263275
 relatedPosts: []
 categories:
-  - news-and-blogs
+  - src/content/categories/news-and-blogs.md
 authors: []
-publishedAt: 2024-03-19
+publishedAt: '2024-03-19'
 meta:
   title: 'FinnSurveyText: Tool for open-ended survey questions in Finnish – DARIAH-FI'
   description: >-
@@ -15,6 +15,7 @@ meta:
   image: /media/1_finnsurveytext-LOGO-e1751008263275.png
 slug: finnsurveytext-intro
 ---
+
 
 **The makers of FinnSurveyText introduce the resource through a demo guide and describe the process of creating an open-source tool for research.**
 

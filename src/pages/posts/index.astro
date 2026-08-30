@@ -1,7 +1,8 @@
 ---
 // src/pages/posts/index.astro
-import { getCollection, getEntry } from 'astro:content'
+import { getCollection } from 'astro:content'
 import BaseLayout from '../../layouts/BaseLayout.astro'
+import { resolveRefs } from '../../lib/references'
 
 const posts = (await getCollection('posts')).sort(
   (a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf(),
@@ -10,17 +11,15 @@ const posts = (await getCollection('posts')).sort(
 // Resolve each post's category references into titles for the card labels
 const cards = await Promise.all(
   posts.map(async (post) => {
-    const cats = post.data.categories
-      ? await Promise.all(post.data.categories.map((c) => getEntry(c)))
-      : []
-    return { post, categoryTitles: cats.filter((c) => c !== undefined).map((c) => c.data.title) }
+    const cats = await resolveRefs('categories', post.data.categories)
+    return { post, categoryTitles: cats.map((c) => c.data.title) }
   }),
 )
 ---
 
 <BaseLayout title="News and Blogs">
-  <div class="container mb-8 my-16">
-    <h1 class="mb-6">News and Blogs</h1>
+  <div class="container mb-8 mt-16">
+    <h1>News and Blogs</h1>
   </div>
 
   <div class="container">
@@ -32,7 +31,7 @@ const cards = await Promise.all(
             class="block h-full border border-border rounded-lg overflow-hidden bg-card hover:cursor-pointer"
             style="text-decoration: none;"
           >
-            {post.data?.heroImage && <img class="w-full" src={post.data.heroImage} alt="" />}
+            {post.data.meta?.image && <img class="w-full" src={post.data.meta.image} alt="" />}
             <div class="p-4">
               {categoryTitles.length > 0 && (
                 <div class="uppercase text-sm mb-4">{categoryTitles.join(', ')}</div>

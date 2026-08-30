@@ -59,7 +59,7 @@ const tabButtonClass = (active: boolean) =>
       ) : (
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {past.map((event) => (
-            <a href={`/events/${event.id}`} class="block border border-border rounded-md p-4 bg-card hover:bg-muted transition-colors">
+            <a href={`/events/${event.id}`} class="block border border-border rounded-md p-4 bg-card hover:bg-muted transition-colors" style="text-decoration: none;">
               <p class="text-sm text-muted-foreground mb-1">
                 {formatEventDate(event.data.startDate, {
                   startTime: event.data.startTime,

@@ -6,9 +6,9 @@ heroImage: /media/The-Turk.png
 heroImageAlt: The Turk
 relatedPosts: []
 categories:
-  - news-and-blogs
+  - src/content/categories/news-and-blogs.md
 authors: []
-publishedAt: 2024-02-09
+publishedAt: '2024-02-09'
 meta:
   title: >-
     We don’t want to leave this at the hands of computer scientists... an interview with Mikko
@@ -19,6 +19,7 @@ meta:
   image: /media/The-Turk.png
 slug: we-dont-want-to-leave-this-at-the-hands-of-computer-scientists-an-interview-with-mikko-laitinen
 ---
+
 
 Recently I had a very interesting conversation with Mikko Laitinen, Professor of sociolinguistics at the University of Eastern Finland and a partner in DARIAH-FI. He is leading the DARIAH FI working group that will improve [analytical frameworks for computational humanities and social sciences](https://www.dariah.fi/analytical-support/). His own research group at UEF is making accessible Twitter data collected for research purposes from the last decade. The closing of the API due to the recent changes in management of the former Twitter (now X), makes this corpus particularly interesting. In this interview we uncover what research-based infrastructure development means and dive deep into social media research, what questions can be posed to Twitter/X data, its limits, and dip our toes into future challenges and ethical aspects of social media research.
 

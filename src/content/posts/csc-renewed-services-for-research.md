@@ -7,10 +7,10 @@ heroImageAlt: >-
   for historical research
 relatedPosts: []
 categories:
-  - csc-it-center-for-science
-  - news-and-blogs
+  - src/content/categories/csc-it-center-for-science.md
+  - src/content/categories/news-and-blogs.md
 authors: []
-publishedAt: 2025-05-08
+publishedAt: '2025-05-08'
 meta:
   title: CSC renewed services for research – DARIAH-FI
   description: CSC renewed Services for Research available at https://research.csc.fi/
@@ -18,6 +18,7 @@ meta:
     /media/DALL·E-2025-02-27-10.43.22-A-cartoon-illustration-depicting-a-cloud-computing-environment-designed-for-historical-research.webp
 slug: csc-renewed-services-for-research
 ---
+
 
 CSC renewed Services for Research available at [https://research.csc.fi/](https://research.csc.fi/) 
 

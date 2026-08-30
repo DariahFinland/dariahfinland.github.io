@@ -4,9 +4,9 @@ heroImage: /media/dariah-fi-building-digital-research-infrastructures-scaled-1.j
 heroImageAlt: dariah fi building digital research infrastructures scaled 1
 relatedPosts: []
 categories:
-  - news-and-blogs
+  - src/content/categories/news-and-blogs.md
 authors: []
-publishedAt: 2024-02-22
+publishedAt: '2024-02-22'
 meta:
   title: DARIAH-FI Season 2 opening meeting – DARIAH-FI
   description: >-
@@ -15,6 +15,7 @@ meta:
   image: /media/dariah-fi-building-digital-research-infrastructures-scaled-1.jpg
 slug: dariah-fi-season-2-opening-meeting
 ---
+
 
 On Friend's Day, as Finns know Valentine's Day, all partners of the DARIAH-FI consortium gathered on Zoom for the first time in its renewed configuration. Here is an overview of the plan ahead, as it was presented by participants. I have done my best to bring the workplan and the teams behind it under one roof, in this blog post, but also with [the image above](http://www.dariah.fi/wp-content/uploads/2024/02/dariah-fi-building-digital-research-infrastructures-scaled.jpg). This is how I see DARIAH-FI at its present stage, as a building that hosts highly diverse expertise and heterogeneous data, but also teams of people which I visualize in these virtual offices with open doors, connected through corridors and elevators…
 

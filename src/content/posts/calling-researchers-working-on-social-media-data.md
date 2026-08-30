@@ -4,15 +4,16 @@ heroImage: /media/so-me-network-photo-scaled-e1726571922329.jpg
 heroImageAlt: so me network photo scaled e1726571922329
 relatedPosts: []
 categories:
-  - news-and-blogs
+  - src/content/categories/news-and-blogs.md
 authors: []
-publishedAt: 2024-09-17
+publishedAt: '2024-09-17'
 meta:
   title: Calling researchers working on social media data! – DARIAH-FI
   description: Survey on the current state of research using social media data in Finland.
   image: /media/so-me-network-photo-scaled-e1726571922329.jpg
 slug: calling-researchers-working-on-social-media-data
 ---
+
 
 **Survey on the current state of research using social media data in Finland.** 
 

@@ -4,9 +4,9 @@ heroImage: /media/Eduskunnan-istunto-Palokunnan-talon-juhlasalissa1.jpg
 heroImageAlt: Eduskunnan istunto Palokunnan talon juhlasalissa1
 relatedPosts: []
 categories:
-  - news-and-blogs
+  - src/content/categories/news-and-blogs.md
 authors: []
-publishedAt: 2023-03-27
+publishedAt: '2023-03-27'
 meta:
   title: ParlamenttiSampo - A Student's POV – DARIAH-FI
   description: >-
@@ -15,6 +15,7 @@ meta:
   image: /media/Eduskunnan-istunto-Palokunnan-talon-juhlasalissa1.jpg
 slug: parlamenttisampo-a-students-pov
 ---
+
 
 #### A Word from the Writer
 

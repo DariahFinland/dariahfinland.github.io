@@ -4,9 +4,9 @@ heroImage: /media/roadshow-vaasa-thumbnail.png
 heroImageAlt: roadshow vaasa thumbnail
 relatedPosts: []
 categories:
-  - news-and-blogs
+  - src/content/categories/news-and-blogs.md
 authors: []
-publishedAt: 2025-04-27
+publishedAt: '2025-04-27'
 meta:
   title: 'FIN-CLARIAH Roadshow in Vaasa: Some take-outs – DARIAH-FI'
   description: >-
@@ -15,6 +15,7 @@ meta:
   image: /media/roadshow-vaasa-thumbnail.png
 slug: fin-clariah-roadshow-in-vaasa-some-take-outs
 ---
+
 
 FIN-CLARIAH organised a roadshow event in Vaasa on March 14th, where some 20 local researchers, teachers and students learned about some of the central resources and tools for social science and humanities (SSH) research, with special emphasis on acquiring, processing and depositing born-digital data. From the University of Vaasa, the Natureach project will join the event with a presentation of AR/VR data and its analysis. In the following you can read a summary of presentations ([**watch the recording here**](https://uwasa.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=4126161d-521f-44ca-9c22-b2a100ee2db1)) and on the bottom I provide a summary of the discussion.
 

@@ -4,9 +4,9 @@ heroImage: /media/20240517_dhh24_presentations-scaled-1.jpg
 heroImageAlt: 20240517 dhh24 presentations scaled 1
 relatedPosts: []
 categories:
-  - news-and-blogs
+  - src/content/categories/news-and-blogs.md
 authors: []
-publishedAt: 2024-05-30
+publishedAt: '2024-05-30'
 meta:
   title: Helsinki DH Hackathon - a summary – DARIAH-FI
   description: >-
@@ -15,6 +15,7 @@ meta:
   image: /media/20240517_dhh24_presentations-scaled-1.jpg
 slug: helsinki-dh-hackathon-a-summary
 ---
+
 
 **Here is a review to the past week's DH Hackathon in Helsinki, with the main take-outs on each of the projects.**
 

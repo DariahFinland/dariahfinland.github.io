@@ -1,12 +1,13 @@
 ---
 // src/pages/local-offices/[slug].astro
 //
-// Lists affiliated groups, tools, and trainings tied to this office, now
-// via each collection's own explicit `localOffice` field (previously
-// affiliated-groups used `dariahNode` and tools used a list `developedBy` --
-// both are gone, replaced by a single, consistently-named field).
+// Lists affiliated groups, tools, and trainings tied to this office, via
+// each collection's own `localOffice` field. These are now plain strings
+// (see src/lib/references.ts) rather than astro:content reference() --
+// refEquals()/refsInclude() handle comparing them against this office's id.
 import { getCollection, render } from 'astro:content'
 import BaseLayout from '../../layouts/BaseLayout.astro'
+import { refEquals, refsInclude } from '../../lib/references'
 
 export async function getStaticPaths() {
   const offices = await getCollection('localOffices')
@@ -20,7 +21,7 @@ const { office } = Astro.props
 
 const allGroups = await getCollection('affiliatedGroups')
 const groups = allGroups
-  .filter((g) => g.data.localOffice?.id === office.id)
+  .filter((g) => refEquals(g.data.localOffice, office.id))
   .sort((a, b) => a.data.name.localeCompare(b.data.name))
 const groupsWithContent = await Promise.all(
   groups.map(async (g) => ({ group: g, Content: (await render(g)).Content })),
@@ -28,11 +29,7 @@ const groupsWithContent = await Promise.all(
 
 const allTools = await getCollection('tools')
 const tools = allTools
-  .filter(
-    (t) =>
-      t.data.localOffice?.id === office.id ||
-      t.data.collaborators?.some((ref) => ref.id === office.id),
-  )
+  .filter((t) => refEquals(t.data.localOffice, office.id) || refsInclude(t.data.collaborators, office.id))
   .sort((a, b) => a.data.name.localeCompare(b.data.name))
 const toolsWithContent = await Promise.all(
   tools.map(async (t) => ({ tool: t, Content: (await render(t)).Content })),
@@ -40,7 +37,7 @@ const toolsWithContent = await Promise.all(
 
 const allTrainings = await getCollection('trainings')
 const trainings = allTrainings
-  .filter((t) => t.data.localOffice?.id === office.id)
+  .filter((t) => refEquals(t.data.localOffice, office.id))
   .sort((a, b) => a.data.title.localeCompare(b.data.title))
 const trainingsWithContent = await Promise.all(
   trainings.map(async (t) => ({ training: t, Content: (await render(t)).Content })),

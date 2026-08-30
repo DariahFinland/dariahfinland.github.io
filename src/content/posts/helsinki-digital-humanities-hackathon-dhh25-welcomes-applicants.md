@@ -4,9 +4,9 @@ heroImage: /media/DHH25-1.png
 heroImageAlt: DHH25 1
 relatedPosts: []
 categories:
-  - news-and-blogs
+  - src/content/categories/news-and-blogs.md
 authors: []
-publishedAt: 2025-03-27
+publishedAt: '2025-03-27'
 meta:
   title: 'Helsinki Digital Humanities Hackathon #DHH25 welcomes applicants – DARIAH-FI'
   description: >-
@@ -15,6 +15,7 @@ meta:
   image: /media/DHH25-1.png
 slug: helsinki-digital-humanities-hackathon-dhh25-welcomes-applicants
 ---
+
 
 Join us to celebrate the 10th anniversary of the award-winning Helsinki Digital Humanities Hackathon 2025—an exciting chance to collaborate, innovate and push your own boundaries. The application period has started (until 12.4.2025) – apply now and be part of this milestone event!
 

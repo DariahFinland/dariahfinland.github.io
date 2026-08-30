@@ -4,9 +4,9 @@ heroImage: /media/hack2-copy.jpg.webp
 heroImageAlt: hack2 copy.jpg
 relatedPosts: []
 categories:
-  - news-and-blogs
+  - src/content/categories/news-and-blogs.md
 authors: []
-publishedAt: 2026-05-20
+publishedAt: '2026-05-20'
 meta:
   title: 'Presentation of #DHH26 Hackathon projects on May 29, 2026 – DARIAH-FI'
   description: >-
@@ -15,6 +15,7 @@ meta:
   image: /media/hack2-copy.jpg.webp
 slug: presentation-of-dhh26-hackathon-projects-on-may-29-2026
 ---
+
 
 Helsinki Digital Humanities Hackathon starts today at the University of Helsinki. This 10-day event brings together students and researchers in the humanities, social sciences and computer science to collaborate in a DH project from start to end. A public presentation of the projects will take place on 29 May 2026.
 

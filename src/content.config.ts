@@ -16,8 +16,13 @@
 //    nested ones inside object/list fields, so this is editable, just not as
 //    the "body" of the file for those nested cases.
 //
-// 2. Relationships -> reference().
-//    Payload's `relationship` fields become Astro's reference(), which points
+// 2. Relationships -> plain strings, resolved by hand.
+//    Payload's `relationship` fields are plain string slugs here (not
+//    astro:content's reference() type) -- PagesCMS's reference field only
+//    works correctly when configured with value: "{path}", which stores
+//    the full file path rather than a bare slug. Rather than fight that,
+//    every relationship field is a plain string/string array, and
+//    src/lib/references.ts resolves them by hand at render time.
 //    at another collection entry by its slug/id. PagesCMS renders these as a
 //    picker field if you set type: "reference" pointing at the right collection
 //    in .pages.yml.
@@ -40,7 +45,7 @@
 //
 // 6. FormBlock is dropped entirely (confirmed not needed for this site).
 
-import { defineCollection, reference, z } from 'astro:content'
+import { defineCollection, z } from 'astro:content'
 import { glob, file } from 'astro/loaders'
 
 // ---------- Shared field helpers ----------
@@ -92,9 +97,9 @@ const blockSchema = z.discriminatedUnion('blockType', [
     blockType: z.literal('archive'),
     introRichText: z.string().optional(),
     populateBy: z.enum(['collection', 'selection']).default('collection'),
-    categories: z.array(reference('categories')).optional(),
+    categories: z.array(z.string()).optional(),
     limit: z.number().default(10),
-    selectedDocs: z.array(reference('posts')).optional(),
+    selectedDocs: z.array(z.string()).optional(),
   }),
   z.object({
     blockType: z.literal('tabsBlock'),
@@ -115,7 +120,7 @@ const blockSchema = z.discriminatedUnion('blockType', [
     // Explicit selection, not "all trainings" -- a page can have more than
     // one trainingSections block (e.g. one per university), and each needs
     // to show only its own subset.
-    trainings: z.array(reference('trainings')).optional(),
+    trainings: z.array(z.string()).optional(),
   }),
   z.object({
     blockType: z.literal('upcomingEvents'),
@@ -146,8 +151,8 @@ const posts = defineCollection({
     heroImage: z.string().optional(),
     heroImageAlt: z.string().optional(),
     // body of the .md file itself = the post's main rich text content
-    relatedPosts: z.array(reference('posts')).optional(),
-    categories: z.array(reference('categories')).optional(),
+    relatedPosts: z.array(z.string()).optional(),
+    categories: z.array(z.string()).optional(),
     authors: z.array(z.string()).optional(),
     publishedAt: z.coerce.date(),
     meta: metaSchema.optional(),
@@ -169,7 +174,7 @@ const events = defineCollection({
     // body of the .md file = event description
     registrationUrl: z.string().optional(),
     featuredImage: z.string().optional(),
-    localOffice: reference('localOffices').optional(), // renamed from relatedNode, matches .pages.yml
+    localOffice: z.string().optional(), // renamed from relatedNode, matches .pages.yml
     // Upcoming/past is now computed at build time from startDate/endDate
     // (see src/lib/events.ts) instead of stored here -- "cancelled" is the
     // only state that genuinely can't be derived from a date.
@@ -209,7 +214,7 @@ const affiliatedGroups = defineCollection({
     expertise: z.array(z.string()).optional(),
     contactName: z.string().optional(),
     contactUrl: z.string().optional(),
-    localOffice: reference('localOffices').optional(), // renamed from dariahNode
+    localOffice: z.string().optional(), // renamed from dariahNode
   }),
 })
 
@@ -235,8 +240,8 @@ const tools = defineCollection({
         }),
       )
       .optional(),
-    localOffice: reference('localOffices').optional(), // replaces developedBy (was a list; now a single office)
-    collaborators: z.array(reference('localOffices')).optional(),
+    localOffice: z.string().optional(), // replaces developedBy (was a list; now a single office)
+    collaborators: z.array(z.string()).optional(),
   }),
 })
 
@@ -256,7 +261,7 @@ const trainings = defineCollection({
     // Section this training belongs to on the page (was groups[].levelLabel)
     group: z.string().optional(),
     levelTags: z.string().optional(),
-    localOffice: reference('localOffices').optional(),
+    localOffice: z.string().optional(),
     // description lives in the file's body, same convention as posts/events/tools
   }),
 })

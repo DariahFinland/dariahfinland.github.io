@@ -6,9 +6,9 @@ heroImage: /media/darah-blog-header-5.png
 heroImageAlt: darah blog header 5
 relatedPosts: []
 categories:
-  - news-and-blogs
+  - src/content/categories/news-and-blogs.md
 authors: []
-publishedAt: 2025-10-02
+publishedAt: '2025-10-02'
 meta:
   title: >-
     Finnish 19th-Century Letters on the Semantic Web: LetterSampo Finland openly available for
@@ -20,6 +20,7 @@ meta:
 slug: >-
   finnish-19th-century-letters-on-the-semantic-web-lettersampo-finland-openly-available-for-digital-humanities-research
 ---
+
 
 A major Finnish research project "Constellations of Correspondence 2022-2025 (CoCo)" by the Finnish Literature Society (SKS), University of Helsinki, Helsinki Centre for Digital Humanities (HELDIG), and Aalto University, Department of Computer Science, has now been finalized, based on collections of 16 Finnish Cultural Heritage organizations, over 1600 fonds, and four earlier online critical editions of prominent Finns (A. Edelfelt, E. Lönnrot, J. V. Snellman, and Z. Topelius). The project's major result is the new LetterSampo Finland portal [https://kirjesampo.fi](https://kirjesampo.fi) and its underlying Linked Open Data service [https://www.ldf.fi/dataset/coco](https://www.ldf.fi/dataset/coco) of about 1.3 million letters of the 19th century Grand Duchy of Finland era, including 116 000 related people and organizations – this is arguably the largest epistolary web service of its kind in the world.
 

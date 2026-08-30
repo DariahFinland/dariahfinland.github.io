@@ -53,14 +53,15 @@ layout:
     introRichText: '## News and Blogs'
     populateBy: collection
     categories:
-      - news-and-blogs
+      - src/content/categories/news-and-blogs.md
     limit: 3
     selectedDocs: []
 meta:
   title: Home - DARIAH-FI
-  description: 'Infrastructure for Data-Intensive Social Science and Humanities Research'
+  description: Infrastructure for Data-Intensive Social Science and Humanities Research
 publishedAt: '2026-08-08T18:28:34.184Z'
 slug: home
 ---
+
 
 

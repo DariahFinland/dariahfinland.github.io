@@ -4,17 +4,17 @@ slug: clouds-of-metadata-dariah-and-the-european-cultural-heritage-ecosystem
 heroImage: /media/darah-blog-header-6.png
 heroImageAlt: clouds-of-metadata
 categories:
-  - blog
-  - news-and-blogs
-publishedAt: 2025-07-03
+  - src/content/categories/blog.md
+  - src/content/categories/news-and-blogs.md
+publishedAt: '2025-07-03'
 meta:
-  title: Clouds of (meta)data… DARIAH and the European Cultural Heritage Ecosystem
-    – DARIAH-FI
-  description: The eve of the DARIAH Annual event was dedicated to working groups
-    that act as research networks across Europe for diverse fields. Working
-    groups are the…
+  title: Clouds of (meta)data… DARIAH and the European Cultural Heritage Ecosystem – DARIAH-FI
+  description: >-
+    The eve of the DARIAH Annual event was dedicated to working groups that act as research networks
+    across Europe for diverse fields. Working groups are the…
   image: /media/darah-blog-header-6.png
 ---
+
 The eve of the DARIAH Annual event was dedicated to [working groups](https://www.dariah.eu/activities/working-groups-list/) that act as research networks across Europe for diverse fields. Working groups are the main mechanism to benefit from the DARIAH ERIC, both financially and by enabling collaboration among infrastructure-oriented SSH scholars and experts. As the main theme of this year's Annual event was "The past", in this post from the [DARIAH Annual event series](https://www.dariah.fi/category/news-and-blogs/?tag=dariah-annual-event), we report on initiatives and groups that aim to facilitate access to and re-use of cultural heritage data.
 
 The European Cultural Heritage Cloud (ECCCH) is a shared platform designed to provide heritage professionals and researchers with access to data, scientific resources, training, and advanced digital tools. This platform is built by the [ECHOES project](https://www.echoes-eccch.eu/) (European Cloud for Heritage Open Science) that held a workshop at the Annual event to prototype their take on [empathy maps](https://en.wikipedia.org/wiki/Empathy_map). These are design tools aimed at understanding users from an affective viewpoint. In this case, the idea was that these empathy map templates / the empathy mapping process will be used to source requirements for tools built on top of the ECCCH, as it was thought it would be easier to get end-users engaged by asking them to answer affective questions as opposed to asking them to list dull requirements.

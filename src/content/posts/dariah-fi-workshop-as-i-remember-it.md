@@ -4,9 +4,9 @@ heroImage: /media/DARIAH-FI-WORKSHOP-figure-1.png
 heroImageAlt: DARIAH FI WORKSHOP figure 1
 relatedPosts: []
 categories:
-  - news-and-blogs
+  - src/content/categories/news-and-blogs.md
 authors: []
-publishedAt: 2023-06-21
+publishedAt: '2023-06-21'
 meta:
   title: 'DARIAH-FI Workshop: As I Remember It – DARIAH-FI'
   description: >-
@@ -15,6 +15,7 @@ meta:
   image: /media/DARIAH-FI-WORKSHOP-figure-1.png
 slug: dariah-fi-workshop-as-i-remember-it
 ---
+
 
 ### Introduction
 

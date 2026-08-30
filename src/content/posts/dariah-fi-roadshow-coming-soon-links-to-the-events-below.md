@@ -7,17 +7,19 @@ heroImageAlt: >-
   von Wright with sunglasses on the road towards the sun 1
 relatedPosts: []
 categories:
-  - news-and-blogs
+  - src/content/categories/news-and-blogs.md
 authors: []
-publishedAt: 2022-10-17
+publishedAt: '2022-10-17'
 meta:
   title: DARIAH-FI ROADSHOW COMING SOON (links to the events below) – DARIAH-FI
   description: >-
-    Starting in November -22, DARIAH-FI will tour around Finland to introduce our services for both individual researchers and for the wider research community.
+    Starting in November -22, DARIAH-FI will tour around Finland to introduce our services for both
+    individual researchers and for the wider research community.
   image: >-
     /media/DALL·E-2022-10-17-09.24.54-Pointillist-painting-of-Michel-Foucault-Donna-Haraway-and-Georg-Henrik-von-Wright-with-sunglasses-on-the-road-towards-the-sun-1.png
 slug: dariah-fi-roadshow-coming-soon-links-to-the-events-below
 ---
+
 
 *(Image: This is what AI (https://openai.com/dall-e-2/) produced when I asked it to create a pointillist painting of Michel Foucault, Donna Haraway and Georg Henrik von Wright with sunglasses on the road towards the sun.)*
 

@@ -4,10 +4,10 @@ heroImage: /media/20260325-FINCLARIAH-roadshow-aalto-scaled.jpg
 heroImageAlt: 20260325 FINCLARIAH roadshow aalto scaled
 relatedPosts: []
 categories:
-  - aalto-university
-  - news-and-blogs
+  - src/content/categories/aalto-university.md
+  - src/content/categories/news-and-blogs.md
 authors: []
-publishedAt: 2026-03-26
+publishedAt: '2026-03-26'
 meta:
   title: From data to intelligence - A FIN-CLARIAH Roadshow at Aalto University – DARIAH-FI
   description: >-
@@ -16,6 +16,7 @@ meta:
   image: /media/20260325-FINCLARIAH-roadshow-aalto-scaled.jpg
 slug: from-data-to-intelligence-a-fin-clariah-roadshow-at-aalto-university
 ---
+
 
 In this report we gather important references to services and use cases that illustrate Terminology work as a resource for improving visibility of research outputs and to produce reliable data-analysis tools. These were recently introduced to a small but interested live-audience at Aalto University.
 

@@ -4,10 +4,10 @@ heroImage: /media/darah-blog-header-4-1.png
 heroImageAlt: darah blog header 4 1
 relatedPosts: []
 categories:
-  - blog
-  - news-and-blogs
+  - src/content/categories/blog.md
+  - src/content/categories/news-and-blogs.md
 authors: []
-publishedAt: 2026-03-04
+publishedAt: '2026-03-04'
 meta:
   title: Use Cases, data publications and guidelines -  DARIAH-FI virtual library – DARIAH-FI
   description: >-
@@ -16,6 +16,7 @@ meta:
   image: /media/darah-blog-header-4-1.png
 slug: use-cases-data-publications-and-guidelines-dariah-fi-virtual-library
 ---
+
 
 We are glad to introduce this month the recently created DARIAH-FI library
 

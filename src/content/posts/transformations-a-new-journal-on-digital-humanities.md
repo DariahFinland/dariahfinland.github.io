@@ -4,9 +4,9 @@ heroImage: /media/transformations-journal_banner-1.png
 heroImageAlt: transformations journal banner 1
 relatedPosts: []
 categories:
-  - news-and-blogs
+  - src/content/categories/news-and-blogs.md
 authors: []
-publishedAt: 2024-08-07
+publishedAt: '2024-08-07'
 meta:
   title: TRANSFORMATIONS a new journal on digital humanities – DARIAH-FI
   description: >-
@@ -15,6 +15,7 @@ meta:
   image: /media/transformations-journal_banner-1.png
 slug: transformations-a-new-journal-on-digital-humanities
 ---
+
 
 [*Transformations: A DARIAH Journal*](https://transformations.episciences.org) is dedicated to providing a trusted, non-commercial platform for documenting various methodological and research activities in arts and humanities, including data gathering and processing, annotation and modeling, analysis and interpretation.
 

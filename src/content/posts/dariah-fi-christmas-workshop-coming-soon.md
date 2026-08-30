@@ -4,15 +4,16 @@ heroImage: /media/DARIAH-FI-WORKSHOP-Featured-Image.jpg
 heroImageAlt: DARIAH FI WORKSHOP Featured Image
 relatedPosts: []
 categories:
-  - news-and-blogs
+  - src/content/categories/news-and-blogs.md
 authors: []
-publishedAt: 2023-10-16
+publishedAt: '2023-10-16'
 meta:
   title: DARIAH-FI Christmas Workshop Coming Soon! – DARIAH-FI
   description: Dear Stranger, you are warmly invited to the DARIAH-FI Christmas Workshop on December 19
   image: /media/DARIAH-FI-WORKSHOP-Featured-Image.jpg
 slug: dariah-fi-christmas-workshop-coming-soon
 ---
+
 
 Dear Stranger,
 

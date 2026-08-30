@@ -4,9 +4,9 @@ heroImage: /media/dariah-roadshowjpg-scaled-1.jpg
 heroImageAlt: dariah roadshowjpg scaled 1
 relatedPosts: []
 categories:
-  - news-and-blogs
+  - src/content/categories/news-and-blogs.md
 authors: []
-publishedAt: 2023-03-10
+publishedAt: '2023-03-10'
 meta:
   title: Three Lessons from the Road – DARIAH-FI
   description: >-
@@ -15,6 +15,7 @@ meta:
   image: /media/dariah-roadshowjpg-scaled-1.jpg
 slug: lessons-from-the-road
 ---
+
 
 DARIAH-FI Roadshow has been touring in Tampere, Jyväskylä, Joensuu, Helsinki, and Turku. The goal was to meet those people we try to serve: humanists and social scientists from every corner of the country. We are a new research infrastructure, so not everyone knows us yet in Finland. A lot of sparkling wine has been poured down the throat in various locations, and now it is good time to sum up what we have learned from the trip so far. There are at minimum three serious lessons for our research infrastructure.
 

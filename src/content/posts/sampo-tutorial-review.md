@@ -4,9 +4,9 @@ heroImage: /media/20241128_sampo-tutorial-lod.jpg
 heroImageAlt: 20241128 sampo tutorial lod
 relatedPosts: []
 categories:
-  - news-and-blogs
+  - src/content/categories/news-and-blogs.md
 authors: []
-publishedAt: 2025-01-22
+publishedAt: '2025-01-22'
 meta:
   title: 'Sampo Tutorial: From Semantic Web Technologies to Your Own Portal – DARIAH-FI'
   description: >-
@@ -15,6 +15,7 @@ meta:
   image: /media/20241128_sampo-tutorial-lod.jpg
 slug: sampo-tutorial-review
 ---
+
 
 **PhD researcher Arianna Moretti brings us a review from our recent SAMPO tutorial. Find out in this review how to apply semantic web technologies to your own data and resources to create your own portal.**
 

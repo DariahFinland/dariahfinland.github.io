@@ -4,9 +4,9 @@ heroImage: /media/PXL_20240618_1921096001-scaled-e1718991651436.jpg
 heroImageAlt: PXL 20240618 1921096001 scaled e1718991651436
 relatedPosts: []
 categories:
-  - news-and-blogs
+  - src/content/categories/news-and-blogs.md
 authors: []
-publishedAt: 2024-06-21
+publishedAt: '2024-06-21'
 meta:
   title: Finland at the DARIAH Annual event in Lisbon 18-21 June 2024 – DARIAH-FI
   description: >-
@@ -15,6 +15,7 @@ meta:
   image: /media/PXL_20240618_1921096001-scaled-e1718991651436.jpg
 slug: finland-at-the-dariah-annual-event-in-lisbon-18-21-june-2024
 ---
+
 
 **Report on the highlights of the DARIAH Annual event that gathered European representatives from DH, arts and humanities scholars, to university libraries and infrastructure providers under the them of digital research workflows.**
 

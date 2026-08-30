@@ -4,9 +4,9 @@ heroImage: /media/DHH24.png
 heroImageAlt: DHH24
 relatedPosts: []
 categories:
-  - news-and-blogs
+  - src/content/categories/news-and-blogs.md
 authors: []
-publishedAt: 2024-03-18
+publishedAt: '2024-03-18'
 meta:
   title: Helsinki Digital Humanities Hackathon welcomes applicants – DARIAH-FI
   description: >-
@@ -15,6 +15,7 @@ meta:
   image: /media/DHH24.png
 slug: helsinkidhh24
 ---
+
 
 Helsinki Digital Humanities Hackathon #DHH24 will be organized 15.–24.5.2024 as a [CLARIN](https://www.clarin.eu/) and [DARIAH-EU](https://www.dariah.eu/) international summer school. The event will be organized as an in-person hackathon. Participation to #DHH24 is free to all accepted participants.
 

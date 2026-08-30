@@ -4,17 +4,17 @@ slug: unveiling-new-data-services-and-tools-for-cultural-heritage-researchers
 heroImage: /media/Viking-luettelo-1.jpg
 heroImageAlt: darah blog header 6
 categories:
-  - news-and-blogs
-  - uncategorized
-publishedAt: 2026-02-10
+  - src/content/categories/news-and-blogs.md
+  - src/content/categories/uncategorized.md
+publishedAt: '2026-02-10'
 meta:
-  title: Unveiling new data services and tools for cultural heritage researchers –
-    DARIAH-FI
-  description: In this blog, we bring news about new infrastructure developed in
-    the past two years by the DARIAH-FI network for acquiring and processing
-    large-scale,…
+  title: Unveiling new data services and tools for cultural heritage researchers – DARIAH-FI
+  description: >-
+    In this blog, we bring news about new infrastructure developed in the past two years by the
+    DARIAH-FI network for acquiring and processing large-scale,…
   image: /media/darah-blog-header-6.png
 ---
+
 In this blog, we bring news about new infrastructure developed in the past two years by the DARIAH-FI network for acquiring and processing large-scale, visual and multimodal historical documents. 
 
 These infrastructures were unveiled during a full-day workshop on January 22nd with 70 participants. The tools have been developed based on what humanities researchers need when working with archival materials and visual cultural heritage, enabling the acquisition and making the most of large-scale data in the [ASTIA](https://astia.narc.fi/) services, or [FINNA.fi](http://finna.fi/) portal. The sessions offered things for everybody, both for researchers not familiar with computational methods and for advanced digital humanities research.

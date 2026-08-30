@@ -4,17 +4,18 @@ slug: analysis-of-video-stream-interactions-with-ai-solutions
 heroImage: /media/darah-blog-header-3-1.png
 heroImageAlt: darah blog header 3 1
 categories:
-  - blog
-  - news-and-blogs
-  - uncategorized
-publishedAt: 2026-01-12
+  - src/content/categories/blog.md
+  - src/content/categories/news-and-blogs.md
+  - src/content/categories/uncategorized.md
+publishedAt: '2026-01-12'
 meta:
   title: Analysis of Video Stream Interactions with AI Solutions – DARIAH-FI
-  description: The proliferation of short-form video on livestreaming platforms
-    like Twitch presents a significant challenge for multimodal content
-    analysis. Each clip…
+  description: >-
+    The proliferation of short-form video on livestreaming platforms like Twitch presents a
+    significant challenge for multimodal content analysis. Each clip…
   image: /media/darah-blog-header-3-1.png
 ---
+
 The proliferation of short-form video on livestreaming platforms like Twitch presents a significant challenge for multimodal content analysis. Each clip contains a vast amount of diverse information: the visual action of the gameplay, the auditory context from the caster commentary, and the text-based reactions from the live chat. Together, these represent dense and valuable data for understanding online communities and digital entertainment.
 
 However, the sheer volume and complexity of this data creates a need for efficient tools for its analysis.

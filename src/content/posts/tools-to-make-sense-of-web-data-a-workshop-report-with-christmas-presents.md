@@ -4,9 +4,9 @@ heroImage: /media/data-workshop.jpg
 heroImageAlt: data workshop
 relatedPosts: []
 categories:
-  - news-and-blogs
+  - src/content/categories/news-and-blogs.md
 authors: []
-publishedAt: 2024-12-18
+publishedAt: '2024-12-18'
 meta:
   title: 'Tools to Make Sense of Web Data: a workshop report... with Christmas presents – DARIAH-FI'
   description: >-
@@ -15,6 +15,7 @@ meta:
   image: /media/data-workshop.jpg
 slug: tools-to-make-sense-of-web-data-a-workshop-report-with-christmas-presents
 ---
+
 
 Before leaving for a well earned winter break, we bring news from the [Digital Research Data and Human Science (DRDHum) conference](https://sites.uef.fi/drd-hum-2024/) organized by the University of Eastern Finland in Joensuu. This DRDHum edition (10-12 December 2024) attracted more than 100 scholars of the digital age. FIN-CLARIAH hosted a workshop that brought an early Christmas present to some 25 participants who were introduced a suite of tools designed to make sense of web data. The term "sense-making" here includes not only the analytical interpretation of dataset contents but also their automatic enrichment and the extraction of relevant segments for deeper analysis. This comprehensive toolkit is needed for supporting the whole research cycle, from raw data extraction and preprocessing to interpretation.
 

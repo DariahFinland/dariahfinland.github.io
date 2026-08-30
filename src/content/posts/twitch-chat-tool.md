@@ -4,9 +4,9 @@ heroImage: /media/twitch.png
 heroImageAlt: twitch
 relatedPosts: []
 categories:
-  - news-and-blogs
+  - src/content/categories/news-and-blogs.md
 authors: []
-publishedAt: 2023-05-23
+publishedAt: '2023-05-23'
 meta:
   title: Twitch Chat Tool - DARIAH-FI workshop winner – DARIAH-FI
   description: >-
@@ -15,6 +15,7 @@ meta:
   image: /media/twitch.png
 slug: twitch-chat-tool
 ---
+
 
 The DARIAH-FI workshop this past month brought with it many fresh ideas into the space of the digital humanities infrastructure. It was the perfect way to do a check-up on several projects of DARIAH-FI's researchers, how they are unfolding and progressing, as well as interact socially with peers and strengthen connections. Led by National Coordinator of DARIAH-FI, Risto Turunen, the event was spread across two days, April 25 and 26, and introduced several worthwhile projects that deliver on the promise of being helpful tools for researchers in the digital humanities field. While a more detailed blog post regarding the workshop is coming from Risto himself, I would like to write about the demo that was deemed the best from the workshop, which is the Twitch Chat Tool built by Raine Koskimaa's Work Package from the University of Jyväskylä.
 

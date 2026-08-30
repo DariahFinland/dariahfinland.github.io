@@ -4,11 +4,11 @@ heroImage: /media/darah-blog-header-2-1.png
 heroImageAlt: darah blog header 2 1
 relatedPosts: []
 categories:
-  - blog
-  - news-and-blogs
-  - university-of-helsinki
+  - src/content/categories/blog.md
+  - src/content/categories/news-and-blogs.md
+  - src/content/categories/university-of-helsinki.md
 authors: []
-publishedAt: 2025-12-05
+publishedAt: '2025-12-05'
 meta:
   title: FIN-CLARIAH Fall meeting Annotating Social data – DARIAH-FI
   description: >-
@@ -17,6 +17,7 @@ meta:
   image: /media/darah-blog-header-2-1.png
 slug: fin-clariah-annotating-social-data
 ---
+
 
 On November 28, the [Centre for Social Data Science](https://www.helsinki.fi/en/networks/centre-social-data-science) (CSDS) at the University of Helsinki hosted this milestone meeting to support FIN-CLARIAH in developing national infrastructure for digital social sciences. The event focused on current practices in annotating datasets in across disciplines interested in qualitative data, narrative analysis, secure practices for sensitive data, and the responsible use of AI tools in the annotation pipeline. This event was open for the local research community, and had approximately 70 participants.
 

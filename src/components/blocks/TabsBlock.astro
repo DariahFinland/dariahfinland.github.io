@@ -6,15 +6,17 @@
 //
 // developedBy/collaborators on tools, and the affiliated-group/tool
 // descriptions, are handled a bit differently than other blocks:
-//   - developedBy/collaborators are reference() fields -- resolved via
-//     getEntry() to get each local office's actual name.
+//   - localOffice/collaborators are plain strings now (see
+//     src/lib/references.ts), resolved via resolveRef()/resolveRefs()
+//     instead of astro:content's reference() type.
 //   - descriptions live in the Markdown BODY of affiliated-groups/tools
 //     files (not a frontmatter string), so each one needs its own
 //     render() call to get a <Content /> component, same as the detail
 //     pages do.
 
-import { getCollection, getEntry, render } from 'astro:content'
+import { getCollection, render } from 'astro:content'
 import { md } from '../../lib/markdown'
+import { resolveRef, resolveRefs } from '../../lib/references'
 
 interface Tab {
   label: string
@@ -33,20 +35,18 @@ const needsTools = tabs.some((t) => t.listType === 'tools')
 
 const affiliatedGroups = needsGroups
   ? await Promise.all(
-      (await getCollection('affiliatedGroups')).sort((a, b) => a.data.name.localeCompare(b.data.name)).map(async (g) => ({
-        group: g,
-        Content: (await render(g)).Content,
-      })),
+      (await getCollection('affiliatedGroups')).sort((a, b) => a.data.name.localeCompare(b.data.name)).map(async (g) => {
+        const localOffice = await resolveRef('localOffices', g.data.localOffice)
+        return { group: g, Content: (await render(g)).Content, localOffice }
+      }),
     )
   : []
 
 const tools = needsTools
   ? await Promise.all(
       (await getCollection('tools')).sort((a, b) => a.data.name.localeCompare(b.data.name)).map(async (t) => {
-        const localOffice = t.data.localOffice ? await getEntry(t.data.localOffice) : undefined
-        const collaborators = t.data.collaborators
-          ? (await Promise.all(t.data.collaborators.map((ref) => getEntry(ref)))).filter((o) => o !== undefined)
-          : []
+        const localOffice = await resolveRef('localOffices', t.data.localOffice)
+        const collaborators = await resolveRefs('localOffices', t.data.collaborators)
         return { tool: t, Content: (await render(t)).Content, localOffice, collaborators }
       }),
     )
@@ -78,7 +78,7 @@ const tools = needsTools
 
       {tab.listType === 'affiliatedGroups' && (
         <div class="space-y-4 mt-4">
-          {affiliatedGroups.map(({ group, Content }) => (
+          {affiliatedGroups.map(({ group, Content, localOffice }) => (
             <div class="border rounded-lg p-4 flex gap-4">
               {group.data.logo && (
                 <div class="w-16 h-16 flex-shrink-0">
@@ -114,6 +114,14 @@ const tools = needsTools
                     )}
                   </p>
                 )}
+                {localOffice && (
+                <p class="text-sm mb-2">
+                  Local office:{' '}
+                  <a href={`/local-offices/${localOffice.data.slug}`} target="_blank" rel="noreferrer noopener" class="underline">
+                        {localOffice.data.name}
+                  </a>
+                </p>
+              )}
               </div>
             </div>
           ))}

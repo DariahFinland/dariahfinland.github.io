@@ -6,25 +6,18 @@
 // THIS block instance -- not the whole collection. Same idea as the
 // Archive block's populateBy: 'selection' + selectedDocs.
 
-import { getEntry, render } from 'astro:content'
-
-interface Ref {
-  id: string
-  collection: string
-}
+import { render } from 'astro:content'
+import { resolveRefs } from '../../lib/references'
 
 interface Props {
   heading?: string
   intro?: string
-  trainings?: Ref[]
+  trainings?: string[]
 }
 
 const { heading, intro, trainings: trainingRefs = [] } = Astro.props
 
-const selected =
-  trainingRefs.length > 0
-    ? (await Promise.all(trainingRefs.map((ref) => getEntry(ref)))).filter((t) => t !== undefined)
-    : []
+const selected = await resolveRefs('trainings', trainingRefs)
 
 const withContent = await Promise.all(
   selected

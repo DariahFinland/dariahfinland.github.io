@@ -4,9 +4,9 @@ heroImage: /media/SUB-Altes-gebaude-scaled-e1750849722680.jpg
 heroImageAlt: SUB Altes gebaude scaled e1750849722680
 relatedPosts: []
 categories:
-  - news-and-blogs
+  - src/content/categories/news-and-blogs.md
 authors: []
-publishedAt: 2025-06-25
+publishedAt: '2025-06-25'
 meta:
   title: Engaging infrastructures to study The Past, DARIAH Annual event 2025 Göttingen – DARIAH-FI
   description: >-
@@ -15,6 +15,7 @@ meta:
   image: /media/SUB-Altes-gebaude-scaled-e1750849722680.jpg
 slug: engaging-infrastructures-to-study-the-past-dariah-annual-event-2025-in-gottingen
 ---
+
 
 The [DARIAH Annual Events](http://annualevent.dariah.eu) combine different forms of encounter between researchers in the arts and humanities, cultural heritage stakeholders, as well as computer, information and data science communities. Members, partner institutions and observer countries of DARIAH ERIC can attend this annual event for free, to seek collaborators and showcase national research enabled by our infrastructures, or simply, to be inspired by digitally-enabled research and teaching. This year Göttingen was chosen as the venue of this event that was dedicated to highlighting innovative approaches to studying "the Past". This important university city hosted 270 participants from 35 countries from 17-20 June.
 

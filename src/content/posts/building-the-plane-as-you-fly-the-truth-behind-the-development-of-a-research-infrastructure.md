@@ -1,19 +1,21 @@
 ---
-title: "Building the plane as you fly: The truth behind the development of a
-  research infrastructure"
+title: 'Building the plane as you fly: The truth behind the development of a research infrastructure'
 slug: building-the-plane-as-you-fly-the-truth-behind-the-development-of-a-research-infrastructure
 heroImage: /media/photo_1-scaled-1.jpg
 heroImageAlt: photo 1 scaled 1
 categories:
-  - news-and-blogs
-publishedAt: 2023-06-08
+  - src/content/categories/news-and-blogs.md
+publishedAt: '2023-06-08'
 meta:
-  title: "Building the plane as you fly: The truth behind the development of a
-    research infrastructure – DARIAH-FI"
-  description: How do you develop a research infrastructure? A short insight into
-    the reality of DARIAH-FI's evolution thus far, the good and the bad.
+  title: >-
+    Building the plane as you fly: The truth behind the development of a research infrastructure –
+    DARIAH-FI
+  description: >-
+    How do you develop a research infrastructure? A short insight into the reality of DARIAH-FI's
+    evolution thus far, the good and the bad.
   image: /media/photo_1-scaled-1.jpg
 ---
+
 Hi y'all!
 
 Greetings from Käärijä's land. My name is Anna Sendra Toset and I'm currently working as a Project Manager at Tampere University for the DARIAH-FI research infrastructure (RI). I joined this fantastic group of people back in August 2022, and my work since then has mainly consisted in trying to reveal the needs and expectations of Finnish social sciences and humanities (SSH) scholars regarding this new facility. To this end, we conducted up to **34 semi-structured interviews** between September 2022 and February 2023 with potential end-users of different backgrounds, both related and unrelated to the development of DARIAH-FI. Participants, which included SSH scholars and computer/data scientists, were recruited via internal communication channels and taking advantage of the roadshow events organized to present the RI in various universities around Finland.
