@@ -1,12 +1,14 @@
 ---
 title: Nordic Tweet Stream (NTS) online workshop
 slug: nordic-tweet-stream-nts-online-workshop-2
-startDate: '2024-02-01T00:00:00.000Z'
-location: ''
+startDate: 2024-03-14
+startTime: 10:00
+endDate: 2024-03-14
+endTime: 23:00
+cancelled: false
 isOnline: true
-status: past
+localOffice: src/content/local-offices/tampere.md
 ---
-
 Tampere University, in collaboration with the University of Eastern Finland and the University of Helsinki, are organizing a online workshop about the Nordic Tweet Stream (NTS), one of the digital resources developed under the DARIAH-FI research infrastructure.
 
 The NTS is a multilingual monitor corpus of geolocated tweets and associated metadata from the Nordic region. Altogether, it contains nearly 74 million messages from hundreds of thousands of user accounts from Denmark, Finland, Iceland, Norway, and Sweden. The NTS data cover the period between January 2013 and May 2023 and were collected using the Twitter Academic API, which is now closed.
