@@ -1,19 +1,20 @@
 ---
-title: 'DARIAH-FI Workshop: New datasets and tools for social media research'
+title: "DARIAH-FI Workshop: New datasets and tools for social media research"
 slug: dariah-fi-workshop-new-datasets-and-tools-for-social-media-research
-startDate: '2025-12-09T09:00:00.000Z'
-endDate: '2025-12-09T12:00:00.000Z'
-location: ''
+startDate: 2025-12-09
+startTime: 9:00
+endDate: 2025-12-09
+endTime: 12:00
+cancelled: false
 isOnline: true
 registrationUrl: https://link.webropol.com/ep/dariahsome
-status: past
+localOffice: src/content/local-offices/eastern-finland.md
 ---
-
 Organisers: Mikko Laitinen & Paula Rautionaho (University of Eastern Finland)
 
 Date: **Tuesday 9 December, at 9-12am (Online)**
 
-The workshop is **free and open** but register to participate here:[ **https://link.webropol.com/ep/dariahsome**](https://link.webropol.com/ep/dariahsome)
+The workshop is **free and open** but register to participate here: [**https://link.webropol.com/ep/dariahsome**](https://link.webropol.com/ep/dariahsome)
 
 This workshop introduces datasets, tools and related services recently developed for social media and web research. In recent years, the Finnish Network for Data-intensive Research in the Humanities and Social Sciences (DARIAH-FI) together with The Language Bank of Finland (Kielipankki) have developed tools and methods to access, analyze, and enrich large-scale data from social media outlets, gaming outlets and other web-based platforms.
 
@@ -45,4 +46,4 @@ In this workshop, the developers of the new resources will demonstrate their too
 
 The videos and the Zoom link will only be provided to registered participants. Registration is open for anyone interested and until Monday December 8, 2025.
 
-For questions, please contact Paula Rautionaho (firstname.lastname@uef.fi).
+For questions, please contact Paula Rautionaho ([firstname.lastname@uef.fi](mailto:firstname.lastname@uef.fi)).
