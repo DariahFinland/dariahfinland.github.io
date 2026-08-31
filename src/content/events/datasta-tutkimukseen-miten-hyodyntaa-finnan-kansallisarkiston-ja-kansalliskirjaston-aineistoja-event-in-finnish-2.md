@@ -1,20 +1,19 @@
 ---
-title: >-
-  Datasta tutkimukseen –Miten hyödyntää Finnan, Kansallisarkiston ja Kansalliskirjaston aineistoja?
-  (event in Finnish)
-slug: >-
-  datasta-tutkimukseen-miten-hyodyntaa-finnan-kansallisarkiston-ja-kansalliskirjaston-aineistoja-event-in-finnish-2
-startDate: '2025-04-04T00:00:00.000Z'
-location: ''
+title: Datasta tutkimukseen –Miten hyödyntää Finnan, Kansallisarkiston ja
+  Kansalliskirjaston aineistoja? (event in Finnish)
+slug: datasta-tutkimukseen-miten-hyodyntaa-finnan-kansallisarkiston-ja-kansalliskirjaston-aineistoja-event-in-finnish-2
+startDate: 2025-05-21
+startTime: 12:30
+endDate: 2025-05-21
+endTime: 15:30
+cancelled: false
 isOnline: false
-status: past
 ---
-
 Kansallisarkisto, Kansalliskirjasto ja Finna tarjoavat massiivisia määriä digitaalisia aineistoja (kuten sanomalehtiä ja muuta mediaa, julkishallinnon aineistoja, kuvia, historiallisia asiakirjoja ja kirjallisuutta.) tutkimuskäyttöön. Tämä avaa uudenlaisia mahdollisuuksia esimerkiksi dataintensiivisiä menetelmiä hyödyntävälle tutkimukselle.
 
 Tutkijoille suunnatussa tilaisuudessa kerrotaan Kansallisarkiston, Kansalliskirjaston ja Finnan tarjoamista palveluista ja työkaluista, jotka helpottavat aineistojen saatavuutta ja käytettävyyttä. Tule kuulemaan aineistojen tarjonnasta, käyttöoikeuksista, nykyisistä ja tulevista palveluista ja näihin liittyvistä mahdollisuuksista!
 
-Tilaisuus järjestävät yhteistyössä Kansallisarkisto ja Kansalliskirjasto, ja on avoin kaikille aiheesta kiinnostuneille. Taustalla ovat Suomen tutkimusinfrastruktuurien tiekartalle kuuluva[ FIN-CLARIAH-projekti](https://www.kielipankki.fi/organization/fin-clariah/) ja kansallinen DARIAH-verkosto.
+Tilaisuus järjestävät yhteistyössä Kansallisarkisto ja Kansalliskirjasto, ja on avoin kaikille aiheesta kiinnostuneille. Taustalla ovat Suomen tutkimusinfrastruktuurien tiekartalle kuuluva [FIN-CLARIAH-projekti](https://www.kielipankki.fi/organization/fin-clariah/) ja kansallinen DARIAH-verkosto.
 
 **Briefly in English:** The National Archives and the National Library of Finland invite you to the following information event (on Teams, in Finnish only): *"From data to research - How to make use of the materials of Finna, the National Archives and the National Library of Finland?*" The National Archives, the National Library of Finland and Finna offer massive amounts of digital materials for research use. This opens up new opportunities for research and researchers, for example those using or interested in data-intensive methods. This information event will introduce the services and tools that facilitate access and ease use of cultural heritage digitized materials in research.
 
