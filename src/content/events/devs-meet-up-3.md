@@ -1,12 +1,13 @@
 ---
 title: Devs meet-up
 slug: devs-meet-up-3
-startDate: '2024-09-26T12:00:00.000Z'
-location: ''
+startDate: 2024-10-10
+startTime: 12:00
+endDate: 2024-10-10
+endTime: 13:00
+cancelled: false
 isOnline: true
-status: past
 ---
-
 These monthly meetings are a space to foster common and integrated technical solutions, reusing components, ask questions regarding components of the infrastructure, use of CSC services, or bring up issues related with data pipelines, workflows or tool building. Zoom link and agenda for meetups is circulated via Slack.
 
 Meetups dates for 2024 **(always Thursday, always from 12:00-13:0)**
