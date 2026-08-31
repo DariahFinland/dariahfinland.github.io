@@ -1,13 +1,13 @@
 ---
 title: DARIAH-FI Devs meet-up
 slug: devs-meetup
-startDate: '2025-09-18T12:00:00.000Z'
-endDate: '2025-09-18T13:00:00.000Z'
-location: ''
+startDate: 2025-09-18
+startTime: 12:00
+endDate: 2025-09-18
+endTime: 13:00
+cancelled: false
 isOnline: true
-status: past
 ---
-
 These monthly meetings are a space to foster common and integrated technical solutions, reusing components, ask questions regarding components of the infrastructure, use of CSC services, or bring up issues related with data pipelines, workflows or tool building. Zoom link and agenda for meetups is circulated via Slack.
 
 Meetups dates for Fall 2025 **(always Thursday, always from 12:00-13:00)**
