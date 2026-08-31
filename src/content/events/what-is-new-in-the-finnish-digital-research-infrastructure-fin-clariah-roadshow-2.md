@@ -1,12 +1,14 @@
 ---
-title: What is new in the Finnish digital research infrastructure? - FIN-CLARIAH Roadshow
+title: What is new in the Finnish digital research infrastructure? - FIN-CLARIAH
+  Roadshow
 slug: what-is-new-in-the-finnish-digital-research-infrastructure-fin-clariah-roadshow-2
-startDate: '2025-02-01T00:00:00.000Z'
-location: ''
+startDate: 2025-03-14
+startTime: 12:15
+endDate: 2025-03-14
+endTime: 15:30
+cancelled: false
 isOnline: false
-status: past
 ---
-
 FIN-CLARIAH (Common Language Resources and Technology Infrastructure) is a fundamental Finnish digital research infrastructure (RI) for Social Sciences and Humanities (SSH). FIN-CLARIAH connects ten universities and memory organisations across the country. The Finnish Research Infrastructure Committee has granted roadmap status to FIN-CLARIAH for 2025–2028. This roadmap guides the research community, policymakers, and funders in directing investment and supporting research, development, and innovation.
 
 FIN-CLARIAH will participate in a roadshow event in Vaasa 14.3., where some of the central resources and tools for social science and humanities (SSH) research will be presented, with special emphasis on acquiring, processing and depositing born-digital data . There will be informative presentations, but also hands-on activities in the program. From the University of Vaasa, the Natureach project will join the event with a presentation of AR/VR data and its analysis.
