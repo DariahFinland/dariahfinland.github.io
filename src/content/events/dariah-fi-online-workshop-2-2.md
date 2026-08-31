@@ -1,10 +1,9 @@
 ---
-title: 'DARIAH-FI Online Workshop #2'
+title: "DARIAH-FI Online Workshop #2"
 slug: dariah-fi-online-workshop-2-2
-startDate: '2023-01-01T00:00:00.000Z'
-location: ''
+startDate: 2022-11-09
+endDate: 2022-11-09
+cancelled: false
 isOnline: true
-status: past
 ---
-
 DARIAH-FI Online Workshop.
