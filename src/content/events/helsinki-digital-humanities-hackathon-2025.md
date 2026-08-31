@@ -1,13 +1,15 @@
 ---
 title: Helsinki Digital Humanities Hackathon 2025
 slug: helsinki-digital-humanities-hackathon-2025
-startDate: '2025-05-26T00:00:00.000Z'
-endDate: '2025-06-06T00:00:00.000Z'
+startDate: 2025-05-14
+startTime: 13:00
+endDate: 2025-05-23
+endTime: 16:00
+cancelled: false
 location: University of Helsinki
 isOnline: false
-status: past
+localOffice: src/content/local-offices/helsinki.md
 ---
-
 As a [CLARIN](https://www.clarin.eu/) and [DARIAH](https://www.dariah.eu/) summer school, Helsinki Digital Humanities Hackathon #DHH25 is truly international, welcoming applications from all over Europe and beyond!
 
 The Helsinki Digital Humanities Hackathon is a chance to experience an interdisciplinary research project from start to finish within the span of 10 days. For researchers and students from computer science and data science, the hackathon gives the opportunity to test their abstract knowledge against complex real-life problems. For people from the humanities and social sciences, it shows what is possible to achieve with such collaboration.
