@@ -1,10 +1,10 @@
 ---
 title: DARIAH Aalto Day
 slug: dariah-aalto-day
-startDate: '2022-11-01T00:00:00.000Z'
+startDate: 2022-11-30
+endDate: 2022-11-30
+cancelled: false
 location: Aalto University
 isOnline: false
-status: past
 ---
-
 DARIAH Aalto Day.
