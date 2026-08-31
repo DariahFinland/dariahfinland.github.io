@@ -1,10 +1,10 @@
 ---
 title: DARIAH-FI Roadshow Tampere
 slug: dariah-fi-roadshow-tampere-2
-startDate: '2023-01-01T00:00:00.000Z'
+startDate: 2022-11-10
+endDate: 2022-11-10
+cancelled: false
 location: Tampere
 isOnline: false
-status: past
 ---
-
 DARIAH-FI Roadshow in Tampere.
