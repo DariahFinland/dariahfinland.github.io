@@ -1,18 +1,19 @@
 ---
-title: 'DARIAH-FI Workshop: New tools and data services for cultural heritage research'
+title: "DARIAH-FI Workshop: New tools and data services for cultural heritage
+  research"
 slug: dariah-fi-workshop-tools-for-ch
-startDate: '2026-01-22T09:00:00.000Z'
-endDate: '2026-01-22T15:00:00.000Z'
-location: ''
+startDate: 2026-01-22
+startTime: 9:00
+endDate: 2026-01-22
+endTime: 15:00
+cancelled: false
 isOnline: true
-status: past
 ---
-
 **Organisers**: Inés Matres (University of Helsinki), Ida Toivanen (University of Jyväskylä), and Ilkka Lähteenmäki (University of Oulu)
 
 **Date**: 22 January 2026, Online, Full-day with breaks
 
-(if your registration credentials do not work for some reason, please contact ines.matres@helsinki.fi)
+(if your registration credentials do not work for some reason, please contact [ines.matres@helsinki.fi](mailto:ines.matres@helsinki.fi))
 
 This workshop unveils new infrastructure developed in the last two years making use of LLMs, computer vision and semantic web to help processing visual, multimodal or large-scale historical documents. In this full-day workshop participants will get acquainted with tools to find, acquire and process manuscripts, letters, historical images or cultural heritage accessible in FINNA and ASTIA services. The workshop includes sessions for researchers not familiar with computational methods and one session for advanced digital humanities research.
 
