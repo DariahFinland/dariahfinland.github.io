@@ -1,12 +1,14 @@
 ---
 title: FIN-CLARIAH meeting Turku
 slug: fin-clariah-meeting-in-turku-2
-startDate: '2024-10-01T00:00:00.000Z'
+startDate: 2024-11-22
+startTime: 11:00
+endDate: 2024-11-22
+endTime: 16:00
+cancelled: false
 location: University of Turku
 isOnline: false
-status: past
 ---
-
 ***Digital Cultural Heritage –Data or Metadata?***
 
 **The goal of this FIN-CLARIAH day is to reflect on the importance of data and metadata for research. We want to discuss what is data vs. metadata? What are the standards in different fields? How is or could metadata be extracted or processed? First we will hear the perspective of a research infrastructure project integrating heterogeneous data for the study of human diversity to set the stage for group discussions.**
