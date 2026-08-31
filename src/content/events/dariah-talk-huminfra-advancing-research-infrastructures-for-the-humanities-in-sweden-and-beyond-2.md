@@ -1,12 +1,15 @@
 ---
-title: 'DARIAH Talk: Huminfra Advancing Research Infrastructures for the Humanities in Sweden (and Beyond)'
+title: "DARIAH Talk: Huminfra Advancing Research Infrastructures for the
+  Humanities in Sweden (and Beyond)"
 slug: dariah-talk-huminfra-advancing-research-infrastructures-for-the-humanities-in-sweden-and-beyond-2
-startDate: '2024-09-05T00:00:00.000Z'
+startDate: 2024-09-05
+startTime: 16:15
+endDate: 2024-09-05
+endTime: 18:00
+cancelled: false
 location: University of Helsinki
 isOnline: false
-status: past
 ---
-
 The Helsinki DH agenda kicks-off on Thursday September 5th with a visit from digital ethnologist and Sámi scholar Prof. Coppélie Cocq from the University of Umeå.
 
 Cocq is currently the deputy director of the Swedish research infrastructure [Huminfra](https://www.huminfra.se/) and in her talk she will introduce the important task of "Advancing Research Infrastructures for the Humanities in Sweden (and Beyond)".
