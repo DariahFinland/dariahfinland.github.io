@@ -1,10 +1,10 @@
 ---
 title: DARIAH-FI Roadshow Helsinki
 slug: dariah-fi-roadshow-helsinki
-startDate: '2022-11-01T00:00:00.000Z'
+startDate: 2022-12-05
+endDate: 2022-12-05
+cancelled: false
 location: Helsinki
 isOnline: false
-status: past
 ---
-
 DARIAH-FI Roadshow in Helsinki.
