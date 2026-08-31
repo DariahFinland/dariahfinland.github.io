@@ -1,10 +1,9 @@
 ---
 title: DARIAH-FI & SSH Open Marketplace
 slug: dariah-fi-ssh-open-marketplace-2
-startDate: '2023-01-01T00:00:00.000Z'
-location: ''
+startDate: 2023-04-26
+endDate: 2023-04-26
+cancelled: false
 isOnline: false
-status: past
 ---
-
 DARIAH-FI at the SSH Open Marketplace.
