@@ -1,10 +1,9 @@
 ---
 title: DARIAH-FI Live Workshop
 slug: dariah-fi-live-workshop
-startDate: '2023-09-01T00:00:00.000Z'
-location: ''
+startDate: 2023-04-25
+endDate: 2023-04-25
+cancelled: false
 isOnline: false
-status: past
 ---
-
 DARIAH-FI Live Workshop.
