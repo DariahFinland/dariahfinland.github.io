@@ -19,6 +19,7 @@ content:
     view:
       fields: [title]
       primary: title
+      sort: [title]
     fields:
       - { name: title, type: string, required: true }
       - { name: slug, type: string, required: true }
