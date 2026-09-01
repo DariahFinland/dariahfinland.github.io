@@ -58,7 +58,7 @@ content:
       fields: [name, localOffice, expertise]
       primary: name
       sort: [name]
-      search: [name, localOffice, expertise]
+      search: [name, localOffice, expertise, body]
     fields:
       - { name: name, type: string, required: true }
       - { name: logo, type: image }
@@ -84,7 +84,7 @@ content:
       fields: [name, localOffice]
       primary: name
       sort: [name]
-      search: [name, localOffice]
+      search: [name, localOffice, body]
     fields:
       - { name: name, type: string, required: true }
       - name: accessLinks
@@ -119,7 +119,7 @@ content:
       fields: [title, group, localOffice]
       primary: title
       sort: [title]
-      search: [title, group, localOffice]
+      search: [title, group, localOffice, levelTags, body]
     fields:
       - { name: title, type: string, required: true }
       - { name: url, type: string }
@@ -141,7 +141,7 @@ content:
       primary: title
       sort: [startDate]
       default: { sort: startDate, order: desc }
-      search: [title, localOffice]
+      search: [title, localOffice, body]
     fields:
       - { name: title, type: string, required: true }
       - { name: slug, type: string, required: true }
@@ -170,7 +170,7 @@ content:
       primary: title
       sort: [publishedAt]
       default: { sort: publishedAt, order: desc }
-      search: [title, authors, tags]
+      search: [title, authors, tags, body]
     fields:
       - { name: title, type: string, required: true }
       - { name: slug, type: string, required: true }
