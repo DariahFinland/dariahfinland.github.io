@@ -137,7 +137,7 @@ content:
     type: collection
     path: src/content/events
     view:
-      fields: [title, startDate, cancelled, localOffice]
+      fields: [title, startDate, localOffice]
       primary: title
       sort: [startDate]
       default: { sort: startDate, order: desc }
