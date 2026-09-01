@@ -2,7 +2,7 @@
 // src/components/blocks/Archive.astro
 //
 // In Payload this queried Postgres live. Here, getCollection('posts') reads
-// all post files at build time instead. `categories`/`selectedDocs` are
+// all post files at build time instead. `tags`/`selectedDocs` are
 // plain strings now (see src/lib/references.ts), not astro:content
 // reference() -- resolved/compared by hand below.
 
@@ -13,7 +13,7 @@ import { resolveRefs, slugFromRef } from '../../lib/references'
 interface Props {
   introRichText?: string
   populateBy?: 'collection' | 'selection'
-  categories?: string[]
+  tags?: string[]
   limit?: number
   selectedDocs?: string[]
 }
@@ -21,7 +21,7 @@ interface Props {
 const {
   introRichText,
   populateBy = 'collection',
-  categories = [],
+  tags = [],
   limit = 10,
   selectedDocs = [],
 } = Astro.props
@@ -31,19 +31,19 @@ if (populateBy === 'selection' && selectedDocs.length > 0) {
   posts = await resolveRefs('posts', selectedDocs)
 } else {
   posts = await getCollection('posts')
-  if (categories.length > 0) {
-    const wantedSlugs = new Set(categories.map((c) => slugFromRef(c)))
-    posts = posts.filter((p) => p.data.categories?.some((c) => wantedSlugs.has(slugFromRef(c))))
+  if (tags.length > 0) {
+    const wantedSlugs = new Set(tags.map((c) => slugFromRef(c)))
+    posts = posts.filter((p) => p.data.tags?.some((c) => wantedSlugs.has(slugFromRef(c))))
   }
   posts = posts
     .sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf())
     .slice(0, limit)
 }
 
-// Resolve each post's category references into titles for display.
+// Resolve each post's tag references into titles for display.
 const cards = await Promise.all(
   posts.map(async (post) => {
-    const cats = post.data.categories ? await resolveRefs('categories', post.data.categories) : []
+    const cats = post.data.tags ? await resolveRefs('tags', post.data.tags) : []
     return {
       post,
       categoryTitles: cats.map((c) => c.data.title),
@@ -66,7 +66,6 @@ const cards = await Promise.all(
           <a
             href={`/posts/${post.id}`}
             class="block h-full border border-border rounded-lg overflow-hidden bg-card hover:cursor-pointer"
-            style="text-decoration: none;"
           >
             {post.data.meta?.image && <img class="w-full" src={post.data.meta.image} alt="" />}
             <div class="p-4">

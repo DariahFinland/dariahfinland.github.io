@@ -11,7 +11,7 @@ const posts = (await getCollection('posts')).sort(
 // Resolve each post's category references into titles for the card labels
 const cards = await Promise.all(
   posts.map(async (post) => {
-    const cats = await resolveRefs('categories', post.data.categories)
+    const cats = await resolveRefs('tags', post.data.tags)
     return { post, categoryTitles: cats.map((c) => c.data.title) }
   }),
 )

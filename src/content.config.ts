@@ -97,7 +97,7 @@ const blockSchema = z.discriminatedUnion('blockType', [
     blockType: z.literal('archive'),
     introRichText: z.string().optional(),
     populateBy: z.enum(['collection', 'selection']).default('collection'),
-    categories: z.array(z.string()).optional(),
+    tags: z.array(z.string()).optional(),
     limit: z.number().default(10),
     selectedDocs: z.array(z.string()).optional(),
   }),
@@ -152,7 +152,7 @@ const posts = defineCollection({
     heroImageAlt: z.string().optional(),
     // body of the .md file itself = the post's main rich text content
     relatedPosts: z.array(z.string()).optional(),
-    categories: z.array(z.string()).optional(),
+    tags: z.array(z.string()).optional(),
     authors: z.array(z.string()).optional(),
     publishedAt: z.coerce.date(),
     meta: metaSchema.optional(),
@@ -211,6 +211,9 @@ const affiliatedGroups = defineCollection({
     logo: z.string().optional(),
     externalUrl: z.string(),
     // body of the .md file = group description
+    // expertise: reference values (plain string slugs/paths, resolved by
+    // hand via src/lib/references.ts) pointing at the `tags` collection --
+    // was free-text strings, now tag references (see migration script).
     expertise: z.array(z.string()).optional(),
     contactName: z.string().optional(),
     contactUrl: z.string().optional(),
@@ -245,8 +248,10 @@ const tools = defineCollection({
   }),
 })
 
-const categories = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/content/categories' }),
+// Shared tags -- used by posts (formerly "categories") and by affiliated
+// groups' expertise field.
+const tags = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/tags' }),
   schema: z.object({
     title: z.string(),
     slug: z.string(),
@@ -284,7 +289,7 @@ export const collections = {
   localOffices,
   affiliatedGroups,
   tools,
-  categories,
+  tags,
   trainings,
   globals,
 }

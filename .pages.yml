@@ -11,18 +11,18 @@ media:
   output: /media
 
 content:
-  # ---------- categories ----------
-  - name: categories
-    label: Categories
+  # ---------- tags ----------
+  - name: tags
+    label: Tags
     type: collection
-    path: src/content/categories
+    path: src/content/tags
     view:
       fields: [title]
       primary: title
     fields:
       - { name: title, type: string, required: true }
       - { name: slug, type: string, required: true }
-
+ 
   # ---------- local-offices ----------
   - name: local-offices
     label: Local Offices
@@ -54,18 +54,18 @@ content:
     type: collection
     path: src/content/affiliated-groups
     view:
-      fields: [name, localOffice]
+      fields: [name, localOffice, expertise]
       primary: name
       sort: [name]
-      search: [name, localOffice]
+      search: [name, localOffice, expertise]
     fields:
       - { name: name, type: string, required: true }
       - { name: logo, type: image }
       - { name: externalUrl, type: string, required: true }
       - name: expertise
         label: Expertise tags
-        type: string
-        list: true
+        type: reference
+        options: { collection: tags, multiple: true, label: "{title}", value: "{path}" }
       - { name: contactName, type: string }
       - { name: contactUrl, type: string }
       - name: localOffice
@@ -165,19 +165,19 @@ content:
     type: collection
     path: src/content/posts
     view:
-      fields: [title, publishedAt, authors, categories]
+      fields: [title, publishedAt, authors, tags]
       primary: title
       sort: [publishedAt]
       default: { sort: publishedAt, order: desc }
-      search: [title, authors, categories]
+      search: [title, authors, tags]
     fields:
       - { name: title, type: string, required: true }
       - { name: slug, type: string, required: true }
       - { name: heroImage, type: image }
       - { name: heroImageAlt, type: string }
-      - name: categories
+      - name: tags
         type: reference
-        options: { collection: categories, multiple: true, value: "{path}" }
+        options: { collection: tags, multiple: true, label: "{title}", value: "{path}" }
       - name: relatedPosts
         type: reference
         options: { collection: posts, multiple: true, value: "{path}" }
@@ -269,9 +269,9 @@ content:
                 type: select
                 options: { values: [collection, selection] }
                 default: collection
-              - name: categories
+              - name: tags
                 type: reference
-                options: { collection: categories, multiple: true, value: "{path}" }
+                options: { collection: tags, multiple: true, label: "{title}", value: "{path}" }
               - { name: limit, type: number, default: 10 }
               - name: selectedDocs
                 label: Selected posts
