@@ -66,6 +66,7 @@ const cards = await Promise.all(
           <a
             href={`/posts/${post.id}`}
             class="block h-full border border-border rounded-lg overflow-hidden bg-card hover:cursor-pointer"
+            style="text-decoration: none;"
           >
             {post.data.meta?.image && <img class="w-full" src={post.data.meta.image} alt="" />}
             <div class="p-4">
