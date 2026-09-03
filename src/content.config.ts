@@ -156,7 +156,6 @@ const posts = defineCollection({
     authors: z.array(z.string()).optional(),
     publishedAt: z.coerce.date(),
     meta: metaSchema.optional(),
-    slug: z.string(),
   }),
 })
 
@@ -164,7 +163,6 @@ const events = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/events' }),
   schema: z.object({
     title: z.string(),
-    slug: z.string(),
     startDate: z.coerce.date(),
     startTime: z.string().optional(), // display-only, e.g. "12:15" -- not used for sorting/status
     endDate: z.coerce.date().optional(),
@@ -186,7 +184,6 @@ const localOffices = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/local-offices' }),
   schema: z.object({
     name: z.string(),
-    slug: z.string(),
     logo: z.string().optional(),
     shortDescription: z.string().optional(),
     externalUrl: z.string().optional(),
@@ -254,7 +251,6 @@ const tags = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/tags' }),
   schema: z.object({
     title: z.string(),
-    slug: z.string(),
   }),
 })
 

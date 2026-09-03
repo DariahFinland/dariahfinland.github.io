@@ -16,26 +16,26 @@ content:
     label: Tags
     type: collection
     path: src/content/tags
+    filename: "{primary}.md"
     view:
       fields: [title]
       primary: title
       sort: [title]
     fields:
       - { name: title, type: string, required: true }
-      - { name: slug, type: string, required: true }
  
   # ---------- local-offices ----------
   - name: local-offices
     label: Local Offices
     type: collection
     path: src/content/local-offices
+    filename: "{primary}.md"
     view:
       fields: [name]
       primary: name
       sort: [name]
     fields:
       - { name: name, type: string, required: true }
-      - { name: slug, type: string, required: true }
       - { name: logo, type: image }
       - { name: shortDescription, type: text }
       - { name: externalUrl, type: string }
@@ -54,6 +54,7 @@ content:
     label: Affiliated Groups
     type: collection
     path: src/content/affiliated-groups
+    filename: "{primary}.md"
     view:
       fields: [name, localOffice, expertise]
       primary: name
@@ -80,6 +81,7 @@ content:
     label: Tools
     type: collection
     path: src/content/tools
+    filename: "{primary}.md"
     view:
       fields: [name, localOffice]
       primary: name
@@ -115,6 +117,7 @@ content:
     label: Trainings
     type: collection
     path: src/content/trainings
+    filename: "{primary}.md"
     view:
       fields: [title, group, localOffice]
       primary: title
@@ -136,6 +139,7 @@ content:
     label: Events
     type: collection
     path: src/content/events
+    filename: "{primary}.md"
     view:
       fields: [title, startDate, localOffice]
       primary: title
@@ -165,6 +169,7 @@ content:
     label: Posts
     type: collection
     path: src/content/posts
+    filename: "{primary}.md"
     view:
       fields: [title, publishedAt, authors, tags]
       primary: title
@@ -200,6 +205,7 @@ content:
     label: Pages
     type: collection
     path: src/content/pages
+    filename: "{primary}.md"
     view:
       fields: [title, slug]
       primary: title
