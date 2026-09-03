@@ -24,6 +24,16 @@ const { title, description } = Astro.props
     <title>{title} · DARIAH-FI</title>
     {description && <meta name="description" content={description} />}
     <link rel="icon" href="/favicon.ico" />
+
+    {/* GoatCounter analytics -- production only, so local dev testing
+        doesn't pollute the traffic numbers. */}
+    {import.meta.env.PROD && (
+      <script
+        data-goatcounter="https://dariah-fi.goatcounter.com/count"
+        async
+        src="//gc.zgo.at/count.js"
+      ></script>
+    )}
   </head>
   <body>
     <Header />
