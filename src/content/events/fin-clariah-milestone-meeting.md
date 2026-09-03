@@ -4,7 +4,7 @@ slug: fin-clariah-milestone-meeting
 startDate: 2026-11-09
 startTime: cat12
 endDate: 2026-11-10
-endTime: dog
+endTime: 13:00
 cancelled: false
 location: University of Helsinki, Helsinki
 isOnline: false
