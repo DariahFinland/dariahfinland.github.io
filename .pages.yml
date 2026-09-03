@@ -148,7 +148,6 @@ content:
       search: [title, localOffice, body]
     fields:
       - { name: title, type: string, required: true }
-      - { name: slug, type: string, required: true }
       - { name: startDate, type: date, required: true }
       - { name: startTime, type: string, description: 'e.g. 12:15' }
       - { name: endDate, type: date }
