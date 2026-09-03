@@ -5,5 +5,5 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  site: 'https://nesterenkojul.github.io'
+  site: 'https://dariahfinland.github.io'
 })
