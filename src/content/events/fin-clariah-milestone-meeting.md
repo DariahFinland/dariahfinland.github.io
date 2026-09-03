@@ -2,7 +2,7 @@
 title: FIN-CLARIAH Milestone meeting
 slug: fin-clariah-milestone-meeting
 startDate: 2026-11-09
-startTime: cat12
+startTime: 12:00
 endDate: 2026-11-10
 endTime: 13:00
 cancelled: false
