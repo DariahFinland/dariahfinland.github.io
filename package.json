@@ -8,11 +8,12 @@
   },
   "scripts": {
     "dev": "tinacms dev -c 'astro dev'",
-    "build": "astro build && pagefind --site dist",
-    "preview": "astro preview",
+    "build": "astro build && pagefind --site dist/client",
+    "preview": "node ./dist/server/entry.mjs",
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/node": "^11.1.2",
     "@tailwindcss/vite": "^4.3.3",
     "@tinacms/datalayer": "^2.0.29",
     "astro": "^7.2.2",

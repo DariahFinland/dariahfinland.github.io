@@ -1,4 +1,11 @@
 ---
+// This route now needs to opt back into build-time generation explicitly --
+// under output: 'server' (needed for Tina's on-demand editing routes),
+// getStaticPaths() is ignored by default, and pages render on-demand
+// instead. prerender = true restores the original static-generation
+// behavior for this specific route.
+export const prerender = true
+
 // src/pages/contacts.astro
 //
 // This route never went through the export script because it was never a
