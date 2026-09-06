@@ -1,14 +1,15 @@
 ---
-title: Datasta tutkimukseen –Miten hyödyntää Finnan, Kansallisarkiston ja
-  Kansalliskirjaston aineistoja? (event in Finnish)
-slug: datasta-tutkimukseen-miten-hyodyntaa-finnan-kansallisarkiston-ja-kansalliskirjaston-aineistoja-event-in-finnish-2
-startDate: 2025-05-21
-startTime: 12:30
-endDate: 2025-05-21
-endTime: 15:30
+title: >-
+  Datasta tutkimukseen –Miten hyödyntää Finnan, Kansallisarkiston ja Kansalliskirjaston aineistoja?
+  (event in Finnish)
+startDate: '2025-05-21'
+startTime: '12:30'
+endDate: '2025-05-21'
+endTime: '15:30'
 cancelled: false
 isOnline: false
 ---
+
 Kansallisarkisto, Kansalliskirjasto ja Finna tarjoavat massiivisia määriä digitaalisia aineistoja (kuten sanomalehtiä ja muuta mediaa, julkishallinnon aineistoja, kuvia, historiallisia asiakirjoja ja kirjallisuutta.) tutkimuskäyttöön. Tämä avaa uudenlaisia mahdollisuuksia esimerkiksi dataintensiivisiä menetelmiä hyödyntävälle tutkimukselle.
 
 Tutkijoille suunnatussa tilaisuudessa kerrotaan Kansallisarkiston, Kansalliskirjaston ja Finnan tarjoamista palveluista ja työkaluista, jotka helpottavat aineistojen saatavuutta ja käytettävyyttä. Tule kuulemaan aineistojen tarjonnasta, käyttöoikeuksista, nykyisistä ja tulevista palveluista ja näihin liittyvistä mahdollisuuksista!

@@ -13,8 +13,8 @@ meta:
     CSC’s new national supercomputer Roihu has been opened for general use, significantly increasing
     the national scientific computing capacity available in Finland.
   image: /media/Roihu2026-konekuva-8131-scaled.jpg
-slug: roihu-is-here-what-you-need-to-know
 ---
+
 
 
 CSC’s new national supercomputer Roihu [has been opened for general use](https://csc.fi/en/news/supercomputer-roihu-is-now-open-for-research-use/), significantly increasing the national scientific computing capacity available in Finland. This brings numerous changes: for example, the copy of the [open newspapers and journals dataset from the National Library of Finland](https://digi.kansalliskirjasto.fi/collections?id=861&set_language=en) has been [moved to Roihu](https://www.kielipankki.fi/organization/fin-clariah/deliverables-26-29/fin-clariah-26-29-d3-1-1/), and the adoption of the next-generation system means that the previous-generation machines Puhti and Mahti will be decommissioned. This decommissioning means that researchers must move their active research and data away from them, e.g. to Roihu. 

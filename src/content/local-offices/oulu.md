@@ -1,6 +1,5 @@
 ---
 name: University of Oulu
-slug: oulu
 logo: /media/logo_oulu.png
 shortDescription: >-
   The University of Oulu's DARIAH node supports language-focused research across the social sciences
@@ -11,7 +10,7 @@ contacts:
     photo: /media/Jouni-MattiKuukkanen_thumbnail.png
     url: https://www.oulu.fi/en/researchers/jouni-matti-kuukkanen
     note: ''
-order: 5
 ---
+
 
 

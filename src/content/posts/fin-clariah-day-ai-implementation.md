@@ -13,8 +13,8 @@ meta:
     On the first FIN-CLARIAH plenary this season the whole infrastructure reflected on how SSH
     research will be affected by AI and introduced what they will…
   image: /media/PXL_20240610_090656021-scaled-e1718743427367.jpg
-slug: fin-clariah-day-ai-implementation
 ---
+
 
 
 **On the first FIN-CLARIAH plenary this season the whole infrastructure reflected on how SSH research will be affected by AI and introduced what they will deliver by the end of 2025.**

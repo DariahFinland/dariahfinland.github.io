@@ -1,6 +1,5 @@
 ---
 name: University of Helsinki
-slug: helsinki
 logo: /media/logo_HY_s.png
 shortDescription: >-
   The University of Helsinki DARIAH node is distributed in diverse units in the city centre campus,
@@ -12,7 +11,7 @@ contacts:
     photo: /media/InesMatres_thumbnail.png
     url: https://researchportal.helsinki.fi/en/persons/in%C3%A9s-matres
     note: ''
-order: 3
 ---
+
 
 

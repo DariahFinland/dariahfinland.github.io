@@ -1,14 +1,14 @@
 ---
 title: Online workshop about the Finna API
-slug: online-workshop-about-the-finna-api-2
-startDate: 2025-05-28
-startTime: 10:00
-endDate: 2025-05-28
-endTime: 11:00
+startDate: '2025-05-28'
+startTime: '10:00'
+endDate: '2025-05-28'
+endTime: '11:00'
 cancelled: false
 isOnline: true
 localOffice: src/content/local-offices/tampere.md
 ---
+
 *Please note that due to foreseen university strikes in Helsinki and Turku the date of this workshop has been changed from Tue. 27.5. to Thu 28.5.*
 
 [Finna.fi](http://Finna.fi) is a search service that collects material (e.g., images, literature, journals, maps, objects, art, films) from hundreds of Finnish organizations under one roof. The renewed Finna API makes it possible to download thousands of high-resolution image files with their according metadata from one organization at a time.

@@ -1,6 +1,5 @@
 ---
 title: 'Building bridges across borders and languages: Sweden joins DARIAH EU'
-slug: building-bridges-across-borders-and-languages-sweden-joins-dariah-eu
 heroImage: /media/LNU_header.37db1f3c.webp
 heroImageAlt: LNU header.37db1f3c
 categories:
@@ -13,6 +12,7 @@ meta:
     international researchers and historical datasets in Swedish language.
   image: /media/LNU_header.37db1f3c.webp
 ---
+
 
 **Find in this article information about HumInfra.se and a dossier with Finnish tools fit for international researchers and historical datasets in Swedish language**
 

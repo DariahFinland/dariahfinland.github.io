@@ -1,14 +1,14 @@
 ---
 title: FIN-CLARIAH day Annotating Social Data
-slug: fin-clariah-day-annotating-social-data
-startDate: 2025-11-28
-startTime: 10:30
-endDate: 2025-11-28
-endTime: 17:00
+startDate: '2025-11-28'
+startTime: '10:30'
+endDate: '2025-11-28'
+endTime: '17:00'
 cancelled: false
 location: University of Helsinki, Metsätalo, Unioninkatu 40
 isOnline: false
 ---
+
 This FIN-CLARIAH day brings together researchers, infrastructure developers, and social scientists to explore current practices and future needs in annotating data sets in social sciences for further analysis.
 
 The day opens with a keynote by **Salla-Maaria Laaksonen** on collecting, annotating, and analyzing social media data, followed by insight talks from **Krista Lagus** on theory-based annotation using large language models (LLMs) and **Katja Valaskivi** on the challenges of working with interview data with sensitive subjects. In the afternoon parallel sessions offer practical perspectives on secure environments for handling sensitive data, hands-on demonstrations with the CSC Secure Desktop environment, and discussions on ethical agreements and algorithmic transparency.

@@ -13,8 +13,8 @@ meta:
     Join us to celebrate the 10th anniversary of the award-winning Helsinki Digital Humanities
     Hackathon 2025—an exciting chance to collaborate, innovate and…
   image: /media/DHH25-1.png
-slug: helsinki-digital-humanities-hackathon-dhh25-welcomes-applicants
 ---
+
 
 
 Join us to celebrate the 10th anniversary of the award-winning Helsinki Digital Humanities Hackathon 2025—an exciting chance to collaborate, innovate and push your own boundaries. The application period has started (until 12.4.2025) – apply now and be part of this milestone event!

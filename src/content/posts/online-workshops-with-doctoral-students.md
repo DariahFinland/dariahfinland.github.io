@@ -13,8 +13,8 @@ meta:
     Our evidence-based infrastructure development lead team from Tampere Univeristy reflects about
     the first hand-on workshops introducing two resources…
   image: /media/dariah-fi-workshops-1.jpg
-slug: online-workshops-with-doctoral-students
 ---
+
 
 
 This week we are reflecting on the DARIAH-FI online workshops with doctoral researchers that took place during the spring 2024. The team from Tampere University, which is responsible for the [Evidence-Based Infrastructure Development](https://www.dariah.fi/evidence-based-infrastructure-development/) work package (WP), organized two events in collaboration with the University of Helsinki and other WPs of the research infrastructure (RI).

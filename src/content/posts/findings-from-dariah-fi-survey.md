@@ -11,8 +11,8 @@ meta:
   title: Findings from DARIAH-FI survey – DARIAH-FI
   description: Findings from a DARIAH-FI wide survey.
   image: /media/FIGURE3-1.png
-slug: findings-from-dariah-fi-survey
 ---
+
 
 
 The interviews with DARIAH-FI participants in Autumn (by Anna Sendra Toset from WP5) brought up some interesting results, which we wanted to test by conducting a short follow-up survey. In total 20 people from DARIAH-FI took part in the survey, which is not fully representative, yet gives some indications. Of those 20 people surveyed, 9 associated themselves with "data science, computer science, language technologies, or other technical discipline", and 9 with "humanities, social sciences, arts, or other non-technical discipline", thus providing equal share of answers for technical and non-technical professions.

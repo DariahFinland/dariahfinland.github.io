@@ -7,19 +7,20 @@
     "node": ">=22.12.0"
   },
   "scripts": {
-    "dev": "astro dev", 
+    "dev": "tinacms dev -c 'astro dev'",
     "build": "astro build && pagefind --site dist",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/node": "^11.1.4",
     "@tailwindcss/vite": "^4.3.3",
-    "@tinacms/astro": "^0.6.1",
+    "@tinacms/datalayer": "^2.0.29",
     "astro": "^7.2.2",
     "marked": "^18.0.9",
+    "mongodb-level": "^0.0.4",
     "tailwindcss": "^4.3.3",
-    "tinacms": "^3.12.1"
+    "tinacms": "^3.12.1",
+    "tinacms-gitprovider-github": "^4.1.16"
   },
   "devDependencies": {
     "@tinacms/cli": "^2.6.1",

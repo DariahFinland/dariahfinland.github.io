@@ -1,6 +1,5 @@
 ---
 title: A word or two on DARIAH-Campus
-slug: a-word-or-two-on-dariah-campus
 heroImage: /media/Screenshot-2023-11-15-at-13.23.56.png
 heroImageAlt: Screenshot 2023 11 15 at 13.23.56
 categories:
@@ -13,6 +12,7 @@ meta:
     digital humanities as a whole, look no further than here.
   image: /media/Screenshot-2023-11-15-at-13.23.56.png
 ---
+
 
 ([featured image source](https://campus.dariah.eu))
 

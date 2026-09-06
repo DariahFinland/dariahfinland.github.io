@@ -16,8 +16,8 @@ meta:
   description: CSC renewed Services for Research available at https://research.csc.fi/
   image: >-
     /media/DALL·E-2025-02-27-10.43.22-A-cartoon-illustration-depicting-a-cloud-computing-environment-designed-for-historical-research.webp
-slug: csc-renewed-services-for-research
 ---
+
 
 
 CSC renewed Services for Research available at [https://research.csc.fi/](https://research.csc.fi/) 

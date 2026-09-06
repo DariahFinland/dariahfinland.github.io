@@ -13,8 +13,8 @@ meta:
     Hello there! This is my first blog post, so I feel that an introduction is necessary. My name is
     Elias, I am a master's degree student at the University…
   image: /media/Eduskunnan-istunto-Palokunnan-talon-juhlasalissa1.jpg
-slug: parlamenttisampo-a-students-pov
 ---
+
 
 
 #### A Word from the Writer

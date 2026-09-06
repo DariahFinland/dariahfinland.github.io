@@ -15,8 +15,8 @@ meta:
     cover diverse research approaches to networks and communities, opening up their infrastructures,
     challenges and needs.
   image: /media/PXL_20260612_0910496602-scaled.jpg
-slug: networked-communities-the-traces-they-leave-and-the-phenomena-they-reveal
 ---
+
 
 
 The summer edition of the FIN-CLARIAH travelling seminar married historical and contemporary phenomena by focusing on the relationships between digital materials, from texts to multimodal content, their creators, and the communities that emerge around them. The [DARIAH-FI node at UEF](https://www.dariah.fi/local-offices/local-office-detail-eastern-finland/) hosted some 25 FIN-CLARIAH partners and local researchers to a night-less encounter in Joensuu on June 11-12. This blog summarises a handful of talks that cover diverse research approaches to networks and communities, opening up their infrastructures, challenges and needs.

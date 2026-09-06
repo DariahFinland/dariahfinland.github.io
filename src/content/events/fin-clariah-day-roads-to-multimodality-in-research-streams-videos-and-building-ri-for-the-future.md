@@ -1,16 +1,17 @@
 ---
-title: "FIN-CLARIAH day – Roads to multimodality in research: streams, videos,
-  and building RI for the future"
-slug: fin-clariah-day-roads-to-multimodality-in-research-streams-videos-and-building-ri-for-the-future
-startDate: 2025-06-13
-startTime: 11:00
-endDate: 2025-06-13
-endTime: 17:00
+title: >-
+  FIN-CLARIAH day – Roads to multimodality in research: streams, videos, and building RI for the
+  future
+startDate: '2025-06-13'
+startTime: '11:00'
+endDate: '2025-06-13'
+endTime: '17:00'
 cancelled: false
 location: University of Jyväskylä
 isOnline: false
 featuredImage: /media/20240517_dhh24_presentations-scaled-1.jpg
 ---
+
 *With the recent news that FIN-CLARIAH has been granted lighthouse status, we are now positioned to lead the way in advancing essential infrastructure areas, from impact and functionality, to service provision and collaborative use. This day in Jyväskylä will be dedicated to setting standards in latest and multimodal modes of research. With insights from processing audiovisual data, we aim to build connections and spark ideas for future development. In addition, we will have thematic group sessions that will convene on annotation, education provision, and code review for developers.*
 
 **When:** Fri. 13 June 2025, 11:00-17:00

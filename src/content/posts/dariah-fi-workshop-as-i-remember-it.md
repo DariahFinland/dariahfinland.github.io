@@ -13,8 +13,8 @@ meta:
     Our National Coordinator takes a trip down memory lane and talks about April's big event, the
     DARIAH-FI Workshop.
   image: /media/DARIAH-FI-WORKSHOP-figure-1.png
-slug: dariah-fi-workshop-as-i-remember-it
 ---
+
 
 
 ### Introduction

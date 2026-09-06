@@ -1,14 +1,14 @@
 ---
 title: Brown Bag Seminar "Unsupervised methods for image clustering..."
-slug: brown-bag-seminar-2
-startDate: 2026-02-11
-startTime: 12:15
-endDate: 2026-02-11
-endTime: 13:15
+startDate: '2026-02-11'
+startTime: '12:15'
+endDate: '2026-02-11'
+endTime: '13:15'
 cancelled: false
 isOnline: false
 localOffice: src/content/local-offices/helsinki.md
 ---
+
 The Methodological unit at the [Helsinki Institute for Humanities and Social Sciences](https://www.helsinki.fi/en/helsinki-institute-social-sciences-and-humanities) (Uni Helsinki) organizes a recurrent Brown Bag Seminar to highlight novel methodological approaches in humanities and social sciences. The idea of the meetings is to introduce methodological innovations and cutting-edge research in various disciplines in an easily accessible manner and have an interdisciplinary discussion in an easy-going atmosphere over lunch.
 
 There will be a 20-minute introduction to the methodological theme, followed by an open discussion of 40 minutes. The seminars are open to everybody and welcome a multidisciplinary and methodologically curious audience. The language of the meetings can be Finnish or English.

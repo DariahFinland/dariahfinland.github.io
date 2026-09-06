@@ -13,8 +13,8 @@ meta:
     DARIAH-FI project's Work Package 3.1 "Increasingly Automated Ingestion of Material" is creating
     data pipeline from the National Library of Finland to CSC.
   image: /media/Figure-2-DARIAH-FI-Workshop-scaled-1.jpg
-slug: challenges-of-big-datasets
 ---
+
 
 
 DARIAH-FI project's Work Package 3.1 "Increasingly Automated Ingestion of Material" is creating data pipeline from the National Library of Finland (NLF) to CSC (IT Center for Science). In this blogpost we talked with two people involved in this work package, Tuula Pääkkönen from NLF and Martin Matthiesen from CSC, to learn more how researchers will benefit from this pipeline and about unforeseen challenges when working with very large datasets.

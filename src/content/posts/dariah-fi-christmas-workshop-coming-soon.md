@@ -11,8 +11,8 @@ meta:
   title: DARIAH-FI Christmas Workshop Coming Soon! – DARIAH-FI
   description: Dear Stranger, you are warmly invited to the DARIAH-FI Christmas Workshop on December 19
   image: /media/DARIAH-FI-WORKSHOP-Featured-Image.jpg
-slug: dariah-fi-christmas-workshop-coming-soon
 ---
+
 
 
 Dear Stranger,

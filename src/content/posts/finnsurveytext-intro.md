@@ -13,8 +13,8 @@ meta:
     The makers of FinnSurveyText introduce the resource through a demo guide and describe the
     process of creating an open-source tool for research.
   image: /media/1_finnsurveytext-LOGO-e1751008263275.png
-slug: finnsurveytext-intro
 ---
+
 
 
 **The makers of FinnSurveyText introduce the resource through a demo guide and describe the process of creating an open-source tool for research.**

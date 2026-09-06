@@ -1,6 +1,5 @@
 ---
 name: University of Jyväskylä
-slug: jyvaskyla
 logo: /media/logo_jyvaskyla_s.png
 shortDescription: >-
   The University of Jyväskylä's DARIAH node supports multidisciplinary research at the intersection
@@ -15,7 +14,7 @@ contacts:
   - name: Ida Toivanen
     url: https://www.jyu.fi/fi/henkilot/ida-toivanen
     note: ''
-order: 4
 ---
+
 
 

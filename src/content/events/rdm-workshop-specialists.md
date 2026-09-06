@@ -1,13 +1,13 @@
 ---
 title: Participatory RDM workshop for support specialists (Online)
-slug: rdm-workshop-specialists
-startDate: 2024-06-06
-startTime: 10:00
-endDate: 2024-06-06
-endTime: 12:00
+startDate: '2024-06-06'
+startTime: '10:00'
+endDate: '2024-06-06'
+endTime: '12:00'
 cancelled: false
 isOnline: true
 ---
+
 **Are you an information specialist (e.g., librarian) with experience in SSH research data management (RDM)? Then this workshop might interest you!**
 
 Tampere University and the CSC - IT Center for Science are looking for volunteers to take part in a study for developing the DARIAH-FI (/) research infrastructure. The purpose of the study is to (1) understand the RDM practices of SSH scholars that conduct data-intensive research and work with social media data and/or visual materials(); (2) comprehend how these practices are currently supported; and (3) identify how can we better support this aspect of the digital humanities and computational social sciences research process.
