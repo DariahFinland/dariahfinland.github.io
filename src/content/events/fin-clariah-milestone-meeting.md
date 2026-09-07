@@ -1,14 +1,14 @@
 ---
 title: FIN-CLARIAH Milestone meeting
-startDate: '2026-11-09'
-startTime: '12:00'
-endDate: '2026-11-10'
-endTime: '13:00'
+slug: fin-clariah-milestone-meeting
+startDate: 2026-11-09
+startTime: 12:00
+endDate: 2026-11-10
+endTime: 13:00
 cancelled: false
 location: University of Helsinki, Helsinki
 isOnline: false
 ---
-
 **Save the date 9.–10.11.2026**
 
 **FIN-CLARIAH Meeting in Helsinki**

@@ -1,15 +1,15 @@
 ---
-title: 'Brown Bag Seminar: Algorithm-based facial expression analysis'
-startDate: '2026-08-26'
-startTime: '12:00'
-endDate: '2026-08-26'
-endTime: '13:00'
+title: "Brown Bag Seminar: Algorithm-based facial expression analysis"
+slug: brown-bag-seminar-algorithm-based-facial-expression-analysis
+startDate: 2026-08-26
+startTime: 12:00
+endDate: 2026-08-26
+endTime: 13:00
 cancelled: false
 location: University of Helsinki Main Building, Fabianinkatu 33, 3rd floor, room F3010
 isOnline: false
 localOffice: src/content/local-offices/helsinki.md
 ---
-
 In this talk, we present a research method that enables the automatic analysis of facial expressions from video recordings. In 2023 HSSH organized a workshop on the method that inspired its use in the context of language education and language assessment. We give two examples on how the method has been used in the Aasis project (Research Council of Finland 2023 – 2027) developing ways to automatically measure and assess verbal and nonverbal features of spoken interaction in L2 Finnish.
 
 We briefly present a manual (Juselius et al. 2026) introducing the use of algorithm-based facial expression analysis in research that was published for researchers at the University of Helsinki City Centre Campus. The development of the manual was supported by HSSH’s Catalyst Grant funding. We will also explain what we have learnt about the limitations of the method, and what new possibilities the software released this summer, Py-Feat Live, offers ([https://py-feat.org/pages/pyfeat_live/](https://py-feat.org/pages/pyfeat_live/)). Finally, we provide guidance to researchers on how to book Interlab, which is located at Metsätalo.

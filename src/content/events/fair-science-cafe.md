@@ -1,14 +1,14 @@
 ---
 title: FAIR Science Café
-startDate: '2025-11-21'
-startTime: '13:00'
-endDate: '2025-11-21'
-endTime: '14:00'
+slug: fair-science-cafe
+startDate: 2025-11-21
+startTime: 13:00
+endDate: 2025-11-21
+endTime: 14:00
 cancelled: false
 isOnline: true
 localOffice: src/content/local-offices/csc.md
 ---
-
 FAIR Science Café is a informal and interactive online event where researchers get to talk about their work, research, and results in their own words. The discussion also highlights the data used, produced, and possibly openly available in the research.
 
 ### Event aims:

@@ -1,17 +1,16 @@
 ---
-title: >-
-  Emeritus- ja julkistustilaisuus: SampoSampo - Kaikki kaikkeen kietoutuvi - Connecting Everything
-  to Everything Else (in Finnish)
-startDate: '2026-01-09'
-startTime: '13:00'
-endDate: '2026-01-09'
-endTime: '16:00'
+title: "Emeritus- ja julkistustilaisuus: SampoSampo - Kaikki kaikkeen kietoutuvi
+  - Connecting Everything to Everything Else (in Finnish)"
+slug: emeritus-ja-julkistustilaisuus-samposampo-kaikki-kaikkeen-kietoutuvi-connecting-everything-to-everything-else-in-finnish
+startDate: 2026-01-09
+startTime: 13:00
+endDate: 2026-01-09
+endTime: 16:00
 cancelled: false
 location: Aalto University, Konemiehentie 2, Espoo
 isOnline: false
 localOffice: src/content/local-offices/aalto.md
 ---
-
 ***This event will be held in Finnish.***
 
 ### **Sampojen ylinen sampo datan rikastamiseen, hakuun, data-analyysiin ja yhteyksen etsimiseen viisauden verkossa**

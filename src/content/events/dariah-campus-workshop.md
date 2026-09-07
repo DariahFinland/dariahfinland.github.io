@@ -1,13 +1,13 @@
 ---
 title: What makes a good Open Education Resource? DARIAH Campus workshop
-startDate: '2026-05-13'
-startTime: '14:00'
-endDate: '2026-05-13'
-endTime: '15:30'
+slug: dariah-campus-workshop
+startDate: 2026-05-13
+startTime: 14:00
+endDate: 2026-05-13
+endTime: 15:30
 cancelled: false
 isOnline: true
 ---
-
 This event invites digital humanities and social science researchers, projects and infrastructure developers in Finland to an introduction to [DARIAH Campus](https://campus.dariah.eu/). In this workshop participants will find support for creating well curated learning resources. 
 
 Join us for an introduction to DARIAH Campus by Training and Education Officer Dr. Vicky Garnett ([DARIAH EU](https://dariah.eu)). This discovery platform for learning contains 270+ contributions by universities across Europe. Educational resources can be from short concept videos, exercises, or more comprehensive pathfinders for different profiles, from students, teachers or researchers, interested in incorporating digital humanities methods and digital scholarship in their practice. The University of Helsinki is cooperative partner in [DARIAH-EU](https://dariah.eu) and as such, we are also the national liaison to benefiting and contributing to DARIAH services focusing on supporting teaching and leaning of digitally enabled Arts and Humanities research.

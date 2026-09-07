@@ -13,8 +13,8 @@ meta:
     Here is a review to the past week's DH Hackathon in Helsinki, with the main take-outs on each of
     the projects.
   image: /media/20240517_dhh24_presentations-scaled-1.jpg
+slug: helsinki-dh-hackathon-a-summary
 ---
-
 
 
 **Here is a review to the past week's DH Hackathon in Helsinki, with the main take-outs on each of the projects.**

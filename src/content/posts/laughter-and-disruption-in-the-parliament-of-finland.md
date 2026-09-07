@@ -13,8 +13,8 @@ meta:
     ParliamentSampo (parlamenttisampo.fi) is a linked open data research infrastructure of Finnish
     parliamentary data based on speeches extracted from the…
   image: /media/parlamentti-naurua-yle20240104.jpg
+slug: laughter-and-disruption-in-the-parliament-of-finland
 ---
-
 
 
 ParliamentSampo ([parlamenttisampo.fi](https://parlamenttisampo.fi/)) is a linked open data research infrastructure of Finnish parliamentary data based on speeches extracted from the minutes of the plenary sessions of the Parliament of Finland (PoF). Its updated version finds out who is being laughed at and why, and who interrupts whose speeches.

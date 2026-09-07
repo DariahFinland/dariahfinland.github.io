@@ -14,8 +14,8 @@ meta:
     We are glad to introduce this month a recently created DARIAH-FI library. In it one can find
     publications that explain a resource, data publications and…
   image: /media/darah-blog-header-4-1.png
+slug: use-cases-data-publications-and-guidelines-dariah-fi-virtual-library
 ---
-
 
 
 We are glad to introduce this month the recently created DARIAH-FI library

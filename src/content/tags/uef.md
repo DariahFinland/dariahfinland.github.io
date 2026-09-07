@@ -1,5 +1,5 @@
 ---
 title: UEF
+slug: uef
 ---
-
 

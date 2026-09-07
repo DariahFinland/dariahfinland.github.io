@@ -1,15 +1,15 @@
 ---
 title: Digital Humanities Early-Career Välipala. Spring 2026
-startDate: '2026-05-29'
-startTime: '13:00'
-endDate: '2026-05-29'
-endTime: '14:30'
+slug: valipala-3
+startDate: 2026-05-29
+startTime: 13:00
+endDate: 2026-05-29
+endTime: 14:30
 cancelled: false
 location: University of Helsinki
 isOnline: false
 localOffice: src/content/local-offices/helsinki.md
 ---
-
 Digital Humanities Early-Career Välipala is a regular event for early career humanities and social sciences researchers. It offers a free form opportunity to discuss and share experiences of digital methods in research. The focus is on digital good practices, stumbling blocks and tricks regarding use of data, tools and analysis methods.
 
 Snacks will be provided in the form of insights on new methods, best practice testimonials… and cake!

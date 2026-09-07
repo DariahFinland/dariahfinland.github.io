@@ -9,16 +9,12 @@
 // Every place your schema has a LIST of references, that field is left out
 // of this config entirely -- it stays fully editable through PagesCMS, just
 // not through Tina. Affected fields, all commented at their point of use:
-//   - posts: tags, relatedPosts
-//   - tools: collaborators
-//   - affiliated-groups: expertise (this one changed since the last version
-//     of this file -- expertise used to be free-text strings, now it's a
-//     list of references into `tags`, so it moved into this exclusion list)
-//   - pages > archive block: tags, selectedDocs
-//   - pages > trainingSections block: trainings (Tina can edit a training
-//     section's heading/intro, but NOT which trainings it shows)
-// Single (non-list) references -- localOffice on events/tools/trainings/
-// affiliated-groups -- work fine as-is, and are included below.
+//   - posts: categories, relatedPosts
+//   - tools: developedBy, collaborators
+//   - pages > archive block: categories, selectedDocs
+//   - pages > trainingSections block: trainings (this means Tina can edit
+//     a training section's heading/intro, but NOT which trainings it shows)
+// Single (non-list) references -- dariahNode, relatedNode -- work fine as-is.
 
 import { defineConfig } from 'tinacms'
 
@@ -42,11 +38,14 @@ export default defineConfig({
   schema: {
     collections: [
       {
-        name: 'tags',
-        label: 'Tags',
-        path: 'src/content/tags',
+        name: 'categories',
+        label: 'Categories',
+        path: 'src/content/categories',
         format: 'md',
-        fields: [{ type: 'string', name: 'title', label: 'Title', required: true, isTitle: true }],
+        fields: [
+          { type: 'string', name: 'title', label: 'Title', required: true, isTitle: true },
+          { type: 'string', name: 'slug', label: 'Slug', required: true },
+        ],
       },
 
       {
@@ -56,11 +55,12 @@ export default defineConfig({
         format: 'md',
         fields: [
           { type: 'string', name: 'title', label: 'Title', required: true, isTitle: true },
+          { type: 'string', name: 'slug', label: 'Slug', required: true },
           { type: 'image', name: 'heroImage', label: 'Hero Image' },
           { type: 'string', name: 'heroImageAlt', label: 'Hero Image Alt Text' },
-          // tags, relatedPosts omitted -- list-of-reference, see note at top
+          // categories, relatedPosts omitted -- list-of-reference, see note at top
           { type: 'string', name: 'authors', label: 'Authors', list: true },
-          { type: 'string', name: 'publishedAt', label: 'Published At (YYYY-MM-DD)', required: true },
+          { type: 'datetime', name: 'publishedAt', label: 'Published At', required: true },
           {
             type: 'object',
             name: 'meta',
@@ -82,6 +82,7 @@ export default defineConfig({
         format: 'md',
         fields: [
           { type: 'string', name: 'name', label: 'Name', required: true, isTitle: true },
+          { type: 'string', name: 'slug', label: 'Slug', required: true },
           { type: 'image', name: 'logo', label: 'Logo' },
           { type: 'string', name: 'shortDescription', label: 'Short Description', ui: { component: 'textarea' } },
           { type: 'string', name: 'externalUrl', label: 'External URL' },
@@ -110,10 +111,10 @@ export default defineConfig({
           { type: 'string', name: 'name', label: 'Name', required: true, isTitle: true },
           { type: 'image', name: 'logo', label: 'Logo' },
           { type: 'string', name: 'externalUrl', label: 'External URL', required: true },
-          // expertise omitted -- now a list-of-reference to `tags`, see note at top
+          { type: 'string', name: 'expertise', label: 'Expertise Tags', list: true },
           { type: 'string', name: 'contactName', label: 'Contact Name' },
           { type: 'string', name: 'contactUrl', label: 'Contact URL' },
-          { type: 'reference', name: 'localOffice', label: 'Local Office', collections: ['localOffices'] },
+          { type: 'reference', name: 'dariahNode', label: 'Local Office', collections: ['localOffices'] },
           { type: 'rich-text', name: 'body', label: 'Description', isBody: true },
         ],
       },
@@ -146,8 +147,7 @@ export default defineConfig({
               { type: 'string', name: 'url', label: 'URL' },
             ],
           },
-          { type: 'reference', name: 'localOffice', label: 'Local Office', collections: ['localOffices'] },
-          // collaborators omitted -- list-of-reference, see note at top
+          // developedBy, collaborators omitted -- list-of-reference, see note at top
           { type: 'rich-text', name: 'body', label: 'Description', isBody: true },
         ],
       },
@@ -159,15 +159,16 @@ export default defineConfig({
         format: 'md',
         fields: [
           { type: 'string', name: 'title', label: 'Title', required: true, isTitle: true },
-          { type: 'string', name: 'startDate', label: 'Start Date (YYYY-MM-DD)', required: true },
+          { type: 'string', name: 'slug', label: 'Slug', required: true },
+          { type: 'datetime', name: 'startDate', label: 'Start Date', required: true },
           { type: 'string', name: 'startTime', label: 'Start Time (e.g. 12:15)' },
-          { type: 'string', name: 'endDate', label: 'End Date (YYYY-MM-DD)' },
+          { type: 'datetime', name: 'endDate', label: 'End Date' },
           { type: 'string', name: 'endTime', label: 'End Time (e.g. 14:00)' },
           { type: 'string', name: 'location', label: 'Location' },
           { type: 'boolean', name: 'isOnline', label: 'Online Event' },
           { type: 'string', name: 'registrationUrl', label: 'Registration URL' },
           { type: 'image', name: 'featuredImage', label: 'Featured Image' },
-          { type: 'reference', name: 'localOffice', label: 'Organising Office', collections: ['localOffices'] },
+          { type: 'reference', name: 'relatedNode', label: 'Organising Office', collections: ['localOffices'] },
           { type: 'boolean', name: 'cancelled', label: 'Cancelled' },
           { type: 'rich-text', name: 'body', label: 'Description', isBody: true },
         ],
@@ -183,7 +184,6 @@ export default defineConfig({
           { type: 'string', name: 'url', label: 'URL' },
           { type: 'string', name: 'group', label: "Group (e.g. Bachelor's level)" },
           { type: 'string', name: 'levelTags', label: 'Level Tags' },
-          { type: 'reference', name: 'localOffice', label: 'Local Office', collections: ['localOffices'] },
           { type: 'rich-text', name: 'body', label: 'Description', isBody: true },
         ],
       },
@@ -285,7 +285,7 @@ export default defineConfig({
                   { type: 'rich-text', name: 'introRichText', label: 'Intro Text' },
                   { type: 'string', name: 'populateBy', label: 'Populate By', options: ['collection', 'selection'] },
                   { type: 'number', name: 'limit', label: 'Limit' },
-                  // tags, selectedDocs omitted -- list-of-reference, see note at top
+                  // categories, selectedDocs omitted -- list-of-reference, see note at top
                 ],
               },
               {

@@ -13,8 +13,8 @@ meta:
     The Fall plenary brought the whole infrastructure to reflect about metadata, what is it in
     diverse fields and how to make it fit-for-research.
   image: /media/fin-clariah20241122_groupphoto-scaled-e1732736022698.jpg
+slug: fin-clariah-day-digital-cultural-heritage-data-or-metadata
 ---
-
 
 
 **The Fall plenary brought the whole infrastructure to reflect about metadata, what is it in diverse fields and how to make it fit-for-research.** 

@@ -14,8 +14,8 @@ meta:
     In this report we gather important references to services and use cases that illustrate
     Terminology work as a resource for improving visibility of…
   image: /media/20260325-FINCLARIAH-roadshow-aalto-scaled.jpg
+slug: from-data-to-intelligence-a-fin-clariah-roadshow-at-aalto-university
 ---
-
 
 
 In this report we gather important references to services and use cases that illustrate Terminology work as a resource for improving visibility of research outputs and to produce reliable data-analysis tools. These were recently introduced to a small but interested live-audience at Aalto University.

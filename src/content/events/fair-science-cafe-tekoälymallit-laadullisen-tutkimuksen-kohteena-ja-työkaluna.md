@@ -1,16 +1,15 @@
 ---
 title: FAIR Science Café – Tekoälymallit laadullisen tutkimuksen kohteena ja työkaluna
-startDate: '2026-08-26'
-startTime: '13:00'
-endDate: '2026-08-26'
-endTime: '14:00'
+slug: fair-science-cafe-tekoälymallit-laadullisen-tutkimuksen-kohteena-ja-työkaluna
+startDate: 2026-08-26
+startTime: 13:00
+endDate: 2026-08-26
+endTime: 14:00
 cancelled: false
 isOnline: true
-registrationUrl: >-
-  https://research.csc.fi/training/fair-science-cafe-tekoalymallit-laadullisen-tutkimuksen-kohteena-ja-tyokaluna/
+registrationUrl: https://research.csc.fi/training/fair-science-cafe-tekoalymallit-laadullisen-tutkimuksen-kohteena-ja-tyokaluna/
 localOffice: src/content/local-offices/csc.md
 ---
-
 **CSC:n järjestämän FAIR Science Cafén elokun puhujana on tutkija [Matti Pohjonen](https://researchportal.helsinki.fi/en/persons/matti-pohjonen/)  (Helsingin yliopisto) aiheenaan tekoälymallit laadullisen tutkimuksen kohteena ja työkaluna.**
 
 Matti Pohjonen esittelee synteettistä etnografiaa uutena tapana käyttää tekoälyä varsinkin laadullisen tutkimuksen apuna. Kuulet tapahtumassa mm:

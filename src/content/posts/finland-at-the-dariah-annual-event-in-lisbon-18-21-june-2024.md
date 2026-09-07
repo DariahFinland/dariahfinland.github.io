@@ -13,8 +13,8 @@ meta:
     Report on the highlights of the DARIAH Annual event that gathered European representatives from
     DH, arts and humanities scholars, to university libraries…
   image: /media/PXL_20240618_1921096001-scaled-e1718991651436.jpg
+slug: finland-at-the-dariah-annual-event-in-lisbon-18-21-june-2024
 ---
-
 
 
 **Report on the highlights of the DARIAH Annual event that gathered European representatives from DH, arts and humanities scholars, to university libraries and infrastructure providers under the them of digital research workflows.**

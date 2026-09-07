@@ -13,8 +13,8 @@ meta:
     Looking for publication venue? Here is one to share your research with special interest in
     datasets, tools and workflows. Call for papers open.
   image: /media/transformations-journal_banner-1.png
+slug: transformations-a-new-journal-on-digital-humanities
 ---
-
 
 
 [*Transformations: A DARIAH Journal*](https://transformations.episciences.org) is dedicated to providing a trusted, non-commercial platform for documenting various methodological and research activities in arts and humanities, including data gathering and processing, annotation and modeling, analysis and interpretation.

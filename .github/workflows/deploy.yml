@@ -1,90 +1,69 @@
 # .github/workflows/deploy.yml
 #
-# Replaces the old GitHub Pages workflow. Adapted directly from the
-# original Payload project's Rahti deploy workflow -- same build-push-to-
-# GHCR-then-oc-set-image pattern, just pointed at this repo's image and the
-# new deployment name.
-#
-# Requires these repo secrets (Settings -> Secrets and variables -> Actions)
-# -- if these already exist as org-level secrets shared from the old Payload
-# repo, nothing to do; otherwise they need adding fresh to THIS repo, since
-# secrets don't carry over automatically between repos:
-#   RAHTI_TOKEN    -- oc login token
-#   RAHTI_SERVER   -- Rahti API server URL
-#   RAHTI_PROJECT  -- the OpenShift project/namespace to deploy into
-#
-# IMPORTANT: rahti/deployment.yaml must be applied by hand once
-# (oc apply -f rahti/deployment.yaml) before this workflow's `oc set image`
-# step has a deployment to actually target.
+# Builds the site (Astro + Pagefind indexing) and deploys it to GitHub Pages
+# on every push to main -- including the commits PagesCMS makes when
+# someone saves an edit. That closes the loop we talked about earlier:
+# edit in PagesCMS -> commit to main -> this workflow runs automatically ->
+# live site updates, no manual step in between.
 
-name: Deploy to Rahti
+name: Deploy to GitHub Pages
 
 on:
   push:
     branches: [main]
-  workflow_dispatch:
+  workflow_dispatch: # lets you trigger a rebuild manually from the Actions tab
   schedule:
     # Daily rebuild so events flip from upcoming to past on their own, even
-    # with zero content changes.
+    # with zero content changes -- otherwise the site only recomputes this
+    # whenever someone happens to save an edit in PagesCMS/Tina.
     - cron: '0 3 * * *' # 03:00 UTC daily
 
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set lowercase image repository name
-        id: image
-        # Docker/OCI registries require lowercase repository paths, but
-        # github.repository preserves the org's actual casing
-        # (DariahFinland) -- this derives the lowercase form once so every
-        # later step references the same correct value.
-        run: echo "repo=$(echo '${{ github.repository }}' | tr '[:upper:]' '[:lower:]')" >> "$GITHUB_OUTPUT"
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
 
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-
-      - name: Log in to GitHub Container Registry
-        uses: docker/login-action@v3
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          node-version: 22
+          cache: pnpm
 
-      - name: Build and push image
-        uses: docker/build-push-action@v5
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build site (astro build + pagefind indexing)
+        run: pnpm build
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload build artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          context: .
-          platforms: linux/amd64
-          push: true
-          tags: |
-            ghcr.io/${{ steps.image.outputs.repo }}:latest
-            ghcr.io/${{ steps.image.outputs.repo }}:${{ github.sha }}
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
+          path: ./dist
 
-      - name: Install OpenShift CLI
-        run: |
-          curl -LO https://mirror.openshift.com/pub/openshift-v4/clients/ocp/stable/openshift-client-linux.tar.gz
-          tar -xzf openshift-client-linux.tar.gz
-          sudo mv oc /usr/local/bin/oc
-          oc version --client
-
-      - name: Login to Rahti
-        run: |
-          oc login --token=${{ secrets.RAHTI_TOKEN }} --server=${{ secrets.RAHTI_SERVER }}
-
-      - name: Set project namespace
-        run: |
-          oc project ${{ secrets.RAHTI_PROJECT }}
-
-      - name: Update image and restart deployment
-        run: |
-          oc set image deployment/dariah-fi-astro dariah-fi-astro=ghcr.io/${{ steps.image.outputs.repo }}:${{ github.sha }}
-          oc rollout status deployment/dariah-fi-astro --timeout=120s
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

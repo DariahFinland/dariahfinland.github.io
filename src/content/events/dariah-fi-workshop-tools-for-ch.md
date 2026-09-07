@@ -1,13 +1,14 @@
 ---
-title: 'DARIAH-FI Workshop: New tools and data services for cultural heritage research'
-startDate: '2026-01-22'
-startTime: '9:00'
-endDate: '2026-01-22'
-endTime: '15:00'
+title: "DARIAH-FI Workshop: New tools and data services for cultural heritage
+  research"
+slug: dariah-fi-workshop-tools-for-ch
+startDate: 2026-01-22
+startTime: 9:00
+endDate: 2026-01-22
+endTime: 15:00
 cancelled: false
 isOnline: true
 ---
-
 **Organisers**: Inés Matres (University of Helsinki), Ida Toivanen (University of Jyväskylä), and Ilkka Lähteenmäki (University of Oulu)
 
 **Date**: 22 January 2026, Online, Full-day with breaks

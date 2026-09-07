@@ -1,5 +1,6 @@
 ---
 name: University of Turku
+slug: turku
 logo: /media/logo_turku.png
 shortDescription: >-
   The University of Turku has a long tradition in developing digital language resources and language
@@ -11,7 +12,7 @@ contacts:
     photo: /media/VeronikaLaippala_thumbnail.png
     url: https://www.utu.fi/fi/ihmiset/veronika-laippala
     note: ''
+order: 7
 ---
-
 
 

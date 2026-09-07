@@ -1,5 +1,6 @@
 ---
 name: University of Eastern Finland
+slug: eastern-finland
 logo: /media/logo_uoef.png
 shortDescription: >-
   The local node at the University of Eastern Finland highlights interdisciplinary research and the
@@ -12,7 +13,7 @@ contacts:
     photo: /media/PaulaRautionaho_thumbnail.png
     url: https://uefconnect.uef.fi/paula.rautionaho/
     note: ''
+order: 2
 ---
-
 
 

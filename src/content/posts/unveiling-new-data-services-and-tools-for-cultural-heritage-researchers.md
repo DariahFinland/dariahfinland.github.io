@@ -1,5 +1,6 @@
 ---
 title: Unveiling new data services and tools for cultural heritage researchers
+slug: unveiling-new-data-services-and-tools-for-cultural-heritage-researchers
 heroImage: /media/Viking-luettelo-1.jpg
 heroImageAlt: darah blog header 6
 categories:
@@ -13,7 +14,6 @@ meta:
     DARIAH-FI network for acquiring and processing large-scale,…
   image: /media/darah-blog-header-6.png
 ---
-
 
 In this blog, we bring news about new infrastructure developed in the past two years by the DARIAH-FI network for acquiring and processing large-scale, visual and multimodal historical documents. 
 

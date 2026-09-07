@@ -11,8 +11,8 @@ meta:
   title: Calling researchers working on social media data! – DARIAH-FI
   description: Survey on the current state of research using social media data in Finland.
   image: /media/so-me-network-photo-scaled-e1726571922329.jpg
+slug: calling-researchers-working-on-social-media-data
 ---
-
 
 
 **Survey on the current state of research using social media data in Finland.** 

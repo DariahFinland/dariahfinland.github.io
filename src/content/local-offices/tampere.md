@@ -1,5 +1,6 @@
 ---
 name: Tampere University
+slug: tampere
 logo: /media/logo_tampere.png
 shortDescription: >-
   At Tampere University, the DARIAH local node is situated in the Faculty of Information Technology
@@ -10,7 +11,7 @@ contacts:
     photo: /media/SannaKumpulainen_thumbnail.png
     url: https://www.tuni.fi/fi/ihmiset/sanna-kumpulainen
     note: ''
+order: 6
 ---
-
 
 

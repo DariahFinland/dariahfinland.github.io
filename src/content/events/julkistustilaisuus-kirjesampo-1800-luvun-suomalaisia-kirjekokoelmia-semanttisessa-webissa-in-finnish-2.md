@@ -1,17 +1,16 @@
 ---
-title: >-
-  Julkistustilaisuus: Kirjesampo: 1800-luvun suomalaisia kirjekokoelmia semanttisessa webissä (In
-  Finnish)
-startDate: '2025-05-27'
-startTime: '13:15'
-endDate: '2025-05-27'
-endTime: '16:00'
+title: "Julkistustilaisuus: Kirjesampo: 1800-luvun suomalaisia kirjekokoelmia
+  semanttisessa webissä (In Finnish)"
+slug: julkistustilaisuus-kirjesampo-1800-luvun-suomalaisia-kirjekokoelmia-semanttisessa-webissa-in-finnish-2
+startDate: 2025-05-27
+startTime: 13:15
+endDate: 2025-05-27
+endTime: 16:00
 cancelled: false
 location: Suomalaisen Kirjallisuuden Seura (SKS), Hallituskatu 1, Helsinki
 isOnline: false
 localOffice: src/content/local-offices/aalto.md
 ---
-
 **Milloin:** Ti. 27.5.2025, klo 13:15–16:00
 
 **Missä:** Suomalaisen Kirjallisuuden Seura (SKS), juhlasali, Hallituskatu 1, 2. kerros, ja etäyhteydellä

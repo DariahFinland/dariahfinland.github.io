@@ -1,5 +1,6 @@
 ---
 title: 'Building the plane as you fly: The truth behind the development of a research infrastructure'
+slug: building-the-plane-as-you-fly-the-truth-behind-the-development-of-a-research-infrastructure
 heroImage: /media/photo_1-scaled-1.jpg
 heroImageAlt: photo 1 scaled 1
 categories:
@@ -14,7 +15,6 @@ meta:
     evolution thus far, the good and the bad.
   image: /media/photo_1-scaled-1.jpg
 ---
-
 
 Hi y'all!
 

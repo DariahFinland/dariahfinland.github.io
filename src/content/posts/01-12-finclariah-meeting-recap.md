@@ -1,5 +1,6 @@
 ---
 title: 01.12 FINCLARIAH meeting recap
+slug: 01-12-finclariah-meeting-recap
 heroImage: /media/Screenshot-2023-12-15-at-15.16.24.png
 heroImageAlt: Screenshot 2023 12 15 at 15.16.24
 categories:
@@ -13,7 +14,6 @@ meta:
     spoke about what, and what it means for the future.
   image: /media/Screenshot-2023-12-15-at-15.16.24.png
 ---
-
 
 Dear Readers,
 

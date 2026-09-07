@@ -1,15 +1,15 @@
 ---
-title: 'DARIAH-FI Workshop: New datasets and tools for social media research'
-startDate: '2025-12-09'
-startTime: '9:00'
-endDate: '2025-12-09'
-endTime: '12:00'
+title: "DARIAH-FI Workshop: New datasets and tools for social media research"
+slug: dariah-fi-workshop-new-datasets-and-tools-for-social-media-research
+startDate: 2025-12-09
+startTime: 9:00
+endDate: 2025-12-09
+endTime: 12:00
 cancelled: false
 isOnline: true
 registrationUrl: https://link.webropol.com/ep/dariahsome
 localOffice: src/content/local-offices/eastern-finland.md
 ---
-
 Organisers: Mikko Laitinen & Paula Rautionaho (University of Eastern Finland)
 
 Date: **Tuesday 9 December, at 9-12am (Online)**

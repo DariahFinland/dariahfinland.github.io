@@ -1,5 +1,6 @@
 ---
 name: Aalto University
+slug: aalto
 logo: /media/logo_aalto.png
 shortDescription: >-
   The local node in the Aalto University is situated at the Department of Computer Science, Semantic
@@ -13,7 +14,7 @@ contacts:
     photo: /media/EeroHyvonen_thumbnail.png
     url: https://seco.cs.aalto.fi/u/eahyvone/
     note: ''
+order: 1
 ---
-
 
 

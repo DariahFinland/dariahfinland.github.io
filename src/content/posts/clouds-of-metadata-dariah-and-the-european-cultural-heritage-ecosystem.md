@@ -1,5 +1,6 @@
 ---
 title: Clouds of (meta)data… DARIAH and the European Cultural Heritage Ecosystem
+slug: clouds-of-metadata-dariah-and-the-european-cultural-heritage-ecosystem
 heroImage: /media/darah-blog-header-6.png
 heroImageAlt: clouds-of-metadata
 categories:
@@ -13,7 +14,6 @@ meta:
     across Europe for diverse fields. Working groups are the…
   image: /media/darah-blog-header-6.png
 ---
-
 
 The eve of the DARIAH Annual event was dedicated to [working groups](https://www.dariah.eu/activities/working-groups-list/) that act as research networks across Europe for diverse fields. Working groups are the main mechanism to benefit from the DARIAH ERIC, both financially and by enabling collaboration among infrastructure-oriented SSH scholars and experts. As the main theme of this year's Annual event was "The past", in this post from the [DARIAH Annual event series](https://www.dariah.fi/category/news-and-blogs/?tag=dariah-annual-event), we report on initiatives and groups that aim to facilitate access to and re-use of cultural heritage data.
 

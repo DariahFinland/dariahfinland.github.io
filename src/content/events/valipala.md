@@ -1,15 +1,15 @@
 ---
 title: Digital humanities early career välipala
-startDate: '2025-05-23'
-startTime: '12:00'
-endDate: '2025-05-23'
-endTime: '14:00'
+slug: valipala
+startDate: 2025-05-23
+startTime: 12:00
+endDate: 2025-05-23
+endTime: 14:00
 cancelled: false
 location: University of Helsinki
 isOnline: false
 localOffice: src/content/local-offices/helsinki.md
 ---
-
 Digital Humanities early career välipala is a monthly meet-up in person for early career humanities and social sciences researchers. It offers a free form opportunity to discuss and share experiences of digital methods in research. The focus is on digital good practices, stumbling blocks and tricks regarding use of data, tools and analysis methods.
 
 Snacks will be provided in the form of insights on new methods, best practice testimonials… and cake! **Welcome from 3 to 4 pm at Metsätalo UniCafe!**

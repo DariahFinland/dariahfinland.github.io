@@ -1,5 +1,6 @@
 ---
 title: From Hackathon to publication - Bookmarking Emotional Memories
+slug: from-hackathon-to-publication-bookmarking-emotional-memories
 heroImage: /media/poster-slam-oral-history-e1780301256616.jpg
 heroImageAlt: poster slam oral history
 categories:
@@ -13,7 +14,6 @@ meta:
     work.
   image: /media/poster-slam-oral-history-e1780301256616.jpg
 ---
-
 
 The 10th DHH (Digital Humanities Hackathon 2025) challenged students for the first time to examine oral history interviews. A year later, an article has been published presenting this work.
 
