@@ -1,3 +1,5 @@
 # pnpm-workspace.yaml
+allowBuilds:
+  esbuild: true # needed by Vite (Astro's build tool) -- unrelated to Tina
 minimumReleaseAgeExclude:
   - astro@7.2.2
