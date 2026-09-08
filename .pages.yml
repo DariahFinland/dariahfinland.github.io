@@ -6,6 +6,16 @@
 # versa), or PagesCMS and Astro will quietly disagree about what a document
 # should look like.
 
+actions:
+  - name: publish-to-main
+    label: Publish to Live Site
+    workflow: publish.yml
+    ref: current
+    confirm:
+      title: Publish to the live site?
+      message: This will make your changes visible on the live website immediately.
+      button: Publish
+
 media:
   input: public/media
   output: /media
