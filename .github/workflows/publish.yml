@@ -10,6 +10,14 @@ name: Publish to main
 
 on:
   workflow_dispatch:
+    inputs:
+      payload:
+        description: >
+          Contextual info PagesCMS sends automatically (commit sha, entry
+          path, etc.) -- not used by this workflow, just needs to be
+          declared here or GitHub rejects the dispatch call entirely.
+        required: false
+        type: string
 
 jobs:
   publish:
