@@ -42,7 +42,7 @@ content:
     type: collection
     path: src/content/local-offices
     filename:
-      template: "{primary}.md"
+      template: "{primary}"
       field: true
     view:
       fields: [name]
