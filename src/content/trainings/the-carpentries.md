@@ -1,8 +1,8 @@
 ---
 title: The Carpentries
 url: https://carpentries.org/
-group: ''
-levelTags: ''
+group: Varied levels
+levelTags: Varied levels
 order: 36
 ---
 

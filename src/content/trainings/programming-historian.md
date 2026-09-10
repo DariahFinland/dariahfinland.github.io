@@ -1,8 +1,8 @@
 ---
 title: Programming Historian
 url: https://programminghistorian.org/
-group: ''
-levelTags: ''
+group: Varied levels
+levelTags: Varied levels
 order: 35
 ---
 

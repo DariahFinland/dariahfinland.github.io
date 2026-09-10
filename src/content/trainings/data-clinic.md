@@ -2,7 +2,7 @@
 title: Data Clinic
 url: https://studies.helsinki.fi/courses/course-unit/otm-ef0fec68-bc01-4e00-8da1-2c814b1d07e4/LDA-T309
 group: Varied levels
-levelTags: Doctoral level, Master's level
+levelTags: Varied levels
 order: 32
 ---
 

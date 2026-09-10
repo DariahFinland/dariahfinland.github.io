@@ -1,8 +1,8 @@
 ---
 title: DARIAH Campus
 url: https://campus.dariah.eu/
-group: ''
-levelTags: ''
+group: Varied levels
+levelTags: Varied levels
 order: 34
 ---
 

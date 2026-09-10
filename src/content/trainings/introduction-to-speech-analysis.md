@@ -1,7 +1,7 @@
 ---
 title: Introduction to Speech Analysis
 url: https://studies.helsinki.fi/courses/course-unit/otm-d2d135f4-05d2-4fa3-9987-041463c06fd9/KIK-LG212
-group: Varied levels
+group: Master's level
 levelTags: Master's level
 order: 30
 ---
