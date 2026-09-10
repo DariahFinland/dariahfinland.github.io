@@ -260,7 +260,9 @@ const trainings = defineCollection({
     title: z.string(),
     url: z.string().optional(),
     // Section this training belongs to on the page (was groups[].levelLabel)
-    group: z.string().optional(),
+    // Matches TrainingSections.astro's GROUP_ORDER exactly -- keep both in
+    // sync if this list ever changes.
+    group: z.enum(["Bachelor's level", "Master's level", 'Doctoral level', 'Varied levels']).optional(),
     levelTags: z.string().optional(),
     localOffice: z.string().optional(),
     // description lives in the file's body, same convention as posts/events/tools
