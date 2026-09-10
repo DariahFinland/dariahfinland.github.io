@@ -12,5 +12,4 @@ contactName: Leo Lahti
 contactUrl: https://datascience.utu.fi/team/
 localOffice: src/content/local-offices/turku.md
 ---
-
-Turku Data Science group is a leading Finnish research group in computational humanities. The main research focus is in the analysis of complex natural and social systems using state-of-the-art approaches in scientific data analysis.
+Turku Data Science group is a leading Finnish research group in computational humanities. The main research focus is in the analysis of complex natural and social systems using the state-of-the-art approaches in scientific data analysis. The group has developed data science frameworks to advance computational analyses of cultural production, population studies, and ecological systems and runs a number of internationally recognized projects in these areas. The team coordinates the international rOpenGov developer network ([ropengov.org](http://ropengov.org)) that provides open data science methods for open government data.
