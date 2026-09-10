@@ -1,33 +1,25 @@
 ---
-title: 'Roihu is Here: What You Need to Know?'
+title: "Roihu is Here: What You Need to Know?"
 heroImage: /media/Roihu2026-konekuva-8131-scaled.jpg
-relatedPosts: []
-categories:
-  - src/content/categories/news.md
-  - src/content/categories/news-and-blogs.md
-authors: []
-publishedAt: '2026-07-07'
+authors:
+  - Anni Järvenpää
+publishedAt: 2026-07-07
 meta:
-  title: 'Roihu is Here: What You Need to Know?'
-  description: >-
-    CSC’s new national supercomputer Roihu has been opened for general use, significantly increasing
-    the national scientific computing capacity available in Finland.
+  title: "Roihu is Here: What You Need to Know?"
+  description: CSC’s new national supercomputer Roihu has been opened for general
+    use, significantly increasing the national scientific computing capacity
+    available in Finland.
   image: /media/Roihu2026-konekuva-8131-scaled.jpg
-slug: roihu-is-here-what-you-need-to-know
 ---
-
-
 CSC’s new national supercomputer Roihu [has been opened for general use](https://csc.fi/en/news/supercomputer-roihu-is-now-open-for-research-use/), significantly increasing the national scientific computing capacity available in Finland. This brings numerous changes: for example, the copy of the [open newspapers and journals dataset from the National Library of Finland](https://digi.kansalliskirjasto.fi/collections?id=861&set_language=en) has been [moved to Roihu](https://www.kielipankki.fi/organization/fin-clariah/deliverables-26-29/fin-clariah-26-29-d3-1-1/), and the adoption of the next-generation system means that the previous-generation machines Puhti and Mahti will be decommissioned. This decommissioning means that researchers must move their active research and data away from them, e.g. to Roihu. 
 
 **Roihu**
 
 Moving from Puhti and Mahti to Roihu triples the national supercomputing capacity, and it is well suited for tasks such as training small to medium-sized AI models. Further, the scratch disk performance is estimated to be an order of magnitude higher than on Puhti, which is a huge benefit when it comes to I/O-heavy computations and data preparation. Roihu’s GPU partition ranked 91st and CPU partition 193rd on [June 2026 TOP500 list](https://top500.org/lists/top500/list/2026/06/) comparing supercomputers around the world. For general information about Roihu, see [csc.fi](https://csc.fi/en/our-expertise/high-performance-computing/roihu-supercomputer/). Technical documentation and more detailed information about its compute nodes can be found in [docs.csc.fi](https://docs.csc.fi/computing/systems-roihu/). 
 
-
 **Puhti and Mahti Decommissioning**
 
 The previous generation national HPC environments, Puhti and Mahti, will be decommissioned. The Puhti computing services are scheduled be shut down on July 31st, and Mahti computing services on August 31st. Login nodes and storage of both machines will shut down on October 15th, but their accessibility cannot be guaranteed beyond the end of August due to service contracts running out. Thus the safest option is to ensure that all important data is copied elsewhere already before September.
-
 
 **Getting Roihu Access**
 
@@ -43,8 +35,7 @@ In terms of compute, the most notable difference between the old systems and Roi
 
 If you are running I/O-intensive computations and have been using the fast local storage on compute nodes, its reservation changes somewhat. Previously temporary storage could be requested relatively freely for all types of jobs. On Roihu, jobs running on shared nodes can only obtain the standard quota of 20 GiB: requesting disaggregated NVMe storage is only available for jobs reserving full nodes. Fortunately the shared node support will be added in Q3/2026. See [Roihu disk areas](https://docs.csc.fi/computing/roihu-disk/#temporary-local-disk-areas) for more information.
 
-Docs.csc.fi offers both [instructions for creating batch job scripts](https://docs.csc.fi/computing/running/creating-job-scripts-roihu/) and some [example scripts ](https://docs.csc.fi/computing/running/example-job-scripts-roihu/)to help you get started with your computations.
-
+Docs.csc.fi offers both [instructions for creating batch job scripts](https://docs.csc.fi/computing/running/creating-job-scripts-roihu/) and some [example scripts](https://docs.csc.fi/computing/running/example-job-scripts-roihu/) to help you get started with your computations.
 
 **Migrating Your Data Away from Puhti and Mahti**
 
@@ -57,5 +48,3 @@ After figuring out what needs to be salvaged and identifying a suitable destinat
 **Support**
 
 If you run into any problems or have questions about Roihu or other CSC systems, the usual support channels are available. [CSC support](https://docs.csc.fi/support/contact/)is available throughout the summer via email or phone. To maximize the likelihood of getting your issue resolved quickly and with few rounds of emailing, see [tips for writing good support requests](https://docs.csc.fi/support/support-howto/). [The weekly research support coffees](https://csc.fi/en/training-calendar/csc-research-support-coffee-every-wednesday-at-1400-finnish-time-2-2/) also offer an easy way to ask questions in person and e.g. share your screen if necessary. Roihu has been a popular topic in questions and short talks there lately.
-
-Text: Anni Järvenpää
