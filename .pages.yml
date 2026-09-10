@@ -129,10 +129,10 @@ content:
       template: "{primary}.md"
       field: true
     view:
-      fields: [title, group, localOffice]
+      fields: [title, level, localOffice]
       primary: title
       sort: [title]
-      search: [title, group, localOffice, levelTags, body]
+      search: [title, level, localOffice, body]
     fields:
       - { name: title, type: string, required: true }
       - { name: url, type: string }
@@ -140,8 +140,7 @@ content:
         label: Local Office
         type: reference
         options: { collection: local-offices, label: "{name}", value: "{path}" }
-      - { name: group, type: select, options: { values: ["Bachelor's level", "Master's level", "Doctoral level", "Varied levels"] } }
-      - { name: levelTags, type: string }
+      - { name: level, type: select, options: { values: ["Bachelor's level", "Master's level", "Doctoral level", "Varied levels"] } }
       - { name: body, label: Description, type: rich-text }
 
   # ---------- events ----------
