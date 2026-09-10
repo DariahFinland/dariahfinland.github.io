@@ -9,5 +9,4 @@ contactName: Jouni Tuominen
 contactUrl: https://researchportal.helsinki.fi/fi/persons/jouni-tuominen
 localOffice: src/content/local-offices/helsinki.md
 ---
-
-The institute is building a research culture that creates new multidisciplinary and inspiring research collaboration on the City Centre Campus and with partners outside the university.
+The institute is building a research culture that creates new multidisciplinary and inspiring research collaboration on the City Centre Campus and with partners outside the university. It promotes the renewal of content and methodology in the research fields in social sciences and humanities.
