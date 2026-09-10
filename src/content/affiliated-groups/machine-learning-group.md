@@ -10,5 +10,4 @@ contactName: Pasi Fränti
 contactUrl: https://uefconnect.uef.fi/pasi.franti/
 localOffice: src/content/local-offices/eastern-finland.md
 ---
-
-The main research areas are clustering methods, location-based services, data and web mining, and optimizing health care applications.
+The main research areas are clustering methods, location-based services, data and web mining, and optimizing health care applications. Currently there are also activities in TSP, Twitter data analysis, intelligent robotics, algorithmic music composition, and biomedical signal analysis. Earlier topics have been image and speech processing.
