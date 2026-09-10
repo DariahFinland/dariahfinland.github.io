@@ -5,5 +5,5 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  site: 'https://dariah-fi-astro.dariah-finland.workers.dev'
+  site: 'https://dariahfinland.github.io/'
 })
