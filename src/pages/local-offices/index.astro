@@ -9,6 +9,10 @@ const offices = (await getCollection('localOffices')).sort((a, b) => a.data.name
 <BaseLayout title="Local Offices">
   <main class="container my-16">
     <h1 class="mb-6">Local Offices</h1>
+    <p>Our ”offices” are local nodes that offer an easy access to the national infrastructure. 
+    Each node enjoys freedom to specialize according to its own interests. 
+    You can meet local DARIAH-FI representatives, plan collaborations for future projects, 
+    or simply ask guidance from a real human being.</p>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       {offices.map((office) => (
