@@ -2,28 +2,23 @@
 title: Challenges of Big Datasets
 heroImage: /media/Figure-2-DARIAH-FI-Workshop-scaled-1.jpg
 heroImageAlt: Figure 2 DARIAH FI Workshop scaled 1
-relatedPosts: []
-categories:
-  - src/content/categories/news-and-blogs.md
-authors: []
-publishedAt: '2023-09-12'
+authors:
+  - Harri Haralds Matulis
+publishedAt: 2023-09-12
 meta:
   title: Challenges of Big Datasets – DARIAH-FI
-  description: >-
-    DARIAH-FI project's Work Package 3.1 "Increasingly Automated Ingestion of Material" is creating
-    data pipeline from the National Library of Finland to CSC.
+  description: DARIAH-FI project's Work Package 3.1 "Increasingly Automated
+    Ingestion of Material" is creating data pipeline from the National Library
+    of Finland to CSC.
   image: /media/Figure-2-DARIAH-FI-Workshop-scaled-1.jpg
-slug: challenges-of-big-datasets
 ---
-
-
 DARIAH-FI project's Work Package 3.1 "Increasingly Automated Ingestion of Material" is creating data pipeline from the National Library of Finland (NLF) to CSC (IT Center for Science). In this blogpost we talked with two people involved in this work package, Tuula Pääkkönen from NLF and Martin Matthiesen from CSC, to learn more how researchers will benefit from this pipeline and about unforeseen challenges when working with very large datasets.
 
-![media:393]()
+![](/media/Figure-1-DALL·E-2023-09-08-13.53.20-Make-a-painting-of-a-pipeline-between-the-National-Library-of-Finland-and-CSC.png)
 
-This is what AI ([https://openai.com/dall-e-2](https://openai.com/dall-e-2)) dreamed when I asked it to make a painting of a pipeline between the National Library of Finland and CSC.
+*This is what AI ([https://openai.com/dall-e-2](https://openai.com/dall-e-2)) dreamed when I asked it to make a painting of a pipeline between the National Library of Finland and CSC.*
 
-**Conversation with Tuula Pääkkönen from NLF**
+### **Conversation with Tuula Pääkkönen from NLF**
 
 **Harri Haralds Matulis: My first question is – what is it that you are actually building?**
 
@@ -61,7 +56,7 @@ This is what AI ([https://openai.com/dall-e-2](https://openai.com/dall-e-2)) dre
 
 **TP**: I think the lesson is that it's good to use standards. In the Library interface we use an old standard (OAI-PMH), but it works, and so we have extended it a bit in this project. And it's a standard that all libraries can offer. So this pipeline we create, it's not just for this project, but it's something generic that could be used somewhere else as well.
 
-**Conversation with Martin Matthiesen from CSC<br><br>**
+### **Conversation with Martin Matthiesen from CSC**
 
 **HHM: What is the pipeline you are building? How would you describe it in simple terms?**
 
