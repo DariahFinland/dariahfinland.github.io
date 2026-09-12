@@ -1,27 +1,20 @@
 ---
 title: DARIAH-FI ROADSHOW COMING SOON (links to the events below)
-heroImage: >-
-  /media/DALL·E-2022-10-17-09.24.54-Pointillist-painting-of-Michel-Foucault-Donna-Haraway-and-Georg-Henrik-von-Wright-with-sunglasses-on-the-road-towards-the-sun-1.png
-heroImageAlt: >-
-  DALL·E 2022 10 17 09.24.54 Pointillist painting of Michel Foucault Donna Haraway and Georg Henrik
-  von Wright with sunglasses on the road towards the sun 1
-relatedPosts: []
-categories:
-  - src/content/categories/news-and-blogs.md
-authors: []
-publishedAt: '2022-10-17'
+heroImage: /media/DALL·E-2022-10-17-09.24.54-Pointillist-painting-of-Michel-Foucault-Donna-Haraway-and-Georg-Henrik-von-Wright-with-sunglasses-on-the-road-towards-the-sun-1.png
+heroImageAlt: DALL·E 2022 10 17 09.24.54 Pointillist painting of Michel Foucault
+  Donna Haraway and Georg Henrik von Wright with sunglasses on the road towards
+  the sun 1
+authors:
+  - Risto Turunen
+publishedAt: 2022-10-17
 meta:
   title: DARIAH-FI ROADSHOW COMING SOON (links to the events below) – DARIAH-FI
-  description: >-
-    Starting in November -22, DARIAH-FI will tour around Finland to introduce our services for both
-    individual researchers and for the wider research community.
-  image: >-
-    /media/DALL·E-2022-10-17-09.24.54-Pointillist-painting-of-Michel-Foucault-Donna-Haraway-and-Georg-Henrik-von-Wright-with-sunglasses-on-the-road-towards-the-sun-1.png
-slug: dariah-fi-roadshow-coming-soon-links-to-the-events-below
+  description: Starting in November -22, DARIAH-FI will tour around Finland to
+    introduce our services for both individual researchers and for the wider
+    research community.
+  image: /media/DALL·E-2022-10-17-09.24.54-Pointillist-painting-of-Michel-Foucault-Donna-Haraway-and-Georg-Henrik-von-Wright-with-sunglasses-on-the-road-towards-the-sun-1.png
 ---
-
-
-*(Image: This is what AI (https://openai.com/dall-e-2/) produced when I asked it to create a pointillist painting of Michel Foucault, Donna Haraway and Georg Henrik von Wright with sunglasses on the road towards the sun.)*
+*(Image: This is what AI ([https://openai.com/dall-e-2/](https://openai.com/dall-e-2/)) produced when I asked it to create a pointillist painting of Michel Foucault, Donna Haraway and Georg Henrik von Wright with sunglasses on the road towards the sun.)*
 
 It is difficult to make good predictions, especially about the future, but here is one anyways: **the future of humanities and social sciences will be more data-intensive than the present**. By "data-intensive" I simply mean that the scale of machine-readable data used in SSH research will increase over time. The mass digitization of primary sources and the explosion of born-digital data have already now led into a situation in which **our existing research infrastructures cannot fully satisfy the needs of Finnish SSH community**: we need better practices for storing and sharing heterogenous data, we need pre-processing and analysis tools that are designed for complex datasets, and we need workflows that can be easily "scaled upwards", from personal laptops to the supercomputing environment. This is precisely why DARIAH-FI was [born](https://www.helsinki.fi/en/helsinki-centre-for-digital-humanities/news/fin-clariah-funded-by-the-academy-of-finland): **we want to solve those big problems that cannot be solved by any individual researcher or research group**.
 
