@@ -1,21 +1,17 @@
 ---
 title: Analysis of Video Stream Interactions with AI Solutions
-slug: analysis-of-video-stream-interactions-with-ai-solutions
 heroImage: /media/darah-blog-header-3-1.png
 heroImageAlt: darah blog header 3 1
-categories:
-  - src/content/categories/blog.md
-  - src/content/categories/news-and-blogs.md
-  - src/content/categories/uncategorized.md
-publishedAt: '2026-01-12'
+authors:
+  - Jari Lindroos
+publishedAt: 2026-01-12
 meta:
   title: Analysis of Video Stream Interactions with AI Solutions – DARIAH-FI
-  description: >-
-    The proliferation of short-form video on livestreaming platforms like Twitch presents a
-    significant challenge for multimodal content analysis. Each clip…
+  description: The proliferation of short-form video on livestreaming platforms
+    like Twitch presents a significant challenge for multimodal content
+    analysis. Each clip…
   image: /media/darah-blog-header-3-1.png
 ---
-
 The proliferation of short-form video on livestreaming platforms like Twitch presents a significant challenge for multimodal content analysis. Each clip contains a vast amount of diverse information: the visual action of the gameplay, the auditory context from the caster commentary, and the text-based reactions from the live chat. Together, these represent dense and valuable data for understanding online communities and digital entertainment.
 
 However, the sheer volume and complexity of this data creates a need for efficient tools for its analysis.
@@ -30,11 +26,13 @@ Until now, however, these tools did not cover the diverse, multimodal nature of 
 
 Powered by the **Google Gemini** family of Multimodal Large Language Models (MLLMs) and guided by a structured **Chain-of-Thought** prompt, our tool offers two distinct ways to process Twitch clips:
 
-![media:574]()
+![](/media/image-5-1024x406.png)
 
-![media:547]()
+![](/media/image-3-1024x554.png)
 
-Video Clip Analysis Tool: [https://collector-twitcher.2.rahtiapp.fi/Videoclipsummary](https://collector-twitcher.2.rahtiapp.fi/Video_clip_summary)
+*Video Clip Analysis Tool: [https://collector-twitcher.2.rahtiapp.fi/Videoclipsummary](https://collector-twitcher.2.rahtiapp.fi/Video_clip_summary)*
+
+
 
 #### **1. Automated Summarization**
 
@@ -46,7 +44,9 @@ For users needing a quick but comprehensive understanding of a clip, the tool ge
 
 The upcoming paper about the capabilities of using these MLLMs for video clip summarization purposes will be formally presented at 10th Annual International GamiFIN conference in 2026.
 
-![media:561]()
+![](/media/image-4-1024x833.png)
+
+
 
 #### **2. Data Enrichment**
 
@@ -56,10 +56,8 @@ For researchers requiring structured data for further analysis, the tool generat
 - **Chat Reaction & Glossary:** Analyzes community-specific jargon and provides a glossary explaining the cultural meaning behind reactions.
 - **Causal Synthesis:** Establishes direct causal links, mapping specific visual triggers (like a "clutch play") to the exact chat reactions they caused.
 
-![media:534]()
+![](/media/image-2-1024x1009.png)
 
-![media:521]()
+![](/media/image-1-1024x456.png)
 
 All generated summaries and analyses are automatically saved and accessible within the **videodescriptions** category in the [data viewer section of the tool](https://collector-twitcher.2.rahtiapp.fi/Data_viewer).
-
-Text and images: Jari Lindroos
