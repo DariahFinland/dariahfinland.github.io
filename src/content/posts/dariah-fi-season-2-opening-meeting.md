@@ -2,21 +2,13 @@
 title: DARIAH-FI Season 2 opening meeting
 heroImage: /media/dariah-fi-building-digital-research-infrastructures-scaled-1.jpg
 heroImageAlt: dariah fi building digital research infrastructures scaled 1
-relatedPosts: []
-categories:
-  - src/content/categories/news-and-blogs.md
-authors: []
-publishedAt: '2024-02-22'
+publishedAt: 2024-02-22
 meta:
   title: DARIAH-FI Season 2 opening meeting – DARIAH-FI
-  description: >-
-    Overview of project goals, new participants, and objectives as introduced by partners for the
-    current season of DARIAH-FI.
+  description: Overview of project goals, new participants, and objectives as
+    introduced by partners for the current season of DARIAH-FI.
   image: /media/dariah-fi-building-digital-research-infrastructures-scaled-1.jpg
-slug: dariah-fi-season-2-opening-meeting
 ---
-
-
 On Friend's Day, as Finns know Valentine's Day, all partners of the DARIAH-FI consortium gathered on Zoom for the first time in its renewed configuration. Here is an overview of the plan ahead, as it was presented by participants. I have done my best to bring the workplan and the teams behind it under one roof, in this blog post, but also with [the image above](http://www.dariah.fi/wp-content/uploads/2024/02/dariah-fi-building-digital-research-infrastructures-scaled.jpg). This is how I see DARIAH-FI at its present stage, as a building that hosts highly diverse expertise and heterogeneous data, but also teams of people which I visualize in these virtual offices with open doors, connected through corridors and elevators…
 
 **New types of data**
@@ -27,9 +19,9 @@ As a new data provider DARIAH-FI welcomes the National Library of Finland's [FIN
 
 Diverse partners, such as the social science department at the University of Helsinki or a new partner in the ensemble, the University of Oulu, presented their intention to scrap **data from the web to make it manageable for research**. From popular discussion forums in Finland, to audiovisual content from streamed media; we are expecting that all partners crystallize their plans with regards to what this data will be. The result of this during the first year is that a series of datasets will be identified, enriched and prepared for new analysis methods, which can then be repurposed by DH oriented researchers who have or want to approach them…
 
-![media:468]()
+![](/media/dariah-fi-new-data-types-banner-scaled-1-1024x278.jpg)
 
-Enrichment and analysis support for heterogeneous data, from yesterday and today
+*Enrichment and analysis support for heterogeneous data, from yesterday and today*
 
 The work started in 2022 will continue and partners in Turku, Jyväskylä, Oulu and Helsinki will be developing **automated ways and generative methods to enrich textual content both from the web and cultural heritage organizations, with the novelty that these will be combined with new computer-vision methods** to enrich visual content opening an avenue for enabling multimodal research.
 
