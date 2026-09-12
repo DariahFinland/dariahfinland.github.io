@@ -2,28 +2,21 @@
 title: TRANSFORMATIONS a new journal on digital humanities
 heroImage: /media/transformations-journal_banner-1.png
 heroImageAlt: transformations journal banner 1
-relatedPosts: []
-categories:
-  - src/content/categories/news-and-blogs.md
-authors: []
-publishedAt: '2024-08-07'
+publishedAt: 2024-08-07
 meta:
   title: TRANSFORMATIONS a new journal on digital humanities – DARIAH-FI
-  description: >-
-    Looking for publication venue? Here is one to share your research with special interest in
-    datasets, tools and workflows. Call for papers open.
+  description: Looking for publication venue? Here is one to share your research
+    with special interest in datasets, tools and workflows. Call for papers
+    open.
   image: /media/transformations-journal_banner-1.png
-slug: transformations-a-new-journal-on-digital-humanities
 ---
-
-
-[*Transformations: A DARIAH Journal*](https://transformations.episciences.org) is dedicated to providing a trusted, non-commercial platform for documenting various methodological and research activities in arts and humanities, including data gathering and processing, annotation and modeling, analysis and interpretation.
+*[Transformations: A DARIAH Journal](https://transformations.episciences.org)* is dedicated to providing a trusted, non-commercial platform for documenting various methodological and research activities in arts and humanities, including data gathering and processing, annotation and modeling, analysis and interpretation.
 
 Transformations embraces ephemeral or experimental scholarly outputs, including descriptions and analysis of data collections and workflows, annotation practices, software tools and training materials, as well as traditional scholarly papers.
 
 Please note that Transformation is a new journal pending ISSN and is not ranked e.g. in JUFO-Portaali.
 
-#### Call for contributions 
+### Call for contributions
 
 The first issue of *Transformations* is calling for contributions that explore, assess, and analyse the challenges of designing, implementing, documenting and sharing digitally-enabled workflows in the context of arts and humanities research. Welcomed are submissions that shed light on these challenges from a technical, methodological, infrastructural and/or conceptual point of view. The call is open until October 31st.
 
@@ -31,7 +24,7 @@ Submissions can take the form of classical research articles, project notes, too
 
 **What are workflows?** Workflows are "s*equences of steps that one can perform on research data during their lifecycle. Workflows can be achieved by using diverse tools, resources and methods, and the useful resources are connected to each step.*" (Read more In Barbot et al, 2024 at: [https://doi.org/10.5334/johd.192](https://doi.org/10.5334/johd.192).)
 
-#### Submission and evaluation
+### Submission and evaluation
 
 All contributions will undergo an open peer review process. The journal will use open identities, which means that author and reviewer identities will be disclosed to each other. This said, the review reports will not be published.
 
