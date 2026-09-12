@@ -2,21 +2,13 @@
 title: Twitch Chat Tool - DARIAH-FI workshop winner
 heroImage: /media/twitch.png
 heroImageAlt: twitch
-relatedPosts: []
-categories:
-  - src/content/categories/news-and-blogs.md
-authors: []
-publishedAt: '2023-05-23'
+publishedAt: 2023-05-23
 meta:
   title: Twitch Chat Tool - DARIAH-FI workshop winner – DARIAH-FI
-  description: >-
-    The April DARIAH-FI workshop winning tool, the Twitch Chat Tool, lets you collect data from
-    livestreaming chat for large-scale projects.
+  description: The April DARIAH-FI workshop winning tool, the Twitch Chat Tool,
+    lets you collect data from livestreaming chat for large-scale projects.
   image: /media/twitch.png
-slug: twitch-chat-tool
 ---
-
-
 The DARIAH-FI workshop this past month brought with it many fresh ideas into the space of the digital humanities infrastructure. It was the perfect way to do a check-up on several projects of DARIAH-FI's researchers, how they are unfolding and progressing, as well as interact socially with peers and strengthen connections. Led by National Coordinator of DARIAH-FI, Risto Turunen, the event was spread across two days, April 25 and 26, and introduced several worthwhile projects that deliver on the promise of being helpful tools for researchers in the digital humanities field. While a more detailed blog post regarding the workshop is coming from Risto himself, I would like to write about the demo that was deemed the best from the workshop, which is the Twitch Chat Tool built by Raine Koskimaa's Work Package from the University of Jyväskylä.
 
 ### Tool introduction
@@ -27,19 +19,19 @@ Before diving into a demonstration of how the tool can be used, you might be won
 
 ### The Twitch Chat Collector Tool in action
 
-![media:677]()
+![](/media/tt1-1024x296-1.png)
 
-*Main webpage interface of the Collector tool (https://collector-twitcher.rahtiapp.fi/)*
+*Main webpage interface of the Collector tool ([https://collector-twitcher.rahtiapp.fi/](https://collector-twitcher.rahtiapp.fi/))*
 
 With that, one can go into the demonstration of the tool, to see just how useful it may be to not just researchers, but students or simply enthusiasts. First I would like to collect some data using the Collector tool, and evaluate how easy that is. I believe this should give me a nice overview of whether I am able to work more with the data afterwards.
 
-![media:678]()
+![](/media/tt2-1024x123-1.png)
 
-*Screenshot of the system running and collecting the data, then giving the option to download as ZIP (https://collector-twitcher.rahtiapp.fi/Collect\_VoDs\_by\_channel)*
+*Screenshot of the system running and collecting the data, then giving the option to download as ZIP ([https://collector-twitcher.rahtiapp.fi/Collect\_VoDs\_by\_channel](https://collector-twitcher.rahtiapp.fi/Collect\_VoDs\_by\_channel))*
 
 While the Collector tool gives three options of different data to collect, I would like to focus on the third one in the interface, 'Collect VoDs by channel'. There is no specific reason for this, other than the fact that the first account I thought of just simply is not live right now, so I can't use the other option of collecting live chat, and I want to focus on one channel only. For this experiment's purposes, I chose the channel of SmallAnt, a gaming streamer, and I am curious to see how his public engages with his videos and content at random, by simply getting one recorded video's chat. This choice is purely a personal preference, I happen to like him as a content creator. The collecting part is incredibly easy - all one has to do is enter the Twitch channel name, enter the amount of recorded streams to be downloaded, and hit the 'start collecting' button. Depending on the amount of streams and their length, this process can take a while, but when it's done, you get to download them as a ZIP file with a button. Our download is then also logged into the page with all the data ever collected by the tool, available here [https://a3s.fi/twitcher-data/index.html](https://a3s.fi/twitcher-data/index.html). The UI is simple, but responsive and performs very well, very straight to the point. The one issue I do think could be addressed is that when you hit 'start collecting', the only visual indicator of the process is a small 'running' icon in the top right corner of the page. To me, this isn't very visible or obvious, and I think it could be implemented in a more accessible way.
 
-![media:679]()
+![](/media/tt4-1024x415-1.png)
 
 *Analysis/Visualisation tool demo screenshots*
 
