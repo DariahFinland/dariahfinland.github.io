@@ -1,26 +1,19 @@
 ---
-title: >-
-  We don’t want to leave this at the hands of computer scientists... an interview with Mikko
-  Laitinen
+title: We don’t want to leave this at the hands of computer scientists... an
+  interview with Mikko Laitinen
 heroImage: /media/The-Turk.png
 heroImageAlt: The Turk
-relatedPosts: []
-categories:
-  - src/content/categories/news-and-blogs.md
-authors: []
-publishedAt: '2024-02-09'
+authors:
+  - Inés Matres
+publishedAt: 2024-02-09
 meta:
-  title: >-
-    We don’t want to leave this at the hands of computer scientists... an interview with Mikko
-    Laitinen – DARIAH-FI
-  description: >-
-    In this interview we uncover what research-based infrastructure development means and dive deep
-    into social media research, what questions can be posed to…
+  title: We don’t want to leave this at the hands of computer scientists... an
+    interview with Mikko Laitinen – DARIAH-FI
+  description: In this interview we uncover what research-based infrastructure
+    development means and dive deep into social media research, what questions
+    can be posed to…
   image: /media/The-Turk.png
-slug: we-dont-want-to-leave-this-at-the-hands-of-computer-scientists-an-interview-with-mikko-laitinen
 ---
-
-
 Recently I had a very interesting conversation with Mikko Laitinen, Professor of sociolinguistics at the University of Eastern Finland and a partner in DARIAH-FI. He is leading the DARIAH FI working group that will improve [analytical frameworks for computational humanities and social sciences](https://www.dariah.fi/analytical-support/). His own research group at UEF is making accessible Twitter data collected for research purposes from the last decade. The closing of the API due to the recent changes in management of the former Twitter (now X), makes this corpus particularly interesting. In this interview we uncover what research-based infrastructure development means and dive deep into social media research, what questions can be posed to Twitter/X data, its limits, and dip our toes into future challenges and ethical aspects of social media research.
 
 Inés Matres: *What are your research interests?*
@@ -59,10 +52,12 @@ Another important aspect of this is the technical side, engineers and computer s
 
 *Thank you Mikko for this interesting conversation!*
 
-Photo: Illustration known as The Turk, in Joseph Friedrich Racknitz's 1789 Über den Schachspieler des Herrn von Kempelen und dessen Nachbildung (Page 65). Source: [Humboldt University digital library](https://nbn-resolving.org/urn:nbn:de:kobv:11-707756). *<br />*
+Photo: Illustration known as The Turk, in Joseph Friedrich Racknitz's 1789 Über den Schachspieler des Herrn von Kempelen und dessen Nachbildung (Page 65). Source: [Humboldt University digital library](https://nbn-resolving.org/urn:nbn:de:kobv:11-707756).   
+
 
 Upcoming training on the use of the Nordic Tweet Stream ([March, check our events](https://www.dariah.fi/events/)), below some readings,
 
 - Laitinen, Mikko, and Masoud Fatemi. 'Data-Intensive Sociolinguistics Using Social Media'. Annales Academiae Scientiarum Fennicae 2023 (2): 38–61. [https://doi.org/10.57048/aasf.136177](https://doi.org/10.57048/aasf.136177).
 - Wilkinson, M. D. et al. 2016. The FAIR Guiding Principles for scientific data management and stewardship. Scientific Data 3, 160018. [https://doi:10.1038/sdata.2016.18](https://doi:10.1038/sdata.2016.18)
-- Ess, Charles Melvin. 2020. 'Internet Research Ethics and Social Media'. In Handbook of Research Ethics and Scientific Integrity, edited by Ron Iphofen, 283–303. Cham: Springer International Publishing. [https://doi.org/10.1007/978-3-030-16759-2\_12](https://doi.org/10.1007/978-3-030-16759-2_12)
+- Ess, Charles Melvin. 2020. 'Internet Research Ethics and Social Media'. In Handbook of Research Ethics and Scientific Integrity, edited by Ron Iphofen, 283–303. Cham: Springer International Publishing. [https://doi.org/10.1007/978-3-030-16759-212](https://doi.org/10.1007/978-3-030-16759-2_12)
+
