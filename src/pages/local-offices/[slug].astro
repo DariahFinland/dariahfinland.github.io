@@ -5,6 +5,12 @@
 // each collection's own `localOffice` field. These are now plain strings
 // (see src/lib/references.ts) rather than astro:content reference() --
 // refEquals()/refsInclude() handle comparing them against this office's id.
+//
+// Redesigned from a plain stacked list of thin bordered boxes into: a
+// wave-bg header band (logo, name, website link -- same "hero, then a
+// visible seam" treatment as everywhere else) and card-raised grids for
+// each subsection, consistent with TabsBlock/TrainingSections.
+
 import { getCollection, render } from 'astro:content'
 import BaseLayout from '../../layouts/BaseLayout.astro'
 import { refEquals, refsInclude } from '../../lib/references'
@@ -42,116 +48,128 @@ const trainings = allTrainings
 const trainingsWithContent = await Promise.all(
   trainings.map(async (t) => ({ training: t, Content: (await render(t)).Content })),
 )
+
+// Section label style shared across the subsections below -- same
+// uppercase/primary/underline treatment as TrainingSections.astro's level
+// headers, so this page reads as part of the same system.
+const sectionLabelClass =
+  'inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-primary mb-5 pb-2 border-b-2 border-primary'
 ---
 
 <BaseLayout title={office.data.name}>
-  <main class="container my-16">
-    <a href="/local-offices" class="text-sm underline text-muted-foreground">← Local Offices</a>
-
-    <div class="flex items-center gap-6 mt-4 mb-8">
-      {office.data.logo && (
-        <div class="w-24 flex-shrink-0">
-          <img src={office.data.logo} alt="" />
-        </div>
-      )}
-      <h1 class="mt-12">{office.data.name}</h1>
-    </div>
-
-    {office.data.externalUrl && (
-      <a href={office.data.externalUrl} target="_blank" rel="noreferrer noopener" class="underline inline-block mb-4 font-bold">
-        Visit website
+  <div class="page-header wave-bg">
+    <div class="container">
+      <a href="/local-offices" class="text-sm font-semibold text-muted-foreground hover:text-primary inline-flex items-center gap-1 mb-4">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6" /></svg>
+        Local Offices
       </a>
-    )}
 
-    {office.data.shortDescription && <p class="text-muted-foreground mb-8">{office.data.shortDescription}</p>}
+      <div class="flex items-center gap-6">
+        {office.data.logo && (
+          <div class="w-20 h-20 flex-shrink-0 flex items-center justify-center bg-card rounded-xl border border-border p-2">
+            <img src={office.data.logo} alt="" class="w-full h-full object-contain" />
+          </div>
+        )}
+        <div>
+          <h1 class="mb-1">{office.data.name}</h1>
+          {office.data.externalUrl && (
+            <a href={office.data.externalUrl} target="_blank" rel="noreferrer noopener" class="font-semibold text-sm">
+              Visit website ↗
+            </a>
+          )}
+        </div>
+      </div>
 
-    {office.data.contacts && office.data.contacts.length > 0 && (
-      <div class="mb-10">
-        <h2 class="text-sm font-semibold uppercase tracking-wide text-muted-foreground mb-2">Contact</h2>
-        <div class="flex gap-4 p-4 rounded-lg bg-card">
-          <div class="flex-1 space-y-2">
+      {office.data.shortDescription && <p class="text-muted-foreground mt-4 max-w-[48rem]">{office.data.shortDescription}</p>}
+    </div>
+  </div>
+
+  <main class="section">
+    <div class="container flex flex-col gap-12">
+      {office.data.contacts && office.data.contacts.length > 0 && (
+        <div>
+          <h2 class={sectionLabelClass}>Contact</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {office.data.contacts.map((contact) => (
-              <div class="flex items-center gap-2">
+              <div class="card-raised flex items-center gap-3 p-4">
                 {contact.photo ? (
-                  <img src={contact.photo} alt="" class="w-10 h-10 rounded-full overflow-hidden flex-shrink-0 object-cover" />
+                  <img src={contact.photo} alt="" class="w-12 h-12 rounded-full overflow-hidden flex-shrink-0 object-cover" />
                 ) : (
-                  <div class="w-10 h-10 rounded-full overflow-hidden flex-shrink-0 bg-secondary"></div>
+                  <div class="w-12 h-12 rounded-full overflow-hidden flex-shrink-0 bg-muted"></div>
                 )}
-                <div class="text-sm">
+                <div class="text-sm min-w-0">
                   {contact.url ? (
-                    <a href={contact.url} target="_blank" rel="noreferrer noopener" class="underline">{contact.name}</a>
+                    <a href={contact.url} target="_blank" rel="noreferrer noopener" class="font-bold text-headings hover:text-primary">{contact.name}</a>
                   ) : (
-                    <span>{contact.name}</span>
+                    <p class="font-bold text-headings">{contact.name}</p>
                   )}
-                  {contact.note && <span class="text-muted-foreground"> {contact.note}</span>}
+                  {contact.note && <p class="text-muted-foreground">{contact.note}</p>}
                   {contact.email && (
-                    <div class="text-xs text-muted-foreground">
-                      <a href={`mailto:${contact.email}`} class="underline">{contact.email}</a>
-                    </div>
+                    <a href={`mailto:${contact.email}`} class="text-xs underline block truncate">{contact.email}</a>
                   )}
                 </div>
               </div>
             ))}
           </div>
         </div>
-      </div>
-    )}
+      )}
 
-    {groupsWithContent.length > 0 && (
-      <div class="mb-10">
-        <h2 class="text-xl font-semibold mb-4">Affiliated Groups</h2>
-        <div class="space-y-4">
-          {groupsWithContent.map(({ group, Content }) => (
-            <div class="border rounded-lg p-4 flex gap-4">
-              {group.data.logo && (
-                <div class="w-16 h-16 flex-shrink-0">
-                  <img src={group.data.logo} alt="" class="w-full h-full object-contain" />
+      {groupsWithContent.length > 0 && (
+        <div>
+          <h2 class={sectionLabelClass}>Affiliated Groups</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+            {groupsWithContent.map(({ group, Content }) => (
+              <div class="card-raised p-5 flex gap-4">
+                {group.data.logo && (
+                  <div class="w-14 h-14 flex-shrink-0">
+                    <img src={group.data.logo} alt="" class="w-full h-full object-contain" />
+                  </div>
+                )}
+                <div class="flex-1 min-w-0">
+                  <a href={group.data.externalUrl} target="_blank" rel="noreferrer noopener" class="font-bold text-headings hover:text-primary transition-colors">
+                    {group.data.name}
+                  </a>
+                  <div class="text-sm text-muted-foreground mt-1 rich-text"><Content /></div>
                 </div>
-              )}
-              <div class="flex-1">
-                <a href={group.data.externalUrl} target="_blank" rel="noreferrer noopener" class="font-semibold underline">
-                  {group.data.name}
-                </a>
-                <div class="text-sm text-muted-foreground mt-1 mb-2"><Content /></div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
-    )}
+      )}
 
-    {toolsWithContent.length > 0 && (
-      <div class="mb-10">
-        <h2 class="text-xl font-semibold mb-4">Tools</h2>
-        <div class="space-y-4">
-          {toolsWithContent.map(({ tool, Content }) => (
-            <div class="border rounded-lg p-4">
-              <p class="font-semibold mb-2">{tool.data.name}</p>
-              <div class="text-sm text-muted-foreground mb-2"><Content /></div>
-            </div>
-          ))}
+      {toolsWithContent.length > 0 && (
+        <div>
+          <h2 class={sectionLabelClass}>Tools</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+            {toolsWithContent.map(({ tool, Content }) => (
+              <div class="card-raised p-5">
+                <p class="font-bold text-headings mb-2">{tool.data.name}</p>
+                <div class="text-sm text-muted-foreground rich-text"><Content /></div>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-    )}
+      )}
 
-    {trainingsWithContent.length > 0 && (
-      <div class="mb-10">
-        <h2 class="text-xl font-semibold mb-4">Trainings</h2>
-        <div class="space-y-4">
-          {trainingsWithContent.map(({ training, Content }) => (
-            <div class="border rounded-lg p-4">
-              {training.data.url ? (
-                <a href={training.data.url} target="_blank" rel="noreferrer noopener" class="font-semibold underline">
-                  {training.data.title}
-                </a>
-              ) : (
-                <p class="font-semibold">{training.data.title}</p>
-              )}
-              <div class="text-sm text-muted-foreground mt-1"><Content /></div>
-            </div>
-          ))}
+      {trainingsWithContent.length > 0 && (
+        <div>
+          <h2 class={sectionLabelClass}>Trainings</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+            {trainingsWithContent.map(({ training, Content }) => (
+              <div class="card-raised p-5">
+                {training.data.url ? (
+                  <a href={training.data.url} target="_blank" rel="noreferrer noopener" class="font-bold text-headings hover:text-primary transition-colors">
+                    {training.data.title}
+                  </a>
+                ) : (
+                  <p class="font-bold text-headings">{training.data.title}</p>
+                )}
+                <div class="text-sm text-muted-foreground mt-1 rich-text"><Content /></div>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-    )}
+      )}
+    </div>
   </main>
 </BaseLayout>

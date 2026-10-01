@@ -1,7 +1,7 @@
 ---
 title: Home
 hero:
-  type: lowImpact
+  type: highImpact
   richText: >-
     # Infrastructure for Data-Intensive Social Science and Humanities Research
 
@@ -32,7 +32,7 @@ layout:
           a real human being.
 
 
-          <u>[Read more](/local-offices)</u>
+          [Read more](/local-offices)
   - blockType: content
     columns:
       - size: half
@@ -46,7 +46,7 @@ layout:
           for data-intensive research and big-data processing.
 
 
-          <u>[Discover resources](/resources)</u>
+          [Discover resources](/resources)
       - size: half
         richText: '![expertise wordcloud](/media/expertise-wordcloud3.png)'
   - blockType: archive

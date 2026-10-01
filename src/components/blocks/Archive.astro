@@ -52,32 +52,42 @@ const cards = await Promise.all(
 )
 ---
 
-<div class="my-16">
+<div class="section">
   {introRichText && (
     <div class="container mb-8">
-      <div class="max-w-[48rem]" set:html={md(introRichText)} />
+      <div class="max-w-[48rem] rich-text" set:html={md(introRichText)} />
     </div>
   )}
 
   <div class="container">
-    <div class="grid grid-cols-4 sm:grid-cols-8 lg:grid-cols-12 gap-y-4 gap-x-4 lg:gap-y-8 lg:gap-x-8">
+    <div class="flex flex-col divide-y divide-border">
       {cards.map(({ post, categoryTitles }) => (
-        <div class="col-span-4">
-          <a
-            href={`/posts/${post.id}`}
-            class="block h-full border border-border rounded-lg overflow-hidden bg-card hover:cursor-pointer"
-            style="text-decoration: none;"
-          >
-            {post.data.meta?.image && <img class="w-full" src={post.data.meta.image} alt="" />}
-            <div class="p-4">
-              {categoryTitles.length > 0 && (
-                <div class="uppercase text-sm mb-4">{categoryTitles.join(', ')}</div>
-              )}
-              <h3 class="text-lg font-semibold">{post.data.title}</h3>
-              {post.data.meta?.description && <p class="mt-2">{post.data.meta.description}</p>}
-            </div>
-          </a>
-        </div>
+        <a
+          href={`/posts/${post.id}`}
+          class="flex items-start gap-5 py-6 px-3 -mx-3 rounded-lg transition-colors hover:bg-muted group"
+        >
+          {post.data.meta?.image && (
+            <img
+              class="w-28 h-20 flex-shrink-0 object-cover rounded"
+              src={post.data.meta.image}
+              alt=""
+            />
+          )}
+          <div>
+            {categoryTitles.length > 0 && (
+              <div class="uppercase text-xs font-bold text-primary mb-1">{categoryTitles.join(', ')}</div>
+            )}
+            <h3 class="text-lg font-semibold text-headings group-hover:text-primary transition-colors mb-1">
+              {post.data.title}
+            </h3>
+            {post.data.meta?.description && (
+              <p class="text-sm text-muted-foreground">
+                {post.data.meta.description}{' '}
+                <span class="text-primary font-semibold whitespace-nowrap">Read more</span>
+              </p>
+            )}
+          </div>
+        </a>
       ))}
     </div>
   </div>

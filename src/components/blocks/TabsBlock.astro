@@ -3,6 +3,10 @@
 //
 // Real click-based tab switching now (a small client-side <script> at the
 // bottom handles it -- no framework needed for something this simple).
+// Tabs render as a segmented pill control (.tab-pills/.tab-pill in
+// global.css) instead of the old border/underline hack, so the active tab
+// is unmistakable at a glance. List items are raised cards
+// (.card-raised) in a grid instead of a thin bordered list.
 //
 // developedBy/collaborators on tools, and the affiliated-group/tool
 // descriptions, are handled a bit differently than other blocks:
@@ -54,134 +58,136 @@ const tools = needsTools
   : []
 ---
 
-<div class="container my-8">
-  <div class="flex border-b border-border mb-6 gap-1">
+<div class="section">
+  <div class="container">
+    <div class="tab-pills mb-10" role="tablist">
+      {tabs.map((tab, i) => (
+        <button
+          type="button"
+          role="tab"
+          data-tab-button={i}
+          aria-selected={i === 0 ? 'true' : 'false'}
+          class="tab-pill"
+        >
+          {tab.label}
+        </button>
+      ))}
+    </div>
+
     {tabs.map((tab, i) => (
-      <button
-        type="button"
-        data-tab-button={i}
-        class={
-          i === 0
-            ? 'px-4 py-2 text-sm font-medium transition-colors rounded-t-md border border-b-background border-border bg-background text-foreground -mb-px'
-            : 'px-4 py-2 text-sm font-medium transition-colors rounded-t-md text-muted-foreground hover:text-foreground'
-        }
-      >
-        {tab.label}
-      </button>
-    ))}
-  </div>
+      <div data-tab-panel={i} class={i === 0 ? 'block' : 'hidden'}>
+        {tab.richText && (!tab.listType || tab.listType === 'none') && (
+          <div class="rich-text" set:html={md(tab.richText)} />
+        )}
 
-  {tabs.map((tab, i) => (
-    <div data-tab-panel={i} class={i === 0 ? 'block' : 'hidden'}>
-      {tab.richText && (!tab.listType || tab.listType === 'none') && (
-        <div set:html={md(tab.richText)} />
-      )}
+        {tab.listType === 'affiliatedGroups' && (
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+            {affiliatedGroups.map(({ group, Content, expertiseTags }) => (
+              <div class="card-raised p-5 flex gap-4">
+                {group.data.logo && (
+                  <div class="w-14 h-14 flex-shrink-0">
+                    <img src={group.data.logo} alt="" class="w-full h-full object-contain" />
+                  </div>
+                )}
+                <div class="flex-1 min-w-0">
+                  <a href={group.data.externalUrl} target="_blank" rel="noreferrer noopener" class="font-bold text-headings hover:text-primary transition-colors">
+                    {group.data.name}
+                  </a>
 
-      {tab.listType === 'affiliatedGroups' && (
-        <div class="space-y-4 mt-4">
-          {affiliatedGroups.map(({ group, Content, expertiseTags }) => (
-            <div class="border rounded-lg p-4 flex gap-4">
-              {group.data.logo && (
-                <div class="w-16 h-16 flex-shrink-0">
-                  <img src={group.data.logo} alt="" class="w-full h-full object-contain" />
+                  {expertiseTags.length > 0 && (
+                    <div class="flex flex-wrap gap-1.5 mt-2 mb-2">
+                      {expertiseTags.map((tag) => (
+                        <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-muted text-muted-foreground">{tag.data.title}</span>
+                      ))}
+                    </div>
+                  )}
+
+                  <div class="text-sm text-muted-foreground mt-1 mb-2 rich-text">
+                    <Content />
+                  </div>
+
+                  {group.data.contactName && (
+                    <p class="text-sm mt-2">
+                      Contact:{' '}
+                      {group.data.contactUrl ? (
+                        <a href={group.data.contactUrl} target="_blank" rel="noreferrer noopener" class="underline">
+                          {group.data.contactName}
+                        </a>
+                      ) : (
+                        group.data.contactName
+                      )}
+                    </p>
+                  )}
                 </div>
-              )}
-              <div class="flex-1">
-                <a href={group.data.externalUrl} target="_blank" rel="noreferrer noopener" class="font-semibold underline">
-                  {group.data.name}
-                </a>
+              </div>
+            ))}
+          </div>
+        )}
 
-                {expertiseTags.length > 0 && (
-                  <div class="flex flex-wrap gap-1 mt-2 mb-2">
-                    {expertiseTags.map((tag) => (
-                      <span class="text-xs px-2 py-0.5 rounded-full bg-muted text-muted-foreground">{tag.data.title}</span>
+        {tab.listType === 'tools' && (
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+            {tools.map(({ tool, Content, localOffice, collaborators }) => (
+              <div class="card-raised p-5">
+                <p class="font-bold text-headings mb-2">{tool.data.name}</p>
+
+                {tool.data.accessLinks && tool.data.accessLinks.length > 0 && (
+                  <div class="flex flex-wrap gap-x-3 gap-y-1 mb-2">
+                    {tool.data.accessLinks.map((link) => (
+                      <a href={link.url} target="_blank" rel="noreferrer noopener" class="text-sm font-semibold underline">
+                        {link.label ?? link.url}
+                      </a>
                     ))}
                   </div>
                 )}
 
-                <div class="text-sm text-muted-foreground mt-1 mb-2">
+                {tool.data.tutorialUrl && (
+                  <p class="text-sm mb-2">
+                    <a href={tool.data.tutorialUrl} target="_blank" rel="noreferrer noopener" class="underline font-semibold">
+                      Tutorial / Demo
+                    </a>
+                  </p>
+                )}
+
+                <div class="text-sm text-muted-foreground mb-2 rich-text">
                   <Content />
                 </div>
 
-                {group.data.contactName && (
-                  <p class="text-sm mt-2">
+                {tool.data.contacts && tool.data.contacts.length > 0 && (
+                  <p class="text-sm text-muted-foreground mb-2">
                     Contact:{' '}
-                    {group.data.contactUrl ? (
-                      <a href={group.data.contactUrl} target="_blank" rel="noreferrer noopener" class="underline">
-                        {group.data.contactName}
-                      </a>
-                    ) : (
-                      group.data.contactName
-                    )}
+                    {tool.data.contacts.map((c, idx) => (
+                      <>
+                        {c.url ? (
+                          <a href={c.url} target="_blank" rel="noreferrer noopener" class="underline">{c.name}</a>
+                        ) : (
+                          c.name
+                        )}
+                        {idx < tool.data.contacts!.length - 1 ? ', ' : ''}
+                      </>
+                    ))}
+                  </p>
+                )}
+
+                {(localOffice || collaborators.length > 0) && (
+                  <p class="text-xs text-muted-foreground pt-2 border-t border-border">
+                    {localOffice && `Developed by: ${localOffice.data.name}`}
+                    {collaborators.length > 0 ? `${localOffice ? ' · with ' : 'With '}${collaborators.map((o) => o.data.name).join(', ')}` : ''}
                   </p>
                 )}
               </div>
-            </div>
-          ))}
-        </div>
-      )}
-
-      {tab.listType === 'tools' && (
-        <div class="space-y-4 mt-4">
-          {tools.map(({ tool, Content, localOffice, collaborators }) => (
-            <div class="border rounded-lg p-4">
-              <p class="font-semibold mb-2">{tool.data.name}</p>
-
-              {tool.data.accessLinks && tool.data.accessLinks.length > 0 && (
-                <div class="flex flex-wrap gap-2 mb-2">
-                  {tool.data.accessLinks.map((link) => (
-                    <a href={link.url} target="_blank" rel="noreferrer noopener" class="text-sm underline">
-                      {link.label ?? link.url}
-                    </a>
-                  ))}
-                </div>
-              )}
-
-              {tool.data.tutorialUrl && (
-                <p class="text-sm mb-2">
-                  <a href={tool.data.tutorialUrl} target="_blank" rel="noreferrer noopener" class="underline">
-                    Tutorial / Demo
-                  </a>
-                </p>
-              )}
-
-              <div class="text-sm text-muted-foreground mb-2">
-                <Content />
-              </div>
-
-              {tool.data.contacts && tool.data.contacts.length > 0 && (
-                <p class="text-sm text-muted-foreground mb-2">
-                  Contact:{' '}
-                  {tool.data.contacts.map((c, idx) => (
-                    <>
-                      {c.url ? (
-                        <a href={c.url} target="_blank" rel="noreferrer noopener" class="underline">{c.name}</a>
-                      ) : (
-                        c.name
-                      )}
-                      {idx < tool.data.contacts!.length - 1 ? ', ' : ''}
-                    </>
-                  ))}
-                </p>
-              )}
-
-              {(localOffice || collaborators.length > 0) && (
-                <p class="text-xs text-muted-foreground">
-                  {localOffice && `Developed by: ${localOffice.data.name}`}
-                  {collaborators.length > 0 ? `${localOffice ? ' · with ' : 'With '}${collaborators.map((o) => o.data.name).join(', ')}` : ''}
-                </p>
-              )}
-            </div>
-          ))}
-        </div>
-      )}
-    </div>
-  ))}
+            ))}
+          </div>
+        )}
+      </div>
+    ))}
+  </div>
 </div>
 
 <script>
   // Vanilla-JS tab switching, scoped per tabs block so multiple TabsBlocks
-  // on the same page don't interfere with each other.
+  // on the same page don't interfere with each other. Active state is
+  // just the aria-selected attribute -- .tab-pill[aria-selected="true"]
+  // in global.css handles the look.
   document.querySelectorAll('[data-tab-button]').forEach((button) => {
     button.addEventListener('click', () => {
       const wrapper = button.closest('.container')
@@ -189,15 +195,7 @@ const tools = needsTools
       const index = button.getAttribute('data-tab-button')
 
       wrapper.querySelectorAll('[data-tab-button]').forEach((btn) => {
-        const active = btn === button
-        btn.classList.toggle('border', active)
-        btn.classList.toggle('border-b-background', active)
-        btn.classList.toggle('border-border', active)
-        btn.classList.toggle('bg-background', active)
-        btn.classList.toggle('text-foreground', active)
-        btn.classList.toggle('-mb-px', active)
-        btn.classList.toggle('text-muted-foreground', !active)
-        btn.classList.toggle('hover:text-foreground', !active)
+        btn.setAttribute('aria-selected', btn === button ? 'true' : 'false')
       })
 
       wrapper.querySelectorAll('[data-tab-panel]').forEach((panel) => {

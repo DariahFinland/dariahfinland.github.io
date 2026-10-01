@@ -10,6 +10,7 @@ import { getCollection } from 'astro:content'
 import BaseLayout from '../layouts/BaseLayout.astro'
 import Hero from '../components/Hero.astro'
 import RenderBlocks from '../components/RenderBlocks.astro'
+import HomeLinkCards from '../components/HomeLinkCards.astro'
 
 export async function getStaticPaths() {
   const pages = await getCollection('pages')
@@ -23,9 +24,16 @@ export async function getStaticPaths() {
 }
 
 const { page } = Astro.props
+const isHome = page.data.slug === 'home'
+
+// Static, not CMS-editable -- only the homepage uses this background photo.
+// Drop the file at public/images/home/hero-bg.jpg (replace the path below
+// if you'd rather name/place it differently).
+const HOME_HERO_BACKGROUND = '/images/home/hero-bg.png'
 ---
 
 <BaseLayout title={page.data.title} description={page.data.meta?.description}>
-  <Hero hero={page.data.hero} />
+  <Hero hero={page.data.hero} backgroundImage={isHome ? HOME_HERO_BACKGROUND : undefined} />
+  {isHome && <HomeLinkCards />}
   <RenderBlocks layout={page.data.layout} />
 </BaseLayout>

@@ -10,7 +10,9 @@ const { path, alt } = Astro.props
 ---
 
 {path && (
-  <div class="container">
-    <img class="border border-border rounded-[0.8rem] w-full" src={path} alt={alt ?? ''} />
+  <div class="section">
+    <div class="container">
+      <img class="border border-border rounded-[0.8rem] w-full" src={path} alt={alt ?? ''} />
+    </div>
   </div>
 )}

@@ -1,13 +1,21 @@
 ---
 // src/components/Hero.astro
 //
-// Your old site had 4 hero types: none, lowImpact, mediumImpact, highImpact.
-// Classes below are adapted from the real LowImpact/MediumImpact/HighImpact
-// components. One deliberate simplification: the original highImpact hero
-// used a floating/transparent header + negative margin trick to sit the
-// image behind the nav bar. Our header is a normal, non-overlaid bar, so
-// instead we use a plain full-width image with a dark overlay for text
-// contrast -- simpler, and looks right without needing header changes.
+// Restyled to match dariah.fi's real homepage hero: a soft wave-graphic
+// background (see .wave-bg in global.css) behind a large, regular-weight
+// headline paragraph and pill-shaped primary buttons. highImpact draws a
+// full-bleed background image behind the wave tint, with object-top so the
+// top of the photo (where the subject usually is) stays in frame instead
+// of being center-cropped. Your old site had 4 hero types: none,
+// lowImpact, mediumImpact, highImpact; those are kept as the content
+// shape, just restyled.
+//
+// `backgroundImage` is an optional static override for that highImpact
+// photo -- the homepage passes a hardcoded path here (see [...slug].astro)
+// instead of relying on the CMS-editable hero.media field, since the
+// homepage background is the only place this matters and doesn't need to
+// be editor-facing. Any other page using highImpact still falls back to
+// hero.media from the CMS.
 
 import { md } from '../lib/markdown'
 
@@ -25,29 +33,43 @@ interface Props {
     media?: string
     mediaAlt?: string
   }
+  backgroundImage?: string
 }
 
-const { hero } = Astro.props
+const { hero, backgroundImage } = Astro.props
+const heroBg = backgroundImage ?? hero?.media
 
 // Reused across mediumImpact/highImpact link lists
 const linkClass =
-  'inline-block bg-primary text-primary-foreground px-4 py-2 rounded-md hover:bg-primary-hover transition-colors'
+  'inline-block bg-primary text-primary-foreground px-6 py-2.5 rounded-full font-semibold hover:bg-primary-hover transition-colors'
+
+// The real site's hero headline is a large, *regular*-weight paragraph in
+// the body text color, not a bold h1 -- this class overrides whatever
+// heading tag the markdown produces to match that look.
+const copyClass = '[&_h1]:text-[2.25rem] [&_h1]:md:text-[2.75rem] [&_h1]:font-normal [&_h1]:text-foreground [&_h1]:leading-tight [&_h2]:text-[2.25rem] [&_h2]:md:text-[2.75rem] [&_h2]:font-normal [&_h2]:text-foreground [&_h2]:leading-tight [&_p]:mt-4 [&_p]:text-foreground'
 ---
 
 {hero && hero.type === 'lowImpact' && (
-  <div class="container my-16">
-    <div class="max-w-[48rem]">
-      {hero.richText && <div set:html={md(hero.richText)} />}
+  // Same wave-bg "page-header" band used on Events/Local Offices/Contacts,
+  // so every ordinary content page (About, Training & Teaching,
+  // Resources, ...) opens with the same title treatment instead of each
+  // one looking different depending on what hero type its content
+  // happened to be set to.
+  <div class="page-header wave-bg">
+    <div class="container">
+      <div class="max-w-[48rem] rich-text">
+        {hero.richText && <div set:html={md(hero.richText)} />}
+      </div>
     </div>
   </div>
 )}
 
 {hero && hero.type === 'mediumImpact' && (
-  <div>
-    <div class="container mb-8">
-      {hero.richText && <div class="mb-6" set:html={md(hero.richText)} />}
+  <div class="wave-bg">
+    <div class="container py-16">
+      {hero.richText && <div class={`mb-6 max-w-[48rem] rich-text ${copyClass}`} set:html={md(hero.richText)} />}
       {hero.links && hero.links.length > 0 && (
-        <ul class="flex gap-4">
+        <ul class="flex flex-wrap gap-4">
           {hero.links.map((link) => (
             <li>
               <a class={linkClass} href={link.url} target={link.newTab ? '_blank' : undefined}>
@@ -59,25 +81,34 @@ const linkClass =
       )}
     </div>
     {hero.media && (
-      <div class="container">
-        <img class="w-full" src={hero.media} alt={hero.mediaAlt ?? ''} />
+      <div class="container pb-16">
+        <img class="w-full rounded" src={hero.media} alt={hero.mediaAlt ?? ''} />
       </div>
     )}
   </div>
 )}
 
 {hero && hero.type === 'highImpact' && (
-  <div class="relative flex items-center justify-center text-white min-h-[60vh]">
-    {hero.media && (
-      <img class="absolute inset-0 w-full h-full object-cover -z-10" src={hero.media} alt={hero.mediaAlt ?? ''} />
+  <div class="relative wave-bg overflow-hidden">
+    {heroBg && (
+      <img
+        class="absolute inset-0 w-full h-full object-cover object-top"
+        src={heroBg}
+        alt={hero.mediaAlt ?? ''}
+      />
     )}
-    <div class="absolute inset-0 bg-black/40 -z-10"></div>
+    {/* Light wash over the photo so it reads as the same soft, muted
+        backdrop as the rest of the site instead of a straight photo, and
+        keeps the headline text legible on top of it. */}
+    {heroBg && (
+      <div class="absolute inset-0 bg-gradient-to-b from-background/85 via-background/55 to-background/90"></div>
+    )}
 
-    <div class="container z-10 relative flex items-center justify-center py-16">
-      <div class="max-w-[36.5rem] md:text-center">
-        {hero.richText && <div class="mb-6" set:html={md(hero.richText)} />}
+    <div class="container relative py-20 md:py-28">
+      <div class={`max-w-[42rem] ${copyClass}`}>
+        {hero.richText && <div class="rich-text" set:html={md(hero.richText)} />}
         {hero.links && hero.links.length > 0 && (
-          <ul class="flex md:justify-center gap-4">
+          <ul class="flex flex-wrap gap-4 mt-8">
             {hero.links.map((link) => (
               <li>
                 <a class={linkClass} href={link.url} target={link.newTab ? '_blank' : undefined}>
@@ -91,4 +122,3 @@ const linkClass =
     </div>
   </div>
 )}
-

@@ -2,7 +2,11 @@
 title: Resources
 hero:
   type: lowImpact
-  richText: '# Resources'
+  richText: >-
+    # Resources
+
+
+    As a research infrastructure, we build and share digital tools, datasets, and expertise that help researchers bring materials into environments for data-intensive research and big-data processing.
   links: []
 layout:
   - blockType: tabsBlock

@@ -18,30 +18,33 @@ const cards = await Promise.all(
 ---
 
 <BaseLayout title="News and Blogs">
-  <div class="container mb-8 mt-16">
-    <h1>News and Blogs</h1>
-  </div>
-
-  <div class="container">
-    <div class="grid grid-cols-4 sm:grid-cols-8 lg:grid-cols-12 gap-y-4 gap-x-4 lg:gap-y-8 lg:gap-x-8">
-      {cards.map(({ post, categoryTitles }) => (
-        <div class="col-span-4">
-          <a
-            href={`/posts/${post.id}`}
-            class="block h-full border border-border rounded-lg overflow-hidden bg-card hover:cursor-pointer"
-            style="text-decoration: none;"
-          >
-            {post.data.meta?.image && <img class="w-full" src={post.data.meta.image} alt="" />}
-            <div class="p-4">
-              {categoryTitles.length > 0 && (
-                <div class="uppercase text-sm mb-4">{categoryTitles.join(', ')}</div>
-              )}
-              <h3 class="text-lg font-semibold">{post.data.title}</h3>
-              {post.data.meta?.description && <p class="mt-2">{post.data.meta.description}</p>}
-            </div>
-          </a>
-        </div>
-      ))}
+  <div class="page-header wave-bg">
+    <div class="container">
+      <h1 class="mb-0">News and Blogs</h1>
     </div>
   </div>
+
+  <main class="section">
+    <div class="container">
+      <div class="grid grid-cols-4 sm:grid-cols-8 lg:grid-cols-12 gap-y-5 gap-x-4 lg:gap-y-8 lg:gap-x-8">
+        {cards.map(({ post, categoryTitles }) => (
+          <div class="col-span-4">
+            <a
+              href={`/posts/${post.id}`}
+              class="card-raised block h-full overflow-hidden"
+            >
+              {post.data.meta?.image && <img class="w-full aspect-[16/10] object-cover" src={post.data.meta.image} alt="" />}
+              <div class="p-5">
+                {categoryTitles.length > 0 && (
+                  <div class="uppercase text-xs font-bold text-primary mb-2">{categoryTitles.join(', ')}</div>
+                )}
+                <h3 class="text-lg font-semibold text-headings">{post.data.title}</h3>
+                {post.data.meta?.description && <p class="mt-2 text-sm text-muted-foreground">{post.data.meta.description}</p>}
+              </div>
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </main>
 </BaseLayout>

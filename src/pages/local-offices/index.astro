@@ -7,33 +7,34 @@ const offices = (await getCollection('localOffices')).sort((a, b) => a.data.name
 ---
 
 <BaseLayout title="Local Offices">
-  <main class="container my-16">
-    <h1 class="mb-6">Local Offices</h1>
-    <p>Our ”offices” are local nodes that offer an easy access to the national infrastructure. 
-    Each node enjoys freedom to specialize according to its own interests. 
-    You can meet local DARIAH-FI representatives, plan collaborations for future projects, 
-    or simply ask guidance from a real human being.</p>
+  <div class="page-header wave-bg">
+    <div class="container">
+      <h1 class="mb-0">Local Offices</h1>
+    </div>
+  </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      {offices.map((office) => (
-        <a
-          href={`/local-offices/${office.id}`}
-          class="flex gap-4 p-4 border border-border rounded-md bg-card hover:bg-muted transition-colors"
-          style="text-decoration: none;"
-        >
-          {office.data.logo && (
-            <div class="w-20 flex-shrink-0 flex items-center">
-              <img src={office.data.logo} alt="" />
-            </div>
-          )}
-          <div>
-            <p class="font-semibold text-headings mb-1">{office.data.name}</p>
-            {office.data.shortDescription && (
-              <p class="text-sm text-muted-foreground">{office.data.shortDescription}</p>
+  <main class="section">
+    <div class="container">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        {offices.map((office) => (
+          <a
+            href={`/local-offices/${office.id}`}
+            class="card-raised flex gap-4 p-5"
+          >
+            {office.data.logo && (
+              <div class="w-20 flex-shrink-0 flex items-center">
+                <img src={office.data.logo} alt="" />
+              </div>
             )}
-          </div>
-        </a>
-      ))}
+            <div>
+              <p class="font-bold text-headings mb-1">{office.data.name}</p>
+              {office.data.shortDescription && (
+                <p class="text-sm text-muted-foreground">{office.data.shortDescription}</p>
+              )}
+            </div>
+          </a>
+        ))}
+      </div>
     </div>
   </main>
 </BaseLayout>

@@ -22,15 +22,17 @@ const colSpan: Record<Column['size'], string> = {
 }
 ---
 
-<div class="container my-16">
+<div class="section">
+  <div class="container">
   <div class="grid grid-cols-4 lg:grid-cols-12 gap-y-8 gap-x-16">
     {columns.map((col) => (
       <div class={colSpan[col.size]}>
-        {col.richText && <div set:html={md(col.richText)} />}
+        {col.richText && <div class="rich-text" set:html={md(col.richText)} />}
         {col.link?.url && (
           <a class="underline" href={col.link.url}>{col.link.label}</a>
         )}
       </div>
     ))}
+  </div>
   </div>
 </div>

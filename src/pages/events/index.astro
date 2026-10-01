@@ -11,85 +11,81 @@ const upcoming = allEvents
 const past = allEvents
   .filter((e) => isPastEvent(e.data))
   .sort((a, b) => b.data.startDate.valueOf() - a.data.startDate.valueOf())
-
-const tabButtonClass = (active: boolean) =>
-  active
-    ? 'px-4 py-2 text-sm font-medium transition-colors rounded-t-md border border-b-background border-border bg-background text-foreground -mb-px'
-    : 'px-4 py-2 text-sm font-medium transition-colors rounded-t-md text-muted-foreground hover:text-foreground'
 ---
 
 <BaseLayout title="Events">
-  <main class="container my-16">
-    <h1 class="mb-6">Events</h1>
-
-    <div class="flex border-b border-border mb-8 gap-1">
-      <button type="button" data-events-tab="upcoming" class={tabButtonClass(true)}>Upcoming</button>
-      <button type="button" data-events-tab="past" class={tabButtonClass(false)}>Past Events</button>
+  <div class="page-header wave-bg">
+    <div class="container">
+      <h1 class="mb-0">Events</h1>
     </div>
+  </div>
 
-    <div data-events-panel="upcoming" class="block">
-      {upcoming.length === 0 ? (
-        <p class="text-muted-foreground">No upcoming events at the moment.</p>
-      ) : (
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {upcoming.map((event) => (
-            <a href={`/events/${event.id}`} class="block border border-border rounded-md p-4 bg-card hover:bg-muted transition-colors" style="text-decoration: none;">
-              <p class="text-sm text-muted-foreground mb-1">
-                {formatEventDate(event.data.startDate, {
-                  startTime: event.data.startTime,
-                  endDate: event.data.endDate,
-                  endTime: event.data.endTime,
-                })}
-              </p>
-              <p class="font-semibold text-headings">
-                {event.data.title}
-                {event.data.cancelled && <span class="ml-2 text-xs font-medium uppercase text-red-600">Cancelled</span>}
-              </p>
-              {event.data.location && <p class="text-sm text-muted-foreground mt-1">{event.data.location}</p>}
-              {event.data.isOnline && <p class="text-sm text-muted-foreground mt-1">Online</p>}
-            </a>
-          ))}
-        </div>
-      )}
-    </div>
+  <main class="section">
+    <div class="container">
+      <div class="tab-pills mb-10" role="tablist">
+        <button type="button" data-events-tab="upcoming" aria-selected="true" class="tab-pill">Upcoming</button>
+        <button type="button" data-events-tab="past" aria-selected="false" class="tab-pill">Past Events</button>
+      </div>
 
-    <div data-events-panel="past" class="hidden">
-      {past.length === 0 ? (
-        <p class="text-muted-foreground">No past events.</p>
-      ) : (
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {past.map((event) => (
-            <a href={`/events/${event.id}`} class="block border border-border rounded-md p-4 bg-card hover:bg-muted transition-colors" style="text-decoration: none;">
-              <p class="text-sm text-muted-foreground mb-1">
-                {formatEventDate(event.data.startDate, {
-                  startTime: event.data.startTime,
-                  endDate: event.data.endDate,
-                  endTime: event.data.endTime,
-                })}
-              </p>
-              <p class="font-semibold text-headings">{event.data.title}</p>
-              {event.data.location && <p class="text-sm text-muted-foreground mt-1">{event.data.location}</p>}
-              {event.data.isOnline && <p class="text-sm text-muted-foreground mt-1">Online</p>}
-            </a>
-          ))}
-        </div>
-      )}
+      <div data-events-panel="upcoming" class="block">
+        {upcoming.length === 0 ? (
+          <p class="text-muted-foreground">No upcoming events at the moment.</p>
+        ) : (
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {upcoming.map((event) => (
+              <a href={`/events/${event.id}`} class="card-raised block p-5">
+                <p class="text-sm text-muted-foreground mb-1">
+                  {formatEventDate(event.data.startDate, {
+                    startTime: event.data.startTime,
+                    endDate: event.data.endDate,
+                    endTime: event.data.endTime,
+                  })}
+                </p>
+                <p class="font-bold text-headings">
+                  {event.data.title}
+                  {event.data.cancelled && <span class="ml-2 text-xs font-medium uppercase text-red-600">Cancelled</span>}
+                </p>
+                {event.data.location && <p class="text-sm text-muted-foreground mt-1">{event.data.location}</p>}
+                {event.data.isOnline && <p class="text-sm text-muted-foreground mt-1">Online</p>}
+              </a>
+            ))}
+          </div>
+        )}
+      </div>
+
+      <div data-events-panel="past" class="hidden">
+        {past.length === 0 ? (
+          <p class="text-muted-foreground">No past events.</p>
+        ) : (
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {past.map((event) => (
+              <a href={`/events/${event.id}`} class="card-raised block p-5">
+                <p class="text-sm text-muted-foreground mb-1">
+                  {formatEventDate(event.data.startDate, {
+                    startTime: event.data.startTime,
+                    endDate: event.data.endDate,
+                    endTime: event.data.endTime,
+                  })}
+                </p>
+                <p class="font-bold text-headings">{event.data.title}</p>
+                {event.data.location && <p class="text-sm text-muted-foreground mt-1">{event.data.location}</p>}
+                {event.data.isOnline && <p class="text-sm text-muted-foreground mt-1">Online</p>}
+              </a>
+            ))}
+          </div>
+        )}
+      </div>
     </div>
   </main>
 </BaseLayout>
 
 <script>
-  const activeClass = ['border', 'border-b-background', 'border-border', 'bg-background', 'text-foreground', '-mb-px']
-  const inactiveClass = ['text-muted-foreground', 'hover:text-foreground']
-
   document.querySelectorAll('[data-events-tab]').forEach((button) => {
     button.addEventListener('click', () => {
       const target = button.getAttribute('data-events-tab')
 
       document.querySelectorAll('[data-events-tab]').forEach((btn) => {
-        const active = btn.getAttribute('data-events-tab') === target
-        activeClass.forEach((c) => btn.classList.toggle(c, active))
-        inactiveClass.forEach((c) => btn.classList.toggle(c, !active))
+        btn.setAttribute('aria-selected', btn.getAttribute('data-events-tab') === target ? 'true' : 'false')
       })
 
       document.querySelectorAll('[data-events-panel]').forEach((panel) => {

@@ -28,14 +28,14 @@ const textLinks = navItems.filter((item) => !getSocialIcon(item.url))
 const socialLinks = navItems.filter((item) => getSocialIcon(item.url))
 ---
 
-<footer class="mt-auto border-t border-border bg-black text-white">
+<footer class="mt-auto border-t border-border bg-background text-white">
   <div class="container py-4 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
     <a href="/" class="flex items-center flex-shrink-0">
       <img alt="Dariah Logo" width="160" height="40" loading="eager" fetchpriority="high" decoding="async" class="h-auto w-28 md:w-40" src="/dariah_logo.svg">
     </a>
 
     <nav class="flex flex-wrap gap-x-6 gap-y-2 items-center text-sm">
-      <p>&copy; {new Date().getFullYear()} DARIAH-FI</p>
+      <p class="text-muted-foreground">&copy; {new Date().getFullYear()} DARIAH-FI</p>
       {textLinks.map((item) => (
         <a
           href={item.url}

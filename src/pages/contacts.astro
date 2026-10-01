@@ -9,20 +9,26 @@
 import { getCollection } from 'astro:content'
 import BaseLayout from '../layouts/BaseLayout.astro'
 
-const offices = (await getCollection('localOffices')).sort(
-  (a, b) => (a.data.order ?? 0) - (b.data.order ?? 0),
-)
+// `order` isn't a field on localOffices anymore (removed in the earlier
+// alphabetical-sort cleanup) -- sort by name instead, same as
+// local-offices/index.astro.
+const offices = (await getCollection('localOffices')).sort((a, b) => a.data.name.localeCompare(b.data.name))
 ---
 
 <BaseLayout title="Contacts">
-  <main class="container my-16">
-    <h1 class="mb-6">Contacts</h1>
-    <p class="text-muted-foreground mb-8">Contact your local DARIAH-FI representative</p>
+  <div class="page-header wave-bg">
+    <div class="container">
+      <h1 class="mb-2">Contacts</h1>
+      <p class="text-muted-foreground mb-0">Contact your local DARIAH-FI representative:</p>
+    </div>
+  </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+  <main class="section">
+    <div class="container">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
       {offices.map((office) => (
-        <div class="p-4 rounded-lg bg-card">
-          <p class="font-semibold text-headings mb-3">{office.data.name}</p>
+        <div class="card-raised p-5">
+          <p class="font-bold text-headings mb-3">{office.data.name}</p>
 
           {office.data.contacts && office.data.contacts.length > 0 ? (
             <div class="space-y-2">
@@ -54,6 +60,7 @@ const offices = (await getCollection('localOffices')).sort(
           )}
         </div>
       ))}
+    </div>
     </div>
   </main>
 </BaseLayout>

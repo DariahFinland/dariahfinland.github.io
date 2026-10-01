@@ -1,5 +1,11 @@
 ---
 // src/pages/events/[slug].astro
+//
+// Redesigned to match the other detail pages: a wave-bg header band (back
+// link, status badges, title, date/location, Register button) with the
+// usual visible seam before the content, instead of everything just
+// stacked in one plain container.
+
 import { getCollection, render } from 'astro:content'
 import BaseLayout from '../../layouts/BaseLayout.astro'
 import { isPastEvent, formatEventDate } from '../../lib/events'
@@ -20,65 +26,74 @@ const past = isPastEvent(event.data)
 ---
 
 <BaseLayout title={event.data.title}>
-  <main class="container my-16 max-w-3xl">
-    <a href="/events" class="text-sm underline text-muted-foreground">← Events</a>
+  <div class="page-header wave-bg">
+    <div class="container max-w-3xl">
+      <a href="/events" class="text-sm font-semibold text-muted-foreground hover:text-primary inline-flex items-center gap-1 mb-4">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6" /></svg>
+        Events
+      </a>
 
-    {event.data.featuredImage && (
-      <div class="mt-4 mb-6 rounded-md overflow-hidden">
-        <img class="w-full" src={event.data.featuredImage} alt="" />
+      {(event.data.cancelled || past) && (
+        <div class="flex flex-wrap gap-2 mb-3">
+          {event.data.cancelled && (
+            <span class="inline-block text-xs font-bold uppercase tracking-wide text-red-600 border border-red-600 rounded-full px-3 py-1">
+              Cancelled
+            </span>
+          )}
+          {past && (
+            <span class="inline-block text-xs font-bold uppercase tracking-wide text-muted-foreground border border-border rounded-full px-3 py-1">
+              Past event
+            </span>
+          )}
+        </div>
+      )}
+
+      <h1 class="mb-3">{event.data.title}</h1>
+
+      <div class="flex flex-col gap-0.5">
+        <p class="font-semibold text-headings">
+          {formatEventDate(event.data.startDate, {
+            startTime: event.data.startTime,
+            endDate: event.data.endDate,
+            endTime: event.data.endTime,
+            includeWeekday: true,
+          })}
+        </p>
+        {event.data.location && <p class="text-muted-foreground">{event.data.location}</p>}
+        {event.data.isOnline && <p class="text-muted-foreground">Online event</p>}
       </div>
-    )}
 
-    <h1 class="mb-6">{event.data.title}</h1>
-
-    <p class="text-muted-foreground mb-1">
-      {formatEventDate(event.data.startDate, {
-        startTime: event.data.startTime,
-        endDate: event.data.endDate,
-        endTime: event.data.endTime,
-        includeWeekday: true,
-      })}
-    </p>
-    {event.data.location && <p class="text-muted-foreground mb-1">{event.data.location}</p>}
-    {event.data.isOnline && <p class="text-muted-foreground mb-1">Online event</p>}
-
-    <div class="flex gap-2 mt-2 mb-4">
-      {event.data.cancelled && (
-        <span class="inline-block text-xs font-medium uppercase tracking-wide text-red-600 border border-red-600 rounded-full px-3 py-1">
-          Cancelled
-        </span>
-      )}
-      {past && (
-        <span class="inline-block text-xs font-medium uppercase tracking-wide text-muted-foreground border border-border rounded-full px-3 py-1">
-          Past event
-        </span>
-      )}
-    </div>
-
-    {event.data.registrationUrl && !past && !event.data.cancelled && (
-      <div class="mt-4 mb-6">
+      {event.data.registrationUrl && !past && !event.data.cancelled && (
         <a
           href={event.data.registrationUrl}
           target="_blank"
           rel="noreferrer noopener"
-          class="inline-block bg-primary text-primary-foreground rounded px-5 py-2 text-sm font-medium hover:bg-primary-hover transition-colors"
+          class="inline-block bg-primary text-primary-foreground rounded-full px-6 py-2.5 text-sm font-semibold hover:bg-primary-hover transition-colors mt-5"
         >
           Register
         </a>
-      </div>
-    )}
-
-    <div class="mt-6">
-      <Content />
+      )}
     </div>
+  </div>
 
-    {localOffice && (
-      <div class="mt-8 pt-6 border-t border-border">
-        <p class="text-sm text-muted-foreground">
-          Organised by{' '}
-          <a href={`/local-offices/${localOffice.id}`} class="underline">{localOffice.data.name}</a>
-        </p>
+  <main class="section">
+    <div class="container max-w-3xl">
+      {event.data.featuredImage && (
+        <img class="w-full rounded-xl border border-border mb-8" src={event.data.featuredImage} alt="" />
+      )}
+
+      <div class="rich-text">
+        <Content />
       </div>
-    )}
+
+      {localOffice && (
+        <div class="card-raised inline-block p-4 mt-10">
+          <p class="text-sm text-muted-foreground">
+            Organised by{' '}
+            <a href={`/local-offices/${localOffice.id}`} class="font-semibold">{localOffice.data.name}</a>
+          </p>
+        </div>
+      )}
+    </div>
   </main>
 </BaseLayout>

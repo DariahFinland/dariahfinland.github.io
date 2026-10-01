@@ -1,12 +1,17 @@
 /* src/styles/global.css
  *
- * Ported from the original site's globals.css. Trimmed down on purpose:
- *   - dark mode ([data-theme='dark']) is left out for now -- easy to add
- *     back later by copying that block over once light mode looks right
- *   - Geist fonts aren't included -- using the same system-font fallback
- *     stack the original file already had as its backup
- *   - the shadcn "chart"/"sidebar" tokens are dropped since nothing here
- *     uses them yet
+ * Restyled to visually match the real, live site at https://www.dariah.fi/
+ * (a WordPress/Blocksy site -- a different design from the original
+ * Payload-template this project started from). Colors and type below were
+ * read directly off dariah.fi's computed styles/custom properties:
+ *   - page bg #F4F6F8, body text #3A4F66, headings #192A3D
+ *   - link/primary #2872FA, link hover #1559ED
+ *   - border #E1E8ED, muted panel bg #F2F5F7
+ *   - font stack: -apple-system/system-ui/Segoe UI/Roboto/Helvetica/Arial
+ *     (the real site uses this as its primary font too, not just a
+ *     fallback -- no custom webfont is loaded)
+ *
+ * Still trimmed down on purpose: no dark mode yet.
  */
 
 @import 'tailwindcss';
@@ -17,18 +22,24 @@
 @custom-variant xl (@media (width >= theme(--breakpoint-xl)));
 
 :root {
-  --background: oklch(97.295% 0.00298 264.794);
-  --foreground: oklch(42% 0.0466 251.22deg);
-  --card: oklch(100% 0 0deg);
-  --primary: oklch(58.82% 0.216 261.33deg);
-  --primary-foreground: oklch(100% 0 0deg);
-  --primary-hover: oklch(52.57% 0.2319 262.77deg);
-  --secondary: oklch(96.84% 0.0042 236.5deg);
-  --muted: oklch(96.84% 0.0042 236.5deg);
-  --muted-foreground: oklch(42% 0.0466 251.22deg);
-  --border: oklch(92.71% 0.0101 238.52deg);
-  --headings: oklch(27.98% 0.042 252.07deg);
+  --background: #f4f6f8;
+  --foreground: #3a4f66;
+  --card: #ffffff;
+  --primary: #2872fa;
+  --primary-foreground: #ffffff;
+  --primary-hover: #1559ed;
+  --secondary: #f2f5f7;
+  --muted: #f2f5f7;
+  --muted-foreground: #6b8299;
+  --border: #e1e8ed;
+  --headings: #192a3d;
   --radius: 0.25rem;
+
+  /* Wave-graphic palette -- used by the hero/footer background gradients
+     below, pulled from the same blue family as --primary. */
+  --wave-1: #e9edf3;
+  --wave-2: #dde4ec;
+  --wave-3: #c8d4e2;
 }
 
 @theme inline {
@@ -42,6 +53,7 @@
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-border: var(--border);
+  --color-headings: var(--headings);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -53,39 +65,43 @@
     -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
-/* Canonical heading scale -- applied everywhere, same as the original site */
-h1 { color: var(--foreground); font-size: 3rem; line-height: 1.2; font-weight: 600; margin-bottom: 1.5rem; }
-h2 { color: var(--headings); font-size: 1.5rem; line-height: 1.3; font-weight: 600; margin-bottom: 0.4rem; }
-h3 { font-size: 1.25rem; line-height: 1.35; font-weight: 600; margin-bottom: 0.3rem; }
-h4 { font-size: 1.1rem; line-height: 1.4; font-weight: 500; margin-bottom: 0.25rem; }
+/* Wrapped in Tailwind's `base` layer on purpose: @import 'tailwindcss'
+   pulls in Tailwind's own theme/base/components/utilities layers, and any
+   plain (unlayered) CSS declared after it would otherwise always beat
+   every Tailwind utility class, regardless of specificity or source order
+   -- that's how CSS cascade layers work. Without this, nothing could ever
+   override color/size/margin on an h1-h4 with a Tailwind class (not
+   text-white, not mb-0, not an arbitrary [&_h1]: variant). Putting these
+   in `base` keeps them as real defaults that utilities can still win
+   against, same as Tailwind's own reset styles. */
+@layer base {
+  /* Canonical heading scale -- matches dariah.fi's computed sizes/weights */
+  h1 { color: var(--headings); font-size: 2.25rem; line-height: 1.25; font-weight: 700; margin-bottom: 1.25rem; }
+  h2 { color: var(--headings); font-size: 1.75rem; line-height: 1.3; font-weight: 700; margin-bottom: 0.75rem; }
+  h3 { font-size: 1.25rem; line-height: 1.35; font-weight: 700; margin-bottom: 0.3rem; }
+  h4 { font-size: 1.1rem; line-height: 1.4; font-weight: 500; margin-bottom: 0.25rem; }
 
-body {
-  background-color: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
 
-p {
-  margin-bottom: 1rem;
-}
+  header, footer {
+    background-color: transparent;
+  }
 
-header, footer {
-  background-color: var(--card);
-}
+  a {
+    color: var(--primary);
+    text-decoration: none;
+  }
 
-a {
-  text-decoration: underline;
-}
-
-header a, footer a {
-  text-decoration: none;
-}
-
-a:hover {
-  color: var(--primary-hover);
+  a:hover {
+    color: var(--primary-hover);
+  }
 }
 
 /* Same .container utility as the original site's Tailwind config */
@@ -98,3 +114,148 @@ a:hover {
 @variant md { .container { max-width: var(--breakpoint-md); padding-inline: 2rem; } }
 @variant lg { .container { max-width: var(--breakpoint-lg); } }
 @variant xl { .container { max-width: var(--breakpoint-xl); } }
+
+/* Soft diagonal "wave" background, approximating the layered graphic
+   behind dariah.fi's hero and footer sections (the real site uses a
+   bitmap for this; we recreate the look with gradients so there's no
+   external asset to keep in sync). --wave-tint lets the footer use a
+   slightly darker/bluer version of the same pattern. */
+.wave-bg {
+  --wave-tint: var(--wave-1);
+  position: relative;
+  overflow: hidden;
+  background-color: var(--background);
+  background-image:
+    radial-gradient(ellipse 80% 60% at 15% 20%, var(--wave-tint), transparent 60%),
+    radial-gradient(ellipse 70% 50% at 85% 10%, var(--wave-2), transparent 55%),
+    radial-gradient(ellipse 90% 70% at 50% 100%, var(--wave-3), transparent 60%);
+}
+
+.wave-bg--footer {
+  --wave-tint: #c3d2e6;
+  background-color: var(--muted);
+}
+
+/* Every hero -- the homepage's, a CMS page's, a post's, a detail page's
+   title band -- gets a visible seam from the content that follows it,
+   instead of just fading into the same background color. .wave-bg always
+   gets a bottom border (the footer's wave-bg gets a top border instead,
+   since it's the last thing on the page, not a hero). .hero-photo is for
+   non-wave-bg heroes like the post banner, which is a real photo rather
+   than the gradient. */
+.wave-bg:not(.wave-bg--footer) {
+  border-bottom: 1px solid var(--border);
+}
+.wave-bg--footer {
+  border-top: 1px solid var(--border);
+}
+.hero-photo {
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 1px 12px rgba(25, 42, 61, 0.12);
+}
+
+/* Compact title band used at the top of simple listing/detail pages
+   (Events, Local Offices, Contacts, ...) that don't have a photo hero --
+   same wave-graphic treatment as the real heroes, just shorter, so every
+   page opens with the same "this is the hero, here's where it ends" cue
+   before the actual content starts. */
+.page-header {
+  padding-block: 2.5rem;
+}
+
+/* Shared "section" rhythm -- every page block (Content, Archive,
+   TabsBlock, TrainingSections, UpcomingEvents, ...) uses this instead of
+   picking its own my-* value, so stacked sections get consistent breathing
+   room and a visible seam between them instead of running together. */
+.section {
+  padding-block: 3.5rem;
+}
+.section + .section {
+  border-top: 1px solid var(--border);
+}
+
+/* Shared card look -- used anywhere content is presented as a card
+   (trainings, tools, affiliated groups, posts, events...) so they read as
+   distinct, clickable/scannable objects instead of plain bordered boxes. */
+.card-raised {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px rgba(25, 42, 61, 0.06);
+  transition: box-shadow 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+}
+.card-raised:hover {
+  box-shadow: 0 8px 20px rgba(25, 42, 61, 0.1);
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+
+/* Segmented-pill tab control -- replaces the old underline/border tab
+   style, which read as flat and made it hard to tell which tab was
+   active. */
+.tab-pills {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  padding: 0.25rem;
+  background-color: var(--muted);
+  border-radius: 999px;
+}
+.tab-pill {
+  padding: 0.5rem 1.25rem;
+  border-radius: 999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--muted-foreground);
+  transition: background-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+  white-space: nowrap;
+}
+.tab-pill:hover {
+  color: var(--foreground);
+}
+.tab-pill[aria-selected='true'] {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  box-shadow: 0 1px 3px rgba(25, 42, 61, 0.15);
+}
+
+/* Spacing for any block of rendered markdown/rich-text -- a post or event
+   body, a hero/CTA/content-column richText field, a training or tool
+   description, etc. Markdown output is just a flat run of <p>, <h2-4>,
+   <ul>/<ol>, <blockquote>, <img>... with no spacing of its own, so
+   consecutive paragraphs (and everything else) ran straight into each
+   other. This gives every direct child after the first some breathing
+   room, scaled to whatever font-size it's used at (em, not rem), plus a
+   few typographic basics markdown needs that the rest of the site doesn't
+   (list bullets, blockquote styling, link underlines). */
+.rich-text > * + * {
+  margin-top: 1em;
+}
+.rich-text h1, .rich-text h2, .rich-text h3, .rich-text h4 {
+  margin-top: 1.75em;
+}
+.rich-text ul, .rich-text ol {
+  padding-left: 1.4em;
+}
+.rich-text ul {
+  list-style: disc;
+}
+.rich-text ol {
+  list-style: decimal;
+}
+.rich-text li + li {
+  margin-top: 0.4em;
+}
+.rich-text blockquote {
+  padding-left: 1em;
+  border-left: 3px solid var(--border);
+  color: var(--muted-foreground);
+  font-style: italic;
+}
+.rich-text img {
+  border-radius: 0.5rem;
+}
+.rich-text a {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
