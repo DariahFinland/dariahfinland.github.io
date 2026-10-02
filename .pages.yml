@@ -289,7 +289,7 @@ content:
           - name: trainingSections
             label: Training Sections
             fields:
-              - { name: heading, type: string, required: true }
+              - { name: heading, type: string }
               - { name: intro, type: text }
               - name: trainings
                 label: Trainings shown in this section
