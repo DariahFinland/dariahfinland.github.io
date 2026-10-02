@@ -115,7 +115,7 @@ const blockSchema = z.discriminatedUnion('blockType', [
   }),
   z.object({
     blockType: z.literal('trainingSections'),
-    heading: z.string(),
+    heading: z.string().optional(),
     intro: z.string().optional(),
     // 'collection' (default): auto-shows every entry in the trainings
     // collection, grouped by level -- a new training added in the CMS
