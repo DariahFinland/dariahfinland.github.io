@@ -1,28 +1,39 @@
 ---
 // src/components/blocks/TrainingSections.astro
 //
-// A page can have more than one trainingSections block (e.g. one per
-// university), so this only renders the specific trainings selected on
-// THIS block instance -- not the whole collection. Same idea as the
-// Archive block's populateBy: 'selection' + selectedDocs.
+// Defaults to showing every entry in the trainings collection, auto-divided
+// into a section per local office (so a training added in the CMS appears
+// here -- under its office -- with no extra step), and within each office
+// section, grouped by level same as before. A training with no Local
+// Office set falls into its own "International Resources" section instead
+// of being dropped.
+//
+// A page can still opt a block into populateBy: 'selection' + an explicit
+// trainings picklist when it needs a curated subset -- e.g. more than one
+// trainingSections block, one per page section -- same idea as the Archive
+// block's populateBy: 'selection' + selectedDocs. The office/level grouping
+// below still applies to a manual selection, same as it does to the full
+// collection.
 //
 // Cards were flat bordered boxes in a thin vertical list before -- easy to
 // mistake for plain text. Now they're a proper grid of raised cards
 // (.card-raised, see global.css) with more room to breathe between level
 // groups, so "Training" actually reads as a browsable set of things.
 
-import { render } from 'astro:content'
-import { resolveRefs } from '../../lib/references'
+import { getCollection, render } from 'astro:content'
+import { resolveRefs, refEquals } from '../../lib/references'
 
 interface Props {
   heading?: string
   intro?: string
+  populateBy?: 'collection' | 'selection'
   trainings?: string[]
 }
 
-const { heading, intro, trainings: trainingRefs = [] } = Astro.props
+const { heading, intro, populateBy = 'collection', trainings: trainingRefs = [] } = Astro.props
 
-const selected = await resolveRefs('trainings', trainingRefs)
+const selected =
+  populateBy === 'selection' ? await resolveRefs('trainings', trainingRefs) : await getCollection('trainings')
 
 const withContent = await Promise.all(
   selected
@@ -30,26 +41,60 @@ const withContent = await Promise.all(
     .map(async (t) => ({ training: t, Content: (await render(t)).Content })),
 )
 
-// Group by the `level` field, preserving the order levels first appear in
-const levels = new Map<string, typeof withContent>()
-for (const item of withContent) {
-  const key = item.training.data.level ?? ''
-  if (!levels.has(key)) levels.set(key, [])
-  levels.get(key)!.push(item)
-}
+type Item = (typeof withContent)[number]
 
 // Sections always appear in this order, regardless of content order.
 // Anything with a level not in this list (including no level at all) is
 // appended at the end, in whatever order it was first encountered.
 const LEVEL_ORDER = ["Bachelor's level", "Master's level", 'Doctoral level', 'Varied levels']
-const orderedLevels = [...levels.entries()].sort(([a], [b]) => {
-  const ai = LEVEL_ORDER.indexOf(a)
-  const bi = LEVEL_ORDER.indexOf(b)
-  if (ai === -1 && bi === -1) return 0
-  if (ai === -1) return 1
-  if (bi === -1) return -1
-  return ai - bi
-})
+
+function groupByLevel(items: Item[]) {
+  const levels = new Map<string, Item[]>()
+  for (const item of items) {
+    const key = item.training.data.level ?? ''
+    if (!levels.has(key)) levels.set(key, [])
+    levels.get(key)!.push(item)
+  }
+  return [...levels.entries()].sort(([a], [b]) => {
+    const ai = LEVEL_ORDER.indexOf(a)
+    const bi = LEVEL_ORDER.indexOf(b)
+    if (ai === -1 && bi === -1) return 0
+    if (ai === -1) return 1
+    if (bi === -1) return -1
+    return ai - bi
+  })
+}
+
+const offices = await getCollection('localOffices')
+
+// A training's `localOffice` is a plain string ref (see
+// src/lib/references.ts), compared against each office's id with
+// refEquals() rather than a straight === so differing path formats still
+// match.
+const INTERNATIONAL = '__international__'
+const byOffice = new Map<string, Item[]>()
+for (const item of withContent) {
+  const ref = item.training.data.localOffice
+  const office = ref ? offices.find((o) => refEquals(ref, o.id)) : undefined
+  const key = office ? office.id : INTERNATIONAL
+  if (!byOffice.has(key)) byOffice.set(key, [])
+  byOffice.get(key)!.push(item)
+}
+
+// Each local office with at least one training comes first, alphabetically
+// by name; "International Resources" (no local office set) always comes
+// last, as the catch-all.
+const officeSections = [...byOffice.entries()]
+  .map(([key, items]) => ({
+    key,
+    label: key === INTERNATIONAL ? 'International Resources' : offices.find((o) => o.id === key)!.data.name,
+    levels: groupByLevel(items),
+  }))
+  .sort((a, b) => {
+    if (a.key === INTERNATIONAL) return 1
+    if (b.key === INTERNATIONAL) return -1
+    return a.label.localeCompare(b.label)
+  })
 ---
 
 <div class="section">
@@ -57,36 +102,44 @@ const orderedLevels = [...levels.entries()].sort(([a], [b]) => {
     {heading && <h2 class="mb-2">{heading}</h2>}
     {intro && <p class="mb-10 text-muted-foreground max-w-[48rem]">{intro}</p>}
 
-    <div class="flex flex-col gap-12">
-      {orderedLevels.map(([levelLabel, items]) => (
+    <div class="flex flex-col gap-16">
+      {officeSections.map(({ key, label, levels }) => (
         <div>
-          {levelLabel && (
-            <h3 class="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-primary mb-5 pb-2 border-b-2 border-primary">
-              {levelLabel}
-            </h3>
-          )}
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-            {items.map(({ training, Content }) => (
-              <div class="card-raised p-5">
-                {training.data.url ? (
-                  <a
-                    href={training.data.url}
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    class="font-bold text-headings hover:text-primary transition-colors inline-flex items-center gap-1.5"
-                  >
-                    {training.data.title}
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0">
-                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                      <path d="M15 3h6v6" />
-                      <path d="M10 14 21 3" />
-                    </svg>
-                  </a>
-                ) : (
-                  <p class="font-bold text-headings">{training.data.title}</p>
+          <h2 class="mb-6 pb-3 border-b border-border">{label}</h2>
+
+          <div class="flex flex-col gap-12">
+            {levels.map(([levelLabel, items]) => (
+              <div>
+                {levelLabel && (
+                  <h3 class="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-primary mb-5 pb-2 border-b-2 border-primary">
+                    {levelLabel}
+                  </h3>
                 )}
-                <div class="text-sm mt-2 text-muted-foreground rich-text">
-                  <Content />
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                  {items.map(({ training, Content }) => (
+                    <div class="card-raised p-5">
+                      {training.data.url ? (
+                        <a
+                          href={training.data.url}
+                          target="_blank"
+                          rel="noreferrer noopener"
+                          class="font-bold text-headings hover:text-primary transition-colors inline-flex items-center gap-1.5"
+                        >
+                          {training.data.title}
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                            <path d="M15 3h6v6" />
+                            <path d="M10 14 21 3" />
+                          </svg>
+                        </a>
+                      ) : (
+                        <p class="font-bold text-headings">{training.data.title}</p>
+                      )}
+                      <div class="text-sm mt-2 text-muted-foreground rich-text">
+                        <Content />
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             ))}

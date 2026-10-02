@@ -117,9 +117,12 @@ const blockSchema = z.discriminatedUnion('blockType', [
     blockType: z.literal('trainingSections'),
     heading: z.string(),
     intro: z.string().optional(),
-    // Explicit selection, not "all trainings" -- a page can have more than
-    // one trainingSections block (e.g. one per university), and each needs
-    // to show only its own subset.
+    // 'collection' (default): auto-shows every entry in the trainings
+    // collection, grouped by level -- a new training added in the CMS
+    // appears here with no further action. 'selection' keeps the old
+    // explicit-picklist behavior for when a page needs a curated subset
+    // (e.g. more than one trainingSections block, one per university).
+    populateBy: z.enum(['collection', 'selection']).default('collection'),
     trainings: z.array(z.string()).optional(),
   }),
   z.object({
