@@ -22,12 +22,12 @@ const navItems = header?.data.navItems ?? []
     </a>
 
     <!-- Desktop nav -- lg and up -->
-    <nav class="hidden lg:flex items-center gap-4">
+    <nav class="hidden lg:flex items-center gap-7">
       {navItems.map((item) => (
         <a
           href={item.url}
           target={item.newTab ? '_blank' : undefined}
-          class="text-foreground hover:text-primary transition-colors text-sm"
+          class="text-foreground hover:text-primary transition-colors text-smaller"
         >
           {item.label}
         </a>
