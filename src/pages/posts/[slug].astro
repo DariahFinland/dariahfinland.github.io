@@ -20,42 +20,42 @@ const tags = await resolveRefs('tags', post.data.tags)
 
 <BaseLayout title={post.data.title} description={post.data.meta?.description}>
   <article class="pb-16">
-    <!-- Simplified vs. the original PostHero, which floats over a full-bleed
-         image behind a transparent header -- same simplification as the
-         highImpact hero earlier. .hero-photo (global.css) gives it a
-         visible seam from the article text below instead of just
-         fading into the same background color. -->
-    <div class="relative text-white flex items-end min-h-[50vh] hero-photo">
-      {post.data.heroImage && (
-        <img class="absolute inset-0 w-full h-full object-cover object-top -z-10" src={post.data.heroImage} alt={post.data.heroImageAlt ?? ''} />
-      )}
-      <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent -z-10"></div>
+    <!-- Image on its own (cropped/centered to a fixed banner ratio), with the
+         title block underneath instead of overlaid on the photo. -->
+    {post.data.heroImage && (
+      <div class="container pt-8">
+        <img
+          class="w-full aspect-[21/9] object-cover object-center rounded-xl border border-border"
+          src={post.data.heroImage}
+          alt={post.data.heroImageAlt ?? ''}
+        />
+      </div>
+    )}
 
-      <div class="container z-10 relative pb-8">
-        <div class="max-w-[48rem] [&_h1]:text-white">
-          {tags.length > 0 && (
-            <div class="uppercase text-sm mb-6">
-              {tags.map((c) => c.data.title).join(', ')}
+    <header class="container pt-8 pb-8 border-b border-border">
+      <div class="max-w-[48rem] mx-auto">
+        {tags.length > 0 && (
+          <div class="uppercase text-xs font-bold text-primary mb-3">
+            {tags.map((c) => c.data.title).join(', ')}
+          </div>
+        )}
+        <h1>{post.data.title}</h1>
+        <div class="flex flex-col md:flex-row gap-4 md:gap-16 text-muted-foreground">
+          {post.data.authors && post.data.authors.length > 0 && (
+            <div class="flex flex-col gap-1">
+              <p class="text-sm">Author</p>
+              <p class="text-foreground">{post.data.authors.join(', ')}</p>
             </div>
           )}
-          <h1>{post.data.title}</h1>
-          <div class="flex flex-col md:flex-row gap-4 md:gap-16">
-            {post.data.authors && post.data.authors.length > 0 && (
-              <div class="flex flex-col gap-1">
-                <p class="text-sm">Author</p>
-                <p>{post.data.authors.join(', ')}</p>
-              </div>
-            )}
-            <div class="flex flex-col gap-1">
-              <p class="text-sm">Date Published</p>
-              <time datetime={post.data.publishedAt.toISOString()}>
-                {post.data.publishedAt.toLocaleDateString()}
-              </time>
-            </div>
+          <div class="flex flex-col gap-1">
+            <p class="text-sm">Date Published</p>
+            <time class="text-foreground" datetime={post.data.publishedAt.toISOString()}>
+              {post.data.publishedAt.toLocaleDateString('en-GB', { timeZone: 'UTC' })}
+            </time>
           </div>
         </div>
       </div>
-    </div>
+    </header>
 
     <div class="container pt-8">
       <div class="max-w-[48rem] mx-auto rich-text">
