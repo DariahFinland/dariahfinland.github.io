@@ -33,11 +33,16 @@ const cards = await Promise.all(
               href={`/posts/${post.id}`}
               class="card-raised block h-full overflow-hidden"
             >
-              {post.data.meta?.image && <img class="w-full aspect-[16/10] object-cover" src={post.data.meta.image} alt="" />}
+              {post.data.meta?.image ? (
+                <img class="w-full aspect-[16/10] object-cover" src={post.data.meta.image} alt="" />
+              ) : (
+                <img
+                  class="w-full aspect-[16/10] object-cover"
+                  src="public/images/placeholder.png"
+                  alt=""
+                />
+              )}
               <div class="p-5">
-                {categoryTitles.length > 0 && (
-                  <div class="uppercase text-xs font-bold text-primary mb-2">{categoryTitles.join(', ')}</div>
-                )}
                 <h3 class="text-lg font-semibold text-headings">{post.data.title}</h3>
                 {post.data.meta?.description && <p class="mt-2 text-sm text-muted-foreground">{post.data.meta.description}</p>}
               </div>
