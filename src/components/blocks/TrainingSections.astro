@@ -2,7 +2,7 @@
 // src/components/blocks/TrainingSections.astro
 //
 // Defaults to showing every entry in the trainings collection, auto-divided
-// into a section per local office (so a training added in the CMS appears
+// into a tab per local office (so a training added in the CMS appears
 // here -- under its office -- with no extra step), and within each office
 // section, grouped by level same as before. A training with no Local
 // Office set falls into its own "International Resources" section instead
@@ -102,11 +102,23 @@ const officeSections = [...byOffice.entries()]
     {heading && <h2 class="mb-2">{heading}</h2>}
     {intro && <p class="mb-10 text-muted-foreground max-w-[48rem]">{intro}</p>}
 
-    <div class="flex flex-col gap-16">
-      {officeSections.map(({ key, label, levels }) => (
-        <div>
-          <h2 class="mb-6 pb-3 border-b border-border">{label}</h2>
+    <div class="tab-pills mb-10" role="tablist">
+      {officeSections.map(({ label }, i) => (
+        <button
+          type="button"
+          role="tab"
+          data-ts-button={i}
+          aria-selected={i === 0 ? 'true' : 'false'}
+          class="tab-pill"
+        >
+          {label}
+        </button>
+      ))}
+    </div>
 
+    <div>
+      {officeSections.map(({ key, label, levels }, i) => (
+        <div data-ts-panel={i} class={i === 0 ? 'block' : 'hidden'}>
           <div class="flex flex-col gap-12">
             {levels.map(([levelLabel, items]) => (
               <div>
@@ -149,3 +161,27 @@ const officeSections = [...byOffice.entries()]
     </div>
   </div>
 </div>
+
+<script>
+  // Vanilla-JS tab switching, scoped per trainingSections block (same
+  // approach as TabsBlock.astro, with its own data attributes so the two
+  // don't interfere). Active state is just aria-selected -- .tab-pill in
+  // global.css handles the look.
+  document.querySelectorAll('[data-ts-button]').forEach((button) => {
+    button.addEventListener('click', () => {
+      const wrapper = button.closest('.container')
+      if (!wrapper) return
+      const index = button.getAttribute('data-ts-button')
+
+      wrapper.querySelectorAll('[data-ts-button]').forEach((btn) => {
+        btn.setAttribute('aria-selected', btn === button ? 'true' : 'false')
+      })
+
+      wrapper.querySelectorAll('[data-ts-panel]').forEach((panel) => {
+        const match = panel.getAttribute('data-ts-panel') === index
+        panel.classList.toggle('hidden', !match)
+        panel.classList.toggle('block', match)
+      })
+    })
+  })
+</script>
