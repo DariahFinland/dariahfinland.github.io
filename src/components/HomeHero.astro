@@ -1,0 +1,140 @@
+---
+// src/components/HomeHero.astro
+//
+// Homepage-only hero, replacing both the generic <Hero> and the old row of
+// photo cards (HomeLinkCards). Layout: headline on the left and intro
+// paragraph on the right, over the wave/photo background; directly below,
+// overlapping the hero's bottom edge, a row of three link cards (Learning,
+// Resources, Local Offices) with icon, one-line description and arrow, styled with .card-raised (global.css) like every other card on the site.
+//
+// The headline and paragraph still come from the homepage's hero richText
+// in the CMS: the first "# Heading" line becomes the big headline, and
+// everything after it is the paragraph. Links inside the paragraph get a
+// dotted underline.
+//
+// The three cards are static on purpose (they're only used on the index
+// page). To change their labels, descriptions or links, edit the `cards`
+// array below. The background photo is passed in by [...slug].astro.
+
+import { md } from '../lib/markdown'
+
+interface Props {
+  hero?: { richText?: string }
+  backgroundImage?: string
+}
+
+const { hero, backgroundImage } = Astro.props
+
+const raw = hero?.richText ?? ''
+const headingMatch = raw.match(/^\s*#\s+(.+?)\s*(?:\n|$)/)
+const title = headingMatch?.[1]
+const body = headingMatch ? raw.slice(headingMatch[0].length) : raw
+
+const cards = [
+  {
+    key: 'learning',
+    label: 'Learning',
+    description: 'Courses and training materials',
+    url: '/training-and-teaching',
+  },
+  {
+    key: 'resources',
+    label: 'Resources',
+    description: 'Tools, datasets and expertise',
+    url: '/resources',
+  },
+  {
+    key: 'offices',
+    label: 'Local Offices',
+    description: 'Find your local DARIAH-FI contact',
+    url: '/local-offices',
+  },
+]
+
+const iconProps = {
+  width: 40,
+  height: 40,
+  viewBox: '0 0 24 24',
+  fill: 'none',
+  stroke: 'currentColor',
+  'stroke-width': 1.25,
+  'stroke-linecap': 'round' as const,
+  'stroke-linejoin': 'round' as const,
+  class: 'flex-shrink-0 text-muted-foreground group-hover:text-primary transition-colors',
+}
+---
+
+<div class="relative wave-bg overflow-hidden">
+  {backgroundImage && (
+    <img class="absolute inset-0 w-full h-full object-cover object-top" src={backgroundImage} alt="" />
+  )}
+  {backgroundImage && (
+    <div class="absolute inset-0 bg-gradient-to-b from-background/85 via-background/55 to-background/90"></div>
+  )}
+
+  <div class="container relative pt-14 pb-24 lg:pt-20 lg:pb-32">
+    <div class="grid grid-cols-1 lg:grid-cols-[5fr_6fr] gap-8 lg:gap-16 items-start">
+      {title && (
+        <h1 class="font-normal text-4xl md:text-5xl leading-tight text-headings mb-0">{title}</h1>
+      )}
+      <div class="home-text text-lg md:text-xl leading-relaxed text-headings lg:pt-2" set:html={md(body)} />
+    </div>
+  </div>
+</div>
+
+<div class="container relative z-10 -mt-14 lg:-mt-20">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6">
+    {cards.map((card) => (
+      <a
+        href={card.url}
+        class="card-raised group flex items-center gap-5 p-5 lg:p-6"
+      >
+        {card.key === 'learning' && (
+          <svg {...iconProps}>
+            <path d="M2 4h7a3 3 0 0 1 3 3v13a2 2 0 0 0-2-2H2z" />
+            <path d="M22 4h-7a3 3 0 0 0-3 3v13a2 2 0 0 1 2-2h8z" />
+          </svg>
+        )}
+        {card.key === 'resources' && (
+          <svg {...iconProps}>
+            <rect x="3" y="3" width="18" height="13" rx="1" />
+            <path d="M8 21h8M12 16v5" />
+          </svg>
+        )}
+        {card.key === 'offices' && (
+          <svg {...iconProps}>
+            <path d="M3 21V9h7v12M10 21V3h11v18M3 21h18" />
+            <path d="M13 7h2M17 7h2M13 11h2M17 11h2M13 15h2M17 15h2M5 13h2M5 17h2" />
+          </svg>
+        )}
+        <span class="self-stretch w-px bg-border"></span>
+        <span class="flex-1 min-w-0">
+          <span class="block text-lg font-bold uppercase tracking-wide text-headings group-hover:text-primary transition-colors">{card.label}</span>
+          <span class="block text-sm text-muted-foreground mt-0.5">{card.description}</span>
+        </span>
+        <svg
+          class="flex-shrink-0 text-muted-foreground group-hover:text-primary transition-all group-hover:translate-x-1"
+          width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        >
+          <path d="M5 12h14" />
+          <path d="m12 5 7 7-7 7" />
+        </svg>
+      </a>
+    ))}
+  </div>
+</div>
+
+<style>
+  .home-text :global(p) + :global(p) {
+    margin-top: 1em;
+  }
+  /* Links inside the intro paragraph get a dotted underline. */
+  .home-text :global(a) {
+    color: inherit;
+    border-bottom: 2px dotted currentColor;
+  }
+  .home-text :global(a:hover) {
+    color: var(--primary);
+  }
+</style>

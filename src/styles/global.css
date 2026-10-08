@@ -31,7 +31,7 @@
   --secondary: #f2f5f7;
   --muted: #f2f5f7;
   --muted-foreground: #6b8299;
-  --border: #e1e8ed;
+  --border: #d1d8dd;
   --headings: #192a3d;
   --radius: 0.25rem;
 
@@ -169,6 +169,7 @@
    room and a visible seam between them instead of running together. */
 .section {
   padding-block: 3.5rem;
+  padding-top: 1rem;
 }
 .section + .section {
   border-top: 1px solid var(--border);

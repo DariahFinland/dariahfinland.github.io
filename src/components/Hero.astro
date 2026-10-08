@@ -101,10 +101,10 @@ const copyClass = '[&_h1]:text-[2.25rem] [&_h1]:md:text-[2.75rem] [&_h1]:font-no
         backdrop as the rest of the site instead of a straight photo, and
         keeps the headline text legible on top of it. */}
     {heroBg && (
-      <div class="absolute inset-0 bg-gradient-to-b from-background/85 via-background/55 to-background/90"></div>
+      <div class="absolute inset-0 bg-gradient-to-b from-background/5 via-background/5 to-background/90"></div>
     )}
 
-    <div class="container relative py-20 md:py-28">
+    <div class="container relative py-20 md:py-16">
       <div class={`max-w-[42rem] ${copyClass}`}>
         {hero.richText && <div class="rich-text" set:html={md(hero.richText)} />}
         {hero.links && hero.links.length > 0 && (
