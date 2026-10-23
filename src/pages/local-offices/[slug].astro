@@ -2,9 +2,10 @@
 // src/pages/local-offices/[slug].astro
 //
 // Lists affiliated groups, tools, and trainings tied to this office, via
-// each collection's own `localOffice` field. These are now plain strings
+// each collection's own `localOffice` field (for tools that's the main
+// developer -- tools where this office is only a collaborator are not listed). These are now plain strings
 // (see src/lib/references.ts) rather than astro:content reference() --
-// refEquals()/refsInclude() handle comparing them against this office's id.
+// refEquals() handles comparing them against this office's id.
 //
 // Redesigned from a plain stacked list of thin bordered boxes into: a
 // wave-bg header band (logo, name, website link -- same "hero, then a
@@ -13,7 +14,7 @@
 
 import { getCollection, render } from 'astro:content'
 import BaseLayout from '../../layouts/BaseLayout.astro'
-import { refEquals, refsInclude } from '../../lib/references'
+import { refEquals } from '../../lib/references'
 
 export async function getStaticPaths() {
   const offices = await getCollection('localOffices')
@@ -35,7 +36,7 @@ const groupsWithContent = await Promise.all(
 
 const allTools = await getCollection('tools')
 const tools = allTools
-  .filter((t) => refEquals(t.data.localOffice, office.id) || refsInclude(t.data.collaborators, office.id))
+  .filter((t) => refEquals(t.data.localOffice, office.id))
   .sort((a, b) => a.data.name.localeCompare(b.data.name))
 const toolsWithContent = await Promise.all(
   tools.map(async (t) => ({ tool: t, Content: (await render(t)).Content })),
