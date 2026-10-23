@@ -2,7 +2,7 @@
 // src/components/blocks/TrainingSections.astro
 //
 // Defaults to showing every entry in the trainings collection, auto-divided
-// into a tab per local office (so a training added in the CMS appears
+// into an "All" tab (open by default) plus a tab per local office (so a training added in the CMS appears
 // here -- under its office -- with no extra step), and within each office
 // section, grouped by level same as before. A training with no Local
 // Office set falls into its own "International Resources" section instead
@@ -95,6 +95,23 @@ const officeSections = [...byOffice.entries()]
     if (b.key === INTERNATIONAL) return -1
     return a.label.localeCompare(b.label)
   })
+
+// Tabs: an "All" tab first (opens by default) showing every office's
+// trainings one after another under office headings, then one tab per
+// office. Each panel is a list of groups; a group is an optional heading
+// plus its level sub-sections.
+const panels = [
+  {
+    label: 'All',
+    isAll: true,
+    groups: officeSections.map(({ label, levels }) => ({ heading: label as string | undefined, levels })),
+  },
+  ...officeSections.map(({ label, levels }) => ({
+    label,
+    isAll: false,
+    groups: [{ heading: undefined as string | undefined, levels }],
+  })),
+]
 ---
 
 <div class="section">
@@ -103,7 +120,7 @@ const officeSections = [...byOffice.entries()]
     {intro && <p class="mb-10 text-muted-foreground max-w-[48rem]">{intro}</p>}
 
     <div class="tab-pills mb-10" role="tablist">
-      {officeSections.map(({ label }, i) => (
+      {panels.map(({ label }, i) => (
         <button
           type="button"
           role="tab"
@@ -117,38 +134,46 @@ const officeSections = [...byOffice.entries()]
     </div>
 
     <div>
-      {officeSections.map(({ key, label, levels }, i) => (
-        <div data-ts-panel={i} class={i === 0 ? 'block' : 'hidden'}>
-          <div class="flex flex-col gap-12">
-            {levels.map(([levelLabel, items]) => (
+      {panels.map(({ isAll, groups }, i) => (
+        // The "All" panel repeats every card, so keep it out of the search index.
+        <div data-ts-panel={i} class={i === 0 ? 'block' : 'hidden'} data-pagefind-ignore={isAll ? '' : undefined}>
+          <div class="flex flex-col gap-16">
+            {groups.map(({ heading, levels }) => (
               <div>
-                {levelLabel && (
-                  <h3 class="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-primary mb-5 pb-2 border-b-2 border-primary">
-                    {levelLabel}
-                  </h3>
-                )}
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-                  {items.map(({ training, Content }) => (
-                    <div class="card-raised p-5">
-                      {training.data.url ? (
-                        <a
-                          href={training.data.url}
-                          target="_blank"
-                          rel="noreferrer noopener"
-                          class="font-bold text-headings hover:text-primary transition-colors inline-flex items-center gap-1.5"
-                        >
-                          {training.data.title}
-                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0">
-                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                            <path d="M15 3h6v6" />
-                            <path d="M10 14 21 3" />
-                          </svg>
-                        </a>
-                      ) : (
-                        <p class="font-bold text-headings">{training.data.title}</p>
+                {heading && <h2 class="mb-6 pb-3 border-b border-border">{heading}</h2>}
+                <div class="flex flex-col gap-12">
+                  {levels.map(([levelLabel, items]) => (
+                    <div>
+                      {levelLabel && (
+                        <h3 class="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-primary mb-5 pb-2 border-b-2 border-primary">
+                          {levelLabel}
+                        </h3>
                       )}
-                      <div class="text-sm mt-2 text-muted-foreground rich-text">
-                        <Content />
+                      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        {items.map(({ training, Content }) => (
+                          <div class="card-raised p-5">
+                            {training.data.url ? (
+                              <a
+                                href={training.data.url}
+                                target="_blank"
+                                rel="noreferrer noopener"
+                                class="font-bold text-headings hover:text-primary transition-colors inline-flex items-center gap-1.5"
+                              >
+                                {training.data.title}
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0">
+                                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                  <path d="M15 3h6v6" />
+                                  <path d="M10 14 21 3" />
+                                </svg>
+                              </a>
+                            ) : (
+                              <p class="font-bold text-headings">{training.data.title}</p>
+                            )}
+                            <div class="text-sm mt-2 text-muted-foreground rich-text">
+                              <Content />
+                            </div>
+                          </div>
+                        ))}
                       </div>
                     </div>
                   ))}
