@@ -1,8 +1,7 @@
 ---
 title: Kielipankki user training
 url: https://ssl.eventilla.com/kielipankki
-localOffice: src/content/local-offices/csc.md
+localOffice: src/content/local-offices/kielipankki.md
 level: Varied levels
 ---
-
 Teaching structured through one course on how to use the Language Bank of Finland and its resources with the support of the CSC environment.
