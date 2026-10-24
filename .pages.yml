@@ -39,7 +39,7 @@ content:
       primary: name
       sort: [name]
     fields:
-      - { name: name, type: string, required: true, description: "Live at https://dariahfinland.github.io/local-offices/<filename shown below>" }
+      - { name: name, type: string, required: true }
       - { name: logo, type: image }
       - { name: shortDescription, type: text }
       - { name: externalUrl, type: string }
