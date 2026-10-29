@@ -101,31 +101,46 @@ const sections = [
 
           <section class="card-raised p-5 md:p-6">
             <h2 class="text-lg mb-4">Pageviews per day</h2>
-            <svg viewBox={`0 0 ${W} ${H}`} class="w-full h-auto" role="img" aria-label="Bar chart of pageviews per day over the last 30 days">
-              {ticks.map((t) => {
-                const y = pad.t + innerH - (t / niceMax) * innerH
-                return (
-                  <g>
-                    <line x1={pad.l} x2={W - pad.r} y1={y} y2={y} stroke="var(--border)" stroke-width="1" />
-                    <text x={pad.l - 8} y={y + 4} text-anchor="end" font-size="11" fill="var(--muted-foreground)">{nf.format(t)}</text>
-                  </g>
-                )
-              })}
-              {days.map((d, i) => {
-                const h = (d.count / niceMax) * innerH
-                const x = pad.l + i * slot + (slot - barW) / 2
-                return (
-                  <g>
-                    <rect x={x} y={pad.t + innerH - h} width={barW} height={Math.max(h, d.count > 0 ? 1 : 0)} rx="2" fill="var(--primary)">
-                      <title>{`${fmtDate(d.day)}: ${nf.format(d.count)}`}</title>
-                    </rect>
-                    {i % 5 === 0 && (
-                      <text x={x + barW / 2} y={H - 8} text-anchor="middle" font-size="11" fill="var(--muted-foreground)">{fmtShort(d.day)}</text>
-                    )}
-                  </g>
-                )
-              })}
-            </svg>
+            <div class="relative" data-chart>
+              <svg viewBox={`0 0 ${W} ${H}`} class="w-full h-auto" role="img" aria-label="Bar chart of pageviews per day over the last 30 days">
+                {ticks.map((t) => {
+                  const y = pad.t + innerH - (t / niceMax) * innerH
+                  return (
+                    <g>
+                      <line x1={pad.l} x2={W - pad.r} y1={y} y2={y} stroke="var(--border)" stroke-width="1" />
+                      <text x={pad.l - 8} y={y + 4} text-anchor="end" font-size="11" fill="var(--muted-foreground)">{nf.format(t)}</text>
+                    </g>
+                  )
+                })}
+                {days.map((d, i) => {
+                  const h = (d.count / niceMax) * innerH
+                  const x = pad.l + i * slot + (slot - barW) / 2
+                  return (
+                    <g data-day={fmtDate(d.day)} data-count={nf.format(d.count)}>
+                      <rect data-bar x={x} y={pad.t + innerH - h} width={barW} height={Math.max(h, d.count > 0 ? 1 : 0)} rx="2" fill="var(--primary)" />
+                      {i % 5 === 0 && (
+                        <text x={x + barW / 2} y={H - 8} text-anchor="middle" font-size="11" fill="var(--muted-foreground)">{fmtShort(d.day)}</text>
+                      )}
+                      {/* full-height invisible hit area, so even a tiny bar is easy to hover/tap */}
+                      <rect data-hit x={pad.l + i * slot} y={pad.t} width={slot} height={innerH} fill="transparent" />
+                    </g>
+                  )
+                })}
+              </svg>
+              <div
+                data-tip
+                role="tooltip"
+                class="hidden absolute z-10 pointer-events-none -translate-x-1/2 -translate-y-full rounded-md bg-headings text-white text-xs px-2.5 py-1.5 shadow-lg whitespace-nowrap"
+              ></div>
+            </div>
+            {/* The same numbers as a table for screen readers */}
+            <table class="sr-only">
+              <caption>Pageviews per day</caption>
+              <thead><tr><th>Date</th><th>Pageviews</th></tr></thead>
+              <tbody>
+                {days.map((d) => <tr><td>{fmtDate(d.day)}</td><td>{d.count}</td></tr>)}
+              </tbody>
+            </table>
           </section>
 
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
@@ -163,3 +178,62 @@ const sections = [
     </div>
   </div>
 </BaseLayout>
+
+<style>
+  [data-bar] {
+    transition: fill 0.1s ease;
+  }
+  [data-day][data-active] [data-bar] {
+    fill: var(--primary-hover);
+  }
+</style>
+
+<script>
+  // Hover/tap tooltip for the daily bar chart: shows the date and count above
+  // the bar under the pointer.
+  document.querySelectorAll<HTMLElement>('[data-chart]').forEach((chart) => {
+    const tip = chart.querySelector<HTMLElement>('[data-tip]')
+    if (!tip) return
+    let active: Element | null = null
+
+    const hide = () => {
+      active?.removeAttribute('data-active')
+      active = null
+      tip.classList.add('hidden')
+    }
+
+    const show = (group: Element) => {
+      if (active !== group) {
+        active?.removeAttribute('data-active')
+        group.setAttribute('data-active', '')
+        active = group
+      }
+      const bar = group.querySelector('[data-bar]')!.getBoundingClientRect()
+      const box = chart.getBoundingClientRect()
+      tip.innerHTML = ''
+      const date = document.createElement('div')
+      date.textContent = group.getAttribute('data-day')
+      date.className = 'opacity-70'
+      const count = document.createElement('div')
+      count.className = 'font-semibold'
+      count.textContent = `${group.getAttribute('data-count')} pageviews`
+      tip.append(date, count)
+      tip.classList.remove('hidden')
+      // centre above the bar, kept inside the chart's horizontal bounds
+      const half = tip.offsetWidth / 2
+      const centre = Math.min(Math.max(bar.left + bar.width / 2 - box.left, half), box.width - half)
+      tip.style.left = `${centre}px`
+      tip.style.top = `${bar.top - box.top - 6}px`
+    }
+
+    chart.querySelectorAll('[data-hit]').forEach((hit) => {
+      const group = hit.parentElement!
+      hit.addEventListener('pointerenter', () => show(group))
+      hit.addEventListener('pointerdown', () => show(group)) // tap on touch screens
+    })
+    chart.addEventListener('pointerleave', hide)
+    document.addEventListener('pointerdown', (e) => {
+      if (!chart.contains(e.target as Node)) hide()
+    })
+  })
+</script>
