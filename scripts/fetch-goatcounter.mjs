@@ -52,7 +52,10 @@ async function api(path, params = {}, attempt = 0) {
     await sleep(wait + 250)
     return api(path, params, attempt + 1)
   }
-  if (!res.ok) throw new Error(`${path} -> HTTP ${res.status}`)
+  if (!res.ok) {
+    const body = (await res.text()).replace(/\s+/g, ' ').slice(0, 200)
+    throw new Error(`GET ${url.origin}${url.pathname}?${url.searchParams} -> HTTP ${res.status} ${body}`)
+  }
   return res.json()
 }
 
@@ -64,23 +67,41 @@ const breakdown = (res) =>
     .sort((a, b) => b.count - a.count)
     .slice(0, TOP)
 
-async function optional(label, fn) {
+async function optional(label, fn, fallback = []) {
   try {
     await sleep(300)
     return await fn()
   } catch (err) {
     console.warn(`[stats] ${label} failed (${err.message}) -- leaving that section empty`)
-    return []
+    return fallback
   }
 }
 
 try {
-  // --- daily pageviews (required) ---
-  const total = await api('/stats/total', { daily: 'true' })
+  // --- per-path stats: source for "top pages", and (fallback) the daily series ---
+  // group=day makes each hit's `stats` an array of per-day counts.
+  const hitsRes = await optional('hits', () => api('/stats/hits', { limit: 100, group: 'day' }), null)
+  const hits = (hitsRes?.hits ?? []).filter((h) => !h.event)
+
+  // --- daily pageviews ---
+  // Preferred: /stats/total. If that's unavailable, sum the per-path daily
+  // counts from /stats/hits instead (covers up to the 100 busiest pages).
   const byDay = new Map()
-  for (const s of total.stats ?? []) {
+  const addDay = (s) => {
     const count = s.daily ?? (Array.isArray(s.hourly) ? s.hourly.reduce((a, b) => a + b, 0) : 0)
-    byDay.set(String(s.day).slice(0, 10), Number(count) || 0)
+    const key = String(s.day).slice(0, 10)
+    byDay.set(key, (byDay.get(key) ?? 0) + (Number(count) || 0))
+  }
+  let source = 'total'
+  try {
+    const total = await api('/stats/total')
+    for (const s of total.stats ?? []) addDay(s)
+  } catch (err) {
+    console.warn(`[stats] /stats/total failed (${err.message}) -- falling back to /stats/hits`)
+    source = 'hits'
+    byDay.clear()
+    for (const h of hits) for (const s of h.stats ?? []) addDay(s)
+    if (!hits.length) throw new Error('neither /stats/total nor /stats/hits returned data')
   }
   const daily = []
   for (let i = 0; i < DAYS; i++) {
@@ -88,14 +109,10 @@ try {
     daily.push({ day, count: byDay.get(day) ?? 0 })
   }
 
-  const pages = await optional('top pages', async () => {
-    const res = await api('/stats/hits', { limit: 25, daily: 'true' })
-    return (res.hits ?? [])
-      .filter((h) => !h.event)
-      .map((h) => ({ path: h.path, title: h.title || '', count: Number(h.count) || 0 }))
-      .sort((a, b) => b.count - a.count)
-      .slice(0, TOP)
-  })
+  const pages = hits
+    .map((h) => ({ path: h.path, title: h.title || '', count: Number(h.count) || 0 }))
+    .sort((a, b) => b.count - a.count)
+    .slice(0, TOP)
   const referrers = await optional('referrers', async () => breakdown(await api('/stats/toprefs', { limit: 25 })))
   const countries = await optional('countries', async () => breakdown(await api('/stats/locations', { limit: 25 })))
   const browsers = await optional('browsers', async () => breakdown(await api('/stats/browsers', { limit: 25 })))
@@ -115,7 +132,7 @@ try {
     sizes,
   }
   await writeFile(OUT, JSON.stringify(stats, null, 2) + '\n')
-  console.log(`[stats] wrote ${dayKey(startDay)}..${dayKey(endDay)}: ${stats.totalPageviews} pageviews`)
+  console.log(`[stats] wrote ${dayKey(startDay)}..${dayKey(endDay)}: ${stats.totalPageviews} pageviews (daily series from /stats/${source})`)
 } catch (err) {
   console.warn(`[stats] could not fetch statistics (${err.message}) -- keeping existing src/data/stats.json`)
   try {
