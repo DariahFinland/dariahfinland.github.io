@@ -1,0 +1,165 @@
+---
+// src/pages/statistics.astro
+//
+// Monthly (last 30 days) website statistics, rendered at build time from
+// src/data/stats.json, which scripts/fetch-goatcounter.mjs refreshes on
+// every build from the GoatCounter API. The site is rebuilt daily (cron in
+// .github/workflows/deploy.yml), so this page updates itself. Charts are
+// plain inline SVG/HTML -- no charting library, no client-side requests.
+
+import BaseLayout from '../layouts/BaseLayout.astro'
+import stats from '../data/stats.json'
+
+const DASHBOARD_URL = 'https://dariahfinland.goatcounter.com'
+
+const hasData = Boolean(stats.generatedAt) && stats.daily.length > 0
+const nf = new Intl.NumberFormat('en-GB')
+
+// dd/mm/yyyy (UTC), same format as the rest of the site
+const fmtDate = (iso: string) => {
+  const [y, m, d] = iso.slice(0, 10).split('-')
+  return `${d}/${m}/${y}`
+}
+const fmtShort = (iso: string) => {
+  const [, m, d] = iso.slice(0, 10).split('-')
+  return `${d}/${m}`
+}
+
+// --- headline numbers ---
+const days = stats.daily
+const total = stats.totalPageviews
+const avg = days.length ? Math.round(total / days.length) : 0
+const busiest = days.reduce((best, d) => (d.count > best.count ? d : best), days[0] ?? { day: '', count: 0 })
+
+// --- daily bar chart geometry ---
+const W = 800
+const H = 260
+const pad = { l: 44, r: 8, t: 12, b: 28 }
+const innerW = W - pad.l - pad.r
+const innerH = H - pad.t - pad.b
+const rawMax = Math.max(1, ...days.map((d) => d.count))
+// round the axis maximum up to a "nice" 1/2/5 x 10^n
+const niceMax = (() => {
+  const mag = 10 ** Math.floor(Math.log10(rawMax))
+  for (const m of [1, 2, 5, 10]) if (rawMax <= m * mag) return m * mag
+  return rawMax
+})()
+const ticks = [0, 0.25, 0.5, 0.75, 1].map((f) => Math.round(niceMax * f))
+const slot = days.length ? innerW / days.length : 0
+const barW = Math.max(2, slot * 0.7)
+
+const sections = [
+  { title: 'Most visited pages', items: stats.pages.map((p) => ({ label: p.title || p.path, sub: p.title ? p.path : '', count: p.count })) },
+  { title: 'Referrers', items: stats.referrers.map((r) => ({ label: r.name, sub: '', count: r.count })) },
+  { title: 'Countries', items: stats.countries.map((r) => ({ label: r.name, sub: '', count: r.count })) },
+  { title: 'Browsers', items: stats.browsers.map((r) => ({ label: r.name, sub: '', count: r.count })) },
+  { title: 'Operating systems', items: stats.systems.map((r) => ({ label: r.name, sub: '', count: r.count })) },
+  { title: 'Screen sizes', items: stats.sizes.map((r) => ({ label: r.name, sub: '', count: r.count })) },
+].filter((s) => s.items.length > 0)
+---
+
+<BaseLayout title="Website statistics" description="Monthly visitor statistics for dariah.fi">
+  <div class="page-header wave-bg">
+    <div class="container">
+      <h1 class="mb-2">Website statistics</h1>
+      <p class="text-muted-foreground mb-0 max-w-[48rem]">
+        {hasData
+          ? `Visitor statistics for the last 30 days (${fmtDate(stats.period.start!)} – ${fmtDate(stats.period.end!)}). Updated daily.`
+          : 'Visitor statistics for the last 30 days. Updated daily.'}
+      </p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="container">
+      {!hasData && (
+        <div class="card-raised p-6 max-w-[40rem]">
+          <p class="mb-0">
+            Statistics are not available yet. They appear here after the next site build.
+            You can also view them directly on <a href={DASHBOARD_URL} target="_blank" rel="noreferrer noopener">GoatCounter</a>.
+          </p>
+        </div>
+      )}
+
+      {hasData && (
+        <div class="flex flex-col gap-10">
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
+            <div class="card-raised p-5">
+              <p class="text-sm text-muted-foreground mb-1">Pageviews</p>
+              <p class="text-3xl font-bold text-headings mb-0">{nf.format(total)}</p>
+            </div>
+            <div class="card-raised p-5">
+              <p class="text-sm text-muted-foreground mb-1">Average per day</p>
+              <p class="text-3xl font-bold text-headings mb-0">{nf.format(avg)}</p>
+            </div>
+            <div class="card-raised p-5">
+              <p class="text-sm text-muted-foreground mb-1">Busiest day</p>
+              <p class="text-3xl font-bold text-headings mb-0">{nf.format(busiest.count)}</p>
+              <p class="text-sm text-muted-foreground mt-1 mb-0">{fmtDate(busiest.day)}</p>
+            </div>
+          </div>
+
+          <section class="card-raised p-5 md:p-6">
+            <h2 class="text-lg mb-4">Pageviews per day</h2>
+            <svg viewBox={`0 0 ${W} ${H}`} class="w-full h-auto" role="img" aria-label="Bar chart of pageviews per day over the last 30 days">
+              {ticks.map((t) => {
+                const y = pad.t + innerH - (t / niceMax) * innerH
+                return (
+                  <g>
+                    <line x1={pad.l} x2={W - pad.r} y1={y} y2={y} stroke="var(--border)" stroke-width="1" />
+                    <text x={pad.l - 8} y={y + 4} text-anchor="end" font-size="11" fill="var(--muted-foreground)">{nf.format(t)}</text>
+                  </g>
+                )
+              })}
+              {days.map((d, i) => {
+                const h = (d.count / niceMax) * innerH
+                const x = pad.l + i * slot + (slot - barW) / 2
+                return (
+                  <g>
+                    <rect x={x} y={pad.t + innerH - h} width={barW} height={Math.max(h, d.count > 0 ? 1 : 0)} rx="2" fill="var(--primary)">
+                      <title>{`${fmtDate(d.day)}: ${nf.format(d.count)}`}</title>
+                    </rect>
+                    {i % 5 === 0 && (
+                      <text x={x + barW / 2} y={H - 8} text-anchor="middle" font-size="11" fill="var(--muted-foreground)">{fmtShort(d.day)}</text>
+                    )}
+                  </g>
+                )
+              })}
+            </svg>
+          </section>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+            {sections.map((section) => {
+              const max = Math.max(...section.items.map((i) => i.count))
+              return (
+                <section class="card-raised p-5 md:p-6">
+                  <h2 class="text-lg mb-4">{section.title}</h2>
+                  <ol class="flex flex-col gap-3 list-none p-0 m-0">
+                    {section.items.map((item) => (
+                      <li>
+                        <div class="flex items-baseline justify-between gap-4 text-sm">
+                          <span class="min-w-0 truncate text-headings" title={item.sub ? `${item.label} (${item.sub})` : item.label}>{item.label}</span>
+                          <span class="flex-shrink-0 font-semibold tabular-nums">{nf.format(item.count)}</span>
+                        </div>
+                        <div class="mt-1 h-2 rounded-full bg-muted overflow-hidden">
+                          <div class="h-full rounded-full bg-primary" style={`width: ${Math.max(2, (item.count / max) * 100)}%`}></div>
+                        </div>
+                      </li>
+                    ))}
+                  </ol>
+                </section>
+              )
+            })}
+          </div>
+
+          <p class="text-sm text-muted-foreground mb-0">
+            Statistics are collected with <a href="https://www.goatcounter.com" target="_blank" rel="noreferrer noopener">GoatCounter</a>,
+            a privacy-friendly analytics service that does not use cookies or track individual visitors.
+            Last updated {fmtDate(stats.generatedAt!)}.
+            <a href={DASHBOARD_URL} target="_blank" rel="noreferrer noopener">View the full dashboard</a>.
+          </p>
+        </div>
+      )}
+    </div>
+  </div>
+</BaseLayout>

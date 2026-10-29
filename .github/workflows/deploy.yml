@@ -42,8 +42,13 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Build site (astro build + pagefind indexing)
+      - name: Build site (fetch GoatCounter stats + astro build + pagefind indexing)
         run: pnpm build
+        env:
+          # GoatCounter API token with "Read statistics" permission (repo
+          # Settings > Secrets and variables > Actions). Optional: without it
+          # the /statistics page just keeps showing its placeholder.
+          GOATCOUNTER_API_TOKEN: ${{ secrets.GOATCOUNTER_API_TOKEN }}
 
       - name: Setup Pages
         uses: actions/configure-pages@v5

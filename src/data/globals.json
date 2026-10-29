@@ -46,6 +46,11 @@
         "newTab": false
       },
       {
+        "label": "Statistics",
+        "url": "/statistics",
+        "newTab": false
+      },
+      {
         "label": "Bluesky",
         "url": "https://bsky.app/profile/dariahfi.bsky.social",
         "newTab": true
