@@ -179,16 +179,99 @@
    (trainings, tools, affiliated groups, posts, events...) so they read as
    distinct, clickable/scannable objects instead of plain bordered boxes. */
 .card-raised {
+  position: relative;
   background-color: var(--card);
   border: 1px solid var(--border);
   border-radius: 0.75rem;
   box-shadow: 0 1px 3px rgba(25, 42, 61, 0.06);
   transition: box-shadow 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
 }
-.card-raised:hover {
+
+/* LINK CONVENTIONS (one set of rules for the whole site)
+   1. Blue = clickable, and nothing else.
+   2. A card is either fully clickable or completely flat:
+        - clickable: the card itself is an <a class="card-raised">, or its
+          title is an <a class="stretched-link card-title"> whose ::after
+          stretches over the whole card. Always shows an arrow icon
+          (<LinkIcon />) after the title, and lifts / turns blue on hover.
+        - flat: no hover effect, no arrow. Any links inside it are ordinary
+          text links (.link).
+   3. Links in running text are blue and underlined (.link, or anything
+      inside .rich-text); external ones get a small arrow automatically. */
+a.card-raised:hover,
+.card-raised:has(.stretched-link:hover) {
   box-shadow: 0 8px 20px rgba(25, 42, 61, 0.1);
   border-color: var(--primary);
   transform: translateY(-2px);
+}
+a.card-raised:focus-visible,
+.card-raised:has(.stretched-link:focus-visible) {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+.stretched-link {
+  color: var(--headings);
+}
+.stretched-link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 0.75rem;
+}
+/* Other links inside a card sit above the stretched link, so they stay
+   independently clickable. */
+.card-raised a:not(.stretched-link) {
+  position: relative;
+  z-index: 1;
+}
+.card-title {
+  color: var(--headings);
+  font-weight: 700;
+  transition: color 0.15s ease;
+}
+a.card-raised:hover .card-title,
+.card-raised:has(.stretched-link:hover) .card-title,
+.stretched-link:hover {
+  color: var(--primary);
+}
+.link-icon {
+  color: var(--muted-foreground);
+  transition: color 0.15s ease, transform 0.2s ease;
+}
+a.card-raised:hover .link-icon,
+.card-raised:has(.stretched-link:hover) .link-icon,
+.group:hover .link-icon {
+  color: var(--primary);
+  transform: translateX(2px);
+}
+
+/* Text links: blue + underline. External ones (target=_blank, or any
+   absolute http(s) link in rich text) get a small arrow. */
+.link,
+.rich-text a,
+.home-text a {
+  color: var(--primary);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+.link:hover,
+.rich-text a:hover,
+.home-text a:hover {
+  color: var(--primary-hover);
+}
+.link[target='_blank']::after,
+.rich-text a[href^='http']::after,
+.home-text a[href^='http']::after {
+  content: '';
+  display: inline-block;
+  width: 0.75em;
+  height: 0.75em;
+  margin-left: 0.2em;
+  vertical-align: -0.05em;
+  background-color: currentColor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 17 17 7M7 7h10v10'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 17 17 7M7 7h10v10'/%3E%3C/svg%3E") center / contain no-repeat;
 }
 
 /* Segmented-pill tab control -- replaces the old underline/border tab
@@ -255,8 +338,4 @@
 }
 .rich-text img {
   border-radius: 0.5rem;
-}
-.rich-text a {
-  text-decoration: underline;
-  text-underline-offset: 0.15em;
 }

@@ -14,6 +14,7 @@
 
 import { getCollection, render } from 'astro:content'
 import BaseLayout from '../../layouts/BaseLayout.astro'
+import LinkIcon from '../../components/LinkIcon.astro'
 import { refEquals } from '../../lib/references'
 
 export async function getStaticPaths() {
@@ -54,7 +55,7 @@ const trainingsWithContent = await Promise.all(
 // uppercase/primary/underline treatment as TrainingSections.astro's level
 // headers, so this page reads as part of the same system.
 const sectionLabelClass =
-  'inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-primary mb-5 pb-2 border-b-2 border-primary'
+  'inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-headings mb-5 pb-2 border-b-2 border-primary'
 ---
 
 <BaseLayout title={office.data.name}>
@@ -74,8 +75,8 @@ const sectionLabelClass =
         <div>
           <h1 class="mb-1">{office.data.name}</h1>
           {office.data.externalUrl && (
-            <a href={office.data.externalUrl} target="_blank" rel="noreferrer noopener" class="font-semibold text-sm">
-              Visit website ↗
+            <a href={office.data.externalUrl} target="_blank" rel="noreferrer noopener" class="link font-semibold text-sm">
+              Visit website
             </a>
           )}
         </div>
@@ -100,13 +101,13 @@ const sectionLabelClass =
                 )}
                 <div class="text-sm min-w-0">
                   {contact.url ? (
-                    <a href={contact.url} target="_blank" rel="noreferrer noopener" class="font-bold text-headings hover:text-primary">{contact.name}</a>
+                    <a href={contact.url} target="_blank" rel="noreferrer noopener" class="link font-bold">{contact.name}</a>
                   ) : (
                     <p class="font-bold text-headings">{contact.name}</p>
                   )}
                   {contact.note && <p class="text-muted-foreground">{contact.note}</p>}
                   {contact.email && (
-                    <a href={`mailto:${contact.email}`} class="text-xs underline block truncate">{contact.email}</a>
+                    <a href={`mailto:${contact.email}`} class="link text-xs block truncate">{contact.email}</a>
                   )}
                 </div>
               </div>
@@ -127,8 +128,8 @@ const sectionLabelClass =
                   </div>
                 )}
                 <div class="flex-1 min-w-0">
-                  <a href={group.data.externalUrl} target="_blank" rel="noreferrer noopener" class="font-bold text-headings hover:text-primary transition-colors">
-                    {group.data.name}
+                  <a href={group.data.externalUrl} target="_blank" rel="noreferrer noopener" class="stretched-link card-title">
+                    {group.data.name} <LinkIcon external class="ml-1" />
                   </a>
                   <div class="text-sm text-muted-foreground mt-1 rich-text"><Content /></div>
                 </div>
@@ -159,8 +160,8 @@ const sectionLabelClass =
             {trainingsWithContent.map(({ training, Content }) => (
               <div class="card-raised p-5">
                 {training.data.url ? (
-                  <a href={training.data.url} target="_blank" rel="noreferrer noopener" class="font-bold text-headings hover:text-primary transition-colors">
-                    {training.data.title}
+                  <a href={training.data.url} target="_blank" rel="noreferrer noopener" class="stretched-link card-title">
+                    {training.data.title} <LinkIcon external class="ml-1" />
                   </a>
                 ) : (
                   <p class="font-bold text-headings">{training.data.title}</p>

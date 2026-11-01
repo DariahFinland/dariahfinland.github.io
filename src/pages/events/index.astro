@@ -2,6 +2,7 @@
 // src/pages/events/index.astro
 import { getCollection } from 'astro:content'
 import BaseLayout from '../../layouts/BaseLayout.astro'
+import LinkIcon from '../../components/LinkIcon.astro'
 import { isPastEvent, formatEventDate } from '../../lib/events'
 
 const allEvents = await getCollection('events')
@@ -41,9 +42,10 @@ const past = allEvents
                     endTime: event.data.endTime,
                   })}
                 </p>
-                <p class="font-bold text-headings">
+                <p class="card-title">
                   {event.data.title}
                   {event.data.cancelled && <span class="ml-2 text-xs font-medium uppercase text-red-600">Cancelled</span>}
+                  <LinkIcon class="ml-1" />
                 </p>
                 {event.data.location && <p class="text-sm text-muted-foreground mt-1">{event.data.location}</p>}
                 {event.data.isOnline && <p class="text-sm text-muted-foreground mt-1">Online</p>}
@@ -67,7 +69,7 @@ const past = allEvents
                     endTime: event.data.endTime,
                   })}
                 </p>
-                <p class="font-bold text-headings">{event.data.title}</p>
+                <p class="card-title">{event.data.title} <LinkIcon class="ml-1" /></p>
                 {event.data.location && <p class="text-sm text-muted-foreground mt-1">{event.data.location}</p>}
                 {event.data.isOnline && <p class="text-sm text-muted-foreground mt-1">Online</p>}
               </a>

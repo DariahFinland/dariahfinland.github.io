@@ -29,7 +29,7 @@ const colSpan: Record<Column['size'], string> = {
       <div class={colSpan[col.size]}>
         {col.richText && <div class="rich-text" set:html={md(col.richText)} />}
         {col.link?.url && (
-          <a class="underline" href={col.link.url}>{col.link.label}</a>
+          <a class="link" href={col.link.url}>{col.link.label}</a>
         )}
       </div>
     ))}

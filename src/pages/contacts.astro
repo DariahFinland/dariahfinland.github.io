@@ -41,14 +41,14 @@ const offices = (await getCollection('localOffices')).sort((a, b) => a.data.name
                   )}
                   <div class="text-sm">
                     {contact.url ? (
-                      <a href={contact.url} target="_blank" rel="noreferrer noopener" class="underline">{contact.name}</a>
+                      <a href={contact.url} target="_blank" rel="noreferrer noopener" class="link">{contact.name}</a>
                     ) : (
                       <span>{contact.name}</span>
                     )}
                     {contact.note && <span class="text-muted-foreground"> {contact.note}</span>}
                     {contact.email && (
                       <div class="text-xs text-muted-foreground">
-                        <a href={`mailto:${contact.email}`} class="underline">{contact.email}</a>
+                        <a href={`mailto:${contact.email}`} class="link">{contact.email}</a>
                       </div>
                     )}
                   </div>

@@ -35,7 +35,7 @@ const tags = await resolveRefs('tags', post.data.tags)
     <header class="container pt-8 pb-8 border-b border-border">
       <div class="max-w-[48rem] mx-auto">
         {tags.length > 0 && (
-          <div class="uppercase text-xs font-bold text-primary mb-3">
+          <div class="uppercase text-xs font-bold text-muted-foreground mb-3">
             {tags.map((c) => c.data.title).join(', ')}
           </div>
         )}

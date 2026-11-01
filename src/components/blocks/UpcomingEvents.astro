@@ -7,6 +7,7 @@
 
 import { getCollection } from 'astro:content'
 import { isPastEvent, formatEventDate } from '../../lib/events'
+import LinkIcon from '../LinkIcon.astro'
 
 interface Props {
   heading?: string
@@ -47,8 +48,8 @@ const day = (d: Date) => d.getDate()
                   endTime: event.data.endTime,
                 })}
               </p>
-              <p class="font-semibold text-headings group-hover:text-primary transition-colors">
-                {event.data.title}
+              <p class="font-bold text-headings group-hover:text-primary transition-colors">
+                {event.data.title} <LinkIcon class="ml-1" />
               </p>
             </div>
           </a>
@@ -57,7 +58,7 @@ const day = (d: Date) => d.getDate()
     </ul>
 
     {viewAllLink && (
-      <a href={viewAllLink} class="inline-block mt-4 text-sm font-semibold text-primary hover:text-primary-hover">
+      <a href={viewAllLink} class="link inline-block">
         View Calendar
       </a>
     )}

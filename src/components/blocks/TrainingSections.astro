@@ -22,6 +22,7 @@
 
 import { getCollection, render } from 'astro:content'
 import { resolveRefs, refEquals } from '../../lib/references'
+import LinkIcon from '../LinkIcon.astro'
 
 interface Props {
   heading?: string
@@ -145,7 +146,7 @@ const panels = [
                   {levels.map(([levelLabel, items]) => (
                     <div>
                       {levelLabel && (
-                        <h3 class="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-primary mb-5 pb-2 border-b-2 border-primary">
+                        <h3 class="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-headings mb-5 pb-2 border-b-2 border-primary">
                           {levelLabel}
                         </h3>
                       )}
@@ -157,14 +158,9 @@ const panels = [
                                 href={training.data.url}
                                 target="_blank"
                                 rel="noreferrer noopener"
-                                class="font-bold text-headings hover:text-primary transition-colors inline-flex items-center gap-1.5"
+                                class="stretched-link card-title"
                               >
-                                {training.data.title}
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0">
-                                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                                  <path d="M15 3h6v6" />
-                                  <path d="M10 14 21 3" />
-                                </svg>
+                                {training.data.title} <LinkIcon external class="ml-1" />
                               </a>
                             ) : (
                               <p class="font-bold text-headings">{training.data.title}</p>

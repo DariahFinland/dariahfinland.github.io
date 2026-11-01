@@ -2,6 +2,7 @@
 // src/pages/posts/index.astro
 import { getCollection } from 'astro:content'
 import BaseLayout from '../../layouts/BaseLayout.astro'
+import LinkIcon from '../../components/LinkIcon.astro'
 import { resolveRefs } from '../../lib/references'
 
 const posts = (await getCollection('posts')).sort(
@@ -43,7 +44,7 @@ const cards = await Promise.all(
                 />
               )}
               <div class="p-5">
-                <h3 class="text-lg font-semibold text-headings">{post.data.title}</h3>
+                <h3 class="card-title text-lg">{post.data.title} <LinkIcon class="ml-1" /></h3>
                 {post.data.meta?.description && <p class="mt-2 text-sm text-muted-foreground">{post.data.meta.description}</p>}
               </div>
             </a>

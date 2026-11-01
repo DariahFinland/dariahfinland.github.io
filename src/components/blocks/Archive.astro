@@ -9,6 +9,7 @@
 import { getCollection, getEntry } from 'astro:content'
 import { md } from '../../lib/markdown'
 import { resolveRefs, slugFromRef } from '../../lib/references'
+import LinkIcon from '../LinkIcon.astro'
 
 interface Props {
   introRichText?: string
@@ -80,13 +81,12 @@ const cards = await Promise.all(
             />
           )}
           <div>
-            <h3 class="text-lg font-semibold text-headings group-hover:text-primary transition-colors mb-1">
-              {post.data.title}
+            <h3 class="text-lg font-bold text-headings group-hover:text-primary transition-colors mb-1">
+              {post.data.title} <LinkIcon class="ml-1" />
             </h3>
             {post.data.meta?.description && (
               <p class="text-sm text-muted-foreground">
                 {post.data.meta.description}{' '}
-                <span class="text-primary font-semibold whitespace-nowrap">Read more</span>
               </p>
             )}
           </div>

@@ -1,0 +1,22 @@
+---
+// src/components/LinkIcon.astro
+//
+// The little arrow that marks a clickable card/row: -> for links within the
+// site, up-right arrow for links that leave it. Colour and hover motion come
+// from .link-icon in global.css.
+
+interface Props {
+  external?: boolean
+  class?: string
+}
+
+const { external = false, class: className = '' } = Astro.props
+---
+
+<svg
+  class={`link-icon inline-block flex-shrink-0 align-[-0.15em] ${className}`}
+  width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+  stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"
+>
+  {external ? <path d="M7 17 17 7M7 7h10v10" /> : <><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></>}
+</svg>
