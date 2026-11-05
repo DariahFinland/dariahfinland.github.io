@@ -44,6 +44,7 @@ const affiliatedGroups = needsGroups
         group: g,
         Content: (await render(g)).Content,
         expertiseTags: await resolveRefs('tags', g.data.expertise),
+        localOffice: await resolveRef('localOffices', g.data.localOffice),
       })),
     )
   : []
@@ -83,7 +84,7 @@ const tools = needsTools
 
         {tab.listType === 'affiliatedGroups' && (
           <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-            {affiliatedGroups.map(({ group, Content, expertiseTags }) => (
+            {affiliatedGroups.map(({ group, Content, expertiseTags, localOffice }) => (
               <div class="card-raised p-5 flex gap-4">
                 {group.data.logo && (
                   <div class="w-14 h-14 flex-shrink-0">
@@ -117,6 +118,12 @@ const tools = needsTools
                       ) : (
                         group.data.contactName
                       )}
+                    </p>
+                  )}
+
+                  {localOffice && (
+                    <p class="text-xs text-muted-foreground mt-3 pt-2 border-t border-border">
+                      Local office: <a href={`/local-offices/${localOffice.id}`} class="link">{localOffice.data.name}</a>
                     </p>
                   )}
                 </div>
@@ -171,8 +178,20 @@ const tools = needsTools
 
                 {(localOffice || collaborators.length > 0) && (
                   <p class="text-xs text-muted-foreground pt-2 border-t border-border">
-                    {localOffice && `Developed by: ${localOffice.data.name}`}
-                    {collaborators.length > 0 ? `${localOffice ? ' · with ' : 'With '}${collaborators.map((o) => o.data.name).join(', ')}` : ''}
+                    {localOffice && (
+                      <>Developed by: <a href={`/local-offices/${localOffice.id}`} class="link">{localOffice.data.name}</a></>
+                    )}
+                    {collaborators.length > 0 && (
+                      <>
+                        {localOffice ? ' · with ' : 'With '}
+                        {collaborators.map((o, i) => (
+                          <>
+                            <a href={`/local-offices/${o.id}`} class="link">{o.data.name}</a>
+                            {i < collaborators.length - 1 ? ', ' : ''}
+                          </>
+                        ))}
+                      </>
+                    )}
                   </p>
                 )}
               </div>

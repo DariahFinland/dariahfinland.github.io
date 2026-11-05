@@ -99,7 +99,7 @@ const officeSections = [...byOffice.entries()]
 
 // Tabs: an "All" tab first (opens by default) showing every office's
 // trainings one after another under office headings, then one tab per
-// office. Each panel is a list of groups; a group is an optional heading
+// office (its office heading is kept, same as in the All tab). Each panel is a list of groups; a group is an optional heading
 // plus its level sub-sections.
 const panels = [
   {
@@ -110,7 +110,7 @@ const panels = [
   ...officeSections.map(({ label, levels }) => ({
     label,
     isAll: false,
-    groups: [{ heading: undefined as string | undefined, levels }],
+    groups: [{ heading: label as string | undefined, levels }],
   })),
 ]
 ---

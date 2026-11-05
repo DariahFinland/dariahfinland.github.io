@@ -15,7 +15,7 @@
 import { getCollection, render } from 'astro:content'
 import BaseLayout from '../../layouts/BaseLayout.astro'
 import LinkIcon from '../../components/LinkIcon.astro'
-import { refEquals } from '../../lib/references'
+import { refEquals, resolveRefs } from '../../lib/references'
 
 export async function getStaticPaths() {
   const offices = await getCollection('localOffices')
@@ -40,7 +40,11 @@ const tools = allTools
   .filter((t) => refEquals(t.data.localOffice, office.id))
   .sort((a, b) => a.data.name.localeCompare(b.data.name))
 const toolsWithContent = await Promise.all(
-  tools.map(async (t) => ({ tool: t, Content: (await render(t)).Content })),
+  tools.map(async (t) => ({
+    tool: t,
+    Content: (await render(t)).Content,
+    collaborators: await resolveRefs('localOffices', t.data.collaborators),
+  })),
 )
 
 const allTrainings = await getCollection('trainings')
@@ -143,10 +147,57 @@ const sectionLabelClass =
         <div>
           <h2 class={sectionLabelClass}>Tools</h2>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-            {toolsWithContent.map(({ tool, Content }) => (
+            {toolsWithContent.map(({ tool, Content, collaborators }) => (
               <div class="card-raised p-5">
                 <p class="font-bold text-headings mb-2">{tool.data.name}</p>
-                <div class="text-sm text-muted-foreground rich-text"><Content /></div>
+
+                {tool.data.accessLinks && tool.data.accessLinks.length > 0 && (
+                  <div class="flex flex-wrap gap-x-3 gap-y-1 mb-2">
+                    {tool.data.accessLinks.map((link) => (
+                      <a href={link.url} target="_blank" rel="noreferrer noopener" class="link text-sm font-semibold">
+                        {link.label ?? link.url}
+                      </a>
+                    ))}
+                  </div>
+                )}
+
+                {tool.data.tutorialUrl && (
+                  <p class="text-sm mb-2">
+                    <a href={tool.data.tutorialUrl} target="_blank" rel="noreferrer noopener" class="link font-semibold">
+                      Tutorial / Demo
+                    </a>
+                  </p>
+                )}
+
+                <div class="text-sm text-muted-foreground mb-2 rich-text"><Content /></div>
+
+                {tool.data.contacts && tool.data.contacts.length > 0 && (
+                  <p class="text-sm text-muted-foreground mb-2">
+                    Contact:{' '}
+                    {tool.data.contacts.map((c, idx) => (
+                      <>
+                        {c.url ? (
+                          <a href={c.url} target="_blank" rel="noreferrer noopener" class="link">{c.name}</a>
+                        ) : (
+                          c.name
+                        )}
+                        {idx < tool.data.contacts!.length - 1 ? ', ' : ''}
+                      </>
+                    ))}
+                  </p>
+                )}
+
+                {collaborators.length > 0 && (
+                  <p class="text-xs text-muted-foreground pt-2 border-t border-border">
+                    In collaboration with:{' '}
+                    {collaborators.map((o, i) => (
+                      <>
+                        <a href={`/local-offices/${o.id}`} class="link">{o.data.name}</a>
+                        {i < collaborators.length - 1 ? ', ' : ''}
+                      </>
+                    ))}
+                  </p>
+                )}
               </div>
             ))}
           </div>
