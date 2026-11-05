@@ -2,8 +2,8 @@
 // src/pages/events/index.astro
 import { getCollection } from 'astro:content'
 import BaseLayout from '../../layouts/BaseLayout.astro'
-import LinkIcon from '../../components/LinkIcon.astro'
-import { isPastEvent, formatEventDate } from '../../lib/events'
+import EventCard from '../../components/EventCard.astro'
+import { isPastEvent, groupByMonth } from '../../lib/events'
 
 const allEvents = await getCollection('events')
 const upcoming = allEvents
@@ -12,6 +12,9 @@ const upcoming = allEvents
 const past = allEvents
   .filter((e) => isPastEvent(e.data))
   .sort((a, b) => b.data.startDate.valueOf() - a.data.startDate.valueOf())
+
+const upcomingByMonth = groupByMonth(upcoming)
+const pastByMonth = groupByMonth(past)
 ---
 
 <BaseLayout title="Events">
@@ -32,24 +35,14 @@ const past = allEvents
         {upcoming.length === 0 ? (
           <p class="text-muted-foreground">No upcoming events at the moment.</p>
         ) : (
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {upcoming.map((event) => (
-              <a href={`/events/${event.id}`} class="card-raised block p-5">
-                <p class="text-sm text-muted-foreground mb-1">
-                  {formatEventDate(event.data.startDate, {
-                    startTime: event.data.startTime,
-                    endDate: event.data.endDate,
-                    endTime: event.data.endTime,
-                  })}
-                </p>
-                <p class="card-title">
-                  {event.data.title}
-                  {event.data.cancelled && <span class="ml-2 text-xs font-medium uppercase text-red-600">Cancelled</span>}
-                  <LinkIcon class="ml-1" />
-                </p>
-                {event.data.location && <p class="text-sm text-muted-foreground mt-1">{event.data.location}</p>}
-                {event.data.isOnline && <p class="text-sm text-muted-foreground mt-1">Online</p>}
-              </a>
+          <div class="flex flex-col gap-10 max-w-[56rem]">
+            {upcomingByMonth.map(({ label, events }) => (
+              <section>
+                <h2 class="text-sm font-bold uppercase tracking-wide text-headings mb-5 pb-2 border-b-2 border-primary inline-block">{label}</h2>
+                <div class="flex flex-col gap-5">
+                  {events.map((event) => <EventCard event={event} />)}
+                </div>
+              </section>
             ))}
           </div>
         )}
@@ -59,20 +52,14 @@ const past = allEvents
         {past.length === 0 ? (
           <p class="text-muted-foreground">No past events.</p>
         ) : (
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {past.map((event) => (
-              <a href={`/events/${event.id}`} class="card-raised block p-5">
-                <p class="text-sm text-muted-foreground mb-1">
-                  {formatEventDate(event.data.startDate, {
-                    startTime: event.data.startTime,
-                    endDate: event.data.endDate,
-                    endTime: event.data.endTime,
-                  })}
-                </p>
-                <p class="card-title">{event.data.title} <LinkIcon class="ml-1" /></p>
-                {event.data.location && <p class="text-sm text-muted-foreground mt-1">{event.data.location}</p>}
-                {event.data.isOnline && <p class="text-sm text-muted-foreground mt-1">Online</p>}
-              </a>
+          <div class="flex flex-col gap-10 max-w-[56rem]">
+            {pastByMonth.map(({ label, events }) => (
+              <section>
+                <h2 class="text-sm font-bold uppercase tracking-wide text-headings mb-5 pb-2 border-b-2 border-primary inline-block">{label}</h2>
+                <div class="flex flex-col gap-5">
+                  {events.map((event) => <EventCard event={event} />)}
+                </div>
+              </section>
             ))}
           </div>
         )}

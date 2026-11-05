@@ -1,0 +1,66 @@
+---
+// src/components/EventCard.astro
+//
+// One entry in the events list: a prominent date tile on the left, then
+// title, full date/time line, location and a short text preview. The whole
+// card is the link (see LINK CONVENTIONS in global.css).
+
+import LinkIcon from './LinkIcon.astro'
+import { formatEventDate, eventExcerpt } from '../lib/events'
+
+interface Props {
+  event: {
+    id: string
+    body?: string
+    data: {
+      title: string
+      startDate: Date
+      startTime?: string
+      endDate?: Date
+      endTime?: string
+      location?: string
+      isOnline?: boolean
+      cancelled?: boolean
+    }
+  }
+}
+
+const { event } = Astro.props
+const { data } = event
+
+// Dates are stored as UTC midnight, so format in UTC to avoid off-by-one days.
+const part = (d: Date, opts: Intl.DateTimeFormatOptions) =>
+  new Intl.DateTimeFormat('en-GB', { timeZone: 'UTC', ...opts }).format(d)
+
+const weekday = part(data.startDate, { weekday: 'short' })
+const day = part(data.startDate, { day: 'numeric' })
+const month = part(data.startDate, { month: 'short' })
+
+const multiDay = data.endDate && data.endDate.toDateString() !== data.startDate.toDateString()
+const until = multiDay ? part(data.endDate!, { day: 'numeric', month: 'short' }) : ''
+
+const excerpt = eventExcerpt(event.body)
+const place = [data.location, data.isOnline ? 'Online' : ''].filter(Boolean).join(' · ')
+---
+
+<a href={`/events/${event.id}`} class="card-raised flex gap-5 p-5">
+  <div class="w-20 flex-shrink-0 rounded-lg bg-muted text-center py-3 self-start">
+    <p class="text-xs font-bold uppercase tracking-wide text-muted-foreground">{weekday}</p>
+    <p class="text-3xl font-bold text-headings leading-none my-1">{day}</p>
+    <p class="text-sm font-bold uppercase text-headings">{month}</p>
+    {multiDay && <p class="text-xs text-muted-foreground mt-1">to {until}</p>}
+  </div>
+
+  <div class="min-w-0">
+    <p class="card-title text-lg leading-snug">
+      {data.title}
+      {data.cancelled && <span class="ml-2 text-xs font-medium uppercase text-red-600">Cancelled</span>}
+      <LinkIcon class="ml-1" />
+    </p>
+    <p class="text-sm font-semibold text-foreground mt-1">
+      {formatEventDate(data.startDate, { startTime: data.startTime, endDate: data.endDate, endTime: data.endTime })}
+    </p>
+    {place && <p class="text-sm text-muted-foreground">{place}</p>}
+    {excerpt && <p class="text-sm text-muted-foreground mt-2">{excerpt}</p>}
+  </div>
+</a>
