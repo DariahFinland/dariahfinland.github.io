@@ -24,7 +24,7 @@ Each **90-minute online session** consists of:
 - **30 minutes** of practical demonstrations or hands-on activities,
 - **20 minutes** of questions and discussion.
 
-To take part in the series, register ++[here](https://docs.google.com/forms/d/e/1FAIpQLSekysVQt1RFc10v_NPoumTiTQUH4cxohV-oHA2_eCayMD0JwA/viewform)++.
+To take part in the series, register [here](https://docs.google.com/forms/d/e/1FAIpQLSekysVQt1RFc10v_NPoumTiTQUH4cxohV-oHA2_eCayMD0JwA/viewform).
 
 ### Schedule
 
