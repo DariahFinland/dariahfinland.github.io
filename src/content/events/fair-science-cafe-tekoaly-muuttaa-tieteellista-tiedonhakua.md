@@ -5,6 +5,9 @@ startDate: 2026-12-08
 startTime: 13:00
 endDate: 2026-12-08
 endTime: 14:00
+tags:
+  - src/content/tags/human-centered-ai.md
+  - src/content/tags/data-intensive-research.md
 registrationUrl: https://csc.fi/koulutuskalenteri/fair-science-cafe-tekoaly-muuttaa-tieteellisen-tiedon-hakemista/
 localOffice: src/content/local-offices/csc.md
 ---
