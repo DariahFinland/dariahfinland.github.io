@@ -26,7 +26,7 @@ const tags = await resolveRefs('tags', post.data.tags)
     {post.data.heroImage && (
       <div class="container pt-8">
         <img
-          class="w-full aspect-[21/9] object-cover object-center rounded-xl border border-border"
+          class="max-w-[48rem] mx-auto w-full aspect-[16/9] object-cover object-center rounded-xl border border-border"
           src={post.data.heroImage}
           alt={post.data.heroImageAlt ?? ''}
         />
@@ -59,9 +59,26 @@ const tags = await resolveRefs('tags', post.data.tags)
     </header>
 
     <div class="container pt-8">
-      <div class="max-w-[48rem] mx-auto rich-text">
+      <div class="max-w-[48rem] mx-auto rich-text post-body">
         <Content />
       </div>
     </div>
   </article>
 </BaseLayout>
+
+<style>
+  /* Images inside the post text: never wider than the text column, with
+     space above and below, and (on wider screens) inset from both sides. */
+  .post-body :global(img) {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 2rem auto;
+    border-radius: 0.75rem;
+  }
+  @media (min-width: 640px) {
+    .post-body :global(img) {
+      max-width: calc(100% - 4rem);
+    }
+  }
+</style>
