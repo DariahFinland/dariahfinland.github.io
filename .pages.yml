@@ -190,7 +190,7 @@ content:
     path: src/content/posts
     filename:
       template: "{primary}.md"
-      field: true
+      field: false
     view:
       fields: [title, publishedAt, authors, tags]
       primary: title
@@ -198,7 +198,7 @@ content:
       default: { sort: publishedAt, order: desc }
       search: [title, authors, tags, body]
     fields:
-      - { name: title, type: string, required: true, description: "Live at https://dariahfinland.github.io/posts/<filename above without .md>" }
+      - { name: title, type: string, required: true}
       - { name: heroImage, type: image }
       - { name: heroImageAlt, type: string }
       - name: tags
