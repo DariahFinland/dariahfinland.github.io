@@ -2,6 +2,7 @@
 // src/pages/posts/[slug].astro
 import { getCollection, render } from 'astro:content'
 import BaseLayout from '../../layouts/BaseLayout.astro'
+import TagPill from '../../components/TagPill.astro'
 import { resolveRefs } from '../../lib/references'
 
 export async function getStaticPaths() {
@@ -35,8 +36,8 @@ const tags = await resolveRefs('tags', post.data.tags)
     <header class="container pt-8 pb-8 border-b border-border">
       <div class="max-w-[48rem] mx-auto">
         {tags.length > 0 && (
-          <div class="uppercase text-xs font-bold text-muted-foreground mb-3">
-            {tags.map((c) => c.data.title).join(', ')}
+          <div class="flex flex-wrap gap-1.5 mb-3">
+            {tags.map((tag) => <TagPill tag={tag} />)}
           </div>
         )}
         <h1>{post.data.title}</h1>

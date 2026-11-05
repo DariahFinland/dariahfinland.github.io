@@ -1,0 +1,169 @@
+---
+// src/pages/tags/[slug].astro
+//
+// One page per tag, listing everything tagged with it: posts, events,
+// trainings, tools and affiliated groups (the latter via their `expertise`
+// field). Every tag shown elsewhere on the site links here (TagPill.astro).
+
+import { getCollection, render } from 'astro:content'
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import LinkIcon from '../../components/LinkIcon.astro'
+import EventCard from '../../components/EventCard.astro'
+import { refsInclude } from '../../lib/references'
+import { isPastEvent } from '../../lib/events'
+
+export async function getStaticPaths() {
+  const tags = await getCollection('tags')
+  return tags.map((tag) => ({ params: { slug: tag.id }, props: { tag } }))
+}
+
+const { tag } = Astro.props
+
+const posts = (await getCollection('posts'))
+  .filter((p) => refsInclude(p.data.tags, tag.id))
+  .sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf())
+
+// Events: upcoming first (soonest first), then past (most recent first).
+const taggedEvents = (await getCollection('events')).filter((e) => refsInclude(e.data.tags, tag.id))
+const events = [
+  ...taggedEvents.filter((e) => !isPastEvent(e.data)).sort((a, b) => a.data.startDate.valueOf() - b.data.startDate.valueOf()),
+  ...taggedEvents.filter((e) => isPastEvent(e.data)).sort((a, b) => b.data.startDate.valueOf() - a.data.startDate.valueOf()),
+]
+
+const trainings = await Promise.all(
+  (await getCollection('trainings'))
+    .filter((t) => refsInclude(t.data.tags, tag.id))
+    .sort((a, b) => a.data.title.localeCompare(b.data.title))
+    .map(async (t) => ({ training: t, Content: (await render(t)).Content })),
+)
+
+const tools = await Promise.all(
+  (await getCollection('tools'))
+    .filter((t) => refsInclude(t.data.tags, tag.id))
+    .sort((a, b) => a.data.name.localeCompare(b.data.name))
+    .map(async (t) => ({ tool: t, Content: (await render(t)).Content })),
+)
+
+const groups = await Promise.all(
+  (await getCollection('affiliatedGroups'))
+    .filter((g) => refsInclude(g.data.expertise, tag.id))
+    .sort((a, b) => a.data.name.localeCompare(b.data.name))
+    .map(async (g) => ({ group: g, Content: (await render(g)).Content })),
+)
+
+const total = posts.length + events.length + trainings.length + tools.length + groups.length
+
+const sectionLabelClass =
+  'inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-headings mb-5 pb-2 border-b-2 border-primary'
+---
+
+<BaseLayout title={`Tag: ${tag.data.title}`}>
+  <div class="page-header wave-bg">
+    <div class="container">
+      <p class="text-sm font-bold uppercase tracking-wide text-muted-foreground mb-2">Tag</p>
+      <h1 class="mb-0">{tag.data.title}</h1>
+    </div>
+  </div>
+
+  <main class="section" data-pagefind-ignore>
+    <div class="container flex flex-col gap-12">
+      {total === 0 && <p class="text-muted-foreground">Nothing has been tagged with this yet.</p>}
+
+      {events.length > 0 && (
+        <div>
+          <h2 class={sectionLabelClass}>Events</h2>
+          <div class="flex flex-col gap-5 max-w-[56rem]">
+            {events.map((event) => <EventCard event={event} />)}
+          </div>
+        </div>
+      )}
+
+      {posts.length > 0 && (
+        <div>
+          <h2 class={sectionLabelClass}>News and Blogs</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {posts.map((post) => (
+              <a href={`/posts/${post.id}`} class="card-raised block h-full overflow-hidden">
+                <img
+                  class="w-full aspect-[16/10] object-cover"
+                  src={post.data.meta?.image ?? '/images/placeholder.png'}
+                  alt=""
+                />
+                <div class="p-5">
+                  <h3 class="card-title text-lg">{post.data.title} <LinkIcon class="ml-1" /></h3>
+                  {post.data.meta?.description && <p class="mt-2 text-sm text-muted-foreground">{post.data.meta.description}</p>}
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {trainings.length > 0 && (
+        <div>
+          <h2 class={sectionLabelClass}>Trainings</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+            {trainings.map(({ training, Content }) => (
+              <div class="card-raised p-5">
+                {training.data.url ? (
+                  <a href={training.data.url} target="_blank" rel="noreferrer noopener" class="stretched-link card-title">
+                    {training.data.title} <LinkIcon external class="ml-1" />
+                  </a>
+                ) : (
+                  <p class="font-bold text-headings">{training.data.title}</p>
+                )}
+                <div class="text-sm text-muted-foreground mt-1 rich-text"><Content /></div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {tools.length > 0 && (
+        <div>
+          <h2 class={sectionLabelClass}>Tools</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+            {tools.map(({ tool, Content }) => (
+              <div class="card-raised p-5">
+                <p class="font-bold text-headings mb-2">{tool.data.name}</p>
+                {tool.data.accessLinks && tool.data.accessLinks.length > 0 && (
+                  <div class="flex flex-wrap gap-x-3 gap-y-1 mb-2">
+                    {tool.data.accessLinks.map((link) => (
+                      <a href={link.url} target="_blank" rel="noreferrer noopener" class="link text-sm font-semibold">
+                        {link.label ?? link.url}
+                      </a>
+                    ))}
+                  </div>
+                )}
+                <div class="text-sm text-muted-foreground rich-text"><Content /></div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {groups.length > 0 && (
+        <div>
+          <h2 class={sectionLabelClass}>Affiliated Groups</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+            {groups.map(({ group, Content }) => (
+              <div class="card-raised p-5 flex gap-4">
+                {group.data.logo && (
+                  <div class="w-14 h-14 flex-shrink-0">
+                    <img src={group.data.logo} alt="" class="w-full h-full object-contain" />
+                  </div>
+                )}
+                <div class="flex-1 min-w-0">
+                  <a href={group.data.externalUrl} target="_blank" rel="noreferrer noopener" class="stretched-link card-title">
+                    {group.data.name} <LinkIcon external class="ml-1" />
+                  </a>
+                  <div class="text-sm text-muted-foreground mt-1 rich-text"><Content /></div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  </main>
+</BaseLayout>

@@ -2,6 +2,7 @@
 // src/pages/tools/[slug].astro
 import { getCollection, render } from 'astro:content'
 import BaseLayout from '../../layouts/BaseLayout.astro'
+import TagList from '../../components/TagList.astro'
 
 export async function getStaticPaths() {
   const tools = await getCollection('tools')
@@ -19,6 +20,7 @@ const { Content } = await render(tool)
   <article>
     <h1>{tool.data.name}</h1>
     <Content />
+    <TagList refs={tool.data.tags} />
 
     {tool.data.accessLinks && tool.data.accessLinks.length > 0 && (
       <ul>

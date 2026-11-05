@@ -23,6 +23,7 @@
 import { getCollection, render } from 'astro:content'
 import { resolveRefs, refEquals } from '../../lib/references'
 import LinkIcon from '../LinkIcon.astro'
+import TagList from '../TagList.astro'
 
 interface Props {
   heading?: string
@@ -168,6 +169,7 @@ const panels = [
                             <div class="text-sm mt-2 text-muted-foreground rich-text">
                               <Content />
                             </div>
+                            <TagList refs={training.data.tags} class="mt-3" />
                           </div>
                         ))}
                       </div>

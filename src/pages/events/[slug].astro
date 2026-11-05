@@ -10,6 +10,7 @@ import { getCollection, render } from 'astro:content'
 import BaseLayout from '../../layouts/BaseLayout.astro'
 import { isPastEvent, formatEventDate } from '../../lib/events'
 import { resolveRef } from '../../lib/references'
+import TagList from '../../components/TagList.astro'
 
 export async function getStaticPaths() {
   const events = await getCollection('events')
@@ -62,6 +63,8 @@ const past = isPastEvent(event.data)
         {event.data.location && <p class="text-muted-foreground">{event.data.location}</p>}
         {event.data.isOnline && <p class="text-muted-foreground">Online event</p>}
       </div>
+
+      <TagList refs={event.data.tags} class="mt-4" />
 
       {event.data.registrationUrl && !past && !event.data.cancelled && (
         <a

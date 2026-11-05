@@ -21,6 +21,8 @@
 import { getCollection, render } from 'astro:content'
 import { md } from '../../lib/markdown'
 import LinkIcon from '../LinkIcon.astro'
+import TagPill from '../TagPill.astro'
+import TagList from '../TagList.astro'
 import { resolveRef, resolveRefs } from '../../lib/references'
 
 interface Tab {
@@ -99,7 +101,7 @@ const tools = needsTools
                   {expertiseTags.length > 0 && (
                     <div class="flex flex-wrap gap-1.5 mt-2 mb-2">
                       {expertiseTags.map((tag) => (
-                        <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-muted text-muted-foreground">{tag.data.title}</span>
+                        <TagPill tag={tag} />
                       ))}
                     </div>
                   )}
@@ -159,6 +161,8 @@ const tools = needsTools
                 <div class="text-sm text-muted-foreground mb-2 rich-text">
                   <Content />
                 </div>
+
+                <TagList refs={tool.data.tags} class="mb-2" />
 
                 {tool.data.contacts && tool.data.contacts.length > 0 && (
                   <p class="text-sm text-muted-foreground mb-2">

@@ -173,6 +173,7 @@ const events = defineCollection({
     location: z.string().optional(),
     isOnline: z.boolean().default(false),
     // body of the .md file = event description
+    tags: z.array(z.string()).optional(), // reference values pointing at the `tags` collection
     registrationUrl: z.string().optional(),
     featuredImage: z.string().optional(),
     localOffice: z.string().optional(), // renamed from relatedNode, matches .pages.yml
@@ -234,6 +235,7 @@ const tools = defineCollection({
         }),
       )
       .optional(),
+    tags: z.array(z.string()).optional(), // reference values pointing at the `tags` collection
     tutorialUrl: z.string().optional(),
     contacts: z
       .array(
@@ -267,6 +269,7 @@ const trainings = defineCollection({
     // sync if this list ever changes.
     level: z.enum(["Bachelor's level", "Master's level", 'Doctoral level', 'Varied levels']).optional(),
     localOffice: z.string().optional(),
+    tags: z.array(z.string()).optional(), // reference values pointing at the `tags` collection
     // description lives in the file's body, same convention as posts/events/tools
   }),
 })

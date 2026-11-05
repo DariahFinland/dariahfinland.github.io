@@ -442,3 +442,20 @@ a.card-raised:hover .link-icon,
 #search.site-search .pagefind-ui__button:hover { background-color: var(--primary-hover); }
 #search.site-search .pagefind-ui__filter-panel { margin-top: 1rem; }
 #search.site-search .pagefind-ui__filter-name { font-size: 0.875rem; font-weight: 700; }
+/* TAG PILLS -- every tag is a link to /tags/<slug>. Light blue + blue text
+   (clickable), filling in solid on hover. */
+.tag-pill {
+  display: inline-block;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  font-weight: 600;
+  padding: 0.125rem 0.625rem;
+  border-radius: 9999px;
+  color: var(--primary);
+  background-color: color-mix(in srgb, var(--primary) 10%, transparent);
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+.tag-pill:hover {
+  color: var(--primary-foreground);
+  background-color: var(--primary);
+}

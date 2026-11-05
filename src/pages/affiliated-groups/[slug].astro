@@ -2,6 +2,8 @@
 // src/pages/affiliated-groups/[slug].astro
 import { getCollection, render } from 'astro:content'
 import BaseLayout from '../../layouts/BaseLayout.astro'
+import TagPill from '../../components/TagPill.astro'
+import { resolveRefs } from '../../lib/references'
 
 export async function getStaticPaths() {
   const groups = await getCollection('affiliatedGroups')
@@ -13,6 +15,7 @@ export async function getStaticPaths() {
 
 const { group } = Astro.props
 const { Content } = await render(group)
+const expertiseTags = await resolveRefs('tags', group.data.expertise)
 ---
 
 <BaseLayout title={group.data.name}>
@@ -21,10 +24,10 @@ const { Content } = await render(group)
     {group.data.logo && <img src={group.data.logo} alt="" />}
     <Content />
 
-    {group.data.expertise && group.data.expertise.length > 0 && (
-      <ul>
-        {group.data.expertise.map((tag) => <li>{tag}</li>)}
-      </ul>
+    {expertiseTags.length > 0 && (
+      <div class="flex flex-wrap gap-1.5">
+        {expertiseTags.map((tag) => <TagPill tag={tag} />)}
+      </div>
     )}
     {group.data.externalUrl && <a href={group.data.externalUrl}>Website</a>}
   </article>

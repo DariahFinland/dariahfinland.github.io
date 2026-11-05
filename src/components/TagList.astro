@@ -1,0 +1,24 @@
+---
+// src/components/TagList.astro
+//
+// Renders a row of clickable tag pills from a raw `tags` field (the list of
+// reference strings stored in a content file). Renders nothing when there
+// are no tags. Each pill links to /tags/<slug> (see TagPill.astro).
+
+import TagPill from './TagPill.astro'
+import { resolveRefs } from '../lib/references'
+
+interface Props {
+  refs?: string[]
+  class?: string
+}
+
+const { refs, class: className = '' } = Astro.props
+const tags = await resolveRefs('tags', refs)
+---
+
+{tags.length > 0 && (
+  <div class={`flex flex-wrap gap-1.5 ${className}`}>
+    {tags.map((tag) => <TagPill tag={tag} />)}
+  </div>
+)}

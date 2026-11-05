@@ -1,0 +1,14 @@
+---
+// src/components/TagPill.astro
+//
+// A tag, always rendered as a link to its own page (/tags/<slug>), so a tag
+// is clickable everywhere it appears. Styling lives in .tag-pill (global.css).
+
+interface Props {
+  tag: { id: string; data: { title: string } }
+}
+
+const { tag } = Astro.props
+---
+
+<a href={`/tags/${tag.id}`} class="tag-pill">{tag.data.title}</a>
