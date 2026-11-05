@@ -16,7 +16,7 @@ After a well deserved summer break, we are returning with some learning opportun
 
 
 
-##### [Text Mining YouTube Comment Data with Wordfish in R](https://us.list-manage.com/3ZGiarGwrl9?e=851ddb77fc&c2id=e8470ec25620bfca5fd763c7961e7072)
+### [Text Mining YouTube Comment Data with Wordfish in R](https://us.list-manage.com/3ZGiarGwrl9?e=851ddb77fc&c2id=e8470ec25620bfca5fd763c7961e7072)
 
 A lesson by Alex Wermer-Colan, Nicole Lemire Garlic and Jeff Antsen introducing readers to a method for conducting research on internet discourse by performing data analysis on comments posted under YouTube videos by viewers. 
 
@@ -24,7 +24,7 @@ You will learn how to download YouTube video comments and analyze their textual 
 
 
 
-##### [Mytholudics: Games and Myth](https://us.list-manage.com/G5tgJgrGAPT?e=851ddb77fc&c2id=e8470ec25620bfca5fd763c7961e7072)
+### [Mytholudics: Games and Myth](https://us.list-manage.com/G5tgJgrGAPT?e=851ddb77fc&c2id=e8470ec25620bfca5fd763c7961e7072)
 
 A webinar by Dom Ford from the Friday Frontier series lays out an approach to understanding games using theories from myth and folklor and how it can help you analyse and conceptualise gameworlds.
 
