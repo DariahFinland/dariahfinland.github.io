@@ -7,7 +7,7 @@ tags:
   - src/content/tags/multidisciplinary-research.md
 authors:
   - Inés Matres
-publishedAt: 2026-11-05
+publishedAt: 2026-10-02
 meta:
   title: "Call for talks and posters: HELDIG Summit “Methodological encounters”"
   description: This year, we bring discussion around methodological and
