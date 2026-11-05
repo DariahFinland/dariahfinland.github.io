@@ -7,9 +7,6 @@ accessLinks:
     url: https://github.com/fennicahub/finto
   - label: Geofi R package
     url: https://github.com/rOpenGov/geofi
-tags:
-  - src/content/tags/data-and-web-mining.md
-  - src/content/tags/digital-social-sciences-and-humanities.md
 contacts:
   - name: Leo Lahti
     url: https://www.utu.fi/fi/ihmiset/leo-lahti
