@@ -1,9 +1,11 @@
 ---
 title: Master's Programme in Linguistic Diversity and Digital Humanities
-url: >-
-  https://www.helsinki.fi/en/degree-programmes/linguistic-diversity-and-digital-humanities-masters-programme
+url: https://www.helsinki.fi/en/degree-programmes/linguistic-diversity-and-digital-humanities-masters-programme
 localOffice: src/content/local-offices/helsinki.md
+tags:
+  - src/content/tags/digital-humanities.md
+  - src/content/tags/computational-humanities.md
+  - src/content/tags/language-technology.md
 level: Master's level
 ---
-
 An interdisciplinary programme that combines five fields of study: cognitive science, digital humanities, general linguistics, language technology, and phonetics.
