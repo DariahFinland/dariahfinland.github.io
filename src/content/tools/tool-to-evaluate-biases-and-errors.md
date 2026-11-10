@@ -5,6 +5,11 @@ accessLinks:
     url: https://github.com/hsci-r/elasticsearch-openshift/blob/main/documentation/exported_query.md
   - label: Technical documentation
     url: https://github.com/hsci-r/elasticsearch-openshift
+tags:
+  - src/content/tags/data-analysis.md
+  - src/content/tags/data-visualization.md
+  - src/content/tags/big-data.md
+  - src/content/tags/information-retrieval.md
 tutorialUrl: https://youtu.be/EVe5ZUo8tOM?feature=shared
 contacts:
   - name: Eetu Mäkelä
