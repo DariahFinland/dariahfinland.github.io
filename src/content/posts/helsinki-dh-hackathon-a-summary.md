@@ -10,6 +10,9 @@ meta:
   description: Here is a review to the past week's DH Hackathon in Helsinki, with
     the main take-outs on each of the projects.
   image: /media/20240517_dhh24_presentations-scaled-1.jpg
+tags:
+  - src/content/tags/digital-humanities.md
+  - src/content/tags/interdisciplinary-research.md
 ---
 **Here is a review to the past week's DH Hackathon in Helsinki, with the main take-outs on each of the projects.**
 

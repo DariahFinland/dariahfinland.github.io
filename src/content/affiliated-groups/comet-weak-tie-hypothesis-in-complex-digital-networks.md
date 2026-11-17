@@ -3,11 +3,11 @@ name: "COMET: Weak-tie hypothesis in complex digital networks"
 logo: /media/COMET-Logo-scaled.jpg
 externalUrl: https://uefconnect.uef.fi/en/comet-weak-tie-hypothesis/
 expertise:
-  - src/content/tags/social-media.md
-  - src/content/tags/social-networks.md
-  - src/content/tags/societal-big-data.md
+  - src/content/tags/social-media-analysis.md
+  - src/content/tags/networks-and-complex-systems.md
+  - src/content/tags/data-science-and-big-data.md
   - src/content/tags/language-contact-and-change.md
-  - src/content/tags/human-centered-ai.md
+  - src/content/tags/human-centered-ai-and-hci.md
 contactName: Mikko Laitinen
 contactUrl: https://uefconnect.uef.fi/en/mikko.laitinen/
 localOffice: src/content/local-offices/eastern-finland.md

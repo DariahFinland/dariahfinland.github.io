@@ -3,10 +3,9 @@ name: Helsinki Computational History Group (COMHIS)
 logo: /media/comhis-logo-2.png
 externalUrl: https://www.helsinki.fi/en/researchgroups/computational-history
 expertise:
-  - src/content/tags/book-history.md
-  - src/content/tags/text-reuse.md
-  - src/content/tags/network-analysis.md
-  - src/content/tags/image-processing.md
+  - src/content/tags/digital-history.md
+  - src/content/tags/networks-and-complex-systems.md
+  - src/content/tags/computer-vision-and-image-processing.md
 contactName: Mikko Tolonen
 contactUrl: https://researchportal.helsinki.fi/fi/persons/mikko-tolonen
 localOffice: src/content/local-offices/helsinki.md

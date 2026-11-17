@@ -8,4 +8,8 @@ endTime: 16:30
 cancelled: false
 isOnline: false
 localOffice: src/content/local-offices/national-library.md
+tags:
+  - src/content/tags/computer-vision-and-image-processing.md
+  - src/content/tags/digital-humanities.md
+  - src/content/tags/multimodal-data.md
 ---

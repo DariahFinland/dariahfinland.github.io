@@ -12,6 +12,9 @@ meta:
     between researchers in the arts and humanities, cultural heritage
     stakeholders, as well as…
   image: /media/SUB-Altes-gebaude-scaled-e1750849722680.jpg
+tags:
+  - src/content/tags/digital-humanities.md
+  - src/content/tags/open-science-and-infrastructure.md
 ---
 The [DARIAH Annual Events](http://annualevent.dariah.eu) combine different forms of encounter between researchers in the arts and humanities, cultural heritage stakeholders, as well as computer, information and data science communities. Members, partner institutions and observer countries of DARIAH ERIC can attend this annual event for free, to seek collaborators and showcase national research enabled by our infrastructures, or simply, to be inspired by digitally-enabled research and teaching. This year Göttingen was chosen as the venue of this event that was dedicated to highlighting innovative approaches to studying "the Past". This important university city hosted 270 participants from 35 countries from 17-20 June.
 

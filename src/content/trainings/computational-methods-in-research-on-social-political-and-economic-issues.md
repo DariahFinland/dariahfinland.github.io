@@ -4,6 +4,9 @@ url: >-
   https://opiskelijanopas.tuni.fi/en/tampere-university/curriculum/course-units/otm-80bfeef0-5307-4823-ad5f-f77f5f911c55?year=2025
 localOffice: src/content/local-offices/tampere.md
 level: Doctoral level
+tags:
+  - src/content/tags/computational-social-science.md
+  - src/content/tags/political-science-and-representation.md
 ---
 
 The course examines the ongoing computational turn in social, political, and economic sciences.

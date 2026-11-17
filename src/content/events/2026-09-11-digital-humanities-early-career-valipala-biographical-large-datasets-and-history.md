@@ -7,6 +7,10 @@ endDate: 2026-09-30
 endTime: 15:30
 registrationUrl: https://forms.cloud.microsoft/e/HXEjiJWCPk
 localOffice: src/content/local-offices/helsinki.md
+tags:
+  - src/content/tags/digital-humanities.md
+  - src/content/tags/digital-history.md
+  - src/content/tags/data-science-and-big-data.md
 ---
 Digital Humanities early career välipala is a regular event for early career humanities and social sciences researchers. It offers a free form opportunity to discuss and share experiences of digital methods in research. The focus is on digital good practices, stumbling blocks and tricks regarding use of data, tools and analysis methods.
 

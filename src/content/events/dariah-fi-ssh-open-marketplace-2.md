@@ -5,5 +5,8 @@ startDate: 2023-04-26
 endDate: 2023-04-26
 cancelled: false
 isOnline: false
+tags:
+  - src/content/tags/open-science-and-infrastructure.md
+  - src/content/tags/digital-social-sciences-and-humanities.md
 ---
 DARIAH-FI at the SSH Open Marketplace.

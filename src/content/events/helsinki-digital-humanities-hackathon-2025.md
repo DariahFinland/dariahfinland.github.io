@@ -9,6 +9,9 @@ cancelled: false
 location: University of Helsinki
 isOnline: false
 localOffice: src/content/local-offices/helsinki.md
+tags:
+  - src/content/tags/digital-humanities.md
+  - src/content/tags/interdisciplinary-research.md
 ---
 As a [CLARIN](https://www.clarin.eu/) and [DARIAH](https://www.dariah.eu/) summer school, Helsinki Digital Humanities Hackathon #DHH25 is truly international, welcoming applications from all over Europe and beyond!
 

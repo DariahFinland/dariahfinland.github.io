@@ -9,5 +9,9 @@ contacts:
   - name: Steven Coats
     url: https://cc.oulu.fi/~scoats/
 localOffice: src/content/local-offices/oulu.md
+tags:
+  - src/content/tags/corpus-linguistics.md
+  - src/content/tags/multimodal-data.md
+  - src/content/tags/natural-language-processing.md
 ---
 A structured, searchable corpus comprising audio and ASR-generated transcripts from investigative interviews, courtroom interactions, and related media.

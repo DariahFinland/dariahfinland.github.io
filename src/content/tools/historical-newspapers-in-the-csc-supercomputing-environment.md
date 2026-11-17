@@ -14,5 +14,9 @@ collaborators:
   - src/content/local-offices/turku.md
   - src/content/local-offices/national-archives.md
   - src/content/local-offices/jyvaskyla.md
+tags:
+  - src/content/tags/digital-history.md
+  - src/content/tags/digital-humanities.md
+  - src/content/tags/data-science-and-big-data.md
 ---
 This resource allows downloading copyright-free materials from the National Library of Finland through the CSC. Resource developed by the National Library of Finland in partnership with the CSC, University of Helsinki and University of Turku.

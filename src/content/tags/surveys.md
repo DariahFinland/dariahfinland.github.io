@@ -1,5 +1,0 @@
----
-title: surveys
-slug: surveys
----
-

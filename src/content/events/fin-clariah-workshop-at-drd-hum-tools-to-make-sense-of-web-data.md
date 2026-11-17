@@ -8,6 +8,9 @@ endTime: 12:00
 cancelled: false
 location: University of Eastern Finland, Joensuu
 isOnline: false
+tags:
+  - src/content/tags/natural-language-processing.md
+  - src/content/tags/social-media-analysis.md
 ---
 Note that this workshop is open for participants to the [Digital Research Data and Human Sciences (DRDHum) conference](https://sites.uef.fi/drd-hum-2024) that will take place as an onsite event at the University of Eastern Finland, Joensuu campus, 10-12 December 2024. To participate in this workshop, participants in the conference can opt-in when registering for the conference.
 

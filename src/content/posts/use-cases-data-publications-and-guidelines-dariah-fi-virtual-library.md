@@ -8,6 +8,8 @@ meta:
     – DARIAH-FI
   description: We are glad to introduce this month a recently created DARIAH-FI library.
   image: /media/darah-blog-header-4-1.png
+tags:
+  - src/content/tags/open-science-and-infrastructure.md
 ---
 We are glad to introduce this month the recently created DARIAH-FI library
 

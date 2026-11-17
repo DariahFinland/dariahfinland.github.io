@@ -9,6 +9,9 @@ meta:
     splendidly for you all! We at DARIAH-FI have been working hard on several
     different…
   image: /media/FxECOUKWIAAlVeI-scaled-1.jpg
+tags:
+  - src/content/tags/digital-humanities.md
+  - src/content/tags/interdisciplinary-research.md
 ---
 Hi everyone! Elias here (as per usual). I hope the summer has gone splendidly for you all! We at DARIAH-FI have been working hard on several different projects that will be gradually unveiled, so please look forward to that! In the meantime, I would like to reminisce about an important event that happened in May/June of this year, which is the Digital Humanities Hackathon 2023 in Helsinki, or DHH23 for short. While it has been several months since it has happened, we decided that summer is for resting, and not for writing and reading blogs about academia! Therefore, the beginning of the academic year is the perfect time to talk about the Hackathon.
 

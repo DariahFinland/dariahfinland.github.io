@@ -2,12 +2,11 @@
 name: Centre for Social Data Science (CSDS)
 externalUrl: https://www.helsinki.fi/en/networks/centre-social-data-science
 expertise:
-  - src/content/tags/social-data-science.md
-  - src/content/tags/digital-societies.md
+  - src/content/tags/computational-social-science.md
   - src/content/tags/social-media-analysis.md
-  - src/content/tags/political-science.md
-  - src/content/tags/surveys.md
-  - src/content/tags/human-computer-interaction.md
+  - src/content/tags/political-science-and-representation.md
+  - src/content/tags/statistics-and-data-analysis.md
+  - src/content/tags/human-centered-ai-and-hci.md
 contactName: Maria Valaste
 contactUrl: https://researchportal.helsinki.fi/fi/persons/maria-valaste
 localOffice: src/content/local-offices/helsinki.md

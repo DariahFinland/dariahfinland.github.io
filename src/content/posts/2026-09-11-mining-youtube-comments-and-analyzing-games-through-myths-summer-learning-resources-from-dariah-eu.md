@@ -2,7 +2,7 @@
 title: Mining YouTube Comments and Analyzing Games Through Myths – Summer
   Learning Resources from DARIAH-EU
 tags:
-  - src/content/tags/nlp.md
+  - src/content/tags/natural-language-processing.md
   - src/content/tags/social-media-analysis.md
 publishedAt: 2026-09-01
 meta:

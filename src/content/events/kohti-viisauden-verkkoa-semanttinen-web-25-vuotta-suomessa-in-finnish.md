@@ -6,6 +6,8 @@ endDate: 2026-11-20
 endTime: 18:00
 registrationUrl: https://seco.cs.aalto.fi/events/2026/2026-11-20-seco-25v/
 localOffice: src/content/local-offices/aalto.md
+tags:
+  - src/content/tags/knowledge-graphs-and-semantic-web.md
 ---
 **Location: Aalto-yliopisto, T-talo, Sali T4, Konemiehentie 2, perjantai 20.11.2026, 13:00–18:00 (CET 12:00-17:00)**
 

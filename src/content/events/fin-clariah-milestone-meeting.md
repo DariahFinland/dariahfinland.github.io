@@ -4,6 +4,9 @@ startDate: 2026-11-09
 startTime: 13:00
 endDate: 2026-11-10
 endTime: 16:00
+tags:
+  - src/content/tags/generative-ai-and-llms.md
+  - src/content/tags/natural-language-processing.md
 ---
 This FIN-CLARIAH network event **Small Languages, Large Models** explores current challenges in developing AI for under-resourced languages. During the afternoon, we will have expert talks that focus on how data can be collected for smaller languages and how hallucinations can be detected in language models trained on limited resources. Following the talks and discussion, the event continues with a gathering celebrating the 30-year journey of the Language Bank of Finland.
 

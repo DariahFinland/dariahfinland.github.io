@@ -8,6 +8,9 @@ endTime: 17:00
 cancelled: false
 location: University of Helsinki, Metsätalo, Unioninkatu 40
 isOnline: false
+tags:
+  - src/content/tags/computational-social-science.md
+  - src/content/tags/digital-social-sciences-and-humanities.md
 ---
 This FIN-CLARIAH day brings together researchers, infrastructure developers, and social scientists to explore current practices and future needs in annotating data sets in social sciences for further analysis.
 

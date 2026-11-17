@@ -9,6 +9,9 @@ meta:
     introduction is necessary. My name is Elias, I am a master's degree student
     at the University…
   image: /media/Eduskunnan-istunto-Palokunnan-talon-juhlasalissa1.jpg
+tags:
+  - src/content/tags/political-science-and-representation.md
+  - src/content/tags/knowledge-graphs-and-semantic-web.md
 ---
 ### A Word from the Writer
 

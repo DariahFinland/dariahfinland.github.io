@@ -12,6 +12,9 @@ meta:
     SAMPO tutorial. Find out in this review how to apply semantic web
     technologies to your…
   image: /media/20241128_sampo-tutorial-lod.jpg
+tags:
+  - src/content/tags/knowledge-graphs-and-semantic-web.md
+  - src/content/tags/digital-humanities.md
 ---
 **PhD researcher Arianna Moretti brings us a review from our recent SAMPO tutorial. Find out in this review how to apply semantic web technologies to your own data and resources to create your own portal.**
 

@@ -9,6 +9,9 @@ cancelled: false
 location: University of Helsinki
 isOnline: false
 localOffice: src/content/local-offices/helsinki.md
+tags:
+  - src/content/tags/generative-ai-and-llms.md
+  - src/content/tags/digital-social-sciences-and-humanities.md
 ---
 This presentation by **Feeza Vasudeva** (Academy Research Fellow at the Study of Religions, University of Helsinki) introduces a concept of synthetic sacred – a configuration in which generative systems co-produce devotional, mythological, and heritage content that circulates as religiously effective media. The talk uses two empirical sites – conversational 'Godbots' and AI-generated religious imagery – to ask how such objects can be studied when they exist simultaneously as cultural forms, socio-technical systems, and sites of mediated meaning.
 

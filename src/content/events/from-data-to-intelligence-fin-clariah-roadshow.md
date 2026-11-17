@@ -8,6 +8,9 @@ endTime: 15:30
 cancelled: false
 location: Aalto University, TUAS Atrium, Maarintie 8, Espoo
 isOnline: false
+tags:
+  - src/content/tags/knowledge-graphs-and-semantic-web.md
+  - src/content/tags/data-science-and-big-data.md
 ---
 **"From Data to Intelligence: a FIN-CLARIAH Roadshow"** 
 

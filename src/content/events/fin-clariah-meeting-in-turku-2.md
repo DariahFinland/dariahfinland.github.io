@@ -8,6 +8,9 @@ endTime: 16:00
 cancelled: false
 location: University of Turku
 isOnline: false
+tags:
+  - src/content/tags/digital-humanities.md
+  - src/content/tags/open-science-and-infrastructure.md
 ---
 ***Digital Cultural Heritage –Data or Metadata?***
 

@@ -13,6 +13,8 @@ meta:
     introduce our services for both individual researchers and for the wider
     research community.
   image: /media/DALL·E-2022-10-17-09.24.54-Pointillist-painting-of-Michel-Foucault-Donna-Haraway-and-Georg-Henrik-von-Wright-with-sunglasses-on-the-road-towards-the-sun-1.png
+tags:
+  - src/content/tags/open-science-and-infrastructure.md
 ---
 *(Image: This is what AI ([https://openai.com/dall-e-2/](https://openai.com/dall-e-2/)) produced when I asked it to create a pointillist painting of Michel Foucault, Donna Haraway and Georg Henrik von Wright with sunglasses on the road towards the sun.)*
 

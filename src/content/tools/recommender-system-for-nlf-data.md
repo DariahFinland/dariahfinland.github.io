@@ -11,5 +11,9 @@ collaborators:
   - src/content/local-offices/helsinki.md
   - src/content/local-offices/national-library.md
   - src/content/local-offices/turku.md
+tags:
+  - src/content/tags/information-seeking-and-retrieval.md
+  - src/content/tags/applied-machine-learning.md
+  - src/content/tags/data-science-and-big-data.md
 ---
 Code for developing recommender systems to assist information retrieval in digital libraries based on log data gathered from their use. Developed by Tampere University in partnership with CSC and the University of Helsinki.

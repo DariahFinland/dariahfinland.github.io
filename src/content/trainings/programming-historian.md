@@ -3,6 +3,8 @@ title: Programming Historian
 url: https://programminghistorian.org/
 order: 35
 level: Varied levels
+tags:
+  - src/content/tags/digital-humanities.md
 ---
 
 

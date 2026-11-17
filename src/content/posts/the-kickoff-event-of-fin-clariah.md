@@ -12,6 +12,8 @@ meta:
   description: The kickoff event of FIN-CLARIAH will be held on Friday 3 June 2022 in Helsinki!
   image: /media/BLUE3.png
 slug: the-kickoff-event-of-fin-clariah
+tags:
+  - src/content/tags/open-science-and-infrastructure.md
 ---
 
 

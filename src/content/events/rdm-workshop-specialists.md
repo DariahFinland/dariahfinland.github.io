@@ -7,6 +7,9 @@ endDate: 2024-06-06
 endTime: 12:00
 cancelled: false
 isOnline: true
+tags:
+  - src/content/tags/open-science-and-infrastructure.md
+  - src/content/tags/digital-social-sciences-and-humanities.md
 ---
 **Are you an information specialist (e.g., librarian) with experience in SSH research data management (RDM)? Then this workshop might interest you!**
 

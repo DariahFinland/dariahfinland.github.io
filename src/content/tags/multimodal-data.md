@@ -1,5 +1,3 @@
 ---
-title: multimodal data
-slug: multimodal-data
+title: Multimodal Data
 ---
-

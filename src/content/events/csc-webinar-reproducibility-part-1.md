@@ -7,4 +7,7 @@ endDate: 2025-10-09
 cancelled: false
 isOnline: true
 localOffice: src/content/local-offices/csc.md
+tags:
+  - src/content/tags/open-science-and-infrastructure.md
+  - src/content/tags/data-science-and-big-data.md
 ---

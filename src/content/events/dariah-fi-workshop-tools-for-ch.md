@@ -8,6 +8,10 @@ endDate: 2026-01-22
 endTime: 15:00
 cancelled: false
 isOnline: true
+tags:
+  - src/content/tags/digital-humanities.md
+  - src/content/tags/computer-vision-and-image-processing.md
+  - src/content/tags/multimodal-data.md
 ---
 **Organisers**: Inés Matres (University of Helsinki), Ida Toivanen (University of Jyväskylä), and Ilkka Lähteenmäki (University of Oulu)
 

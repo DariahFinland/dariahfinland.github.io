@@ -15,5 +15,8 @@ localOffice: src/content/local-offices/aalto.md
 collaborators:
   - src/content/local-offices/turku.md
   - src/content/local-offices/helsinki.md
+tags:
+  - src/content/tags/knowledge-graphs-and-semantic-web.md
+  - src/content/tags/digital-humanities.md
 ---
 This resource provides a framework for building customizable and responsive user interfaces for semantic portals without the necessity of having broad coding skill. Resource developed by Aalto University in partnership with the University of Turku and the University of Helsinki.

@@ -8,6 +8,9 @@ endTime: 23:00
 cancelled: false
 isOnline: true
 localOffice: src/content/local-offices/tampere.md
+tags:
+  - src/content/tags/social-media-analysis.md
+  - src/content/tags/data-science-and-big-data.md
 ---
 Tampere University, in collaboration with the University of Eastern Finland and the University of Helsinki, are organizing a online workshop about the Nordic Tweet Stream (NTS), one of the digital resources developed under the DARIAH-FI research infrastructure.
 

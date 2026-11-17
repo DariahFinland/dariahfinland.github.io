@@ -12,6 +12,9 @@ meta:
   description: Survey on the current state of research using social media data in Finland.
   image: /media/so-me-network-photo-scaled-e1726571922329.jpg
 slug: calling-researchers-working-on-social-media-data
+tags:
+  - src/content/tags/social-media-analysis.md
+  - src/content/tags/digital-social-sciences-and-humanities.md
 ---
 
 

@@ -8,6 +8,10 @@ endDate: 2025-05-21
 endTime: 15:30
 cancelled: false
 isOnline: false
+tags:
+  - src/content/tags/digital-humanities.md
+  - src/content/tags/digital-history.md
+  - src/content/tags/open-science-and-infrastructure.md
 ---
 Kansallisarkisto, Kansalliskirjasto ja Finna tarjoavat massiivisia määriä digitaalisia aineistoja (kuten sanomalehtiä ja muuta mediaa, julkishallinnon aineistoja, kuvia, historiallisia asiakirjoja ja kirjallisuutta.) tutkimuskäyttöön. Tämä avaa uudenlaisia mahdollisuuksia esimerkiksi dataintensiivisiä menetelmiä hyödyntävälle tutkimukselle.
 

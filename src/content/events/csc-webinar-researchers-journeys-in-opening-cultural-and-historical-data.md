@@ -8,4 +8,8 @@ endTime: 11:30
 cancelled: false
 isOnline: true
 localOffice: src/content/local-offices/csc.md
+tags:
+  - src/content/tags/open-science-and-infrastructure.md
+  - src/content/tags/digital-humanities.md
+  - src/content/tags/digital-history.md
 ---

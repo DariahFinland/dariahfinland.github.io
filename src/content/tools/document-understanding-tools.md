@@ -16,5 +16,8 @@ contacts:
 localOffice: src/content/local-offices/jyvaskyla.md
 collaborators:
   - src/content/local-offices/national-archives.md
+tags:
+  - src/content/tags/natural-language-processing.md
+  - src/content/tags/applied-machine-learning.md
 ---
 Tools for document understanding including named entity recognition and document type classification. Most of the tool development has been conducted in collaboration with the National Archives of Finland.

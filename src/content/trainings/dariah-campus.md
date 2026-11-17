@@ -3,6 +3,9 @@ title: DARIAH Campus
 url: https://campus.dariah.eu/
 order: 34
 level: Varied levels
+tags:
+  - src/content/tags/digital-humanities.md
+  - src/content/tags/digital-social-sciences-and-humanities.md
 ---
 
 

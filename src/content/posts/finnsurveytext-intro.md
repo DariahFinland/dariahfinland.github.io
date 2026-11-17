@@ -8,6 +8,10 @@ meta:
   description: The makers of FinnSurveyText introduce the resource through a demo
     guide and describe the process of creating an open-source tool for research.
   image: /media/1_finnsurveytext-LOGO-e1751008263275.png
+tags:
+  - src/content/tags/natural-language-processing.md
+  - src/content/tags/statistics-and-data-analysis.md
+  - src/content/tags/digital-social-sciences-and-humanities.md
 ---
 **The makers of FinnSurveyText introduce the resource through a demo guide and describe the process of creating an open-source tool for research.**
 

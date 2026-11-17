@@ -14,6 +14,9 @@ meta:
     Hackathon 2025—an exciting chance to collaborate, innovate and…
   image: /media/DHH25-1.png
 slug: helsinki-digital-humanities-hackathon-dhh25-welcomes-applicants
+tags:
+  - src/content/tags/digital-humanities.md
+  - src/content/tags/interdisciplinary-research.md
 ---
 
 

@@ -13,5 +13,9 @@ localOffice: src/content/local-offices/turku.md
 collaborators:
   - src/content/local-offices/aalto.md
   - src/content/local-offices/jyvaskyla.md
+tags:
+  - src/content/tags/networks-and-complex-systems.md
+  - src/content/tags/political-science-and-representation.md
+  - src/content/tags/natural-language-processing.md
 ---
 This resource provides tools based on network analysis for the analysis of political text. With these tools, researchers will be able to analyze keyword embeddings of the FinParl corpus and identify how phrases or longer text passages are re-used over time in MPs plenary debates of the Finnish parliament. Resource developed by the University of Turku in partnership with Aalto University.

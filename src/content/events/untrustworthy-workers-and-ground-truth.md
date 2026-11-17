@@ -9,6 +9,9 @@ cancelled: false
 location: University of Helsinki
 isOnline: false
 localOffice: src/content/local-offices/helsinki.md
+tags:
+  - src/content/tags/applied-machine-learning.md
+  - src/content/tags/digital-social-sciences-and-humanities.md
 ---
 Ground-truth datasets are supposed to nail down facts about the "world", so that machine-learning models trained on them will behave reliably in that same world. Yet when annotation is outsourced to crowdworkers whom engineers do not know, and often distrust, how is such reliability achieved or even imagined? Based on 27 interviews with machine learning researchers, crowdsourcing practitioners, and industry insiders, this research investigates how ground-truth datasets are stabilised.
 

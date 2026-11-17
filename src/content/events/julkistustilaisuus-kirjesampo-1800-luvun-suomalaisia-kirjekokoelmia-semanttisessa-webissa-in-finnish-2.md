@@ -10,6 +10,10 @@ cancelled: false
 location: Suomalaisen Kirjallisuuden Seura (SKS), Hallituskatu 1, Helsinki
 isOnline: false
 localOffice: src/content/local-offices/aalto.md
+tags:
+  - src/content/tags/knowledge-graphs-and-semantic-web.md
+  - src/content/tags/digital-humanities.md
+  - src/content/tags/digital-history.md
 ---
 **Milloin:** Ti. 27.5.2025, klo 13:15–16:00
 

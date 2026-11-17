@@ -11,6 +11,9 @@ meta:
     students for the first time to examine oral history interviews. A year
     later, an article has been published presenting this work.
   image: /media/poster-slam-oral-history-e1780301256616.jpg
+tags:
+  - src/content/tags/digital-humanities.md
+  - src/content/tags/digital-history.md
 ---
 The 10th DHH (Digital Humanities Hackathon 2025) challenged students for the first time to examine oral history interviews. A year later, an article has been published presenting this work.
 

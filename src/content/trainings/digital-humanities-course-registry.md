@@ -3,6 +3,8 @@ title: Digital Humanities Course Registry
 url: https://dhcr.clariah-aisbl.eu/
 order: 33
 level: Varied levels
+tags:
+  - src/content/tags/digital-humanities.md
 ---
 
 

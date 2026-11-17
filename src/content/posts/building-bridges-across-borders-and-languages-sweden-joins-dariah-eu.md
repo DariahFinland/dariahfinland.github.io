@@ -12,6 +12,9 @@ meta:
     Find in this article information about HumInfra.se and a dossier with Finnish tools fit for
     international researchers and historical datasets in Swedish language.
   image: /media/LNU_header.37db1f3c.webp
+tags:
+  - src/content/tags/digital-humanities.md
+  - src/content/tags/open-science-and-infrastructure.md
 ---
 
 **Find in this article information about HumInfra.se and a dossier with Finnish tools fit for international researchers and historical datasets in Swedish language**

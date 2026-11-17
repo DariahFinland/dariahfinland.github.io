@@ -4,13 +4,10 @@ logo: /media/HSCI_logo_no_texts.png
 externalUrl: https://www.helsinki.fi/human-sciences-computing-interaction
 expertise:
   - src/content/tags/digital-humanities.md
-  - src/content/tags/computational-humanities.md
-  - src/content/tags/data-intensive-research.md
-  - src/content/tags/language-technology.md
-  - src/content/tags/open-science.md
-  - src/content/tags/research-design.md
-  - src/content/tags/applied-statistics.md
-  - src/content/tags/big-data.md
+  - src/content/tags/data-science-and-big-data.md
+  - src/content/tags/natural-language-processing.md
+  - src/content/tags/open-science-and-infrastructure.md
+  - src/content/tags/statistics-and-data-analysis.md
   - src/content/tags/computational-social-science.md
 contactName: Eetu Mäkelä
 contactUrl: https://researchportal.helsinki.fi/fi/persons/jarkko-ilkka-eetu-m%C3%A4kel%C3%A4

@@ -2,11 +2,9 @@
 name: Borders, Mobilities and Cultural Encounters BOMOCULT
 externalUrl: https://www.uef.fi/en/research-community/borders-mobilities-and-cultural-encounters-bomocult
 expertise:
-  - src/content/tags/border-studies.md
-  - src/content/tags/cultural-encounters.md
-  - src/content/tags/karelian.md
+  - src/content/tags/borders-and-cultural-encounters.md
   - src/content/tags/language-contact-and-change.md
-  - src/content/tags/digital-ssh.md
+  - src/content/tags/digital-social-sciences-and-humanities.md
 contactName: Jopi Nyman
 contactUrl: https://uefconnect.uef.fi/jopi.nyman/
 localOffice: src/content/local-offices/eastern-finland.md

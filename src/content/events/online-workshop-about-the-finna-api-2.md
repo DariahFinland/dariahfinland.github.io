@@ -8,6 +8,9 @@ endTime: 11:00
 cancelled: false
 isOnline: true
 localOffice: src/content/local-offices/tampere.md
+tags:
+  - src/content/tags/digital-humanities.md
+  - src/content/tags/data-science-and-big-data.md
 ---
 *Please note that due to foreseen university strikes in Helsinki and Turku the date of this workshop has been changed from Tue. 27.5. to Thu 28.5.*
 

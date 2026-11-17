@@ -7,6 +7,8 @@ endDate: 2024-10-10
 endTime: 13:00
 cancelled: false
 isOnline: true
+tags:
+  - src/content/tags/open-science-and-infrastructure.md
 ---
 These monthly meetings are a space to foster common and integrated technical solutions, reusing components, ask questions regarding components of the infrastructure, use of CSC services, or bring up issues related with data pipelines, workflows or tool building. Zoom link and agenda for meetups is circulated via Slack.
 

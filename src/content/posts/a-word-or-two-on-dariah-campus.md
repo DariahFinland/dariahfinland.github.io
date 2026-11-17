@@ -11,6 +11,8 @@ meta:
     with DARIAH infrastructures or digital humanities as a whole, look no
     further than here.
   image: /media/Screenshot-2023-11-15-at-13.23.56.png
+tags:
+  - src/content/tags/digital-humanities.md
 ---
 ([featured image source](https://campus.dariah.eu))
 

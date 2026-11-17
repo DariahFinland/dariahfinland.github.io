@@ -4,7 +4,7 @@ heroImage: /media/minerva.jpg
 heroImageAlt: Minerva building of University of Helsinki
 tags:
   - src/content/tags/digital-social-sciences-and-humanities.md
-  - src/content/tags/multidisciplinary-research.md
+  - src/content/tags/interdisciplinary-research.md
 authors:
   - Inés Matres
 publishedAt: 2026-10-02

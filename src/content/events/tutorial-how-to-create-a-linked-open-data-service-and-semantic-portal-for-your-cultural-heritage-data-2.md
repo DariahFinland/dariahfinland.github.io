@@ -10,6 +10,9 @@ cancelled: false
 location: Aalto University, TUAS-house, Maarintie 8, Espoo
 isOnline: false
 localOffice: src/content/local-offices/aalto.md
+tags:
+  - src/content/tags/knowledge-graphs-and-semantic-web.md
+  - src/content/tags/digital-humanities.md
 ---
 Since 2002, the Semantic Computing Research Group (SeCo) has been involved in 1) developing a national semantic web infrastructure and 2) the "Sampo series" of over 20 Linked Open Data (LOD) services and semantic portals on top of them in use on the Web. This work goes on today as part of the national DARIAH-FI research infrastructure program, pertaining to the LOD work package led by the SeCo group.
 

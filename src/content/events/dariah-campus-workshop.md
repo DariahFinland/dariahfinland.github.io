@@ -7,6 +7,9 @@ endDate: 2026-05-13
 endTime: 15:30
 cancelled: false
 isOnline: true
+tags:
+  - src/content/tags/open-science-and-infrastructure.md
+  - src/content/tags/digital-humanities.md
 ---
 This event invites digital humanities and social science researchers, projects and infrastructure developers in Finland to an introduction to [DARIAH Campus](https://campus.dariah.eu/). In this workshop participants will find support for creating well curated learning resources. 
 

@@ -11,6 +11,8 @@ meta:
     Library of Finland on June 3 2022! But, what does that acronym mean in the
     first place?
   image: /media/Panel-scaled-1.jpg
+tags:
+  - src/content/tags/open-science-and-infrastructure.md
 ---
 We finally had the kick-off event of **FIN-CLARIAH** in the National Library of Finland on June 3 2022, big thanks to Johanna Lilja for hosting! But, what does that acronym mean in the first place? To make it simple: FIN-CLARIAH = DARIAH-FI + FIN-CLARIN. In other words, [FIN-CLARIAH](https://www.kielipankki.fi/organization/roadmap/) is a research infrastructure project funded by the Academy of Finland, and it includes two main components, DARIAH-FI and FIN-CLARIN. The former is a new infrastructure specialising in heterogenous data in humanities and social sciences, whereas the latter is an existing infrastructure for language-based research. We believe in the classical idea of "the whole being greater than the sum of its part": by collaborating in the questions of documentation, material rights, technical access to data, and hosting tools etc., we will save a lot of time and money – and improve the conditions for top-quality research in Finland. To make this collaboration really happen, we invited all the FIN-CLARIAH people together.
 

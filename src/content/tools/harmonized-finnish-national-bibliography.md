@@ -14,5 +14,9 @@ collaborators:
   - src/content/local-offices/helsinki.md
   - src/content/local-offices/national-library.md
   - src/content/local-offices/jyvaskyla.md
+tags:
+  - src/content/tags/data-science-and-big-data.md
+  - src/content/tags/digital-history.md
+  - src/content/tags/digital-humanities.md
 ---
 This resource provides a harmonized version of the Finnish national bibliography (Fennica) dataset as well as the code used for cleaning, enriching and automatically generating reports on the data. Developed by the University of Turku in partnership with the University of Helsinki.

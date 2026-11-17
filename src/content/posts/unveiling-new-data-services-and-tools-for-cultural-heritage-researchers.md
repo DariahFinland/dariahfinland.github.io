@@ -13,6 +13,10 @@ meta:
     the past two years by the DARIAH-FI network for acquiring and processing
     large-scale,…
   image: /media/darah-blog-header-6.png
+tags:
+  - src/content/tags/digital-humanities.md
+  - src/content/tags/computer-vision-and-image-processing.md
+  - src/content/tags/multimodal-data.md
 ---
 In this blog, we bring news about new infrastructure developed in the past two years by the DARIAH-FI network for acquiring and processing large-scale, visual and multimodal historical documents. 
 

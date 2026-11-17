@@ -12,5 +12,9 @@ contacts:
 localOffice: src/content/local-offices/turku.md
 collaborators:
   - src/content/local-offices/csc.md
+tags:
+  - src/content/tags/natural-language-processing.md
+  - src/content/tags/social-media-analysis.md
+  - src/content/tags/applied-machine-learning.md
 ---
 This resource consists of two tools: one to classify toxic data in Finnish (e.g., insults, obscene language) from datasets retrieved from social media platforms; and another to identify registers (genres, e.g., reviews, interviews, news reports) from web content in diverse languages. Resource developed by TurkuNLP / University of Turku in partnership with the CSC.

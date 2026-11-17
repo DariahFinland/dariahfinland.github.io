@@ -13,6 +13,9 @@ meta:
     development means and dive deep into social media research, what questions
     can be posed to…
   image: /media/The-Turk.png
+tags:
+  - src/content/tags/corpus-linguistics.md
+  - src/content/tags/digital-social-sciences-and-humanities.md
 ---
 Recently I had a very interesting conversation with Mikko Laitinen, Professor of sociolinguistics at the University of Eastern Finland and a partner in DARIAH-FI. He is leading the DARIAH FI working group that will improve [analytical frameworks for computational humanities and social sciences](https://www.dariah.fi/analytical-support/). His own research group at UEF is making accessible Twitter data collected for research purposes from the last decade. The closing of the API due to the recent changes in management of the former Twitter (now X), makes this corpus particularly interesting. In this interview we uncover what research-based infrastructure development means and dive deep into social media research, what questions can be posed to Twitter/X data, its limits, and dip our toes into future challenges and ethical aspects of social media research.
 

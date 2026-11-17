@@ -3,7 +3,6 @@ title: Social Data Science track in the Contemporary Socities master's programme
 url: https://www.helsinki.fi/en/degree-programmes/contemporary-societies-masters-programme/
 localOffice: src/content/local-offices/helsinki.md
 tags:
-  - src/content/tags/social-data-science.md
   - src/content/tags/computational-social-science.md
 level: Master's level
 ---

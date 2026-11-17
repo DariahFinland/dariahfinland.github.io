@@ -1,5 +1,3 @@
 ---
-title: digital humanities
-slug: digital-humanities
+title: Digital Humanities
 ---
-

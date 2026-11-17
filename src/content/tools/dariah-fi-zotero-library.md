@@ -16,5 +16,7 @@ collaborators:
   - src/content/local-offices/turku.md
   - src/content/local-offices/national-library.md
   - src/content/local-offices/csc.md
+tags:
+  - src/content/tags/open-science-and-infrastructure.md
 ---
 A public directory of publications (research articles, conference proceedings, data publications) that point at, explain or introduce use cases for the infrastructures developed by the DARIAH-FI partners for the FIN-CLARIAH project.

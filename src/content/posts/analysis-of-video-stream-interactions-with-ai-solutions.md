@@ -11,6 +11,10 @@ meta:
     like Twitch presents a significant challenge for multimodal content
     analysis. Each clip…
   image: /media/darah-blog-header-3-1.png
+tags:
+  - src/content/tags/social-media-analysis.md
+  - src/content/tags/multimodal-data.md
+  - src/content/tags/generative-ai-and-llms.md
 ---
 The proliferation of short-form video on livestreaming platforms like Twitch presents a significant challenge for multimodal content analysis. Each clip contains a vast amount of diverse information: the visual action of the gameplay, the auditory context from the caster commentary, and the text-based reactions from the live chat. Together, these represent dense and valuable data for understanding online communities and digital entertainment.
 

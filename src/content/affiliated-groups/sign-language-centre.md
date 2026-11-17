@@ -2,8 +2,7 @@
 name: Sign Language Centre
 externalUrl: https://www.jyu.fi/fi/hytk/kivi/viittomakielen-keskus/suomalaisen-ja-suomenruotsalaisen-viittomakielen-korpustyo
 expertise:
-  - src/content/tags/sign-language-corpus.md
-  - src/content/tags/linguistic-research-data.md
+  - src/content/tags/corpus-linguistics.md
   - src/content/tags/multimodal-data.md
 contactName: Juhana Salonen
 contactUrl: https://www.jyu.fi/fi/henkilot/juhana-salonen

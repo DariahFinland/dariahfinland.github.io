@@ -3,9 +3,10 @@ title: Report on the “Digitalisaatio ja tekoäly historiantutkimuksessa” eve
 heroImage: /media/Tilaushistoriat.jpg
 heroImageAlt: shelf with books
 tags:
-  - src/content/tags/data-intensive-research.md
-  - src/content/tags/information-use.md
-  - src/content/tags/big-data.md
+  - src/content/tags/data-science-and-big-data.md
+  - src/content/tags/information-seeking-and-retrieval.md
+  - src/content/tags/digital-history.md
+  - src/content/tags/generative-ai-and-llms.md
 authors:
   - Ville Vaara
 publishedAt: 2026-09-24

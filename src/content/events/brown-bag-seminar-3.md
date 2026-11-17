@@ -8,6 +8,9 @@ endTime: 13:15
 cancelled: false
 isOnline: false
 localOffice: src/content/local-offices/helsinki.md
+tags:
+  - src/content/tags/generative-ai-and-llms.md
+  - src/content/tags/digital-social-sciences-and-humanities.md
 ---
 The Methodological unit at the [Helsinki Institute for Humanities and Social Sciences](https://www.helsinki.fi/en/helsinki-institute-social-sciences-and-humanities) (Uni Helsinki) organizes a recurrent Brown Bag Seminar to highlight novel methodological approaches in humanities and social sciences. The idea of the meetings is to introduce methodological innovations and cutting-edge research in various disciplines in an easily accessible manner and have an interdisciplinary discussion in an easy-going atmosphere over lunch.
 

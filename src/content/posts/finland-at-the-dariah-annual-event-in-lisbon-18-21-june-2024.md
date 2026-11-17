@@ -10,6 +10,9 @@ meta:
     university libraries and infrastructure providers under the them of digital
     research workflows
   image: /media/PXL_20240618_1921096001-scaled-e1718991651436.jpg
+tags:
+  - src/content/tags/digital-humanities.md
+  - src/content/tags/open-science-and-infrastructure.md
 ---
 **Report on the highlights of the DARIAH Annual event that gathered European representatives from DH, arts and humanities scholars, to university libraries and infrastructure providers under the them of digital research workflows.**
 

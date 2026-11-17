@@ -12,6 +12,8 @@ meta:
   description: How do you develop a research infrastructure? A short insight into
     the reality of DARIAH-FI's evolution thus far, the good and the bad.
   image: /media/photo_1-scaled-1.jpg
+tags:
+  - src/content/tags/open-science-and-infrastructure.md
 ---
 Hi y'all!
 

@@ -9,6 +9,9 @@ cancelled: false
 location: University of Helsinki
 isOnline: false
 localOffice: src/content/local-offices/helsinki.md
+tags:
+  - src/content/tags/generative-ai-and-llms.md
+  - src/content/tags/data-science-and-big-data.md
 ---
 Since late 2025, agentic coding tools have exploded. Claude, Codex, Cursor, and a dozen others promising to create software for you. The hype is real, the tools are genuinely powerful, and confusion about how to make these tools useful, especially for social sciences and digital humanities, grows and compounds daily. If you're feeling ambivalent but curious, this talk is for you. Join **David Rosson** in this casual talk, no prior technical knowledge required, about what LLMs actually do, what kind of machine are we interacting with in this prompting-generative loop, and what kind of opportunities this new mode of human-computer interaction offers for digitally-minded humanities scholars. David Rosson is a doctoral researcher at the Department of Computer Science at the University of Helsinki and a member of the Computational History research group at the Department of Digital Humanities.
 

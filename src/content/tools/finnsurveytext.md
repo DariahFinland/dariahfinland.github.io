@@ -8,5 +8,9 @@ contacts:
   - name: Krista Lagus
     url: https://researchportal.helsinki.fi/fi/persons/krista-lagus
 localOffice: src/content/local-offices/helsinki.md
+tags:
+  - src/content/tags/natural-language-processing.md
+  - src/content/tags/statistics-and-data-analysis.md
+  - src/content/tags/digital-social-sciences-and-humanities.md
 ---
 This resource provides a set of easy-to-use tools for conducting qualitative analysis on survey responses in Finnish. Thanks to this resource, researchers will be able to better understand data retrieved from open-ended questions.

@@ -8,6 +8,9 @@ meta:
   description: The Fall plenary brought the whole infrastructure to reflect about
     metadata, what is it in diverse fields and how to make it fit-for-research.
   image: /media/fin-clariah20241122_groupphoto-scaled-e1732736022698.jpg
+tags:
+  - src/content/tags/digital-humanities.md
+  - src/content/tags/open-science-and-infrastructure.md
 ---
 **The Fall plenary brought the whole infrastructure to reflect about metadata, what is it in diverse fields and how to make it fit-for-research.** 
 

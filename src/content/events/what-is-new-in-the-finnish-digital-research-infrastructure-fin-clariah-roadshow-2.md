@@ -8,6 +8,9 @@ endDate: 2025-03-14
 endTime: 15:30
 cancelled: false
 isOnline: false
+tags:
+  - src/content/tags/open-science-and-infrastructure.md
+  - src/content/tags/digital-social-sciences-and-humanities.md
 ---
 FIN-CLARIAH (Common Language Resources and Technology Infrastructure) is a fundamental Finnish digital research infrastructure (RI) for Social Sciences and Humanities (SSH). FIN-CLARIAH connects ten universities and memory organisations across the country. The Finnish Research Infrastructure Committee has granted roadmap status to FIN-CLARIAH for 2025–2028. This roadmap guides the research community, policymakers, and funders in directing investment and supporting research, development, and innovation.
 

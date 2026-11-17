@@ -10,6 +10,9 @@ cancelled: false
 location: Aalto University, Konemiehentie 2, Espoo
 isOnline: false
 localOffice: src/content/local-offices/aalto.md
+tags:
+  - src/content/tags/knowledge-graphs-and-semantic-web.md
+  - src/content/tags/digital-humanities.md
 ---
 ***This event will be held in Finnish.***
 

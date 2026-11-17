@@ -3,13 +3,11 @@ name: Semantic Computing Research Group (SeCo)
 logo: /media/secologo.png
 externalUrl: https://seco.cs.aalto.fi/projects/fin-clariah/
 expertise:
-  - src/content/tags/semantic-web.md
-  - src/content/tags/knowledge-graphs.md
-  - src/content/tags/data-analysis.md
+  - src/content/tags/knowledge-graphs-and-semantic-web.md
+  - src/content/tags/statistics-and-data-analysis.md
   - src/content/tags/data-visualization.md
-  - src/content/tags/network-analysis.md
-  - src/content/tags/large-language-models-llms.md
-  - src/content/tags/generative-ai.md
+  - src/content/tags/networks-and-complex-systems.md
+  - src/content/tags/generative-ai-and-llms.md
 contactName: Eero Hyvönen
 contactUrl: https://seco.cs.aalto.fi/u/eahyvone/
 localOffice: src/content/local-offices/aalto.md

@@ -7,6 +7,9 @@ endDate: 2025-03-10
 endTime: 18:00
 cancelled: false
 isOnline: true
+tags:
+  - src/content/tags/digital-humanities.md
+  - src/content/tags/interdisciplinary-research.md
 ---
 The topic of this café is **project management and team collaboration in Digital Humanities projects**. Our guests from academia, industry and research infrastructures will discuss their experience and approaches to project management and how some of the principles and methods can be incorporated into DH research and teaching to improve the collaboration and efficiency of DH project teams. Depending on the size of a DH project, teams typically include researchers, students, faculty staff, technical experts, community partners, infrastructures, and/or representatives of the GLAM or industry sectors. This café is designed for anyone looking to enhance their project management workflows and skills in the Digital Humanities field. It targets research teams managing Digital Humanities projects, program coordinators, lecturers who teach project management in academic programs, DH graduates working on projects in the creative and industry sectors, and professionals overseeing DH infrastructure projects. The café will also be of great interest to any students who, whether they know what career track they wish to embark upon or not, have a burning desire to get things done in their career.
 

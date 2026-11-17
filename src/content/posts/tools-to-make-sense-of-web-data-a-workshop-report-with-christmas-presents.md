@@ -10,6 +10,9 @@ meta:
     the Digital Research Data and Human Science (DRDHum) conference organized by
     the…
   image: /media/data-workshop.jpg
+tags:
+  - src/content/tags/social-media-analysis.md
+  - src/content/tags/natural-language-processing.md
 ---
 Before leaving for a well earned winter break, we bring news from the [Digital Research Data and Human Science (DRDHum) conference](https://sites.uef.fi/drd-hum-2024/) organized by the University of Eastern Finland in Joensuu. This DRDHum edition (10-12 December 2024) attracted more than 100 scholars of the digital age. FIN-CLARIAH hosted a workshop that brought an early Christmas present to some 25 participants who were introduced a suite of tools designed to make sense of web data. The term "sense-making" here includes not only the analytical interpretation of dataset contents but also their automatic enrichment and the extraction of relevant segments for deeper analysis. This comprehensive toolkit is needed for supporting the whole research cycle, from raw data extraction and preprocessing to interpretation.
 

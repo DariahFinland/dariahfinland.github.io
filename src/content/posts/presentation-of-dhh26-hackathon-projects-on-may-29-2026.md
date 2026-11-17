@@ -11,6 +11,9 @@ meta:
     University of Helsinki. This 10-day event brings together students and
     researchers in the…
   image: /media/hack2-copy.jpg.webp
+tags:
+  - src/content/tags/digital-humanities.md
+  - src/content/tags/interdisciplinary-research.md
 ---
 Helsinki Digital Humanities Hackathon starts today at the University of Helsinki. This 10-day event brings together students and researchers in the humanities, social sciences and computer science to collaborate in a DH project from start to end. A public presentation of the projects will take place on 29 May 2026.
 

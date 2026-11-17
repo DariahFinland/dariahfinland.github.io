@@ -2,12 +2,9 @@
 name: TurkuNLP
 externalUrl: http://turkunlp.org
 expertise:
-  - src/content/tags/language-technology.md
-  - src/content/tags/digital-language-studies.md
-  - src/content/tags/nlp.md
-  - src/content/tags/large-language-models-llms.md
+  - src/content/tags/natural-language-processing.md
+  - src/content/tags/generative-ai-and-llms.md
   - src/content/tags/digital-humanities.md
-  - src/content/tags/web-registers.md
 contactName: Veronika Laippala
 contactUrl: https://www.utu.fi/en/people/veronika-laippala
 localOffice: src/content/local-offices/turku.md

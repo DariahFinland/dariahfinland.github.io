@@ -9,6 +9,9 @@ endTime: 18:00
 cancelled: false
 location: University of Helsinki
 isOnline: false
+tags:
+  - src/content/tags/digital-humanities.md
+  - src/content/tags/open-science-and-infrastructure.md
 ---
 The Helsinki DH agenda kicks-off on Thursday September 5th with a visit from digital ethnologist and Sámi scholar Prof. Coppélie Cocq from the University of Umeå.
 

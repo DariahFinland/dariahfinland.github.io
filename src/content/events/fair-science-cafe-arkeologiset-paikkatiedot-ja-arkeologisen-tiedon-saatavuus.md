@@ -8,6 +8,9 @@ endTime: 14:00
 cancelled: false
 isOnline: true
 localOffice: src/content/local-offices/csc.md
+tags:
+  - src/content/tags/open-science-and-infrastructure.md
+  - src/content/tags/digital-humanities.md
 ---
 **Mikä on FAIR Science Café?**
 

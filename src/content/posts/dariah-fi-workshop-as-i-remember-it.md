@@ -10,6 +10,8 @@ meta:
   description: Our National Coordinator takes a trip down memory lane and talks
     about April's big event, the DARIAH-FI Workshop.
   image: /media/DARIAH-FI-WORKSHOP-figure-1.png
+tags:
+  - src/content/tags/open-science-and-infrastructure.md
 ---
 ### Introduction
 

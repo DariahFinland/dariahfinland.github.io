@@ -1,5 +1,3 @@
 ---
-title: social media analysis
-slug: social-media-analysis
+title: Social Media Analysis
 ---
-

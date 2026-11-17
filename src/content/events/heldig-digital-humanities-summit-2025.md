@@ -9,6 +9,9 @@ cancelled: false
 location: University of Helsinki
 isOnline: false
 localOffice: src/content/local-offices/helsinki.md
+tags:
+  - src/content/tags/digital-humanities.md
+  - src/content/tags/digital-social-sciences-and-humanities.md
 ---
 HELDIG, the Centre for Digital Humanities at the University of Helsinki, will host the **HELDIG Digital Humanities Summit 2025 on Thursday 4 December 2025, from 12:00 to 18:00**, followed by a cocktail. The aim of this afternoon event is to bring together Finnish digital humanities actors, infrastructures and partner organisations; to network, and to provide a snapshot of the field from diverse perspectives.
 

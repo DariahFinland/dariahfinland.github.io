@@ -11,6 +11,9 @@ meta:
     University of Helsinki hosted this milestone meeting to support FIN-CLARIAH
     in developing…
   image: /media/darah-blog-header-2-1.png
+tags:
+  - src/content/tags/computational-social-science.md
+  - src/content/tags/digital-social-sciences-and-humanities.md
 ---
 On November 28, the [Centre for Social Data Science](https://www.helsinki.fi/en/networks/centre-social-data-science) (CSDS) at the University of Helsinki hosted this milestone meeting to support FIN-CLARIAH in developing national infrastructure for digital social sciences. The event focused on current practices in annotating datasets in across disciplines interested in qualitative data, narrative analysis, secure practices for sensitive data, and the responsible use of AI tools in the annotation pipeline. This event was open for the local research community, and had approximately 70 participants.
 

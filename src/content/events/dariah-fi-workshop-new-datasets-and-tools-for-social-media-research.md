@@ -9,6 +9,9 @@ cancelled: false
 isOnline: true
 registrationUrl: https://link.webropol.com/ep/dariahsome
 localOffice: src/content/local-offices/eastern-finland.md
+tags:
+  - src/content/tags/social-media-analysis.md
+  - src/content/tags/corpus-linguistics.md
 ---
 Organisers: Mikko Laitinen & Paula Rautionaho (University of Eastern Finland)
 

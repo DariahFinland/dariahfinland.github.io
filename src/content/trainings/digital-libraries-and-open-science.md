@@ -4,6 +4,9 @@ url: >-
   https://www.tuni.fi/en/students-guide/curriculum/course-units/otm-e5b9699e-a176-44d8-8e64-790aa6320112
 localOffice: src/content/local-offices/tampere.md
 level: Varied levels
+tags:
+  - src/content/tags/open-science-and-infrastructure.md
+  - src/content/tags/information-seeking-and-retrieval.md
 ---
 
 The course literature includes types and tasks of digital libraries, both in the non-profit and commercial sectors. Other topics of the course are open science, open data and data archives.

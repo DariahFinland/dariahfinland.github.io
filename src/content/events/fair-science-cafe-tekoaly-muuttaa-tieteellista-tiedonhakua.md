@@ -7,6 +7,10 @@ endDate: 2026-12-08
 endTime: 14:00
 registrationUrl: https://csc.fi/koulutuskalenteri/fair-science-cafe-tekoaly-muuttaa-tieteellisen-tiedon-hakemista/
 localOffice: src/content/local-offices/csc.md
+tags:
+  - src/content/tags/information-seeking-and-retrieval.md
+  - src/content/tags/generative-ai-and-llms.md
+  - src/content/tags/open-science-and-infrastructure.md
 ---
 **Joulukuun FAIR Science Cafén puhujana on Petter Korkman (tietoasiantuntija, Helsingin yliopiston kirjasto)**
 

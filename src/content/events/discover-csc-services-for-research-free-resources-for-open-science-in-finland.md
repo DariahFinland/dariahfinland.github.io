@@ -9,6 +9,9 @@ endTime: 15:00
 cancelled: false
 isOnline: true
 localOffice: src/content/local-offices/csc.md
+tags:
+  - src/content/tags/open-science-and-infrastructure.md
+  - src/content/tags/data-science-and-big-data.md
 ---
 Are you in need of computing power or data storage solutions? Have you heard about CSC's free services for open science in Finland, but didn't quite know what to do with Mahti (Might), LUMI (Snow), Rahti (Container), and Allas (Pool)?
 

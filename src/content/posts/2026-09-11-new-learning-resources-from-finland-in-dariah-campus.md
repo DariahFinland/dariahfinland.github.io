@@ -10,6 +10,9 @@ meta:
     educational videos by digital humanities and social science researchers,
     projects and infrastructure developers in Finland.
   image: /media/dariah-campus-1.png
+tags:
+  - src/content/tags/digital-humanities.md
+  - src/content/tags/digital-social-sciences-and-humanities.md
 ---
 DARIAH-Campus learning platform has just been updated with [new educational videos](https://campus.dariah.eu/resources)by digital humanities and social science researchers, projects and infrastructure developers in Finland.
 

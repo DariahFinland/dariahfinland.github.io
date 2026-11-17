@@ -2,12 +2,12 @@
 name: Turku Data Science Group
 externalUrl: https://datascience.utu.fi
 expertise:
-  - src/content/tags/computational-humanities.md
-  - src/content/tags/complex-systems.md
-  - src/content/tags/data-science.md
-  - src/content/tags/applied-statistics.md
-  - src/content/tags/probabilistic-models.md
-  - src/content/tags/open-science.md
+  - src/content/tags/digital-humanities.md
+  - src/content/tags/networks-and-complex-systems.md
+  - src/content/tags/data-science-and-big-data.md
+  - src/content/tags/statistics-and-data-analysis.md
+  - src/content/tags/applied-machine-learning.md
+  - src/content/tags/open-science-and-infrastructure.md
 contactName: Leo Lahti
 contactUrl: https://datascience.utu.fi/team/
 localOffice: src/content/local-offices/turku.md

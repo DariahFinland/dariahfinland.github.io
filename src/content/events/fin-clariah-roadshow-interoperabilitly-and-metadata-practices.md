@@ -8,6 +8,9 @@ endTime: 19:30
 cancelled: false
 location: University of Oulu, Pentti Kaiteran katu 1, Oulu
 isOnline: false
+tags:
+  - src/content/tags/open-science-and-infrastructure.md
+  - src/content/tags/knowledge-graphs-and-semantic-web.md
 ---
 The event will take place on **Wednesday, 26 August 2026** at the University of Oulu, Tellus Stage. Possible updates will be notified at the [event site](https://cmc2026.org/roadshow/).
 

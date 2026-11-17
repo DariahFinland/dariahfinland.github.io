@@ -10,6 +10,9 @@ cancelled: false
 location: University of Jyväskylä
 isOnline: false
 featuredImage: /media/20240517_dhh24_presentations-scaled-1.jpg
+tags:
+  - src/content/tags/multimodal-data.md
+  - src/content/tags/digital-social-sciences-and-humanities.md
 ---
 *With the recent news that FIN-CLARIAH has been granted lighthouse status, we are now positioned to lead the way in advancing essential infrastructure areas, from impact and functionality, to service provision and collaborative use. This day in Jyväskylä will be dedicated to setting standards in latest and multimodal modes of research. With insights from processing audiovisual data, we aim to build connections and spark ideas for future development. In addition, we will have thematic group sessions that will convene on annotation, education provision, and code review for developers.*
 

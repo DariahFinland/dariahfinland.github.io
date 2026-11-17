@@ -10,6 +10,9 @@ location: Aurora building, Yliopistokatu 2, Joensuu
 isOnline: false
 registrationUrl: https://link.webropolsurveys.com/EP/ACBF9189CE773E03
 localOffice: src/content/local-offices/eastern-finland.md
+tags:
+  - src/content/tags/networks-and-complex-systems.md
+  - src/content/tags/digital-social-sciences-and-humanities.md
 ---
 The FIN-CLARIAH Summer meeting takes place in Joensuu on 11 and 12 June, 2026. This year's program brings together thematic plenary sessions and dedicated time to share ongoing work across the consortium. Our focus is on the relationships between digital materials, from texts to multimodal content and their creators, and the **networks and communities** that emerge around them.
 

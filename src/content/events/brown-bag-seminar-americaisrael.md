@@ -10,6 +10,9 @@ cancelled: false
 location: University of Helsinki
 isOnline: false
 localOffice: src/content/local-offices/helsinki.md
+tags:
+  - src/content/tags/political-science-and-representation.md
+  - src/content/tags/digital-social-sciences-and-humanities.md
 ---
 This guest lecture with Visiting Professor **Elizabeth Shakman Hurd** (Northwestern University) excavates and explores a cultural, religious and political consensus that appears to unite the US and Israel as if they were one supra-national state: "AmericaIsrael". AmericaIsrael banks on a historical, religious, eschatological, topographical, and commercial fascination with the Holy Land among many Americans which predates 1948 and encompasses and exceeds Christian and Jewish Zionisms. This suspension of the US border with Israel is also bound up with the suspension of the border between Zionism and Judaism, such that to be or become American is to be or become a Zionist. In recent months and years, however, this consensus has begun to crumble.
 
