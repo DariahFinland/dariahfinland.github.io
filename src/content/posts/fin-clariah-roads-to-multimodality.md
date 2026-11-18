@@ -2,6 +2,10 @@
 title: FIN-CLARIAH summer meeting builds "Roads to Multimodality"
 heroImage: /media/IMG_2015-scaled-e1750835325675.jpg
 heroImageAlt: IMG 2015 scaled e1750835325675
+tags:
+  - src/content/tags/multimodal-data.md
+  - src/content/tags/digital-social-sciences-and-humanities.md
+  - src/content/tags/fin-clariah-milestone.md
 authors:
   - Inés Matres
   - Venla Poso
@@ -12,9 +16,6 @@ meta:
     FIN-CLARIAH day dedicated to building Roads to Multimodality. On June 13,
     the members of the…
   image: /media/IMG_2015-scaled-e1750835325675.jpg
-tags:
-  - src/content/tags/multimodal-data.md
-  - src/content/tags/digital-social-sciences-and-humanities.md
 ---
 Before we begin the summer hiatus we bring news from the last FIN-CLARIAH day dedicated to building *Roads to Multimodality*. On June 13, the members of the national consortium FIN-CLARIAH were hosted by the DARIAH-FI node at the [University of Jyväskylä](https://www.dariah.fi/local-offices/local-office-detail-jyvaskyla/) in the green surroundings of Seminaarimäki. Lynty ("Lantern") was chosen as venue, a building designed by Alvar Aalto on top of the campus hill. This symbolic place was fit to celebrate the news that FIN-CLARIAH has been granted [lighthouse status](https://www.aka.fi/en/about-us/whats-new/press-releases/2025/firi-committee-decides-funding-for-finnish-research-infrastructure-roadmap-selects-lighthouse-infrastructures/), which means that FIN-CLARIAH is one of [six research infrastructures](https://www.aka.fi/globalassets/2-suomen-akatemian-toiminta/5-ajankohtaista/1-tiedotteet-ja-uutiset/2025/lighthouse-research-infrastructures-2025.pdf) selected to lead the way in service provision, impact and shared use. This day in Jyväskylä was dedicated to setting standards in latest and multimodal modes of research. With insights for processing audiovisual data.
 
