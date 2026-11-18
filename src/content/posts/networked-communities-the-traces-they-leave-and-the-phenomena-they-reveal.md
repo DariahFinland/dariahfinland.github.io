@@ -3,8 +3,8 @@ title: Networked communities, the traces they leave and the phenomena they revea
 heroImage: /media/PXL_20260612_0910496602-scaled.jpg
 tags:
   - src/content/tags/networks-and-complex-systems.md
-  - src/content/tags/multimodal-data.md
   - src/content/tags/social-media-analysis.md
+  - src/content/tags/fin-clariah-milestone.md
 authors:
   - Inés Matres
 publishedAt: 2026-06-15
