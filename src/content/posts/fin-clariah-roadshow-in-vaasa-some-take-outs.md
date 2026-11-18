@@ -2,6 +2,10 @@
 title: "FIN-CLARIAH Roadshow in Vaasa: Some take-outs"
 heroImage: /media/roadshow-vaasa-thumbnail.png
 heroImageAlt: roadshow vaasa thumbnail
+tags:
+  - src/content/tags/digital-social-sciences-and-humanities.md
+  - src/content/tags/open-science-and-infrastructure.md
+  - src/content/tags/fin-clariah-milestone.md
 publishedAt: 2025-04-27
 meta:
   title: "FIN-CLARIAH Roadshow in Vaasa: Some take-outs – DARIAH-FI"
@@ -9,9 +13,6 @@ meta:
     where some 20 local researchers, teachers and students learned about some of
     the central…
   image: /media/roadshow-vaasa-thumbnail.png
-tags:
-  - src/content/tags/digital-social-sciences-and-humanities.md
-  - src/content/tags/open-science-and-infrastructure.md
 ---
 FIN-CLARIAH organised a roadshow event in Vaasa on March 14th, where some 20 local researchers, teachers and students learned about some of the central resources and tools for social science and humanities (SSH) research, with special emphasis on acquiring, processing and depositing born-digital data. From the University of Vaasa, the Natureach project will join the event with a presentation of AR/VR data and its analysis. In the following you can read a summary of presentations (**[watch the recording here](https://uwasa.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=4126161d-521f-44ca-9c22-b2a100ee2db1)**) and on the bottom I provide a summary of the discussion.
 
@@ -24,7 +25,6 @@ Mietta Lennes introduced **Kielipankki – The Language Bank of Finalnd**, with 
 ![](/media/roadshow-vaasa-kielipankki-courses-1024x576.jpg)
 
 *The Language Bank of Finland offers nation-wide online courses on diverse topics.*  
-
 
 Harri Kettunen & Tiina Onikki-Rantajääskö, from the University of Helsinki, introduced the collaborative terminology work at the **Helsinki Term Bank for the Arts and Sciences (HTB)**, and how researchers can contribute to reliability of Information with their participation. 
 
