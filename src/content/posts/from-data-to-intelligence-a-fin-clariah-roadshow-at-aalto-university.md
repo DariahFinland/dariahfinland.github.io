@@ -2,6 +2,10 @@
 title: From data to intelligence - A FIN-CLARIAH Roadshow at Aalto University
 heroImage: /media/20260325-FINCLARIAH-roadshow-aalto-scaled.jpg
 heroImageAlt: 20260325 FINCLARIAH roadshow aalto scaled
+tags:
+  - src/content/tags/knowledge-graphs-and-semantic-web.md
+  - src/content/tags/data-science-and-big-data.md
+  - src/content/tags/fin-clariah-milestone.md
 authors:
   - Inés Matres
 publishedAt: 2026-03-26
@@ -12,9 +16,6 @@ meta:
     cases that illustrate Terminology work as a resource for improving
     visibility of…
   image: /media/20260325-FINCLARIAH-roadshow-aalto-scaled.jpg
-tags:
-  - src/content/tags/knowledge-graphs-and-semantic-web.md
-  - src/content/tags/data-science-and-big-data.md
 ---
 In this report we gather important references to services and use cases that illustrate Terminology work as a resource for improving visibility of research outputs and to produce reliable data-analysis tools. These were recently introduced to a small but interested live-audience at Aalto University.
 
