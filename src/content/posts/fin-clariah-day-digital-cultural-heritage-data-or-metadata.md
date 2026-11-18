@@ -2,15 +2,16 @@
 title: FIN-CLARIAH day - Digital cultural heritage... Data or Metadata?
 heroImage: /media/fin-clariah20241122_groupphoto-scaled-e1732736022698.jpg
 heroImageAlt: fin clariah20241122 groupphoto scaled e1732736022698
+tags:
+  - src/content/tags/digital-humanities.md
+  - src/content/tags/open-science-and-infrastructure.md
+  - src/content/tags/fin-clariah-milestone.md
 publishedAt: 2024-11-27
 meta:
   title: FIN-CLARIAH day - Digital cultural heritage... Data or Metadata? – DARIAH-FI
   description: The Fall plenary brought the whole infrastructure to reflect about
     metadata, what is it in diverse fields and how to make it fit-for-research.
   image: /media/fin-clariah20241122_groupphoto-scaled-e1732736022698.jpg
-tags:
-  - src/content/tags/digital-humanities.md
-  - src/content/tags/open-science-and-infrastructure.md
 ---
 **The Fall plenary brought the whole infrastructure to reflect about metadata, what is it in diverse fields and how to make it fit-for-research.** 
 
