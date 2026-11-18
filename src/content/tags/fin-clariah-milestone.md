@@ -1,3 +1,3 @@
 ---
-title: FIN-CLARIAH Milestone
+title: Roadshows and Seminars
 ---
