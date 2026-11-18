@@ -2,6 +2,10 @@
 title: FIN-CLARIAH day - Consotium brainstorms AI implementation
 heroImage: /media/PXL_20240610_090656021-scaled-e1718743427367.jpg
 heroImageAlt: PXL 20240610 090656021 scaled e1718743427367
+tags:
+  - src/content/tags/generative-ai-and-llms.md
+  - src/content/tags/digital-social-sciences-and-humanities.md
+  - src/content/tags/fin-clariah-milestone.md
 publishedAt: 2024-06-18
 meta:
   title: FIN-CLARIAH day - Consotium brainstorms AI implementation – DARIAH-FI
@@ -9,9 +13,6 @@ meta:
     infrastructure reflected on how SSH research will be affected by AI and
     introduced what they will…
   image: /media/PXL_20240610_090656021-scaled-e1718743427367.jpg
-tags:
-  - src/content/tags/generative-ai-and-llms.md
-  - src/content/tags/digital-social-sciences-and-humanities.md
 ---
 **On the first FIN-CLARIAH plenary this season the whole infrastructure reflected on how SSH research will be affected by AI and introduced what they will deliver by the end of 2025.**
 
