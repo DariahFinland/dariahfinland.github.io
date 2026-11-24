@@ -4,6 +4,7 @@ import { getCollection, render } from 'astro:content'
 import BaseLayout from '../../layouts/BaseLayout.astro'
 import TagPill from '../../components/TagPill.astro'
 import { resolveRefs } from '../../lib/references'
+import { eventExcerpt } from '../../lib/events'
 
 export async function getStaticPaths() {
   const posts = await getCollection('posts')
@@ -19,7 +20,11 @@ const { Content } = await render(post)
 const tags = await resolveRefs('tags', post.data.tags)
 ---
 
-<BaseLayout title={post.data.title} description={post.data.meta?.description}>
+<BaseLayout
+  title={post.data.title}
+  description={post.data.meta?.description || eventExcerpt(post.body, 200)}
+  image={post.data.meta?.image ?? post.data.heroImage}
+>
   <article class="pb-16">
     <!-- Image on its own (cropped/centered to a fixed banner ratio), with the
          title block underneath instead of overlaid on the photo. -->

@@ -12,9 +12,16 @@ import '../styles/global.css'
 interface Props {
   title: string
   description?: string
+  image?: string // path or absolute URL, used for the social link preview
 }
 
-const { title, description } = Astro.props
+const { title, description, image } = Astro.props
+
+// Open Graph / Twitter tags: what Facebook, LinkedIn, Bluesky, Mastodon etc.
+// show as the link preview card when a page is shared (for example by the
+// Buffer integration in scripts/share-to-buffer.mjs).
+const pageUrl = new URL(Astro.url.pathname, Astro.site ?? Astro.url)
+const previewImage = new URL(image ?? '/images/placeholder.png', Astro.site ?? Astro.url)
 ---
 
 <html lang="en">
@@ -23,6 +30,14 @@ const { title, description } = Astro.props
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title} · DARIAH-FI</title>
     {description && <meta name="description" content={description} />}
+    <link rel="canonical" href={pageUrl} />
+    <meta property="og:site_name" content="DARIAH-FI" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    {description && <meta property="og:description" content={description} />}
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:image" content={previewImage} />
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" href="/favicon.ico" />
 
     {/* GoatCounter analytics -- production only, so local dev testing

@@ -159,6 +159,9 @@ const posts = defineCollection({
     authors: z.array(z.string()).optional(),
     publishedAt: z.coerce.date(),
     meta: metaSchema.optional(),
+    // Social sharing via Buffer (see scripts/share-to-buffer.mjs)
+    shareOnSocial: z.boolean().optional(),
+    socialPostDate: z.coerce.date().optional(), // posted at 10:00 Finnish time on this day; empty = immediately
   }),
 })
 
@@ -181,6 +184,9 @@ const events = defineCollection({
     // (see src/lib/events.ts) instead of stored here -- "cancelled" is the
     // only state that genuinely can't be derived from a date.
     cancelled: z.boolean().optional(),
+    // Social sharing via Buffer (see scripts/share-to-buffer.mjs)
+    shareOnSocial: z.boolean().optional(),
+    socialPostDate: z.coerce.date().optional(), // posted at 10:00 Finnish time on this day; empty = Buffer queue
   }),
 })
 

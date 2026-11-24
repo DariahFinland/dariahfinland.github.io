@@ -11,6 +11,11 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Social sharing: only print what would be posted to Buffer'
+        type: boolean
+        default: false
   schedule:
     - cron: '0 3 * * *' # 03:00 UTC daily
 
@@ -68,3 +73,33 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  # Shares posts/events that editors flagged "Share on social media" in the
+  # CMS to Buffer. Runs only after a successful deploy (the links and images
+  # must be live first) and not on the daily cron. A failure here never
+  # affects the site itself. Needs the BUFFER_API_KEY secret; without it the
+  # script does nothing. See scripts/share-to-buffer.mjs for the options.
+  share:
+    needs: deploy
+    if: github.event_name != 'schedule'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Share new posts and events via Buffer
+        run: node scripts/share-to-buffer.mjs
+        env:
+          BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
+          # Optional repository variables (Settings > Secrets and variables > Actions > Variables):
+          BUFFER_ORGANIZATION_ID: ${{ vars.BUFFER_ORGANIZATION_ID }}
+          BUFFER_CHANNEL_IDS: ${{ vars.BUFFER_CHANNEL_IDS }}
+          SITE_URL: https://www.dariah.fi
+          DRY_RUN: ${{ inputs.dry_run }}

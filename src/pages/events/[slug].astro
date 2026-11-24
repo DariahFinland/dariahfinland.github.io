@@ -8,7 +8,7 @@
 
 import { getCollection, render } from 'astro:content'
 import BaseLayout from '../../layouts/BaseLayout.astro'
-import { isPastEvent, formatEventDate } from '../../lib/events'
+import { isPastEvent, formatEventDate, eventExcerpt } from '../../lib/events'
 import { resolveRef } from '../../lib/references'
 import TagList from '../../components/TagList.astro'
 
@@ -26,7 +26,7 @@ const localOffice = await resolveRef('localOffices', event.data.localOffice)
 const past = isPastEvent(event.data)
 ---
 
-<BaseLayout title={event.data.title}>
+<BaseLayout title={event.data.title} description={eventExcerpt(event.body, 200)} image={event.data.featuredImage}>
   <div class="page-header wave-bg">
     <div class="container max-w-3xl">
       <a href="/events" class="text-sm font-semibold text-muted-foreground hover:text-primary inline-flex items-center gap-1 mb-4">
