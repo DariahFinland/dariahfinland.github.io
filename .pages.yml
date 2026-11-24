@@ -80,14 +80,6 @@ content:
         label: Local Office
         type: reference
         options: { collection: local-offices, label: "{name}", value: "{path}" }
-      - name: shareOnSocial
-        label: Share on social media
-        type: boolean
-        description: "Tick to share this automatically on our social media channels after the site has been updated."
-      - name: socialPostDate
-        label: Social media post date
-        type: date
-        description: "Optional. Pick tomorrow or a later day to have it posted at 10:00 Finnish time on that day. Leave empty to post immediately. Only used when 'Share on social media' is ticked."
       - { name: body, label: Description, type: rich-text }
 
   # ---------- tools ----------
@@ -189,6 +181,14 @@ content:
         label: Organising office
         type: reference
         options: { collection: local-offices, label: "{name}", value: "{path}" }
+      - name: shareOnSocial
+        label: Share on social media
+        type: boolean
+        description: "Tick to share this automatically on our social media channels after the site has been updated."
+      - name: socialPostDate
+        label: Social media post date
+        type: date
+        description: "Optional. Pick tomorrow or a later day to have it posted at 10:00 Finnish time on that day. Leave empty to post immediately. Only used when 'Share on social media' is ticked."
       - { name: body, label: Description, type: rich-text }
 
   # ---------- posts ----------
